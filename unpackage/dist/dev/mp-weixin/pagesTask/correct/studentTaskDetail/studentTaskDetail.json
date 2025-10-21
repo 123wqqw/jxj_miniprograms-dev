@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "学生作业详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-modal": "/node-modules/uview-ui/components/u-modal/u-modal",
+    "u-popup": "/node-modules/uview-ui/components/u-popup/u-popup",
+    "x-week-date-calendar": "/pagesTask/components/x-week-date-calendar/x-week-date-calendar",
+    "user-info": "/pagesTask/correct/studentTaskDetail/components/UserInfo/index",
+    "sport-item": "/pagesTask/correct/studentTaskDetail/components/SportItem/index",
+    "opeartion-btn": "/pagesTask/correct/studentTaskDetail/components/OpeartionBtn/index",
+    "review": "/pagesTask/correct/studentTaskDetail/components/Review/index"
+  }
+}

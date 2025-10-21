@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "导出数据",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-select": "/node-modules/uview-ui/components/u-select/u-select",
+    "x-calendar": "/pagesTask/components/x-calendar/x-calendar"
+  }
+}

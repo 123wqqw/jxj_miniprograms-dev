@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "核销记录",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "u-search": "/node-modules/uview-ui/components/u-search/u-search",
+    "u-loadmore": "/node-modules/uview-ui/components/u-loadmore/u-loadmore",
+    "u-image": "/node-modules/uview-ui/components/u-image/u-image",
+    "u-modal": "/node-modules/uview-ui/components/u-modal/u-modal",
+    "list-item": "/pagesData/prizeVerification/record/components/listItem"
+  }
+}

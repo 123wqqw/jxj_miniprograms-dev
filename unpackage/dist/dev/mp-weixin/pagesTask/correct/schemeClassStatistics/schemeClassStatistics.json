@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "班级统计",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "x-week-date-calendar": "/pagesTask/components/x-week-date-calendar/x-week-date-calendar"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "physical-info-banner": "/pagesPlan/classPlan/physicalTestClass/components/physicalInfo/components/physicalInfoBanner",
+    "physical-info-item": "/pagesPlan/classPlan/physicalTestClass/components/physicalInfo/components/physicalInfoItem"
+  }
+}

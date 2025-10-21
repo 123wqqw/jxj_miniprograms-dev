@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "作业批改",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "u-image": "/node-modules/uview-ui/components/u-image/u-image",
+    "u-back-top": "/node-modules/uview-ui/components/u-back-top/u-back-top",
+    "u-calendar": "/node-modules/uview-ui/components/u-calendar/u-calendar",
+    "u-popup": "/node-modules/uview-ui/components/u-popup/u-popup",
+    "u-input": "/node-modules/uview-ui/components/u-input/u-input"
+  }
+}

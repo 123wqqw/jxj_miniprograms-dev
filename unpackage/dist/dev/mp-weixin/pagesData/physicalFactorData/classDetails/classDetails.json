@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "班级详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-modal": "/node-modules/uview-ui/components/u-modal/u-modal",
+    "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
+    "l-echart": "/uni_modules/lime-echart/components/l-echart/l-echart"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "体测数据",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-picker": "/node-modules/uview-ui/components/u-picker/u-picker"
+  }
+}

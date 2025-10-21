@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "随堂训练详情",
+  "usingComponents": {
+    "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
+    "record-detail": "/pagesCenter/classTraining/detail/components/recordDetail",
+    "record-table": "/pagesCenter/classTraining/detail/components/recordTable"
+  }
+}

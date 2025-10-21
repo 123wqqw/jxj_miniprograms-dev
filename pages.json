@@ -1,0 +1,706 @@
+{
+	"globalStyle": {
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTextStyle": "black",
+		"backgroundColor": "#f6f6f6",
+		"pageOrientation": "portrait"
+	},
+	"tabBar": {
+		"color": "#A8ABB2",
+		"selectedColor": "#409EFF",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"height": "56px",
+		"iconWidth": "24px",
+		"spacing": "2px",
+		"fontSize": "12px",
+		"list": [{
+				"pagePath": "pages/home/index/index",
+				"iconPath": "static/images/tabBar/teacher-home.png",
+				"selectedIconPath": "static/images/tabBar/teacher-home-active.png",
+				"text": "校体云"
+			},
+			{
+				"pagePath": "pages/mine/index/index",
+				"iconPath": "static/images/tabBar/teacher-mine.png",
+				"selectedIconPath": "static/images/tabBar/teacher-mine-active.png",
+				"text": "我"
+			}
+		]
+	},
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/index/index",
+			"style": {
+				"navigationBarTitleText": "用户授权",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/mine/index/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom" // 取消本页面的导航栏
+			}
+		},
+		{
+			"path": "pages/home/index/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom", // 取消本页面的导航栏
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/login/login/login",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/login/bindPhone/bindPhone",
+			"style": {
+				"navigationBarTitleText": "绑定手机号",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/webView/index/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/login/auth/step1",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/login/forgotPassword/step2",
+			"style": {
+				"navigationBarTitleText": "忘记账号或密码",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/login/forgotPassword/step3",
+			"style": {
+				"navigationBarTitleText": "忘记账号或密码",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/login/register/step2",
+			"style": {
+				"navigationBarTitleText": "账号注册",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/login/register/step3",
+			"style": {
+				"navigationBarTitleText": "账号注册",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false
+			}
+		}
+	],
+	"subPackages": [{
+			"root": "pagesTask", // 作业相关包
+			"pages": [{
+					"path": "assign/index/index",
+					"style": {
+						"navigationBarTitleText": "布置作业",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "assign/selectAssign/index",
+					"style": {
+						"navigationBarTitleText": "布置作业"
+					}
+				},
+				{
+					"path": "assign/templateInfo/index",
+					"style": {
+						"navigationBarTitleText": "课件内容",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "assign/replacement/index",
+					"style": {
+						"navigationBarTitleText": "替换项目"
+					}
+				},
+				{
+					"path": "assign/assignTemplate/index",
+					"style": {
+						"navigationBarTitleText": "布置作业"
+					}
+				},
+				{
+					"path": "correct/index/index",
+					"style": {
+						"navigationBarTitleText": "批改作业",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "assign/assignTask/assignTask",
+					"style": {
+						"navigationBarTitleText": "布置作业",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "assign/assignTask/selectAi",
+					"style": {
+						"navigationBarTitleText": "选择项目",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "assign/assignTask/sportDetail",
+					"style": {
+						"navigationBarTitleText": "项目详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "assign/assignTask/taskDetails",
+					"style": {
+						"navigationBarTitleText": "作业浏览",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "assign/assignTaskInfo/assignTaskInfo",
+					"style": {
+						"navigationBarTitleText": "布置作业",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "assign/clockStatistics/clockStatistics",
+					"style": {
+						"navigationBarTitleText": "详细数据",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "assign/correctTask/correctTask",
+					"style": {
+						"navigationBarTitleText": "作业批改",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "assign/clockDetails/clockDetails",
+					"style": {
+						"navigationBarTitleText": "打卡详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "correct/classStatistics/classStatistics",
+					"style": {
+						"navigationBarTitleText": "班级统计",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "correct/batchCorrectTask/batchCorrectTask",
+					"style": {
+						"navigationBarTitleText": "批量批改作业",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "correct/studentTaskDetail/studentTaskDetail",
+					"style": {
+						"navigationBarTitleText": "学生作业详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "correct/exportCorrectFile/exportCorrectFile",
+					"style": {
+						"navigationBarTitleText": "导出数据",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "correct/correctStudentDetail/correctStudentDetail",
+					"style": {
+						"navigationBarTitleText": "学生作业详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "correct/schemeIndex/schemeIndex",
+					"style": {
+						"navigationBarTitleText": "总览",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "correct/schemeClassStatistics/schemeClassStatistics",
+					"style": {
+						"navigationBarTitleText": "班级统计",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "correct/schemeStudentDetail/schemeStudentDetail",
+					"style": {
+						"navigationBarTitleText": "方案详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "assign/assignTask/clearTask",
+					"style": {
+						"navigationBarTitleText": "撤回布置",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "assign/assignReport/index",
+					"style": {
+						"navigationBarTitleText": "作业报告",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "assign/assignReport/dataExport",
+					"style": {
+						"navigationBarTitleText": "导出数据",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "assign/assignReport/classes",
+					"style": {
+						"navigationBarTitleText": "作业报告",
+						"enablePullDownRefresh": false
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesData", //数据相关包
+			"pages": [
+				// {
+				// 	"path": "aiData/index/index",
+				// 	"style": {
+				// 		"navigationBarTitleText": "AI运动数据",
+				// 		"enablePullDownRefresh": false
+				// 	}
+				// },
+				// {
+				// 	"path": "aiData/classDetails/classDetails",
+				// 	"style": {
+				// 		"navigationBarTitleText": "班级详情",
+				// 		"enablePullDownRefresh": false
+				// 	}
+				// },
+				// {
+				// 	"path": "aiData/studentDetails/studentDetails",
+				// 	"style": {
+				// 		"navigationBarTitleText": "学生详情",
+				// 		"enablePullDownRefresh": false
+				// 	}
+				// },
+				// {
+				// 	"path": "aiData/itemDetails/itemDetails",
+				// 	"style": {
+				// 		"navigationBarTitleText": "动态变更项目名称",
+				// 		"enablePullDownRefresh": false
+				// 	}
+				// },
+				{
+					"path": "physicalData/index/index",
+					"style": {
+						"navigationBarTitleText": "体测数据",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "physicalData/classDetails/classDetails",
+					"style": {
+						"navigationBarTitleText": "班级详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "physicalData/studentDetail/studentDetail",
+					"style": {
+						"navigationBarTitleText": "学生详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "physicalData/studentDetail/downloadFile",
+					"style": {
+						"navigationBarTitleText": "下载",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "physicalFactorData/index/index",
+					"style": {
+						"navigationBarTitleText": "体质数据",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "physicalFactorData/classDetails/classDetails",
+					"style": {
+						"navigationBarTitleText": "班级详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "physicalFactorData/studentDetail/studentDetail",
+					"style": {
+						"navigationBarTitleText": "学生详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "prizeVerification/page/index",
+					"style": {
+						"navigationBarTitleText": "奖品核销",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "prizeVerification/detail/index",
+					"style": {
+						"navigationBarTitleText": "兑换详情"
+					}
+				},
+				{
+					"path": "prizeVerification/record/index",
+					"style": {
+						"navigationBarTitleText": "核销记录",
+						"enablePullDownRefresh": true
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesPlan", //教案相关包
+			"pages": [{
+					"path": "classPlan/index/index",
+					"style": {
+						"navigationBarTitleText": "运动方案",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "classPlan/indicator/index",
+					"style": {
+						"navigationBarTitleText": "体测指标解读"
+					}
+				},
+				{
+					"path": "classPlan/physicalTestClass/index",
+					"style": {
+						"navigationBarTitleText": "班级体测数据",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "classPlan/coursewareSet/index",
+					"style": {
+						"navigationBarTitleText": "设置方案"
+					}
+				},
+				{
+					"path": "classPlan/selectScheme/index",
+					"style": {
+						"navigationBarTitleText": "选择方案",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "classPlan/replacement/index",
+					"style": {
+						"navigationBarTitleText": "替换方案"
+					}
+				},
+				{
+					"path": "classPlan/replacement/sportDetail",
+					"style": {
+						"navigationBarTitleText": "项目详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "classPlan/assignment/index",
+					"style": {
+						"navigationBarTitleText": "布置作业"
+					}
+				},
+				{
+					"path": "intervention/index/intervention",
+					"style": {
+						"navigationBarTitleText": "干预方案数据",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "intervention/detail/interventionDetail",
+					"style": {
+						"navigationBarTitleText": "班级详情",
+						"backgroundColor": "#FFFFFF"
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesMine", //我的其他页面相关
+			"pages": [{
+					"path": "mine/classManage/classManage",
+					"style": {
+						"navigationBarTitleText": "班级管理",
+						"enablePullDownRefresh": true
+					}
+				}, {
+					"path": "mine/facialCapture/facialCapture",
+					"style": {
+						"navigationBarTitleText": "人脸录入",
+						"enablePullDownRefresh": false
+					}
+				}, {
+					"path": "mine/editPhone/editPhone",
+					"style": {
+						"navigationBarTitleText": "修改手机号",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "mine/myInformation/myInformation",
+					"style": {
+						"navigationBarTitleText": "个人资料",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "mine/facialSelfie/facialSelfie",
+					"style": {
+						"navigationBarTitleText": "人脸照片",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "mine/classConcat/calssConcat",
+					"style": {
+						"navigationBarTitleText": "绑定管理班级",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "mine/clockDateSetting/clockDateSetting",
+					"style": {
+						"navigationBarTitleText": "打卡设置",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "mine/classConcatHelp/classConcatHelp",
+					"style": {
+						"navigationBarTitleText": "绑定协管班级",
+						"enablePullDownRefresh": false
+					}
+				}
+			]
+		},
+		{
+			"root": "H5", //H5
+			"pages": [{
+				"path": "share/index",
+				"style": {
+					"navigationBarTitleText": "邀请学生",
+					"enablePullDownRefresh": true
+				}
+			}]
+		},
+		{
+			"root": "pagesCenter", // 运动训练页面相关
+			"pages": [{
+					"path": "sportCenter/index",
+					"style": {
+						"navigationBarTitleText": "跑步中心"
+					}
+				},
+				{
+					"path": "sportCenter/runnStats/index",
+					"style": {
+						"navigationBarTitleText": "跑步统计"
+					}
+				},
+				{
+					"path": "sportCenter/runnStats/semseterSelect/index",
+					"style": {
+						"navigationBarTitleText": "学期",
+						"navigationStyle": "custom" // 隐藏系统导航栏
+					}
+				},
+				{
+					"path": "sportCenter/runnStats/classDetail/index",
+					"style": {
+						"navigationBarTitleText": "班级详情"
+					}
+				},
+				{
+					"path": "sportCenter/runnStats/studentDetail/index",
+					"style": {
+						"navigationBarTitleText": "学生详情"
+					}
+				},
+				{
+					"path": "sportCenter/runDetails/index",
+					"style": {
+						"navigationBarTitleText": "跑步明细"
+					}
+				},
+				{
+					"path": "sportCenter/runDetails/runRecord/index",
+					"style": {
+						"navigationBarTitleText": "跑步明细"
+					}
+				},
+				{
+					"path": "classTraining/page/index",
+					"style": {
+						"navigationBarTitleText": "随堂训练记录"
+					}
+				},
+				{
+					"path": "classTraining/detail/index",
+					"style": {
+						"navigationBarTitleText": "随堂训练详情"
+					}
+				},
+				{
+					"path": "casuallyClass/page/index",
+					"style": {
+						"navigationBarTitleText": "串班训练记录"
+					}
+				},
+				{
+					"path": "casuallyClass/detail/index",
+					"style": {
+						"navigationBarTitleText": "串班训练详情"
+					}
+				},
+				{
+					"path": "freeExercise/page/index",
+					"style": {
+						"navigationBarTitleText": "自由锻练记录"
+					}
+				},
+				{
+					"path": "sunshineRun/page/index",
+					"style": {
+						"navigationBarTitleText": "阳光跑记录"
+					}
+				},
+				{
+					"path": "sunshineRun/detail/index",
+					"style": {
+						"navigationBarTitleText": "阳光跑详情"
+					}
+				}
+			]
+		}, {
+			"root": "pagesNotice",
+			"pages": [{
+					"path": "index/index",
+					"style": {
+						"navigationBarTitleText": "消息中心"
+					}
+				}, {
+					"path": "leaveNotice/index",
+					"style": {
+						"navigationBarTitleText": "学生请假通知"
+					}
+				},
+				{
+					"path": "leaveNoticeReview/index",
+					"style": {
+						"navigationBarTitleText": "请假审批"
+					}
+				}
+			]
+		}, {
+			"root": "pagesStudent",
+			"pages": [{
+					"path": "home/index",
+					"style": {
+						"navigationBarTitleText": "",
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "gym/index",
+					"style": {
+						"navigationBarTitleText": "家庭健身房"
+					}
+				}
+				
+			]
+		}
+	],
+	"preloadRule": {
+		"pagesTask/assign/index/index": {
+			"network": "all",
+			"packages": [
+				"pagesTask"
+			]
+		},
+		"pagesTask/correct/index/index": {
+			"network": "all",
+			"packages": [
+				"pagesTask"
+			]
+		},
+		"pagesData/physicalData/index/index": {
+			"network": "all",
+			"packages": [
+				"pagesData"
+			]
+		},
+		"pagesData/physicalFactorData/index/index": {
+			"network": "all",
+			"packages": [
+				"pagesData"
+			]
+		},
+		"pages/mine/index/index": {
+			"network": "all",
+			"packages": [
+				"pagesMine"
+			]
+		},
+		"pagesCenter/sportCenter/index": {
+			"network": "all",
+			"packages": [
+				"pagesCenter"
+			]
+		}
+	}
+}

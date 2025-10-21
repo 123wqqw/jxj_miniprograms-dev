@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "设置方案",
+  "usingComponents": {
+    "u-gap": "/node-modules/uview-ui/components/u-gap/u-gap",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
+    "u-modal": "/node-modules/uview-ui/components/u-modal/u-modal",
+    "u-input": "/node-modules/uview-ui/components/u-input/u-input",
+    "class-info": "/pagesPlan/classPlan/components/class-info/index",
+    "scheme-item": "/pagesPlan/classPlan/coursewareSet/components/schemeItem/index",
+    "train-strength": "/pagesPlan/classPlan/coursewareSet/components/trainStrength/index",
+    "radar-chart": "/pagesPlan/classPlan/components/radarChart/index",
+    "sport-days": "/pagesPlan/classPlan/coursewareSet/components/sportDays/index"
+  }
+}

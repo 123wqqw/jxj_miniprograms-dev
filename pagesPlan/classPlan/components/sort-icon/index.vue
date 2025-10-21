@@ -1,0 +1,43 @@
+<template>
+	<view class="u-margin-left-4" @click="bindStatusChange">
+		<u-image width="20rpx" height="24rpx" src="/static/icon_sort_default.png" v-show="!status"></u-image>
+		<u-image width="20rpx" height="24rpx" src="/static/icon_sort_preface.png" v-show="status && sortIcon">
+		</u-image>
+		<u-image width="20rpx" height="24rpx" src="/static/icon_sort_reverse.png" v-show="status && !sortIcon">
+		</u-image>
+	</view>
+</template>
+
+<script>
+	export default {
+		props: {
+			prop: {
+				type: String,
+				default: ""
+			},
+			sort: {
+				type: String,
+				default: ""
+			}
+		},
+		data() {
+			return {
+				sortIcon: false,
+			}
+		},
+		computed: {
+			status() {
+				return this.prop === this.sort
+			}
+		},
+		methods: {
+			bindStatusChange() {
+				this.sortIcon = !this.sortIcon
+				this.$emit('handle-sort', this.prop, this.sortIcon ? "preface" : "reverse")
+			}
+		}
+	}
+</script>
+
+<style>
+</style>

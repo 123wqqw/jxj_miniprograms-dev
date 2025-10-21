@@ -1,0 +1,142 @@
+.maxBox {
+  width: 750rpx;
+  padding: 16rpx 32rpx 200rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.maxBox .zhezhaoBox {
+  width: 750rpx;
+  height: 704rpx;
+  z-index: 11000;
+  background: #FFFFFF;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  font-size: 32rpx;
+}
+.maxBox .zhezhaoBox .checkedTit {
+  padding: 0 32rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  color: #707070;
+}
+.maxBox .zhezhaoBox .checkedItem {
+  padding: 0 32rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.maxBox .zhezhaoBox .checkedItem .yichu {
+  width: 112rpx;
+  height: 48rpx;
+  background: #FFFFFF;
+  border-radius: 8rpx;
+  border: 1rpx solid #707070;
+  text-align: center;
+  line-height: 48rpx;
+  font-size: 24rpx;
+  float: right;
+  margin-top: 20rpx;
+}
+.maxBox .checkAll {
+  line-height: 88rpx;
+  height: 88rpx;
+  width: 686rpx;
+  border-bottom: 1rpx solid #E6E6E6;
+}
+.maxBox .checkItem .checkDropBox {
+  display: block;
+  width: 686rpx;
+  border-bottom: 1rpx solid #E6E6E6;
+  text-align: left;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.maxBox .checkItem .checkDropBox  .u-checkbox__icon-wrap--checked {
+  position: absolute;
+  left: 0;
+  top: 28rpx;
+}
+.maxBox .checkItem .checkDropBox  .u-checkbox__icon-wrap {
+  position: absolute;
+  left: 0;
+  top: 28rpx;
+}
+.maxBox .checkItem .checkDropBox  .u-checkbox__label {
+  margin-left: 54rpx;
+}
+.maxBox .checkItem .checkDropBox .checkItemClick {
+  width: 130rpx;
+  height: 88rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.maxBox .checkItem .checkDropBox .checkItemClick .checkItemText {
+  position: absolute;
+  top: 0rpx;
+  right: 64rpx;
+  width: 80rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: right;
+}
+.maxBox .checkItem .checkDropBox .checkItemClick .checkItemImg {
+  width: 25rpx;
+  height: 24rpx;
+  position: absolute;
+  top: 32rpx;
+  right: 32rpx;
+}
+.maxBox .checkItem .checkDropBox .checkDrop {
+  display: block;
+  height: 88rpx;
+  width: 686rpx;
+  border-bottom: 1rpx solid #E6E6E6;
+  text-align: left;
+  line-height: 88rpx;
+  padding-left: 44rpx;
+  box-sizing: border-box;
+}
+.maxBox .checkItem .checkDropBox .checkDrop  .u-checkbox__icon-wrap--checked {
+  position: static;
+}
+.maxBox .checkItem .checkDropBox .checkDrop  .u-checkbox__icon-wrap {
+  position: static;
+}
+.maxBox .checkItem .checkDropBox .checkDrop  .u-checkbox__label {
+  padding-left: 0;
+  width: 510rpx;
+}
+.maxBox .checkItem .checkDropBox .checkDrop:last-child {
+  border-bottom: 0;
+}
+.maxBox .dibu {
+  width: 750rpx;
+  height: 120rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #FFFFFF;
+  margin-bottom: 30rpx;
+  z-index: 10000;
+}
+.maxBox .dibu .textNum {
+  float: left;
+  line-height: 120rpx;
+  margin-left: 32rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #707070;
+}
+.maxBox .dibu .submit-btn {
+  width: 376rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #5C8FF7;
+  border-radius: 44rpx;
+  float: right;
+  margin-right: 32rpx;
+  margin-top: 20rpx;
+}
+
