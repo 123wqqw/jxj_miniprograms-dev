@@ -1,4 +1,4 @@
-require('../common/vendor.js');(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pagesStudent/home/index"],{
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pagesStudent/home/index"],{
 
 /***/ 795:
 /*!*********************************************************************************************************!*\
@@ -151,7 +151,7 @@ var _url = __webpack_require__(/*! @/common/url.js */ 76);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var ProfileModal = function ProfileModal() {
-  Promise.all(/*! require.ensure | pagesStudent/home/components/ProfileModal */[__webpack_require__.e("pagesStudent/common/vendor"), __webpack_require__.e("pagesStudent/home/components/ProfileModal")]).then((function () {
+  __webpack_require__.e(/*! require.ensure | pagesStudent/home/components/ProfileModal */ "pagesStudent/home/components/ProfileModal").then((function () {
     return resolve(__webpack_require__(/*! ./components/ProfileModal.vue */ 1513));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };

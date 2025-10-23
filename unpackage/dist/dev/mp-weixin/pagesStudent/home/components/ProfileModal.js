@@ -1,4 +1,4 @@
-require('../../common/vendor.js');(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pagesStudent/home/components/ProfileModal"],{
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pagesStudent/home/components/ProfileModal"],{
 
 /***/ 1513:
 /*!********************************************************************************************************!*\

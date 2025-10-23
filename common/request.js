@@ -3,9 +3,8 @@
 // const BASE_URL = 'https://xty.iydsj.com/api'; // 正式环境 wx384c94eaf17a6fd4
 // export const USERCENTER = 'http://test.usercenter.xiaotiyun.cn';
 // export const USERCENTER = 'https://usercenter.xiaotiyun.cn';
-- export const USERCENTER = process.env.VUE_APP_BASE_URL;
-+ const DEFAULT_USERCENTER = 'https://xty.public.xiaoti.cloud';
-+ export const USERCENTER = process.env.VUE_APP_BASE_URL || DEFAULT_USERCENTER;
+const DEFAULT_USERCENTER = 'http://test.xty.public.xiaoti.cloud';
+export const USERCENTER = process.env.VUE_APP_BASE_URL || DEFAULT_USERCENTER;
 // export const USERCENTER = 'http://test.xty.public.xiaoti.cloud';
 // export const USERCENTER = 'http://pre.xty.public.xiaoti.cloud';
 // export const USERCENTER = 'https://xty.public.xiaoti.cloud';

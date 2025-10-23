@@ -663,6 +663,54 @@
 				}
 				
 			]
+		}, {
+			"root": "pages/students",
+			"pages": [{
+					"path": "login/index",
+					"style": {
+						"navigationBarTitleText": "学生登录",
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "register/index",
+					"style": {
+						"navigationBarTitleText": "学生注册",
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "forgotPassword/index",
+					"style": {
+						"navigationBarTitleText": "忘记密码",
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "home/index",
+					"style": {
+						"navigationBarTitleText": "",
+						"navigationStyle": "custom"
+					}
+				}, {
+					"path": "gym/index",
+					"style": {
+						"navigationBarTitleText": "家庭健身房"
+					}
+				}, {
+					"path": "homework/index",
+					"style": {
+						"navigationBarTitleText": "校外体育作业"
+					}
+				}, {
+					"path": "leaderboard/index",
+					"style": {
+						"navigationBarTitleText": "锻炼风云榜"
+					}
+				}, {
+					"path": "records/index",
+					"style": {
+						"navigationBarTitleText": "健身运动记录"
+					}
+				}
+			]
 		}
 	],
 	"preloadRule": {

@@ -1,4 +1,4 @@
-require('../common/vendor.js');(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pagesStudent/gym/index"],{
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pagesStudent/gym/index"],{
 
 /***/ 803:
 /*!********************************************************************************************************!*\
