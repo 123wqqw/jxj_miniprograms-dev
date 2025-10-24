@@ -35,7 +35,11 @@
 		<view class="welcome-card">
 			<view class="welcome-content">
 				<view class="welcome-text">
-					<view class="greeting">嗨~ <br />欢迎来到家庭健身房</view>
+					<view class="greeting">
+						嗨~
+						<br />
+						欢迎来到家庭健身房
+					</view>
 				</view>
 				<view class="mascot">
 					<image src="/static/images/students/jxj.png" mode="aspectFit" class="mascot-img"></image>
@@ -50,22 +54,20 @@
 		<!-- 功能模块网格 -->
 		<view class="function-grid">
 			<view class="grid-item-group">
-				<view class="grid-item" @click="goToGym"
-					style="border-radius: 40rpx;background: linear-gradient(180deg, #997DD6 0%, #BDA3F4 100%);margin-right: 40rpx;">
+				<view class="grid-item" @click="goToGym" style="border-radius: 40rpx; background: linear-gradient(180deg, #997dd6 0%, #bda3f4 100%); margin-right: 40rpx">
 					<image src="/static/images/students/jtjsf.png" class="item-icon"></image>
 					<view class="item-title">家庭健身房</view>
 					<view class="item-subtitle">去锻炼></view>
 				</view>
 
-				<view class="grid-item" @click="goToHomework"
-					style="border-radius: 40rpx;background: linear-gradient(180deg, #EDB341 0%, #FFC87B 100%)">
+				<view class="grid-item" @click="goToHomework" style="border-radius: 40rpx; background: linear-gradient(180deg, #edb341 0%, #ffc87b 100%)">
 					<image src="/static/images/students/xwtyzy.png" class="item-icon"></image>
 					<view class="item-title">校外体育作业</view>
 					<view class="item-subtitle">去完成></view>
 				</view>
 			</view>
 
-			<view class="grid-item-group" style="margin-top: 40rpx;">
+			<view class="grid-item-group" style="margin-top: 40rpx">
 				<view class="card-item leaderboard-card" @click="goToLeaderboard">
 					<image src="/static/images/students/bj.svg" class="card-bg-image"></image>
 					<view class="card-title">锻炼风云榜</view>
@@ -73,7 +75,8 @@
 						<image src="/static/images/students/dlfyb.png" class="icon-img"></image>
 					</view>
 					<view class="card-footer">
-						当前排名<text class="rank-text">{{ currentRank }}</text>
+						当前排名
+						<text class="rank-text">{{ currentRank }}</text>
 					</view>
 				</view>
 
@@ -89,10 +92,10 @@
 				</view>
 			</view>
 		</view>
-		
+
 		<!-- 个人中心弹框 -->
-		<ProfileModal 
-			:visible="showProfileModal" 
+		<ProfileModal
+			:visible="showProfileModal"
 			:userInfo="studentInfo"
 			@close="closeProfileModal"
 			@switchUser="switchUser"
@@ -106,12 +109,10 @@
 </template>
 
 <script>
-import {
-	mapState
-} from 'vuex'
-import ProfileModal from './components/ProfileModal.vue'
-import { getReq } from '@/common/request.js'
-import { URL } from '@/common/url.js'
+import { mapState } from 'vuex';
+import ProfileModal from './components/ProfileModal.vue';
+import { getReq } from '@/common/request.js';
+import { URL } from '@/common/url.js';
 
 export default {
 	components: {
@@ -126,20 +127,20 @@ export default {
 				name: '李思思',
 				school: '北京市朝阳第一小学 四年级3班'
 			}
-		}
+		};
 	},
 	computed: {
 		...mapState(['xiaotiyunUser'])
 	},
 	onLoad() {
-		this.getSystemInfo()
-		this.getStudentInfo()
+		this.getSystemInfo();
+		this.getStudentInfo();
 	},
 	methods: {
 		// 获取系统信息
 		getSystemInfo() {
-			const systemInfo = uni.getSystemInfoSync()
-			this.statusBarHeight = systemInfo.statusBarHeight || 20
+			const systemInfo = uni.getSystemInfoSync();
+			this.statusBarHeight = systemInfo.statusBarHeight || 20;
 		},
 
 		// 获取学生信息
@@ -152,36 +153,35 @@ export default {
 						school: this.xiaotiyunUser.student.schoolName || '',
 						studentId: this.xiaotiyunUser.student.studentId || this.xiaotiyunUser.student.uid,
 						avatar: this.xiaotiyunUser.student.avatar || ''
-					}
+					};
 				}
-				
+
 				// 调用API获取最新学生信息
 				const params = {
 					studentId: this.studentInfo.studentId || '', // 学生ID
 					tag: 'student_info' // 随便传一个字符串
-				}
-				
-				const response = await getReq(URL.apiGetStudentInfo, params)
-				console.log('获取到的学生信息:', response)
-				
+				};
+
+				const response = await getReq(URL.apiGetStudentInfo, params);
+				console.log('获取到的学生信息:', response);
+
 				// 更新学生信息
 				if (response && response.data) {
 					this.studentInfo = {
 						...this.studentInfo,
 						...response.data
-					}
-					this.studentInfo.school=this.studentInfo.schoolName+' '+this.studentInfo.grade+'年级'+this.studentInfo.claNumber+'班'
-					console.log('更新后的学生信息:', this.studentInfo)
+					};
+					this.studentInfo.school = this.studentInfo.schoolName + ' ' + this.studentInfo.grade + '年级' + this.studentInfo.claNumber + '班';
+					console.log('更新后的学生信息:', this.studentInfo);
 				}
-				
 			} catch (error) {
-				console.error('获取学生信息失败:', error)
+				console.error('获取学生信息失败:', error);
 				// 如果API调用失败，至少显示本地存储的信息
 				if (this.xiaotiyunUser && this.xiaotiyunUser.student) {
 					this.studentInfo = {
 						name: this.xiaotiyunUser.student.name || '李思思',
 						school: this.xiaotiyunUser.student.schoolName || '北京市朝阳第一小学 四年级3班'
-					}
+					};
 				}
 			}
 		},
@@ -193,71 +193,71 @@ export default {
 				content: '确定要切换用户吗？',
 				success: (res) => {
 					if (res.confirm) {
-						uni.clearStorage()
+						uni.clearStorage();
 						uni.reLaunch({
 							url: '/pages/login/index/index'
-						})
+						});
 					}
 				}
-			})
+			});
 		},
 
 		// 跳转到个人中心
 		goToProfile() {
-			this.showProfileModal = true
+			this.showProfileModal = true;
 		},
-		
+
 		// 关闭个人中心弹框
 		closeProfileModal() {
-			this.showProfileModal = false
+			this.showProfileModal = false;
 		},
-		
+
 		// 联系方式
 		goToContact() {
 			uni.showToast({
 				title: '功能开发中',
 				icon: 'none'
-			})
+			});
 		},
-		
+
 		// 修改密码
 		goToChangePassword() {
 			uni.showToast({
 				title: '功能开发中',
 				icon: 'none'
-			})
+			});
 		},
-		
+
 		// 解绑账号
 		goToUnbindAccount() {
 			uni.showToast({
 				title: '功能开发中',
 				icon: 'none'
-			})
+			});
 		},
-		
+
 		// 清除缓存
 		clearCache() {
 			uni.showToast({
 				title: '功能开发中',
 				icon: 'none'
-			})
+			});
 		},
-		
+
 		// 更新用户信息
 		updateUserInfo(userInfo) {
 			this.studentInfo = {
 				...this.studentInfo,
 				...userInfo
-			}
-			console.log('更新后的学生信息:', this.studentInfo)
+			};
+			console.log('更新后的学生信息:', this.studentInfo);
 		},
 
 		// 跳转到家庭健身房
 		goToGym() {
 			uni.navigateTo({
 				url: '/pagesStudent/gym/index'
-			})
+			});
 		},
 
 		// 跳转到校外体育作业
@@ -265,7 +265,7 @@ export default {
 			uni.showToast({
 				title: '功能开发中',
 				icon: 'none'
-			})
+			});
 		},
 
 		// 跳转到锻炼风云榜
@@ -273,7 +273,7 @@ export default {
 			uni.showToast({
 				title: '功能开发中',
 				icon: 'none'
-			})
+			});
 		},
 
 		// 跳转到健身运动记录
@@ -281,16 +281,16 @@ export default {
 			uni.showToast({
 				title: '功能开发中',
 				icon: 'none'
-			})
+			});
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss" scoped>
 .student-home {
 	min-height: 100vh;
-	background: #FFFFFF;
+	background: #ffffff;
 	position: relative;
 }
 
@@ -387,7 +387,7 @@ export default {
 .action-text {
 	font-size: 28rpx;
 	font-weight: 500;
-	color: #2C84FF;
+	color: #2c84ff;
 }
 
 .welcome-card {
@@ -396,7 +396,7 @@ export default {
 	margin: -200rpx 32rpx 32rpx;
 	border-radius: 24rpx;
 	z-index: 7;
-	background-image: url('/static/images/students/bj.png');
+	// background-image: url('/static/images/students/bj.png');
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -405,11 +405,9 @@ export default {
 .welcome-content {
 	padding: 36rpx 0rpx 24rpx 0rpx;
 	width: 100%;
-
 }
 
 .welcome-text {
-
 	flex: 1;
 	margin-right: 32rpx;
 }
@@ -425,7 +423,7 @@ export default {
 }
 
 .text-tip-text {
-	background: #FFFFFF;
+	background: #ffffff;
 	padding: 16rpx 36rpx 32rpx 36rpx;
 	font-size: 26rpx;
 	color: #999;
@@ -434,7 +432,7 @@ export default {
 .greeting {
 	font-size: 36rpx;
 	font-weight: 600;
-	color: #2C84FF;
+	color: #2c84ff;
 	margin-bottom: 16rpx;
 }
 
@@ -469,7 +467,6 @@ export default {
 	align-items: center;
 }
 
-
 .grid-item {
 	position: relative;
 	width: 100%;
@@ -495,23 +492,22 @@ export default {
 }
 
 .gym-bg {
-	background: #E8E4FF;
+	background: #e8e4ff;
 }
 
 .homework-bg {
-	background: #FFE4E1;
+	background: #ffe4e1;
 }
 
 .leaderboard-bg {
-	background: #F5F5F5;
+	background: #f5f5f5;
 }
 
 .records-bg {
-	background: #FFF8DC;
+	background: #fff8dc;
 }
 
 .item-content {
-	
 	width: 100%;
 	height: 100%;
 }
@@ -592,7 +588,7 @@ export default {
 }
 
 .card-footer {
-	color: #997DD6;
+	color: #997dd6;
 	display: flex;
 	align-items: center;
 	position: absolute;
@@ -604,13 +600,13 @@ export default {
 
 .rank-text {
 	font-size: 36rpx;
-	color: #997DD6;
+	color: #997dd6;
 	margin-left: 5rpx;
 	font-weight: 500;
 }
 
 .desc-text {
 	font-size: 24rpx;
-	color: #C58E31;
+	color: #c58e31;
 }
 </style>

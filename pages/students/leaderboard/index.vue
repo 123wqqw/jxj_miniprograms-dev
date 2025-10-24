@@ -8,7 +8,7 @@
 			<view class="nav-title">锻炼风云榜</view>
 			<view class="nav-right"></view>
 		</view>
-		
+
 		<!-- 我的排名卡片 -->
 		<view class="my-rank-card">
 			<view class="rank-header">
@@ -28,49 +28,32 @@
 				</view>
 			</view>
 		</view>
-		
+
 		<!-- 筛选标签 -->
 		<view class="filter-section">
 			<view class="filter-tabs">
-				<view 
-					class="filter-tab" 
-					:class="{ 'active': activeFilter === 'week' }"
-					@click="setFilter('week')"
-				>
+				<view class="filter-tab" :class="{ active: activeFilter === 'week' }" @click="setFilter('week')">
 					<text class="tab-text">本周</text>
 				</view>
-				<view 
-					class="filter-tab" 
-					:class="{ 'active': activeFilter === 'month' }"
-					@click="setFilter('month')"
-				>
+				<view class="filter-tab" :class="{ active: activeFilter === 'month' }" @click="setFilter('month')">
 					<text class="tab-text">本月</text>
 				</view>
-				<view 
-					class="filter-tab" 
-					:class="{ 'active': activeFilter === 'total' }"
-					@click="setFilter('total')"
-				>
+				<view class="filter-tab" :class="{ active: activeFilter === 'total' }" @click="setFilter('total')">
 					<text class="tab-text">总计</text>
 				</view>
 			</view>
 		</view>
-		
+
 		<!-- 排行榜列表 -->
 		<view class="leaderboard-list">
-			<view 
-				class="rank-item" 
-				v-for="(item, index) in leaderboardList" 
-				:key="index"
-				:class="{ 'my-rank': item.isMe }"
-			>
+			<view class="rank-item" v-for="(item, index) in leaderboardList" :key="index" :class="{ 'my-rank': item.isMe }">
 				<view class="rank-position">
-					<view class="position-number" :class="getRankClass(item.rank)">
+					<view class="position-number">
 						<image v-if="item.rank <= 3" :src="getRankIcon(item.rank)" class="rank-icon"></image>
 						<text v-else class="rank-text">{{ item.rank }}</text>
 					</view>
 				</view>
-				
+
 				<view class="user-info">
 					<view class="avatar">
 						<image :src="item.avatar || '/static/images/students/user.png'" mode="aspectFill" class="avatar-img"></image>
@@ -80,7 +63,7 @@
 						<view class="user-class">{{ item.className }}</view>
 					</view>
 				</view>
-				
+
 				<view class="rank-stats">
 					<view class="stat-item">
 						<view class="stat-number">{{ item.totalTime }}</view>
@@ -93,7 +76,7 @@
 				</view>
 			</view>
 		</view>
-		
+
 		<!-- 底部提示 -->
 		<view class="bottom-tip">
 			<view class="tip-content">
@@ -197,52 +180,52 @@ export default {
 					isMe: true
 				}
 			]
-		}
+		};
 	},
 	onLoad() {
-		this.loadLeaderboardData()
+		this.loadLeaderboardData();
 	},
 	methods: {
 		// 返回上一页
 		goBack() {
-			uni.navigateBack()
+			uni.navigateBack();
 		},
-		
+
 		// 设置筛选条件
 		setFilter(filter) {
-			this.activeFilter = filter
-			this.loadLeaderboardData()
+			this.activeFilter = filter;
+			this.loadLeaderboardData();
 		},
-		
+
 		// 获取排名样式类
 		getRankClass(rank) {
-			if (rank === 1) return 'rank-first'
-			if (rank === 2) return 'rank-second'
-			if (rank === 3) return 'rank-third'
-			return 'rank-normal'
+			if (rank === 1) return 'rank-first';
+			if (rank === 2) return 'rank-second';
+			if (rank === 3) return 'rank-third';
+			return 'rank-normal';
 		},
-		
+
 		// 获取排名图标
 		getRankIcon(rank) {
-			if (rank === 1) return '/static/images/students/one.png'
-			if (rank === 2) return '/static/images/students/two.png'
-			if (rank === 3) return '/static/images/students/three.png'
-			return ''
+			if (rank === 1) return '/static/images/students/one.png';
+			if (rank === 2) return '/static/images/students/two.png';
+			if (rank === 3) return '/static/images/students/three.png';
+			return '';
 		},
-		
+
 		// 加载排行榜数据
 		loadLeaderboardData() {
 			// 这里可以调用API获取排行榜数据
-			console.log('加载排行榜数据:', this.activeFilter)
+			console.log('加载排行榜数据:', this.activeFilter);
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss" scoped>
 .leaderboard-container {
 	min-height: 100vh;
-	background: #F5F5F5;
+	background: #f5f5f5;
 }
 
 .nav-bar {
@@ -250,7 +233,7 @@ export default {
 	align-items: center;
 	justify-content: space-between;
 	padding: 20rpx 32rpx;
-	background: #FFFFFF;
+	background: #ffffff;
 	box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
 }
 
@@ -279,7 +262,7 @@ export default {
 
 .my-rank-card {
 	margin: 32rpx;
-	background: linear-gradient(135deg, #2C84FF 0%, #4A9EFF 100%);
+	background: linear-gradient(135deg, #2c84ff 0%, #4a9eff 100%);
 	border-radius: 20rpx;
 	padding: 32rpx;
 }
@@ -299,13 +282,13 @@ export default {
 .rank-number {
 	font-size: 64rpx;
 	font-weight: 600;
-	color: #FFFFFF;
+	color: #ffffff;
 	margin-bottom: 8rpx;
 }
 
 .rank-label {
 	font-size: 28rpx;
-	color: #FFFFFF;
+	color: #ffffff;
 	opacity: 0.9;
 }
 
@@ -323,19 +306,19 @@ export default {
 .stat-number {
 	font-size: 36rpx;
 	font-weight: 600;
-	color: #FFFFFF;
+	color: #ffffff;
 	margin-bottom: 4rpx;
 }
 
 .stat-label {
 	font-size: 24rpx;
-	color: #FFFFFF;
+	color: #ffffff;
 	opacity: 0.8;
 }
 
 .filter-section {
 	padding: 0 32rpx 20rpx;
-	background: #FFFFFF;
+	background: #ffffff;
 }
 
 .filter-tabs {
@@ -349,13 +332,13 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #F5F5F5;
+	background: #f5f5f5;
 	border-radius: 36rpx;
 	transition: all 0.3s ease;
 }
 
 .filter-tab.active {
-	background: #2C84FF;
+	background: #2c84ff;
 }
 
 .tab-text {
@@ -365,7 +348,7 @@ export default {
 }
 
 .filter-tab.active .tab-text {
-	color: #FFFFFF;
+	color: #ffffff;
 	font-weight: 500;
 }
 
@@ -376,7 +359,7 @@ export default {
 .rank-item {
 	display: flex;
 	align-items: center;
-	background: #FFFFFF;
+	background: #ffffff;
 	border-radius: 16rpx;
 	padding: 24rpx;
 	margin-bottom: 16rpx;
@@ -384,8 +367,8 @@ export default {
 }
 
 .rank-item.my-rank {
-	background: linear-gradient(135deg, #FFE4E1 0%, #FFF0F0 100%);
-	border: 2rpx solid #FF6B6B;
+	background: linear-gradient(135deg, #ffe4e1 0%, #fff0f0 100%);
+	border: 2rpx solid #ff6b6b;
 }
 
 .rank-position {
@@ -404,19 +387,19 @@ export default {
 }
 
 .position-number.rank-first {
-	background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+	background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
 }
 
 .position-number.rank-second {
-	background: linear-gradient(135deg, #C0C0C0 0%, #A0A0A0 100%);
+	background: linear-gradient(135deg, #c0c0c0 0%, #a0a0a0 100%);
 }
 
 .position-number.rank-third {
-	background: linear-gradient(135deg, #CD7F32 0%, #B8860B 100%);
+	background: linear-gradient(135deg, #cd7f32 0%, #b8860b 100%);
 }
 
 .position-number.rank-normal {
-	background: #F5F5F5;
+	background: #f5f5f5;
 }
 
 .rank-icon {
@@ -433,7 +416,7 @@ export default {
 .position-number.rank-first .rank-text,
 .position-number.rank-second .rank-text,
 .position-number.rank-third .rank-text {
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 .user-info {
@@ -486,7 +469,7 @@ export default {
 .stat-number {
 	font-size: 28rpx;
 	font-weight: 600;
-	color: #2C84FF;
+	color: #2c84ff;
 	margin-bottom: 4rpx;
 }
 
@@ -497,7 +480,7 @@ export default {
 
 .bottom-tip {
 	padding: 32rpx;
-	background: #FFFFFF;
+	background: #ffffff;
 	margin-top: 20rpx;
 }
 
@@ -507,7 +490,7 @@ export default {
 	justify-content: center;
 	gap: 16rpx;
 	padding: 24rpx;
-	background: #F8F9FA;
+	background: #f8f9fa;
 	border-radius: 16rpx;
 }
 
