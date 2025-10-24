@@ -1,9 +1,9 @@
 require('../../../common/vendor.js');(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pagesCenter/sportCenter/runDetails/runRecord/index"],{
 
 /***/ 684:
-/*!****************************************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/main.js?{"page":"pagesCenter%2FsportCenter%2FrunDetails%2FrunRecord%2Findex"} ***!
-  \****************************************************************************************************************************************/
+/*!**********************************************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/main.js?{"page":"pagesCenter%2FsportCenter%2FrunDetails%2FrunRecord%2Findex"} ***!
+  \**********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22,9 +22,9 @@ createPage(_index.default);
 /***/ }),
 
 /***/ 685:
-/*!*****************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue ***!
-  \*****************************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -63,9 +63,9 @@ component.options.__file = "pagesCenter/sportCenter/runDetails/runRecord/index.v
 /***/ }),
 
 /***/ 686:
-/*!************************************************************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue?vue&type=template&id=5fba7df1&scoped=true& ***!
-  \************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue?vue&type=template&id=5fba7df1&scoped=true& ***!
+  \******************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -85,9 +85,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 687:
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue?vue&type=template&id=5fba7df1&scoped=true& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue?vue&type=template&id=5fba7df1&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -101,19 +101,19 @@ var components
 try {
   components = {
     uTag: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */ "node-modules/uview-ui/components/u-tag/u-tag").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 1011))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */ "node-modules/uview-ui/components/u-tag/u-tag").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 1075))
     },
     uIcon: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 874))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 938))
     },
     uButton: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 965))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 1029))
     },
     uModal: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 853))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 917))
     },
     uInput: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-input/u-input.vue */ 990))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-input/u-input.vue */ 1054))
     },
   }
 } catch (e) {
@@ -200,9 +200,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 688:
-/*!******************************************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************/
+/*!************************************************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -216,9 +216,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 689:
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -241,17 +241,17 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var tracePlot = function tracePlot() {
   __webpack_require__.e(/*! require.ensure | pagesCenter/sportCenter/runDetails/components/trace-plot/index */ "pagesCenter/sportCenter/runDetails/components/trace-plot/index").then((function () {
-    return resolve(__webpack_require__(/*! ../components/trace-plot/index.vue */ 1423));
+    return resolve(__webpack_require__(/*! ../components/trace-plot/index.vue */ 1487));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var speedBlock = function speedBlock() {
   __webpack_require__.e(/*! require.ensure | pagesCenter/sportCenter/runDetails/components/speed-block/index */ "pagesCenter/sportCenter/runDetails/components/speed-block/index").then((function () {
-    return resolve(__webpack_require__(/*! ../components/speed-block/index.vue */ 1430));
+    return resolve(__webpack_require__(/*! ../components/speed-block/index.vue */ 1494));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var frequencyBlock = function frequencyBlock() {
   Promise.all(/*! require.ensure | pagesCenter/sportCenter/runDetails/components/frequency-block/index */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pagesCenter/sportCenter/runDetails/components/frequency-block/index")]).then((function () {
-    return resolve(__webpack_require__(/*! ../components/frequency-block/index.vue */ 1437));
+    return resolve(__webpack_require__(/*! ../components/frequency-block/index.vue */ 1501));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -355,9 +355,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 710:
-/*!***************************************************************************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue?vue&type=style&index=0&id=5fba7df1&lang=scss&scoped=true& ***!
-  \***************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue?vue&type=style&index=0&id=5fba7df1&lang=scss&scoped=true& ***!
+  \*********************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -371,9 +371,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 711:
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue?vue&type=style&index=0&id=5fba7df1&lang=scss&scoped=true& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesCenter/sportCenter/runDetails/runRecord/index.vue?vue&type=style&index=0&id=5fba7df1&lang=scss&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

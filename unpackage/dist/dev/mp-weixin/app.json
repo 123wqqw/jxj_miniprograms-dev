@@ -126,6 +126,19 @@
         "home/index",
         "gym/index"
       ]
+    },
+    {
+      "root": "pages/students",
+      "pages": [
+        "login/index",
+        "register/index",
+        "forgotPassword/index",
+        "home/index",
+        "gym/index",
+        "homework/index",
+        "leaderboard/index",
+        "records/index"
+      ]
     }
   ],
   "window": {

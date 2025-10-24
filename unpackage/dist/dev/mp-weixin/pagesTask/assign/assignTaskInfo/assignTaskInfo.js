@@ -1,9 +1,9 @@
 require('../../common/vendor.js');(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pagesTask/assign/assignTaskInfo/assignTaskInfo"],{
 
 /***/ 278:
-/*!**********************************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/main.js?{"page":"pagesTask%2Fassign%2FassignTaskInfo%2FassignTaskInfo"} ***!
-  \**********************************************************************************************************************************/
+/*!****************************************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/main.js?{"page":"pagesTask%2Fassign%2FassignTaskInfo%2FassignTaskInfo"} ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22,9 +22,9 @@ createPage(_assignTaskInfo.default);
 /***/ }),
 
 /***/ 279:
-/*!*************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue ***!
-  \*************************************************************************************************************/
+/*!*******************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue ***!
+  \*******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -63,9 +63,9 @@ component.options.__file = "pagesTask/assign/assignTaskInfo/assignTaskInfo.vue"
 /***/ }),
 
 /***/ 280:
-/*!********************************************************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue?vue&type=template&id=221233fa&scoped=true& ***!
-  \********************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue?vue&type=template&id=221233fa&scoped=true& ***!
+  \**************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -85,9 +85,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 281:
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue?vue&type=template&id=221233fa&scoped=true& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue?vue&type=template&id=221233fa&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -101,19 +101,19 @@ var components
 try {
   components = {
     uGap: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-gap/u-gap */ "node-modules/uview-ui/components/u-gap/u-gap").then(__webpack_require__.bind(null, /*! uview-ui/components/u-gap/u-gap.vue */ 839))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-gap/u-gap */ "node-modules/uview-ui/components/u-gap/u-gap").then(__webpack_require__.bind(null, /*! uview-ui/components/u-gap/u-gap.vue */ 903))
     },
     uButton: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 965))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 1029))
     },
     uIcon: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 874))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 938))
     },
     uSelect: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-select/u-select */ "node-modules/uview-ui/components/u-select/u-select").then(__webpack_require__.bind(null, /*! uview-ui/components/u-select/u-select.vue */ 997))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-select/u-select */ "node-modules/uview-ui/components/u-select/u-select").then(__webpack_require__.bind(null, /*! uview-ui/components/u-select/u-select.vue */ 1061))
     },
     uModal: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 853))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 917))
     },
   }
 } catch (e) {
@@ -171,9 +171,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 282:
-/*!**************************************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************/
+/*!********************************************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -187,9 +187,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 283:
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -212,12 +212,12 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var customizedItems = function customizedItems() {
   __webpack_require__.e(/*! require.ensure | pagesTask/assign/components/customized-items/index */ "pagesTask/assign/components/customized-items/index").then((function () {
-    return resolve(__webpack_require__(/*! ../components/customized-items/index.vue */ 1074));
+    return resolve(__webpack_require__(/*! ../components/customized-items/index.vue */ 1138));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var aiSportItem = function aiSportItem() {
   __webpack_require__.e(/*! require.ensure | pagesTask/assign/components/ai-sport-item/index */ "pagesTask/assign/components/ai-sport-item/index").then((function () {
-    return resolve(__webpack_require__(/*! ../components/ai-sport-item/index.vue */ 1081));
+    return resolve(__webpack_require__(/*! ../components/ai-sport-item/index.vue */ 1145));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var that = null;
@@ -631,9 +631,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 284:
-/*!***********************************************************************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue?vue&type=style&index=0&id=221233fa&lang=less&scoped=true& ***!
-  \***********************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue?vue&type=style&index=0&id=221233fa&lang=less&scoped=true& ***!
+  \*****************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -647,9 +647,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 285:
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-2!./node_modules/postcss-loader/src??ref--10-oneOf-1-3!./node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue?vue&type=style&index=0&id=221233fa&lang=less&scoped=true& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--10-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-2!./node_modules/postcss-loader/src??ref--10-oneOf-1-3!./node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesTask/assign/assignTaskInfo/assignTaskInfo.vue?vue&type=style&index=0&id=221233fa&lang=less&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

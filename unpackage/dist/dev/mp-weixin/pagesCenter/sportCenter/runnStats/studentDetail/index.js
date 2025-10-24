@@ -1,9 +1,9 @@
 require('../../../common/vendor.js');(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pagesCenter/sportCenter/runnStats/studentDetail/index"],{
 
 /***/ 670:
-/*!*******************************************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/main.js?{"page":"pagesCenter%2FsportCenter%2FrunnStats%2FstudentDetail%2Findex"} ***!
-  \*******************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/main.js?{"page":"pagesCenter%2FsportCenter%2FrunnStats%2FstudentDetail%2Findex"} ***!
+  \*************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22,9 +22,9 @@ createPage(_index.default);
 /***/ }),
 
 /***/ 671:
-/*!********************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesCenter/sportCenter/runnStats/studentDetail/index.vue ***!
-  \********************************************************************************************************************/
+/*!**************************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesCenter/sportCenter/runnStats/studentDetail/index.vue ***!
+  \**************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -61,9 +61,9 @@ component.options.__file = "pagesCenter/sportCenter/runnStats/studentDetail/inde
 /***/ }),
 
 /***/ 672:
-/*!***************************************************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesCenter/sportCenter/runnStats/studentDetail/index.vue?vue&type=template&id=0be70b62& ***!
-  \***************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesCenter/sportCenter/runnStats/studentDetail/index.vue?vue&type=template&id=0be70b62& ***!
+  \*********************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -83,9 +83,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 673:
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesCenter/sportCenter/runnStats/studentDetail/index.vue?vue&type=template&id=0be70b62& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesCenter/sportCenter/runnStats/studentDetail/index.vue?vue&type=template&id=0be70b62& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -121,9 +121,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 674:
-/*!*********************************************************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesCenter/sportCenter/runnStats/studentDetail/index.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************/
+/*!***************************************************************************************************************************************!*\
+  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesCenter/sportCenter/runnStats/studentDetail/index.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -137,9 +137,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 675:
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesCenter/sportCenter/runnStats/studentDetail/index.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!/Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesCenter/sportCenter/runnStats/studentDetail/index.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -155,12 +155,12 @@ var _url = __webpack_require__(/*! @/common/url.js */ 76);
 var _util = __webpack_require__(/*! @/common/util.js */ 115);
 var lineCharts = function lineCharts() {
   Promise.all(/*! require.ensure | pagesCenter/sportCenter/runnStats/components/line-charts/index */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pagesCenter/sportCenter/runnStats/components/line-charts/index")]).then((function () {
-    return resolve(__webpack_require__(/*! ../components/line-charts/index.vue */ 1367));
+    return resolve(__webpack_require__(/*! ../components/line-charts/index.vue */ 1431));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var scoreCard = function scoreCard() {
   __webpack_require__.e(/*! require.ensure | pagesCenter/sportCenter/runnStats/components/score-card/index */ "pagesCenter/sportCenter/runnStats/components/score-card/index").then((function () {
-    return resolve(__webpack_require__(/*! ../components/score-card/index.vue */ 1360));
+    return resolve(__webpack_require__(/*! ../components/score-card/index.vue */ 1424));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
