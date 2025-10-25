@@ -4,20 +4,20 @@
 		<view class="modal-content" @click.stop>
 			<!-- 关闭按钮 -->
 			<view class="close-btn" @click="closeModal">
-				<image src="/static/images/students/cc.png" class="close-icon"></image>
+				<image src="/static/images/img/close.png" class="close-icon"></image>
 			</view>
 
 			<!-- 用户信息区域 -->
 			<view class="user-info-section">
 				<view class="user-info">
 					<view class="avatar">
-						<image :src="userInfo.avatar || '/static/images/students/boy.png'" mode="aspectFill" class="avatar-img"></image>
+						<image :src="userInfo.avatar || '/static/images/img/default.png'" mode="aspectFill" class="avatar-img"></image>
 					</view>
 					<view class="user-details">
 						<view class="user-name-row">
 							<view class="user-name">{{ userInfo.name || '李思思' }}</view>
 							<view class="switch-user-btn" @click="switchUser">
-								<image src="/static/images/students/jt.svg" class="switch-icon"></image>
+								<image src="/static/images/img/change.png" class="switch-icon"></image>
 								<text class="switch-text">切换用户</text>
 							</view>
 						</view>
