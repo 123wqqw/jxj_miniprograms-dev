@@ -549,6 +549,42 @@ const URL = {
 	apiGetStudentInfo: "/xty-usercenter/app-api/student/v1/info",
 	// 修改密码V2
 	apiPostChangePasswordV2: "/xty-usercenter/app-api/mine/v2/password/change",
+
+
+	// 首页文案
+	jxjTextType:"/xty-task/app-api/rank/v41100/jxjAppIndexTextType",
+	// 排行榜
+	jxjRankInfo:"/xty-task/app-api/rank/v41100/weekRankInfo",
+	// 获取绑定关系
+	jxjRelation:"/xty-usercenter/app-api/login/v41100/relation",
+	// 京小健登录
+	jxjLogin: "/xty-usercenter/app-api/login/v41100/login",
+	// 条件查询分屏运动列表
+	jxjSportList: "/xty-task/app-api/sport/v3/list",
+	// 体能训练查看锻炼方向，难度和改善方向
+	jxjDirection:"/xty-task/app-api/sport/v1/select/sport/direction",
+	// 下载分屏运动背景音效
+	jxjDownload:"/xty-task/app-api/sport/v1/download",
+	// 获取运动详情
+	jxjSportDetail:"/xty-task/app-api/sport/v2/sportDetail",
+	// 上传AI锻炼记录
+	jxjUploadRecord: "/xty-task/app-api/clock/v2/uploadRecord",
+	// 每日打卡日历
+	jxjCalendar:"/xty-task/app-api/clock/v1/calendar",
+	// 打卡作业查询
+	jxjTaskInfo:"/xty-task/app-api/clock/v2/taskInfo",
+	// 获取学生信息
+	jxjStudentInfo:"xty-basic/app-api/student/v260/studentInfo",
+	// 打卡作业详情
+	jxjTaskDetail:"/xty-task/app-api/clock/v3/taskInfo/detail",
+	// 请假
+	jxjAskLeave:"/xty-task/app-api/clock/v2/askleave",
+	// 撤销请假
+	jxjRevoke:"/xty-task/app-api/clock/v1/askleave/revoke",
+	// 获取所有AI锻炼记录列表
+	jxjRecordInfos:"/xty-task/app-api/clock/v2/getRecordInfos",
+	// 获取AI锻炼记录列表
+	jxjGetRecordInfos:"/xty-task/app-api/clock/v1/getRecordInfos",
 };
 
 const userCenterUrlList = [
@@ -580,7 +616,25 @@ const userCenterUrlList = [
 	URL.apiPostStudentPasswordLogin,
 	URL.apiGetStudentInfo,
 	URL.apiPostChangePasswordV2,
-	URL.apiPostTeachersCheckAccount
+	URL.apiPostTeachersCheckAccount,
+
+	URL.jxjTextType,
+	URL.jxjRankInfo,
+	URL.jxjRelation,
+	URL.jxjLogin,
+	URL.jxjSportList,
+	URL.jxjDirection,
+	URL.jxjDownload,
+	URL.jxjSportDetail,
+	URL.jxjUploadRecord,
+	URL.jxjCalendar,
+	URL.jxjTaskInfo,
+	URL.jxjStudentInfo,
+	URL.jxjTaskDetail,
+	URL.jxjAskLeave,
+	URL.jxjRevoke,
+	URL.jxjRecordInfos,
+	URL.jxjGetRecordInfos,
 ];
 
 export {
