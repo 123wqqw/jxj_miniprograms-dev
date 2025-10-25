@@ -1,653 +1,702 @@
 <template>
-	<view class="student-home">
-		<!-- 顶部背景图片 -->
-		<view class="top-background">
-			<image src="/static/login.png" mode="aspectFill" class="background-image"></image>
-		</view>
+  <view class="student-home">
+    <!-- 顶部背景图片 -->
+    <view class="top-background">
+      <image
+        src="/static/login.png"
+        mode="aspectFill"
+        class="background-image"
+      ></image>
+    </view>
 
-		<!-- 状态栏占位 -->
-		<view class="status-bar" :style="{ height: statusBarHeight + 'px', top: statusBarHeight + 'px' }"></view>
+    <!-- 状态栏占位 -->
+    <view
+      class="status-bar"
+      :style="{ height: statusBarHeight + 'px', top: statusBarHeight + 'px' }"
+    ></view>
 
-		<!-- 顶部用户信息区域 -->
-		<view class="user-header">
-			<view class="user-info">
-				<view class="avatar">
-					<image :src="studentInfo.avatar || '/static/images/students/default.png'" mode="aspectFill" class="avatar-img"></image>
-				</view>
-				<view class="user-details">
-					<view class="user-name">{{ studentInfo.name || '李思思' }}</view>
-					<view class="user-school">{{ studentInfo.school || '北京市朝阳第一小学 四年级3班' }}</view>
-				</view>
-			</view>
-			<view class="header-actions">
-				<view class="action-btn" @click="switchUser">
-					<image src="/static/images/students/change.png" class="action-icon"></image>
-					<text class="action-text">切换用户</text>
-				</view>
-				<view class="action-btn" @click="goToProfile">
-					<image src="/static/images/students/user.png" class="action-icon"></image>
-					<text class="action-text">个人中心</text>
-				</view>
-			</view>
-		</view>
+    <!-- 顶部用户信息区域 -->
+    <view class="user-header">
+      <view class="user-info">
+        <view class="avatar">
+          <image
+            :src="studentInfo.avatar || '/static/images/students/default.png'"
+            mode="aspectFill"
+            class="avatar-img"
+          ></image>
+        </view>
+        <view class="user-details">
+          <view class="user-name">{{ studentInfo.name || "李思思" }}</view>
+          <view class="user-school">{{
+            studentInfo.school || "北京市朝阳第一小学 四年级3班"
+          }}</view>
+        </view>
+      </view>
+      <view class="header-actions">
+        <view class="action-btn" @click="switchUser">
+          <image
+            src="/static/images/students/change.png"
+            class="action-icon"
+          ></image>
+          <text class="action-text">切换用户</text>
+        </view>
+        <view class="action-btn" @click="goToProfile">
+          <image
+            src="/static/images/students/user.png"
+            class="action-icon"
+          ></image>
+          <text class="action-text">个人中心</text>
+        </view>
+      </view>
+    </view>
 
-		<!-- 欢迎卡片 -->
-		<view class="welcome-card">
-			<image src="/static/images/students/welcome.png" mode="aspectFill" class="welcome-bg"></image>
-			<view class="welcome-content">
-				<view class="welcome-text">
-					<view class="greeting">嗨~</view>
-					<view class="greeting">欢迎来到家庭健身房</view>
-				</view>
-			</view>
-		</view>
-		<view class="mascot">
-			<image src="/static/images/students/banner.png" mode="aspectFit" class="mascot-img"></image>
-		</view>
-		<!-- 文字提示 -->
-		<view class="text-tip">
-			<view class="text-tip-text">呼叫[{{ studentInfo.name }}]！无论什么原因暂停，这里永远是你的加油站。今天先来活动10分钟，找回感觉就好！</view>
-		</view>
+    <!-- 欢迎卡片 -->
+    <view class="welcome-card">
+      <image
+        src="/static/images/students/welcome.png"
+        mode="aspectFill"
+        class="welcome-bg"
+      ></image>
+      <view class="welcome-content">
+        <view class="welcome-text">
+          <view class="greeting">嗨~</view>
+          <view class="greeting">欢迎来到家庭健身房</view>
+        </view>
+      </view>
+    </view>
+    <view class="mascot">
+      <image
+        src="/static/images/students/banner.png"
+        mode="aspectFit"
+        class="mascot-img"
+      ></image>
+    </view>
+    <!-- 文字提示 -->
+    <view class="text-tip">
+      <view class="text-tip-text"
+        >呼叫[{{
+          studentInfo.name
+        }}]！无论什么原因暂停，这里永远是你的加油站。今天先来活动10分钟，找回感觉就好！</view
+      >
+    </view>
 
-		<!-- 功能模块网格 -->
-		<view class="function-grid">
-			<view class="grid-item-group">
-				<view class="grid-item exercise-bg" @click="goToGym">
-					<image src="/static/images/students/exercise.png" class="bg-image" mode="aspectFill"></image>
-				</view>
+    <!-- 功能模块网格 -->
+    <view class="function-grid">
+      <view class="grid-item-group">
+        <view class="grid-item exercise-bg" @click="goToGym">
+          <image
+            src="/static/images/students/exercise.png"
+            class="bg-image"
+            mode="aspectFill"
+          ></image>
+        </view>
 
-				<view class="grid-item homework-bg" @click="goToHomework">
-					<image src="/static/images/students/homework.png" class="bg-image" mode="aspectFill"></image>
-				</view>
-			</view>
+        <view class="grid-item homework-bg" @click="goToHomework">
+          <image
+            src="/static/images/students/homework.png"
+            class="bg-image"
+            mode="aspectFill"
+          ></image>
+        </view>
+      </view>
 
-			<view class="grid-item-group" style="margin-top: 40rpx">
-				<view class="card-item leaderboard-card" @click="goToLeaderboard">
-					<image src="/static/images/students/bj.svg" class="card-bg-image"></image>
-					<view class="card-title">锻炼风云榜</view>
-					<view class="card-icon">
-						<image src="/static/images/students/dlfyb.png" class="icon-img"></image>
-					</view>
-					<view class="card-footer">
-						当前排名
-						<text class="rank-text">{{ currentRank }}</text>
-					</view>
-				</view>
-
-				<view class="card-item records-card" @click="goToRecords">
-					<image src="/static/images/students/record.png" class="card-bg-image"></image>
-					<!-- <view class="card-title">健身运动记录</view>
+      <view class="grid-item-group" style="margin-top: 40rpx">
+        <view class="card-item leaderboard-card" @click="goToLeaderboard">
+          <image
+            src="/static/images/students/bj.svg"
+            class="card-bg-image"
+          ></image>
+          <view class="card-title">锻炼风云榜</view>
           <view class="card-icon">
             <image
-              src="/static/images/students/jsydjl.png"
+              src="/static/images/students/dlfyb.png"
               class="icon-img"
             ></image>
           </view>
           <view class="card-footer">
-            <text class="desc-text">健身房、体育作业记录</text>
-          </view> -->
-				</view>
-			</view>
-		</view>
+            当前排名
+            <text class="rank-text">{{ currentRank }}</text>
+          </view>
+        </view>
 
-		<!-- 个人中心弹框 -->
-		<ProfileModal
-			:visible="showProfileModal"
-			:userInfo="studentInfo"
-			@close="closeProfileModal"
-			@switchUser="switchUser"
-			@goToContact="goToContact"
-			@goToChangePassword="goToChangePassword"
-			@goToUnbindAccount="goToUnbindAccount"
-			@clearCache="clearCache"
-			@updateUserInfo="updateUserInfo"
-		/>
-	</view>
+        <view class="card-item records-card" @click="goToRecords">
+          <image
+            src="/static/images/students/record.png"
+            class="card-bg-image"
+          ></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 个人中心弹框 -->
+    <ProfileModal
+      v-if="showProfileModal"
+      :visible="showProfileModal"
+      :userInfo="studentInfo"
+      @close="closeProfileModal"
+      @switchUser="switchUser"
+      @goToContact="goToContact"
+      @goToChangePassword="goToChangePassword"
+      @goToUnbindAccount="goToUnbindAccount"
+      @clearCache="clearCache"
+      @updateUserInfo="updateUserInfo"
+    />
+  </view>
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import ProfileModal from './components/ProfileModal.vue';
-import { getReq } from '@/common/request.js';
-import { URL } from '@/common/url.js';
+import { mapState } from "vuex";
+import ProfileModal from "./components/ProfileModal.vue";
+import { getReq } from "@/common/request.js";
+import { URL } from "@/common/url.js";
 
 export default {
-	components: {
-		ProfileModal
-	},
-	data() {
-		return {
-			statusBarHeight: 0,
-			currentRank: 20,
-			showProfileModal: false,
-			studentInfo: {
-				name: '李思思',
-				school: '北京市朝阳第一小学 四年级3班'
-			}
-		};
-	},
-	computed: {
-		...mapState(['xiaotiyunUser'])
-	},
-	onLoad() {
-		this.getSystemInfo();
-		this.getStudentInfo();
-	},
-	methods: {
-		// 获取系统信息
-		getSystemInfo() {
-			const systemInfo = uni.getSystemInfoSync();
-			this.statusBarHeight = systemInfo.statusBarHeight || 20;
-		},
+  components: {
+    ProfileModal,
+  },
+  data() {
+    return {
+      statusBarHeight: 0,
+      currentRank: 20,
+      showProfileModal: false,
+      studentInfo: {
+        name: "李思思",
+        school: "北京市朝阳第一小学 四年级3班",
+      },
+    };
+  },
+  computed: {
+    ...mapState(["xiaotiyunUser"]),
+  },
+  onLoad() {
+    this.getSystemInfo();
+    this.getStudentInfo();
+  },
+  methods: {
+    // 获取系统信息
+    getSystemInfo() {
+      const systemInfo = uni.getSystemInfoSync();
+      this.statusBarHeight = systemInfo.statusBarHeight || 20;
+    },
 
-		// 获取学生信息
-		async getStudentInfo() {
-			try {
-				// 先从本地存储获取基本信息
-				if (this.xiaotiyunUser && this.xiaotiyunUser.student) {
-					this.studentInfo = {
-						name: this.xiaotiyunUser.student.name || '',
-						school: this.xiaotiyunUser.student.schoolName || '',
-						studentId: this.xiaotiyunUser.student.studentId || this.xiaotiyunUser.student.uid,
-						avatar: this.xiaotiyunUser.student.avatar || ''
-					};
-				}
+    // 获取学生信息
+    async getStudentInfo() {
+      try {
+        // 先从本地存储获取基本信息
+        if (this.xiaotiyunUser && this.xiaotiyunUser.student) {
+          this.studentInfo = {
+            name: this.xiaotiyunUser.student.name || "",
+            school: this.xiaotiyunUser.student.schoolName || "",
+            studentId:
+              this.xiaotiyunUser.student.studentId ||
+              this.xiaotiyunUser.student.uid,
+            avatar: this.xiaotiyunUser.student.avatar || "",
+          };
+        }
 
-				// 调用API获取最新学生信息
-				const params = {
-					studentId: this.studentInfo.studentId || '', // 学生ID
-					tag: 'student_info' // 随便传一个字符串
-				};
+        // 调用API获取最新学生信息
+        const params = {
+          studentId: this.studentInfo.studentId || "", // 学生ID
+          tag: "student_info", // 随便传一个字符串
+        };
 
-				const response = await getReq(URL.apiGetStudentInfo, params);
-				console.log('获取到的学生信息:', response);
+        const response = await getReq(URL.apiGetStudentInfo, params);
+        console.log("获取到的学生信息:", response);
 
-				// 更新学生信息
-				if (response && response.data) {
-					this.studentInfo = {
-						...this.studentInfo,
-						...response.data
-					};
-					this.studentInfo.school = this.studentInfo.schoolName + ' ' + this.studentInfo.grade + '年级' + this.studentInfo.claNumber + '班';
-					console.log('更新后的学生信息:', this.studentInfo);
-				}
-			} catch (error) {
-				console.error('获取学生信息失败:', error);
-				// 如果API调用失败，至少显示本地存储的信息
-				if (this.xiaotiyunUser && this.xiaotiyunUser.student) {
-					this.studentInfo = {
-						name: this.xiaotiyunUser.student.name || '李思思',
-						school: this.xiaotiyunUser.student.schoolName || '北京市朝阳第一小学 四年级3班'
-					};
-				}
-			}
-		},
+        // 更新学生信息
+        if (response && response.data) {
+          this.studentInfo = {
+            ...this.studentInfo,
+            ...response.data,
+          };
+          this.studentInfo.school =
+            this.studentInfo.schoolName +
+            " " +
+            this.studentInfo.grade +
+            "年级" +
+            this.studentInfo.claNumber +
+            "班";
+          console.log("更新后的学生信息:", this.studentInfo);
+        }
+      } catch (error) {
+        console.error("获取学生信息失败:", error);
+        // 如果API调用失败，至少显示本地存储的信息
+        if (this.xiaotiyunUser && this.xiaotiyunUser.student) {
+          this.studentInfo = {
+            name: this.xiaotiyunUser.student.name || "李思思",
+            school:
+              this.xiaotiyunUser.student.schoolName ||
+              "北京市朝阳第一小学 四年级3班",
+          };
+        }
+      }
+    },
 
-		// 切换用户
-		switchUser() {
-			uni.showModal({
-				title: '切换用户',
-				content: '确定要切换用户吗？',
-				success: (res) => {
-					if (res.confirm) {
-						uni.clearStorage();
-						uni.reLaunch({
-							url: '/pages/login/index/index'
-						});
-					}
-				}
-			});
-		},
+    // 切换用户
+    switchUser() {
+      uni.showModal({
+        title: "切换用户",
+        content: "确定要切换用户吗？",
+        success: (res) => {
+          if (res.confirm) {
+            uni.clearStorage();
+            uni.reLaunch({
+              url: "/pages/login/index/index",
+            });
+          }
+        },
+      });
+    },
 
-		// 跳转到个人中心
-		goToProfile() {
-			this.showProfileModal = true;
-		},
+    // 跳转到个人中心
+    goToProfile() {
+      this.showProfileModal = true;
+    },
 
-		// 关闭个人中心弹框
-		closeProfileModal() {
-			this.showProfileModal = false;
-		},
+    // 关闭个人中心弹框
+    closeProfileModal() {
+      this.showProfileModal = false;
+    },
 
-		// 联系方式
-		goToContact() {
-			uni.showToast({
-				title: '功能开发中',
-				icon: 'none'
-			});
-		},
+    // 联系方式
+    goToContact() {
+      uni.showToast({
+        title: "功能开发中",
+        icon: "none",
+      });
+    },
 
-		// 修改密码
-		goToChangePassword() {
-			uni.showToast({
-				title: '功能开发中',
-				icon: 'none'
-			});
-		},
+    // 修改密码
+    goToChangePassword() {
+      uni.showToast({
+        title: "功能开发中",
+        icon: "none",
+      });
+    },
 
-		// 解绑账号
-		goToUnbindAccount() {
-			uni.showToast({
-				title: '功能开发中',
-				icon: 'none'
-			});
-		},
+    // 解绑账号
+    goToUnbindAccount() {
+      uni.showToast({
+        title: "功能开发中",
+        icon: "none",
+      });
+    },
 
-		// 清除缓存
-		clearCache() {
-			uni.showToast({
-				title: '功能开发中',
-				icon: 'none'
-			});
-		},
+    // 清除缓存
+    clearCache() {
+      uni.showToast({
+        title: "功能开发中",
+        icon: "none",
+      });
+    },
 
-		// 更新用户信息
-		updateUserInfo(userInfo) {
-			this.studentInfo = {
-				...this.studentInfo,
-				...userInfo
-			};
-			console.log('更新后的学生信息:', this.studentInfo);
-		},
+    // 更新用户信息
+    updateUserInfo(userInfo) {
+      this.studentInfo = {
+        ...this.studentInfo,
+        ...userInfo,
+      };
+      console.log("更新后的学生信息:", this.studentInfo);
+    },
 
-		// 跳转到家庭健身房
-		goToGym() {
-			uni.navigateTo({
-				url: '/pagesStudent/gym/index'
-			});
-		},
+    // 跳转到家庭健身房
+    goToGym() {
+      uni.navigateTo({
+        url: "/pagesStudent/gym/index",
+      });
+    },
 
-		// 跳转到校外体育作业
-		goToHomework() {
-			uni.showToast({
-				title: '功能开发中',
-				icon: 'none'
-			});
-		},
+    // 跳转到校外体育作业
+    goToHomework() {
+      uni.showToast({
+        title: "功能开发中",
+        icon: "none",
+      });
+    },
 
-		// 跳转到锻炼风云榜
-		goToLeaderboard() {
-			uni.showToast({
-				title: '功能开发中',
-				icon: 'none'
-			});
-		},
+    // 跳转到锻炼风云榜
+    goToLeaderboard() {
+      uni.showToast({
+        title: "功能开发中",
+        icon: "none",
+      });
+    },
 
-		// 跳转到健身运动记录
-		goToRecords() {
-			uni.showToast({
-				title: '功能开发中',
-				icon: 'none'
-			});
-		}
-	}
+    // 跳转到健身运动记录
+    goToRecords() {
+      uni.showToast({
+        title: "功能开发中",
+        icon: "none",
+      });
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .student-home {
-	min-height: 100vh;
-	background: #f8f8f8;
-	position: relative;
+  min-height: 100vh;
+  background: #f8f8f8;
+  position: relative;
 }
 
 .top-background {
-	position: relative;
-	width: 100%;
-	height: 500rpx;
-	overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 500rpx;
+  overflow: hidden;
 }
 
 .background-image {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .status-bar {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 7;
-	width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 7;
+  width: 100%;
 }
 
 .user-header {
-	position: absolute;
-	top: 60rpx;
-	left: 0;
-	right: 0;
-	z-index: 10;
-	padding: 32rpx;
-	display: flex;
-	flex-direction: column;
+  position: absolute;
+  top: 60rpx;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 32rpx;
+  display: flex;
+  flex-direction: column;
 }
 
 .user-info {
-	display: flex;
-	align-items: center;
-	margin-bottom: 36rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 36rpx;
 }
 
 .avatar {
-	width: 80rpx;
-	height: 80rpx;
-	border-radius: 50%;
-	overflow: hidden;
-	margin-right: 24rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 24rpx;
 }
 
 .avatar-img {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .user-details {
-	color: #333333;
-	font-size: 36rpx;
-	flex: 1;
+  color: #333333;
+  font-size: 36rpx;
+  flex: 1;
 }
 
 .user-name {
-	font-size: 36rpx;
-	font-weight: 600;
-	color: #333;
-	margin-bottom: 8rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8rpx;
 }
 
 .user-school {
-	font-size: 28rpx;
+  font-size: 28rpx;
 }
 
 .header-actions {
-	display: flex;
-	gap: 24rpx;
+  display: flex;
+  gap: 24rpx;
 }
 
 .action-btn {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 2px;
-	flex: 1 0 0;
-	padding: 8rpx 20rpx;
-	background: rgba(255, 255, 255, 0.6);
-	border-radius: 16rpx;
-	max-width: 198rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex: 1 0 0;
+  padding: 8rpx 20rpx;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16rpx;
+  max-width: 198rpx;
 }
 
 .action-icon {
-	width: 32rpx;
-	height: 32rpx;
+  width: 32rpx;
+  height: 32rpx;
 }
 
 .action-text {
-	font-size: 28rpx;
-	font-weight: 500;
-	color: #2c84ff;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #2c84ff;
 }
 
 .welcome-card {
-	position: relative;
-	margin: -200rpx 32rpx 32rpx;
-	// border-radius: 24rpx;
-	z-index: 7;
-	height: 200rpx;
-	overflow: hidden;
+  position: relative;
+  margin: -200rpx 32rpx 32rpx;
+  // border-radius: 24rpx;
+  z-index: 7;
+  height: 200rpx;
+  overflow: hidden;
 }
 
 .welcome-bg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .welcome-content {
-	position: relative;
-	z-index: 2;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 32rpx;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32rpx;
 }
 
 .welcome-text {
-	flex: 1;
-	margin-right: 32rpx;
+  flex: 1;
+  margin-right: 32rpx;
 }
 
 .text-tip {
-	width: 100%;
-	padding: 0 32rpx;
-	// position: relative;
-	z-index: 7;
-	margin-top: -50rpx;
-	// border-radius: 0 0 32rpx 32rpx;
-	// box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  width: 100%;
+  padding: 0 32rpx;
+  // position: relative;
+  z-index: 7;
+  margin-top: -50rpx;
+  // border-radius: 0 0 32rpx 32rpx;
+  // box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
 }
 
 .text-tip-text {
-	background: #fff;
-	padding: 16rpx 36rpx 32rpx 36rpx;
-	font-size: 26rpx;
-	color: #999;
-	// border: 2rpx dashed #2c84ff;
-	border-radius: 0 0 32rpx 32rpx;
+  background: #fff;
+  padding: 16rpx 36rpx 32rpx 36rpx;
+  font-size: 26rpx;
+  color: #999;
+  // border: 2rpx dashed #2c84ff;
+  border-radius: 0 0 32rpx 32rpx;
 }
 
 .greeting {
-	font-size: 36rpx;
-	font-weight: 600;
-	color: #2c84ff;
-	margin-bottom: 8rpx;
-	line-height: 1.2;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #2c84ff;
+  margin-bottom: 8rpx;
+  line-height: 1.2;
 }
 
 .motivation {
-	font-size: 26rpx;
-	color: #666666;
-	line-height: 1.5;
+  font-size: 26rpx;
+  color: #666666;
+  line-height: 1.5;
 }
 
 .mascot {
-	position: absolute;
-	top: 200rpx;
-	right: 32rpx;
-	width: 184rpx;
-	height: 290rpx;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 8;
+  position: absolute;
+  top: 200rpx;
+  right: 32rpx;
+  width: 184rpx;
+  height: 290rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 8;
 }
 
 .mascot-img {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .function-grid {
-	width: 100%;
-	padding: 32rpx;
+  width: 100%;
+  padding: 32rpx;
 }
 
 .grid-item-group {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .grid-item {
-	position: relative;
-	width: 100%;
-	height: 286rpx;
-	z-index: 7;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
-	border-radius: 24rpx;
-	overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 286rpx;
+  z-index: 7;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 24rpx;
+  overflow: hidden;
 }
 
 .exercise-bg {
-	margin-right: 20rpx;
+  margin-right: 20rpx;
 }
 
 .homework-bg {
-	/* 保持默认样式 */
+  /* 保持默认样式 */
 }
 
 .bg-image {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .item-content {
-	position: relative;
-	z-index: 2;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-	text-align: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
 }
 .grid-item2 {
-	width: 100%;
-	z-index: 7;
+  width: 100%;
+  z-index: 7;
 }
 
 .item-bg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
 }
 
 .gym-bg {
-	background: #e8e4ff;
+  background: #e8e4ff;
 }
 
 .leaderboard-bg {
-	background: #f5f5f5;
+  background: #f5f5f5;
 }
 
 .item-content {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .item-icon {
-	width: 160rpx;
-	height: 160rpx;
-	margin-bottom: 16rpx;
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 16rpx;
 }
 .item-icon2 {
-	width: 148rpx;
-	height: 148rpx;
+  width: 148rpx;
+  height: 148rpx;
 }
 
 .item-text {
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: flex;
-	align-items: center;
-	width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .item-title {
-	font-size: 32rpx;
-	font-weight: 600;
-	color: #fff;
-	margin-bottom: 8rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8rpx;
 }
 
 .item-subtitle {
-	font-size: 24rpx;
-	color: #fff;
+  font-size: 24rpx;
+  color: #fff;
 }
 
 /* 新的卡片样式 */
 .card-item {
-	width: 100%;
-	height: 230rpx;
-	border-radius: 24rpx;
-	position: relative;
-	overflow: hidden;
-	box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 230rpx;
+  border-radius: 24rpx;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
 }
 
 .records-card {
-	box-shadow: none;
+  box-shadow: none;
 }
 
 .leaderboard-card {
-	margin-right: 20rpx;
+  margin-right: 20rpx;
 }
 
 .card-bg-image {
-	width: 100%;
-	height: 100%;
-	display: block;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .card-title {
-	position: absolute;
-	top: 24rpx;
-	left: 24rpx;
-	font-size: 32rpx;
-	font-weight: 600;
-	color: #333;
-	z-index: 2;
+  position: absolute;
+  top: 24rpx;
+  left: 24rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  z-index: 2;
 }
 
 .card-icon {
-	position: absolute;
-	top: -10rpx;
-	right: -10rpx;
-	width: 148rpx;
-	height: 148rpx;
-	z-index: 2;
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  width: 148rpx;
+  height: 148rpx;
+  z-index: 2;
 }
 
 .icon-img {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .card-footer {
-	color: #997dd6;
-	display: flex;
-	align-items: center;
-	position: absolute;
-	bottom: 24rpx;
-	left: 24rpx;
-	font-size: 24rpx;
-	z-index: 2;
+  color: #997dd6;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 24rpx;
+  left: 24rpx;
+  font-size: 24rpx;
+  z-index: 2;
 }
 
 .rank-text {
-	font-size: 36rpx;
-	color: #997dd6;
-	margin-left: 5rpx;
-	font-weight: 500;
+  font-size: 36rpx;
+  color: #997dd6;
+  margin-left: 5rpx;
+  font-weight: 500;
 }
 
 .desc-text {
-	font-size: 24rpx;
-	color: #c58e31;
+  font-size: 24rpx;
+  color: #c58e31;
 }
 </style>

@@ -4,20 +4,20 @@
 		<view class="modal-content" @click.stop>
 			<!-- 关闭按钮 -->
 			<view class="close-btn" @click="closeModal">
-				<image src="/static/images/img/close.png" class="close-icon"></image>
+				<image src="/static/images/students/close.png" class="close-icon"></image>
 			</view>
 
 			<!-- 用户信息区域 -->
 			<view class="user-info-section">
 				<view class="user-info">
 					<view class="avatar">
-						<image :src="userInfo.avatar || '/static/images/img/default.png'" mode="aspectFill" class="avatar-img"></image>
+						<image :src="userInfo.avatar || '/static/images/students/default.png'" mode="aspectFill" class="avatar-img"></image>
 					</view>
 					<view class="user-details">
 						<view class="user-name-row">
 							<view class="user-name">{{ userInfo.name || '李思思' }}</view>
 							<view class="switch-user-btn" @click="switchUser">
-								<image src="/static/images/img/change.png" class="switch-icon"></image>
+								<image src="/static/images/students/change.png" class="switch-icon"></image>
 								<text class="switch-text">切换用户</text>
 							</view>
 						</view>
@@ -32,7 +32,7 @@
 					<view class="menu-item-content">
 						<text class="menu-text">账号与安全</text>
 						<view class="arrow-icon" :class="{ expanded: accountSecurityExpanded }">
-							<image src="/static/images/students/yjt.png" class="arrow-img"></image>
+							<image src="/static/images/students/right_arr.png" class="arrow-img"></image>
 						</view>
 					</view>
 
@@ -45,7 +45,7 @@
 							<view class="sub-menu-right">
 								<text class="phone-number">{{ formatPhoneNumber(userInfo.phone || userInfo.contactInformation) || '183******70' }}</text>
 								<view class="arrow-icon">
-									<image src="/static/images/students/yjt.png" class="arrow-img"></image>
+									<image src="/static/images/students/right_arr.png" class="arrow-img"></image>
 								</view>
 							</view>
 						</view>
@@ -54,7 +54,7 @@
 								<text class="sub-menu-text">修改密码</text>
 							</view>
 							<view class="arrow-icon">
-								<image src="/static/images/students/yjt.png" class="arrow-img"></image>
+								<image src="/static/images/students/right_arr.png" class="arrow-img"></image>
 							</view>
 						</view>
 						<view class="sub-menu-item" @click.stop="goToUnbindAccount">
@@ -62,7 +62,7 @@
 								<text class="sub-menu-text">解绑账号</text>
 							</view>
 							<view class="arrow-icon">
-								<image src="/static/images/students/yjt.png" class="arrow-img"></image>
+								<image src="/static/images/students/right_arr.png" class="arrow-img"></image>
 							</view>
 						</view>
 					</view>
@@ -72,7 +72,7 @@
 					<view class="menu-item-content">
 						<text class="menu-text">清除缓存</text>
 						<view class="arrow-icon">
-							<image src="/static/images/students/yjt.png" class="arrow-img"></image>
+							<image src="/static/images/students/right_arr.png" class="arrow-img"></image>
 						</view>
 					</view>
 				</view>
@@ -137,7 +137,7 @@ export default {
 				// 弹框显示时获取学生信息
 				this.getStudentInfo();
 			}
-		}
+		},
 	},
 	methods: {
 		closeModal() {
@@ -269,14 +269,20 @@ export default {
 		},
 
 		// 获取学生信息
-		async getStudentInfo() {
+		getStudentInfo() {
 			try {
 				const params = {
-					studentid: this.userInfo.studentId || this.userInfo.studentid || 123456, // 学生ID
+					studentid: this.userInfo.studentId || '', // 学生ID
 					tag: 'student_info' // 随便传一个字符串
 				};
 
-				const response = await getReq(URL.apiGetStudentInfo, params);
+				console.log('paramsparamsparams',params);
+				
+
+				getReq(URL.apiGetStudentInfo, params).then(res => {
+					console.log('resresresresresresresresres',res);
+					
+				});
 				console.log('学生信息:', response);
 
 				// 处理返回的学生信息
@@ -500,8 +506,8 @@ export default {
 }
 
 .arrow-img {
-	width: 16rpx;
-	height: 16rpx;
+	width: 40rpx;
+	height: 40rpx;
 }
 
 .sub-menu {
