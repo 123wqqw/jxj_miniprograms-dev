@@ -27,7 +27,7 @@
 .taskdetail.data-v-860fe632 {
   width: 100%;
   position: relative;
-  padding: 0 24rpx 24rpx 24rpx;
+  padding: 0 24upx 24upx 24upx;
   background: #FAFAFA;
 }
 .taskdetail .dfc.data-v-860fe632 {
@@ -37,9 +37,9 @@
 }
 .taskdetail .box.data-v-860fe632 {
   background: #FFFFFF;
-  box-shadow: 0rpx 4rpx 10rpx rgba(0, 0, 0, 0.04);
-  border-radius: 12rpx;
-  margin-top: 20rpx;
+  box-shadow: 0upx 4upx 10upx rgba(0, 0, 0, 0.04);
+  border-radius: 12upx;
+  margin-top: 20upx;
 }
 .taskdetail .taskdetail-grade.data-v-860fe632 {
   position: relative;
@@ -49,31 +49,31 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 64rpx;
+  height: 64upx;
   width: 100%;
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: 500;
   color: #707070;
 }
 .taskdetail .taskdetail-grade .grade-tab.data-v-860fe632 {
   position: relative;
-  height: 68rpx;
-  padding: 10rpx 0;
+  height: 68upx;
+  padding: 10upx 0;
   width: -webkit-max-content;
   width: max-content;
 }
 .taskdetail .taskdetail-grade .grade-tab .tab.data-v-860fe632 {
   position: relative;
-  font-size: 24rpx;
+  font-size: 24upx;
   font-weight: bold;
-  padding: 2rpx 20rpx;
-  height: 48rpx;
+  padding: 2upx 20upx;
+  height: 48upx;
   background: #CDCDCD;
   opacity: 1;
-  border-radius: 28rpx;
-  line-height: 48rpx;
+  border-radius: 28upx;
+  line-height: 48upx;
   text-align: center;
-  margin-right: 16rpx;
+  margin-right: 16upx;
   color: #FFFFFF;
   float: left;
 }
@@ -82,13 +82,13 @@
 }
 .taskdetail .taskdetail-date.data-v-860fe632 {
   position: relative;
-  margin-top: 6rpx;
+  margin-top: 6upx;
 }
 .taskdetail .taskdetail-date .table-tab.data-v-860fe632 {
   position: relative;
   display: flex;
-  height: 92rpx;
-  border-top: solid 4rpx #F5F5F5;
+  height: 92upx;
+  border-top: solid 4upx #F5F5F5;
 }
 .taskdetail .taskdetail-date .tab.data-v-860fe632 {
   position: relative;
@@ -99,7 +99,7 @@
   font-weight: bold;
   color: #B2B2B2;
   white-space: nowrap;
-  font-size: 28rpx;
+  font-size: 28upx;
 }
 .taskdetail .taskdetail-date .tab.active.data-v-860fe632 {
   color: #202020;
@@ -107,29 +107,29 @@
 .taskdetail .taskdetail-date .tab.active.data-v-860fe632::before {
   content: "";
   position: absolute;
-  bottom: 0rpx;
+  bottom: 0upx;
   background: #24D0A2;
-  width: 20rpx;
-  left: calc((100% - 16rpx) / 2);
-  height: 6rpx;
-  border-radius: 50rpx;
+  width: 20upx;
+  left: calc((100% - 16upx) / 2);
+  height: 6upx;
+  border-radius: 50upx;
 }
 .taskdetail .taskdetail-table.data-v-860fe632 {
   position: relative;
   width: 100%;
-  box-shadow: 0rpx 4rpx 10rpx rgba(0, 0, 0, 0.04);
-  border-radius: 12rpx;
-  margin-top: 20rpx;
+  box-shadow: 0upx 4upx 10upx rgba(0, 0, 0, 0.04);
+  border-radius: 12upx;
+  margin-top: 20upx;
   overflow: hidden;
 }
 .taskdetail .taskdetail-table .table-row.data-v-860fe632 {
   width: 100%;
-  height: 120rpx;
-  padding: 14rpx 37rpx;
+  height: 120upx;
+  padding: 14upx 37upx;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  border-top: solid 2rpx rgba(0, 0, 0, 0.04);
+  border-top: solid 2upx rgba(0, 0, 0, 0.04);
   background: #FFFFFF;
 }
 .taskdetail .taskdetail-table .table-row.data-v-860fe632:first-child {
@@ -140,15 +140,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 120rpx;
+  width: 120upx;
 }
 .taskdetail .taskdetail-table .row-left .headpic.data-v-860fe632 {
-  width: 88rpx;
-  height: 88rpx;
+  width: 88upx;
+  height: 88upx;
   border-radius: 50%;
 }
 .taskdetail .taskdetail-table .row-userinfo.data-v-860fe632 {
-  width: calc((100% - 120rpx) / 4);
+  width: calc((100% - 120upx) / 4);
   height: 100%;
   color: #707070;
   flex: 1;
@@ -159,7 +159,7 @@
 .taskdetail .taskdetail-table .row-userinfo .name.data-v-860fe632 {
   width: 100%;
   height: 60%;
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -172,38 +172,38 @@
 }
 .taskdetail .taskdetail-table .row-userinfo .number.data-v-860fe632 {
   height: 40%;
-  font-size: 22rpx;
+  font-size: 22upx;
   font-weight: 400;
   display: flex;
   align-items: center;
 }
 .taskdetail .taskdetail-table .review.data-v-860fe632 {
-  width: 88rpx;
-  height: 88rpx;
+  width: 88upx;
+  height: 88upx;
 }
 .taskdetail .taskdetail-table .row-leaver.data-v-860fe632 {
-  width: calc((100% - 120rpx) / 5);
+  width: calc((100% - 120upx) / 5);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: bold;
   color: #707070;
   flex: 1;
 }
 .taskdetail .taskdetail-table .row-btn.data-v-860fe632 {
-  width: calc((100% - 120rpx) / 5);
+  width: calc((100% - 120upx) / 5);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: bold;
   color: #5C8FF7;
   flex: 1;
 }
 .taskdetail .taskdetail-table .row-progress.data-v-860fe632 {
-  width: calc((100% - 120rpx) / 5);
-  font-size: 28rpx;
+  width: calc((100% - 120upx) / 5);
+  font-size: 28upx;
   font-weight: 400;
   color: #202020;
   flex: 1;
@@ -213,27 +213,27 @@
   display: flex;
   flex-direction: column;
   background-color: #FFFFFF;
-  margin-bottom: 8rpx;
-  border-radius: 12rpx;
+  margin-bottom: 8upx;
+  border-radius: 12upx;
 }
 .taskdetail .taskdetail-table .table-row-leave.data-v-860fe632:last-child {
   margin-bottom: 0;
 }
 .taskdetail .taskdetail-table .table-row-leave .leave-row.data-v-860fe632 {
-  width: 629rpx;
-  height: 120rpx;
-  padding: 14rpx 0;
+  width: 629upx;
+  height: 120upx;
+  padding: 14upx 0;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  border-bottom: solid 2rpx rgba(0, 0, 0, 0.04);
+  border-bottom: solid 2upx rgba(0, 0, 0, 0.04);
 }
 .taskdetail .taskdetail-table .table-row-leave .leave-reason.data-v-860fe632 {
   width: 100%;
-  padding: 24rpx 37rpx;
-  font-size: 28rpx;
-  line-height: 40rpx;
+  padding: 24upx 37upx;
+  font-size: 28upx;
+  line-height: 40upx;
   color: #707070;
 }
 .taskdetail .taskdetail-table .table-row-leave .leave-reason .reason-text.data-v-860fe632 {
@@ -246,13 +246,13 @@
   padding-bottom: env(safe-area-inset-bottom);
 }
 .taskdetail .btn-box-content .default-content.data-v-860fe632 {
-  height: 88rpx;
-  padding: 32rpx 0;
+  height: 88upx;
+  padding: 32upx 0;
   box-sizing: content-box;
 }
 .taskdetail .btn-box-content .default-content .btn-content.data-v-860fe632 {
   width: 100%;
-  height: 88rpx;
+  height: 88upx;
 }
 .taskdetail .bottom-btn-box.data-v-860fe632 {
   background-color: #FFFFFF;
@@ -266,18 +266,18 @@
 }
 .taskdetail .bottom-btn-box .btn-content.data-v-860fe632 {
   width: 100%;
-  height: 88rpx;
-  padding: 32rpx 0;
+  height: 88upx;
+  padding: 32upx 0;
   box-sizing: content-box;
 }
 .taskdetail .bottom-btn-box .action-btn.data-v-860fe632 {
-  width: 686rpx;
-  height: 88rpx;
+  width: 686upx;
+  height: 88upx;
   background-color: #24D0A2;
   border: none;
-  border-radius: 12rpx;
-  font-size: 28rpx;
-  line-height: 88rpx;
+  border-radius: 12upx;
+  font-size: 28upx;
+  line-height: 88upx;
 }
 .taskdetail .bottom-btn-box .action-btn-leave.data-v-860fe632 {
   background-color: #B2B2B2;
@@ -292,49 +292,49 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80rpx;
+  height: 80upx;
   opacity: 1;
-  border-radius: 40rpx;
+  border-radius: 40upx;
   color: #FFFFFF;
-  width: 686rpx;
+  width: 686upx;
   background: linear-gradient(270deg, #0D9FFF 0%, #78CBFF 100%);
-  margin: 20rpx 0;
+  margin: 20upx 0;
 }
 .taskdetail .task-button .remain-icon.data-v-860fe632 {
-  width: 30rpx;
-  height: 24rpx;
-  margin-right: 14rpx;
+  width: 30upx;
+  height: 24upx;
+  margin-right: 14upx;
 }
 .taskdetail .task-rest.data-v-860fe632 {
   width: 100%;
-  height: 560rpx;
+  height: 560upx;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .taskdetail .task-rest .rest-content.data-v-860fe632 {
   position: relative;
-  width: 144rpx;
-  height: 216rpx;
+  width: 144upx;
+  height: 216upx;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .taskdetail .task-rest .rest-content .rest-img.data-v-860fe632 {
-  width: 144rpx;
-  height: 144rpx;
+  width: 144upx;
+  height: 144upx;
 }
 .taskdetail .task-rest .rest-content .rest-text.data-v-860fe632 {
-  font-size: 32rpx;
+  font-size: 32upx;
   color: #B2B2B2;
 }
 .taskdetail .table-none.data-v-860fe632 {
   width: 100%;
-  height: 560rpx;
+  height: 560upx;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .taskdetail .table-none .none-img.data-v-860fe632 {
-  width: 250rpx;
+  width: 250upx;
 }

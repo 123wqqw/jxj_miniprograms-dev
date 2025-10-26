@@ -25,23 +25,23 @@
 /* 透明度 */
 /* 文章场景相关 */
 .container.data-v-5ea0bbc4 {
-  width: 750rpx;
+  width: 750upx;
   overflow: scroll;
 }
 .date-filter.data-v-5ea0bbc4 {
-  width: 420rpx;
-  height: 60rpx;
-  margin: 10rpx 32rpx;
+  width: 420upx;
+  height: 60upx;
+  margin: 10upx 32upx;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 .complete-title.data-v-5ea0bbc4 {
-  height: 90rpx;
-  padding: 0rpx 16rpx 0rpx 32rpx;
+  height: 90upx;
+  padding: 0upx 16upx 0upx 32upx;
   background: #FFFFFF;
-  font-size: 32rpx;
+  font-size: 32upx;
   font-weight: 600;
   color: #202020;
   display: flex;
@@ -50,18 +50,18 @@
   align-items: center;
 }
 .complete-title .downLoad-img.data-v-5ea0bbc4 {
-  width: 63rpx;
-  height: 64rpx;
-  padding: 16rpx;
+  width: 63upx;
+  height: 64upx;
+  padding: 16upx;
 }
 .complete-list.data-v-5ea0bbc4 {
-  padding-bottom: 20rpx;
+  padding-bottom: 20upx;
   display: flex;
   flex-direction: column;
 }
 .complete-list .list-head.data-v-5ea0bbc4 {
-  height: 90rpx;
-  padding: 0rpx 32rpx;
+  height: 90upx;
+  padding: 0upx 32upx;
   background: #FFFFFF;
   display: flex;
   flex-direction: row;
@@ -69,8 +69,8 @@
   align-items: center;
 }
 .complete-list .list-item.data-v-5ea0bbc4 {
-  height: 70rpx;
-  padding: 0rpx 32rpx;
+  height: 70upx;
+  padding: 0upx 32upx;
   background: #FFFFFF;
   display: flex;
   flex-direction: row;

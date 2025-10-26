@@ -26,7 +26,7 @@
 /* 文章场景相关 */
 .student-home.data-v-18c8cebc {
   min-height: 100vh;
-  background: #ffffff;
+  background: #f8f8f8;
   position: relative;
 }
 .top-background.data-v-18c8cebc {
@@ -112,18 +112,28 @@
   color: #2c84ff;
 }
 .welcome-card.data-v-18c8cebc {
-  padding: 0 32rpx;
   position: relative;
   margin: -200rpx 32rpx 32rpx;
-  border-radius: 24rpx;
   z-index: 7;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 200rpx;
+  overflow: hidden;
+}
+.welcome-bg.data-v-18c8cebc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 .welcome-content.data-v-18c8cebc {
-  padding: 36rpx 0rpx 24rpx 0rpx;
-  width: 100%;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32rpx;
 }
 .welcome-text.data-v-18c8cebc {
   flex: 1;
@@ -132,23 +142,22 @@
 .text-tip.data-v-18c8cebc {
   width: 100%;
   padding: 0 32rpx;
-  position: relative;
   z-index: 7;
   margin-top: -50rpx;
-  border-radius: 0 0 32rpx 32rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
 }
 .text-tip-text.data-v-18c8cebc {
-  background: #ffffff;
+  background: #fff;
   padding: 16rpx 36rpx 32rpx 36rpx;
   font-size: 26rpx;
   color: #999;
+  border-radius: 0 0 32rpx 32rpx;
 }
 .greeting.data-v-18c8cebc {
   font-size: 36rpx;
   font-weight: 600;
   color: #2c84ff;
-  margin-bottom: 16rpx;
+  margin-bottom: 8rpx;
+  line-height: 1.2;
 }
 .motivation.data-v-18c8cebc {
   font-size: 26rpx;
@@ -157,10 +166,14 @@
 }
 .mascot.data-v-18c8cebc {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 200rpx;
+  right: 32rpx;
   width: 184rpx;
   height: 290rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 8;
 }
 .mascot-img.data-v-18c8cebc {
   width: 100%;
@@ -179,12 +192,38 @@
 .grid-item.data-v-18c8cebc {
   position: relative;
   width: 100%;
-  padding: 16rpx 0;
+  height: 286rpx;
   z-index: 7;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+  border-radius: 24rpx;
+  overflow: hidden;
+}
+.exercise-bg.data-v-18c8cebc {
+  margin-right: 20rpx;
+}
+.homework-bg.data-v-18c8cebc {
+  /* 保持默认样式 */
+}
+.bg-image.data-v-18c8cebc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.item-content.data-v-18c8cebc {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
 }
 .grid-item2.data-v-18c8cebc {
   width: 100%;
@@ -201,14 +240,8 @@
 .gym-bg.data-v-18c8cebc {
   background: #e8e4ff;
 }
-.homework-bg.data-v-18c8cebc {
-  background: #ffe4e1;
-}
 .leaderboard-bg.data-v-18c8cebc {
   background: #f5f5f5;
-}
-.records-bg.data-v-18c8cebc {
-  background: #fff8dc;
 }
 .item-content.data-v-18c8cebc {
   width: 100%;
@@ -241,6 +274,7 @@
   font-size: 24rpx;
   color: #fff;
 }
+
 /* 新的卡片样式 */
 .card-item.data-v-18c8cebc {
   width: 100%;
@@ -249,6 +283,9 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+}
+.records-card.data-v-18c8cebc {
+  box-shadow: none;
 }
 .leaderboard-card.data-v-18c8cebc {
   margin-right: 20rpx;

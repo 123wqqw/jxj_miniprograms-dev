@@ -86,6 +86,7 @@
 .picker-placeholder.data-v-7022e7d9 {
   color: #333 !important;
 }
+
 /* 右侧箭头样式，符合原型图 */
 .picker-placeholder.data-v-7022e7d9::after {
   content: ">";

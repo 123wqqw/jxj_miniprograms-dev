@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pagesTask/common/vendor"],{
 
 /***/ 1211:
-/*!********************************************************************************************************!*\
-  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesTask/static/images/correctTask/icon_reivew.png ***!
-  \********************************************************************************************************/
+/*!**************************************************************************************************************!*\
+  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/static/images/correctTask/icon_reivew.png ***!
+  \**************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -12,9 +12,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAACoCAYAAAC2
 /***/ }),
 
 /***/ 1212:
-/*!***********************************************************************************************************!*\
-  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesTask/static/images/correctTask/ask-leave-icon.png ***!
-  \***********************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/static/images/correctTask/ask-leave-icon.png ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -23,9 +23,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAB8CAYAAAC7
 /***/ }),
 
 /***/ 1213:
-/*!******************************************************************************************************!*\
-  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesTask/static/images/correctTask/read-icon.png ***!
-  \******************************************************************************************************/
+/*!************************************************************************************************************!*\
+  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/static/images/correctTask/read-icon.png ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -34,9 +34,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABqCAYAAAAi
 /***/ }),
 
 /***/ 242:
-/*!***************************************************************************************************************!*\
-  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/pagesTask/components/x-week-date-calendar/generateDates.js ***!
-  \***************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/components/x-week-date-calendar/generateDates.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -216,9 +216,9 @@ exports.gegerateDates = gegerateDates;
 /***/ }),
 
 /***/ 275:
-/*!********************************************************************************!*\
-  !*** /Users/lidi/Work/A-mine/jxj_miniprograms-dev/common/huaweicloud/index.js ***!
-  \********************************************************************************/
+/*!**************************************************************************************!*\
+  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/common/huaweicloud/index.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

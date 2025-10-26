@@ -220,8 +220,8 @@ to {
           transform: rotate(90deg);
 }
 .arrow-img.data-v-e66f7e32 {
-  width: 16rpx;
-  height: 16rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 .sub-menu.data-v-e66f7e32 {
   background: #ffffff;
@@ -259,6 +259,7 @@ to {
   font-size: 28rpx;
   color: #999999;
 }
+
 /* 修改密码弹框样式 */
 .password-form.data-v-e66f7e32 {
   padding: 20rpx 80rpx;
@@ -269,6 +270,7 @@ to {
 .password-field.data-v-e66f7e32:last-child {
   margin-bottom: 0;
 }
+
 /* 自定义按钮样式 - 按照图片样式 */
 .password-buttons.data-v-e66f7e32 {
   display: flex;

@@ -24,302 +24,239 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.gym-container.data-v-efbd7f00 {
+.gym-page.data-v-efbd7f00 {
+  background-color: #f5f5f5;
   min-height: 100vh;
-  background: #F5F5F5;
 }
+
+/* 导航栏样式 */
 .nav-bar.data-v-efbd7f00 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20rpx 32rpx;
-  background: #FFFFFF;
-  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  height: 88rpx;
+  padding: 0 32rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
 }
-.nav-left.data-v-efbd7f00 {
+.nav-left.data-v-efbd7f00, .nav-right.data-v-efbd7f00 {
   width: 60rpx;
   height: 60rpx;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.back-icon.data-v-efbd7f00 {
+.back-icon.data-v-efbd7f00, .more-icon.data-v-efbd7f00 {
   width: 40rpx;
   height: 40rpx;
 }
 .nav-title.data-v-efbd7f00 {
   font-size: 36rpx;
   font-weight: 600;
-  color: #333333;
+  color: #333;
 }
-.nav-right.data-v-efbd7f00 {
-  width: 60rpx;
+
+/* 筛选区域样式 */
+.filter-section.data-v-efbd7f00 {
+  display: flex;
+  padding: 20rpx 32rpx;
+  background-color: #fff;
+  gap: 16rpx;
 }
-.top-section.data-v-efbd7f00 {
-  position: relative;
-  height: 300rpx;
-  overflow: hidden;
-}
-.background-image.data-v-efbd7f00 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.bg-img.data-v-efbd7f00 {
-  width: 100%;
-  height: 100%;
-}
-.content-overlay.data-v-efbd7f00 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+.filter-item.data-v-efbd7f00 {
+  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-.welcome-text.data-v-efbd7f00 {
-  text-align: center;
-  color: #FFFFFF;
-}
-.title.data-v-efbd7f00 {
-  font-size: 40rpx;
-  font-weight: 600;
-  margin-bottom: 16rpx;
-}
-.subtitle.data-v-efbd7f00 {
-  font-size: 28rpx;
-  opacity: 0.9;
-}
-.sport-list.data-v-efbd7f00 {
-  padding: 32rpx;
-  background: #FFFFFF;
-  margin-bottom: 20rpx;
-}
-.section-title.data-v-efbd7f00 {
-  font-size: 32rpx;
-  font-weight: 600;
-  color: #333333;
-  margin-bottom: 24rpx;
-}
-.sport-grid.data-v-efbd7f00 {
-  display: flex;
-  flex-direction: column;
-  gap: 20rpx;
-}
-.sport-item.data-v-efbd7f00 {
-  display: flex;
-  align-items: center;
-  padding: 24rpx;
-  background: #F8F9FA;
-  border-radius: 16rpx;
-  border: 2rpx solid transparent;
+  justify-content: space-between;
+  padding: 16rpx 20rpx;
+  background-color: #ffffff;
+  border-radius: 8rpx;
+  border: 1rpx solid #ddd;
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-.sport-item.data-v-efbd7f00:active {
-  border-color: #2C84FF;
-  background: #F0F7FF;
+.filter-item.data-v-efbd7f00:active {
+  background-color: #f8f9fa;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
 }
-.sport-icon.data-v-efbd7f00 {
-  width: 80rpx;
-  height: 80rpx;
-  margin-right: 24rpx;
-}
-.icon-img.data-v-efbd7f00 {
-  width: 100%;
-  height: 100%;
-}
-.sport-info.data-v-efbd7f00 {
-  flex: 1;
-}
-.sport-name.data-v-efbd7f00 {
-  font-size: 32rpx;
-  font-weight: 600;
-  color: #333333;
-  margin-bottom: 8rpx;
-}
-.sport-desc.data-v-efbd7f00 {
+.filter-text.data-v-efbd7f00 {
   font-size: 26rpx;
-  color: #666666;
-  margin-bottom: 8rpx;
+  color: #333;
+  font-weight: 400;
 }
-.sport-duration.data-v-efbd7f00 {
-  font-size: 24rpx;
-  color: #2C84FF;
-  font-weight: 500;
+.filter-arrow.data-v-efbd7f00 {
+  width: 20rpx;
+  height: 20rpx;
+  opacity: 0.6;
 }
-.sport-action.data-v-efbd7f00 {
-  width: 60rpx;
-  height: 60rpx;
+
+/* 主要内容区域样式 */
+.main-content.data-v-efbd7f00 {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #fff;
+  min-height: calc(100vh - 200rpx);
 }
-.play-icon.data-v-efbd7f00 {
-  width: 40rpx;
-  height: 40rpx;
-}
-.ai-section.data-v-efbd7f00 {
-  padding: 32rpx;
-  background: #FFFFFF;
-  margin-bottom: 20rpx;
-}
-.ai-card.data-v-efbd7f00 {
-  background: linear-gradient(135deg, #2C84FF 0%, #4A9EFF 100%);
-  border-radius: 20rpx;
-  padding: 32rpx;
-}
-.ai-content.data-v-efbd7f00 {
-  display: flex;
-  align-items: center;
-}
-.ai-icon.data-v-efbd7f00 {
-  width: 80rpx;
-  height: 80rpx;
-  margin-right: 24rpx;
-}
-.ai-img.data-v-efbd7f00 {
-  width: 100%;
-  height: 100%;
-}
-.ai-info.data-v-efbd7f00 {
-  flex: 1;
-}
-.ai-title.data-v-efbd7f00 {
-  font-size: 32rpx;
-  font-weight: 600;
-  color: #FFFFFF;
-  margin-bottom: 8rpx;
-}
-.ai-desc.data-v-efbd7f00 {
-  font-size: 26rpx;
-  color: #FFFFFF;
-  opacity: 0.9;
-}
-.ai-arrow.data-v-efbd7f00 {
-  width: 40rpx;
-  height: 40rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.arrow-icon.data-v-efbd7f00 {
-  width: 24rpx;
-  height: 24rpx;
-}
-.record-section.data-v-efbd7f00 {
-  padding: 32rpx;
-  background: #FFFFFF;
-  margin-bottom: 20rpx;
-}
-.record-card.data-v-efbd7f00 {
-  display: flex;
-  justify-content: space-between;
-}
-.record-item.data-v-efbd7f00 {
+
+/* 左侧分类导航样式 */
+.left-sidebar.data-v-efbd7f00 {
+  width: 180rpx;
+  background-color: #fafafa;
+  border-right: 1rpx solid #e0e0e0;
+  padding: 12rpx 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  flex: 1;
 }
-.record-icon.data-v-efbd7f00 {
-  width: 60rpx;
-  height: 60rpx;
-  margin-bottom: 16rpx;
-}
-.record-img.data-v-efbd7f00 {
-  width: 100%;
-  height: 100%;
-}
-.record-label.data-v-efbd7f00 {
-  font-size: 24rpx;
-  color: #666666;
-  margin-bottom: 8rpx;
-}
-.record-value.data-v-efbd7f00 {
-  font-size: 32rpx;
-  font-weight: 600;
-  color: #2C84FF;
-}
-.history-section.data-v-efbd7f00 {
-  padding: 32rpx;
-  background: #FFFFFF;
-}
-.section-header.data-v-efbd7f00 {
+.sidebar-item.data-v-efbd7f00 {
+  padding: 18rpx 12rpx;
+  margin: 3rpx 8rpx;
+  border-radius: 6rpx;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 76rpx;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 24rpx;
+  justify-content: center;
 }
-.view-all.data-v-efbd7f00 {
+.sidebar-item.data-v-efbd7f00:hover {
+  background-color: #f0f0f0;
+}
+.sidebar-item.active.data-v-efbd7f00 {
+  background-color: #007AFF;
+  box-shadow: 0 2rpx 6rpx rgba(0, 122, 255, 0.25);
+}
+.sidebar-text.data-v-efbd7f00 {
+  font-size: 24rpx;
+  color: #555;
+  text-align: center;
+  line-height: 1.3;
+  word-break: break-all;
+  font-weight: 400;
+}
+.sidebar-item.active .sidebar-text.data-v-efbd7f00 {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* 左侧“全部运动”右侧难度控件样式 */
+.sidebar-item--controls.data-v-efbd7f00 {
+  justify-content: space-between;
+}
+.sidebar-left.data-v-efbd7f00 {
+  display: flex;
+  align-items: center;
+}
+.sidebar-control.data-v-efbd7f00 {
   display: flex;
   align-items: center;
   gap: 8rpx;
+  padding: 10rpx 14rpx;
+  background-color: #fff;
+  border: 1rpx solid #E6E8EB;
+  border-radius: 10rpx;
+  box-shadow: 0 1rpx 3rpx rgba(16, 24, 40, 0.08);
 }
-.view-all-text.data-v-efbd7f00 {
-  font-size: 28rpx;
-  color: #2C84FF;
+.sidebar-control-text.data-v-efbd7f00 {
+  font-size: 24rpx;
+  color: #4D5562;
+  font-weight: 500;
 }
-.history-list.data-v-efbd7f00 {
+.sidebar-control-arrow.data-v-efbd7f00 {
+  width: 22rpx;
+  height: 14rpx;
+  opacity: 0.8;
+}
+
+/* 右侧内容样式 */
+.right-content.data-v-efbd7f00 {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
 }
-.history-item.data-v-efbd7f00 {
+
+/* 运动分类样式 */
+/* 运动项目网格样式 */
+.exercise-grid.data-v-efbd7f00 {
+  padding: 24rpx 32rpx 32rpx;
   display: flex;
-  align-items: center;
-  padding: 24rpx;
-  background: #F8F9FA;
-  border-radius: 12rpx;
-}
-.history-date.data-v-efbd7f00 {
-  width: 120rpx;
-  margin-right: 24rpx;
-}
-.date-text.data-v-efbd7f00 {
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #333333;
-  margin-bottom: 4rpx;
-}
-.time-text.data-v-efbd7f00 {
-  font-size: 24rpx;
-  color: #666666;
-}
-.history-info.data-v-efbd7f00 {
+  flex-wrap: wrap;
+  gap: 24rpx;
   flex: 1;
 }
-.history-sport.data-v-efbd7f00 {
-  font-size: 30rpx;
-  font-weight: 500;
-  color: #333333;
-  margin-bottom: 4rpx;
+.exercise-item.data-v-efbd7f00 {
+  width: calc(50% - 12rpx);
+  margin-bottom: 32rpx;
 }
-.history-duration.data-v-efbd7f00 {
-  font-size: 26rpx;
-  color: #666666;
+.exercise-card.data-v-efbd7f00 {
+  position: relative;
+  height: 240rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  margin-bottom: 16rpx;
 }
-.history-status.data-v-efbd7f00 {
-  padding: 8rpx 16rpx;
-  border-radius: 20rpx;
+.exercise-illustration.data-v-efbd7f00 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 120rpx;
+  height: 120rpx;
 }
-.history-status.completed.data-v-efbd7f00 {
-  background: #E8F5E8;
+.exercise-img.data-v-efbd7f00 {
+  width: 100%;
+  height: 100%;
 }
-.history-status.incomplete.data-v-efbd7f00 {
-  background: #FFF3E0;
+.exercise-arrows.data-v-efbd7f00 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
-.status-text.data-v-efbd7f00 {
-  font-size: 24rpx;
-  font-weight: 500;
+.arrow-icon.data-v-efbd7f00 {
+  position: absolute;
+  width: 32rpx;
+  height: 32rpx;
 }
-.history-status.completed .status-text.data-v-efbd7f00 {
-  color: #4CAF50;
+.arrow-up-left.data-v-efbd7f00 {
+  top: 24rpx;
+  left: 24rpx;
 }
-.history-status.incomplete .status-text.data-v-efbd7f00 {
-  color: #FF9800;
+.arrow-up-right.data-v-efbd7f00 {
+  top: 24rpx;
+  right: 24rpx;
+}
+.arrow-down-left.data-v-efbd7f00 {
+  bottom: 24rpx;
+  left: 24rpx;
+}
+.arrow-down-right.data-v-efbd7f00 {
+  bottom: 24rpx;
+  right: 24rpx;
+}
+.arrow-left.data-v-efbd7f00 {
+  top: 50%;
+  left: 24rpx;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.arrow-right.data-v-efbd7f00 {
+  top: 50%;
+  right: 24rpx;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.exercise-name.data-v-efbd7f00 {
+  font-size: 28rpx;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 750rpx) {
+.exercise-item.data-v-efbd7f00 {
+    width: calc(50% - 12rpx);
+}
 }

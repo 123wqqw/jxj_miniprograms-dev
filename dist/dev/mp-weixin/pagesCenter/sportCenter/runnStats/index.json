@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "跑步统计",
+  "usingComponents": {
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "score-card": "/pagesCenter/sportCenter/runnStats/components/score-card/index",
+    "line-charts": "/pagesCenter/sportCenter/runnStats/components/line-charts/index",
+    "classes-card": "/pagesCenter/sportCenter/runnStats/components/classes-card/index"
+  }
+}

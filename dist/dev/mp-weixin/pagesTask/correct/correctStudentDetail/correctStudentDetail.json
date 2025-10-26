@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "学生作业详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-popup": "/node-modules/uview-ui/components/u-popup/u-popup",
+    "u-input": "/node-modules/uview-ui/components/u-input/u-input",
+    "u-modal": "/node-modules/uview-ui/components/u-modal/u-modal",
+    "x-week-date-calendar": "/pagesTask/components/x-week-date-calendar/x-week-date-calendar"
+  }
+}

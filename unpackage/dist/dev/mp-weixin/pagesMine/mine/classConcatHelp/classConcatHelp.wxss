@@ -1,101 +1,101 @@
 .maxBox {
-  width: 750rpx;
-  padding: 16rpx 32rpx 200rpx;
-  font-size: 28rpx;
+  width: 750upx;
+  padding: 16upx 32upx 200upx;
+  font-size: 28upx;
   box-sizing: border-box;
 }
 .maxBox .zhezhaoBox {
-  width: 750rpx;
-  height: 704rpx;
+  width: 750upx;
+  height: 704upx;
   z-index: 11000;
   background: #FFFFFF;
   position: fixed;
   left: 0;
   bottom: 0;
-  font-size: 32rpx;
+  font-size: 32upx;
 }
 .maxBox .zhezhaoBox .checkedTit {
-  padding: 0 32rpx;
-  height: 104rpx;
-  line-height: 104rpx;
+  padding: 0 32upx;
+  height: 104upx;
+  line-height: 104upx;
   color: #707070;
 }
 .maxBox .zhezhaoBox .checkedItem {
-  padding: 0 32rpx;
-  height: 88rpx;
-  line-height: 88rpx;
+  padding: 0 32upx;
+  height: 88upx;
+  line-height: 88upx;
 }
 .maxBox .zhezhaoBox .checkedItem .yichu {
-  width: 112rpx;
-  height: 48rpx;
+  width: 112upx;
+  height: 48upx;
   background: #FFFFFF;
-  border-radius: 8rpx;
-  border: 1rpx solid #707070;
+  border-radius: 8upx;
+  border: 1upx solid #707070;
   text-align: center;
-  line-height: 48rpx;
-  font-size: 24rpx;
+  line-height: 48upx;
+  font-size: 24upx;
   float: right;
-  margin-top: 20rpx;
+  margin-top: 20upx;
 }
 .maxBox .checkAll {
-  line-height: 88rpx;
-  height: 88rpx;
-  width: 686rpx;
-  border-bottom: 1rpx solid #E6E6E6;
+  line-height: 88upx;
+  height: 88upx;
+  width: 686upx;
+  border-bottom: 1upx solid #E6E6E6;
 }
 .maxBox .checkItem .checkDropBox {
   display: block;
-  width: 686rpx;
-  border-bottom: 1rpx solid #E6E6E6;
+  width: 686upx;
+  border-bottom: 1upx solid #E6E6E6;
   text-align: left;
-  line-height: 88rpx;
+  line-height: 88upx;
   box-sizing: border-box;
   position: relative;
 }
 .maxBox .checkItem .checkDropBox  .u-checkbox__icon-wrap--checked {
   position: absolute;
   left: 0;
-  top: 28rpx;
+  top: 28upx;
 }
 .maxBox .checkItem .checkDropBox  .u-checkbox__icon-wrap {
   position: absolute;
   left: 0;
-  top: 28rpx;
+  top: 28upx;
 }
 .maxBox .checkItem .checkDropBox  .u-checkbox__label {
-  margin-left: 54rpx;
+  margin-left: 54upx;
 }
 .maxBox .checkItem .checkDropBox .checkItemClick {
-  width: 130rpx;
-  height: 88rpx;
+  width: 130upx;
+  height: 88upx;
   position: absolute;
   top: 0;
   right: 0;
 }
 .maxBox .checkItem .checkDropBox .checkItemClick .checkItemText {
   position: absolute;
-  top: 0rpx;
-  right: 64rpx;
-  width: 80rpx;
-  height: 88rpx;
-  line-height: 88rpx;
+  top: 0upx;
+  right: 64upx;
+  width: 80upx;
+  height: 88upx;
+  line-height: 88upx;
   text-align: right;
 }
 .maxBox .checkItem .checkDropBox .checkItemClick .checkItemImg {
-  width: 25rpx;
-  height: 24rpx;
+  width: 25upx;
+  height: 24upx;
   position: absolute;
-  top: 32rpx;
-  right: 32rpx;
+  top: 32upx;
+  right: 32upx;
 }
 .maxBox .checkItem .checkDropBox .checkDrop {
   display: block;
-  height: 88rpx;
-  width: 686rpx;
-  border-bottom: 1rpx solid #E6E6E6;
+  height: 88upx;
+  width: 686upx;
+  border-bottom: 1upx solid #E6E6E6;
   text-align: left;
-  line-height: 88rpx;
-  padding-left: 44rpx;
+  line-height: 88upx;
+  padding-left: 44upx;
   box-sizing: border-box;
 }
 .maxBox .checkItem .checkDropBox .checkDrop  .u-checkbox__icon-wrap--checked {
@@ -106,37 +106,37 @@
 }
 .maxBox .checkItem .checkDropBox .checkDrop  .u-checkbox__label {
   padding-left: 0;
-  width: 510rpx;
+  width: 510upx;
 }
 .maxBox .checkItem .checkDropBox .checkDrop:last-child {
   border-bottom: 0;
 }
 .maxBox .dibu {
-  width: 750rpx;
-  height: 120rpx;
+  width: 750upx;
+  height: 120upx;
   position: fixed;
   bottom: 0;
   left: 0;
   background: #FFFFFF;
-  margin-bottom: 30rpx;
+  margin-bottom: 30upx;
   z-index: 10000;
 }
 .maxBox .dibu .textNum {
   float: left;
-  line-height: 120rpx;
-  margin-left: 32rpx;
-  font-size: 28rpx;
+  line-height: 120upx;
+  margin-left: 32upx;
+  font-size: 28upx;
   font-weight: 400;
   color: #707070;
 }
 .maxBox .dibu .submit-btn {
-  width: 376rpx;
-  height: 80rpx;
-  line-height: 80rpx;
+  width: 376upx;
+  height: 80upx;
+  line-height: 80upx;
   background: #5C8FF7;
-  border-radius: 44rpx;
+  border-radius: 44upx;
   float: right;
-  margin-right: 32rpx;
-  margin-top: 20rpx;
+  margin-right: 32upx;
+  margin-top: 20upx;
 }
 

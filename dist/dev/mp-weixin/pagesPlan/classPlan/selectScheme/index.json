@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "选择方案",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "u-image": "/node-modules/uview-ui/components/u-image/u-image"
+  }
+}

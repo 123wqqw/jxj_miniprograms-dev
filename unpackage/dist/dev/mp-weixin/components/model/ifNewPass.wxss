@@ -26,56 +26,56 @@
 /* 文章场景相关 */
 .maxBox .bigBox.data-v-2f9f3f23 {
   z-index: 100000;
-  width: 560rpx;
-  height: 404rpx;
+  width: 560upx;
+  height: 404upx;
   background: #FFFFFF;
-  border-radius: 24rpx;
+  border-radius: 24upx;
   position: absolute;
-  left: calc(50% - 280rpx);
-  top: 450rpx;
+  left: calc(50% - 280upx);
+  top: 450upx;
   right: 0;
 }
 .maxBox .bigBox .title.data-v-2f9f3f23 {
-  font-size: 34rpx;
+  font-size: 34upx;
   font-weight: 500;
   color: #333333;
-  margin: 48rpx 0 24rpx;
+  margin: 48upx 0 24upx;
   text-align: center;
 }
 .maxBox .bigBox .input-main.data-v-2f9f3f23 {
   width: 100%;
-  height: 32rpx;
-  font-size: 28rpx;
+  height: 32upx;
+  font-size: 28upx;
   text-align: center;
 }
 .maxBox .bigBox .clock-input-placeholder.data-v-2f9f3f23 {
   color: #B2B2B2;
 }
 .maxBox .bigBox .line.data-v-2f9f3f23 {
-  width: 496rpx;
-  height: 1rpx;
+  width: 496upx;
+  height: 1upx;
   background: #DDDDDD;
-  margin: 18rpx auto 32rpx;
+  margin: 18upx auto 32upx;
 }
 .maxBox .bigBox .footBox.data-v-2f9f3f23 {
-  font-size: 34rpx;
+  font-size: 34upx;
   display: flex;
   justify-content: space-between;
-  padding: 0 56rpx;
+  padding: 0 56upx;
 }
 .maxBox .bigBox .footBox .cancel-btn.data-v-2f9f3f23 {
   color: #707070;
-  width: 208rpx;
-  height: 70rpx;
+  width: 208upx;
+  height: 70upx;
   background: #FFFFFF;
   text-align: center;
-  line-height: 70rpx;
+  line-height: 70upx;
 }
 .maxBox .bigBox .footBox .submit-btn.data-v-2f9f3f23 {
-  width: 208rpx;
-  height: 70rpx;
+  width: 208upx;
+  height: 70upx;
   background: #5C8FF7;
   border-radius: 40px;
   color: #FFFFFF;
-  line-height: 70rpx;
+  line-height: 70upx;
 }

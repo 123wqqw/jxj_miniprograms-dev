@@ -1,137 +1,101 @@
 <template>
-	<view class="gym-container">
+	<view class="gym-page">
 		<!-- 顶部导航栏 -->
 		<view class="nav-bar">
 			<view class="nav-left" @click="goBack">
-				<image src="/static/images/students/arrow-left.png" class="back-icon"></image>
+				<image src="/static/images/common/arrow-left.png" class="back-icon"></image>
 			</view>
 			<view class="nav-title">家庭健身房</view>
-			<view class="nav-right"></view>
-		</view>
-		
-		<!-- 顶部背景区域 -->
-		<view class="top-section">
-			<view class="background-image">
-				<image src="/static/images/students/banner.png" mode="aspectFill" class="bg-img"></image>
-			</view>
-			<view class="content-overlay">
-				<view class="welcome-text">
-					<view class="title">欢迎来到家庭健身房</view>
-					<view class="subtitle">选择您喜欢的运动项目开始锻炼吧！</view>
-				</view>
+			<view class="nav-right" @click="showMore">
+				<image src="/static/images/common/more.png" class="more-icon"></image>
 			</view>
 		</view>
-		
-		<!-- 运动项目列表 -->
-		<view class="sport-list">
-			<view class="section-title">运动项目</view>
-			
-			<view class="sport-grid">
+
+		<!-- 筛选区域（保留“改善方向”，移除“难度”至左侧“全部运动”右侧） -->
+		<view class="filter-section">
+			<view class="filter-item" @click="showDirectionPicker">
+				<text class="filter-text">{{ selectedDirection }}</text>
+				<image src="/static/images/common/arrow-down.png" class="filter-arrow"></image>
+			</view>
+		</view>
+
+		<!-- 主要内容区域 -->
+		<view class="main-content">
+			<!-- 左侧分类导航 -->
+			<view class="left-sidebar">
+				<!-- 全部运动 + 难度（右侧控件） -->
 				<view 
-					class="sport-item" 
-					v-for="(sport, index) in sportList" 
-					:key="index"
-					@click="selectSport(sport)"
+					class="sidebar-item sidebar-item--controls" 
+					:class="{ active: activeCategory === 'all' }"
 				>
-					<view class="sport-icon">
-						<image :src="sport.icon" mode="aspectFit" class="icon-img"></image>
+					<view class="sidebar-left" @click="selectCategory('all')">
+						<text class="sidebar-text">全部运动</text>
 					</view>
-					<view class="sport-info">
-						<view class="sport-name">{{ sport.name }}</view>
-						<view class="sport-desc">{{ sport.description }}</view>
-						<view class="sport-duration">{{ sport.duration }}分钟</view>
-					</view>
-					<view class="sport-action">
-						<image src="/static/images/students/play.png" class="play-icon"></image>
+					<view class="sidebar-control" @click.stop="showDifficultyPicker">
+						<text class="sidebar-control-text">{{ selectedDifficulty }}</text>
+						<image src="/static/images/common/arrow-down.png" class="sidebar-control-arrow"></image>
 					</view>
 				</view>
-			</view>
-		</view>
-		
-		<!-- AI动作识别区域 -->
-		<view class="ai-section">
-			<view class="section-title">AI动作识别</view>
-			<view class="ai-card" @click="startAITraining">
-				<view class="ai-content">
-					<view class="ai-icon">
-						<image src="/static/images/students/logo.png" mode="aspectFit" class="ai-img"></image>
-					</view>
-					<view class="ai-info">
-						<view class="ai-title">智能动作识别</view>
-						<view class="ai-desc">通过AI技术实时识别您的运动动作，提供专业的运动指导</view>
-					</view>
-					<view class="ai-arrow">
-						<image src="/static/images/students/arrow-right.png" class="arrow-icon"></image>
-					</view>
-				</view>
-			</view>
-		</view>
-		
-		<!-- 今日运动记录 -->
-		<view class="record-section">
-			<view class="section-title">今日运动记录</view>
-			<view class="record-card">
-				<view class="record-item">
-					<view class="record-icon">
-						<image src="/static/images/students/exercise.png" class="record-img"></image>
-					</view>
-					<view class="record-info">
-						<view class="record-label">运动时长</view>
-						<view class="record-value">{{ todayRecord.duration }}分钟</view>
-					</view>
-				</view>
-				<view class="record-item">
-					<view class="record-icon">
-						<image src="/static/images/students/rank.png" class="record-img"></image>
-					</view>
-					<view class="record-info">
-						<view class="record-label">消耗卡路里</view>
-						<view class="record-value">{{ todayRecord.calories }}卡</view>
-					</view>
-				</view>
-				<view class="record-item">
-					<view class="record-icon">
-						<image src="/static/images/students/read.png" class="record-img"></image>
-					</view>
-					<view class="record-info">
-						<view class="record-label">完成项目</view>
-						<view class="record-value">{{ todayRecord.completed }}个</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		
-		<!-- 运动历史 -->
-		<view class="history-section">
-			<view class="section-header">
-				<view class="section-title">运动历史</view>
-				<view class="view-all" @click="viewAllHistory">
-					<text class="view-all-text">查看全部</text>
-					<image src="/static/images/students/arrow-right.png" class="arrow-icon"></image>
-				</view>
-			</view>
-			
-			<view class="history-list">
+				
+				<!-- 具体运动分类 -->
 				<view 
-					class="history-item" 
-					v-for="(record, index) in historyList" 
-					:key="index"
-					@click="viewHistoryDetail(record)"
+					class="sidebar-item" 
+					:class="{ active: activeCategory === category.value }"
+					v-for="category in specificCategories" 
+					:key="category.value"
+					@click="selectCategory(category.value)"
 				>
-					<view class="history-date">
-						<view class="date-text">{{ record.date }}</view>
-						<view class="time-text">{{ record.time }}</view>
-					</view>
-					<view class="history-info">
-						<view class="history-sport">{{ record.sportName }}</view>
-						<view class="history-duration">{{ record.duration }}分钟</view>
-					</view>
-					<view class="history-status" :class="record.status">
-						<text class="status-text">{{ record.statusText }}</text>
-					</view>
+					<text class="sidebar-text">{{ category.label }}</text>
 				</view>
 			</view>
+
+			<!-- 右侧内容 -->
+			<view class="right-content">
+				<!-- 运动项目网格 -->
+		<view class="exercise-grid">
+			<view 
+				class="exercise-item" 
+				v-for="(exercise, index) in filteredExercises" 
+				:key="index"
+				@click="startExercise(exercise)"
+			>
+				<view class="exercise-card" :style="{ backgroundColor: exercise.bgColor }">
+					<view class="exercise-illustration">
+						<image :src="exercise.illustration" mode="aspectFit" class="exercise-img"></image>
+					</view>
+					<view class="exercise-arrows">
+						<image 
+							v-for="arrow in exercise.arrows" 
+							:key="arrow.id"
+							:src="arrow.icon" 
+							:class="arrow.class"
+							class="arrow-icon"
+						></image>
+					</view>
+				</view>
+				<view class="exercise-name">{{ exercise.name }}</view>
+			</view>
 		</view>
+			</view>
+		</view>
+
+		<!-- 难度选择器（uView 1.x 标准用法） -->
+		<u-picker 
+			:show="showDifficultySelector"
+			:columns="[difficultyOptions]"
+			keyName="label"
+			@confirm="onDifficultyConfirm"
+			@cancel="showDifficultySelector = false"
+		></u-picker>
+
+		<!-- 改善方向选择器（uView 1.x 标准用法） -->
+		<u-picker 
+			:show="showDirectionSelector"
+			:columns="[directionOptions]"
+			keyName="label"
+			@confirm="onDirectionConfirm"
+			@cancel="showDirectionSelector = false"
+		></u-picker>
 	</view>
 </template>
 
@@ -139,175 +103,246 @@
 export default {
 	data() {
 		return {
-			sportList: [
-				{
-					id: 1,
-					name: '俯卧撑',
-					description: '锻炼胸肌和手臂力量',
-					duration: 10,
-					icon: '/static/images/students/exercise.png',
-					type: 'strength'
-				},
-				{
-					id: 2,
-					name: '深蹲',
-					description: '锻炼腿部肌肉',
-					duration: 15,
-					icon: '/static/images/students/exercise.png',
-					type: 'strength'
-				},
-				{
-					id: 3,
-					name: '跳绳',
-					description: '有氧运动，提高心肺功能',
-					duration: 20,
-					icon: '/static/images/students/exercise.png',
-					type: 'cardio'
-				},
-				{
-					id: 4,
-					name: '平板支撑',
-					description: '核心力量训练',
-					duration: 5,
-					icon: '/static/images/students/exercise.png',
-					type: 'core'
-				},
-				{
-					id: 5,
-					name: '仰卧起坐',
-					description: '腹部肌肉训练',
-					duration: 10,
-					icon: '/static/images/students/exercise.png',
-					type: 'core'
-				},
-				{
-					id: 6,
-					name: '开合跳',
-					description: '全身有氧运动',
-					duration: 15,
-					icon: '/static/images/students/exercise.png',
-					type: 'cardio'
-				}
+			// 筛选相关
+			selectedDifficulty: '难度',
+			selectedDirection: '改善方向',
+			showDifficultySelector: false,
+			showDirectionSelector: false,
+			
+			// 分类相关
+			activeCategory: 'all',
+			specificCategories: [
+				{ label: '有氧运动', value: 'cardio' },
+				{ label: '腹部运动', value: 'abs' },
+				{ label: '力量练习', value: 'strength' },
+				{ label: '腿部运动', value: 'legs' },
+				{ label: '手臂运动', value: 'arms' }
 			],
-			todayRecord: {
-				duration: 45,
-				calories: 320,
-				completed: 3
-			},
-			historyList: [
+			
+			// 筛选选项
+			difficultyOptions: [
+				{ label: '难度', value: '' },
+				{ label: '初级', value: 'beginner' },
+				{ label: '中级', value: 'intermediate' },
+				{ label: '高级', value: 'advanced' }
+			],
+			directionOptions: [
+				{ label: '改善方向', value: '' },
+				{ label: '减脂', value: 'weight_loss' },
+				{ label: '塑形', value: 'fitness' },
+				{ label: '柔韧性', value: 'flexibility' },
+				{ label: '体能', value: 'endurance' }
+			],
+			
+			// 运动项目数据
+			exercises: [
 				{
-					id: 1,
-					date: '2024-01-15',
-					time: '18:30',
-					sportName: '俯卧撑',
-					duration: 10,
-					status: 'completed',
-					statusText: '已完成'
+					name: '腹部拉伸',
+					category: 'abs',
+					difficulty: 'beginner',
+					direction: 'flexibility',
+					bgColor: '#FFF4E6',
+					illustration: '/static/images/exercises/abs-stretch.svg',
+					arrows: [
+						{ id: 1, icon: '/static/images/arrows/up-orange.svg', class: 'arrow-up-left' },
+						{ id: 2, icon: '/static/images/arrows/up-orange.svg', class: 'arrow-up-right' }
+					]
 				},
 				{
-					id: 2,
-					date: '2024-01-15',
-					time: '19:00',
-					sportName: '深蹲',
-					duration: 15,
-					status: 'completed',
-					statusText: '已完成'
+					name: '测腰',
+					category: 'abs',
+					difficulty: 'beginner',
+					direction: 'fitness',
+					bgColor: '#FFF4E6',
+					illustration: '/static/images/exercises/waist-measure.svg',
+					arrows: [
+						{ id: 1, icon: '/static/images/arrows/up-orange.svg', class: 'arrow-up-left' },
+						{ id: 2, icon: '/static/images/arrows/up-orange.svg', class: 'arrow-up-right' }
+					]
 				},
 				{
-					id: 3,
-					date: '2024-01-14',
-					time: '17:45',
-					sportName: '跳绳',
-					duration: 20,
-					status: 'completed',
-					statusText: '已完成'
+					name: '猫式运动',
+					category: 'all',
+					difficulty: 'beginner',
+					direction: 'flexibility',
+					bgColor: '#F0F8FF',
+					illustration: '/static/images/exercises/cat-pose.svg',
+					arrows: [
+						{ id: 1, icon: '/static/images/arrows/down-blue.svg', class: 'arrow-down-left' },
+						{ id: 2, icon: '/static/images/arrows/down-blue.svg', class: 'arrow-down-right' }
+					]
 				},
 				{
-					id: 4,
-					date: '2024-01-14',
-					time: '18:15',
-					sportName: '平板支撑',
-					duration: 5,
-					status: 'incomplete',
-					statusText: '未完成'
+					name: '双脚原地踏绳跳（慢...）',
+					category: 'cardio',
+					difficulty: 'intermediate',
+					direction: 'weight_loss',
+					bgColor: '#E6F3FF',
+					illustration: '/static/images/exercises/rope-jump.svg',
+					arrows: [
+						{ id: 1, icon: '/static/images/arrows/left-blue.svg', class: 'arrow-left' },
+						{ id: 2, icon: '/static/images/arrows/right-blue.svg', class: 'arrow-right' }
+					]
+				},
+				{
+					name: '前后摆平衡站立',
+					category: 'all',
+					difficulty: 'beginner',
+					direction: 'fitness',
+					bgColor: '#F0F8FF',
+					illustration: '/static/images/students/exercise.png',
+					arrows: [
+						{ id: 1, icon: '/static/images/arrows/left-blue.svg', class: 'arrow-left' },
+						{ id: 2, icon: '/static/images/arrows/right-blue.svg', class: 'arrow-right' }
+					]
+				},
+				{
+					name: 'A字拉伸',
+					category: 'strength',
+					difficulty: 'intermediate',
+					direction: 'flexibility',
+					bgColor: '#FFF4E6',
+					illustration: '/static/images/students/exercise.png',
+					arrows: [
+						{ id: 1, icon: '/static/images/arrows/left-blue.svg', class: 'arrow-left' },
+						{ id: 2, icon: '/static/images/arrows/right-blue.svg', class: 'arrow-right' }
+					]
+				},
+				{
+					name: '左右三步跑',
+					category: 'cardio',
+					difficulty: 'intermediate',
+					direction: 'fitness',
+					bgColor: '#E6F3FF',
+					illustration: '/static/images/students/exercise.png',
+					arrows: [
+						{ id: 1, icon: '/static/images/arrows/left-blue.svg', class: 'arrow-left' },
+						{ id: 2, icon: '/static/images/arrows/right-blue.svg', class: 'arrow-right' }
+					]
+				},
+				{
+					name: '合掌跳',
+					category: 'cardio',
+					difficulty: 'beginner',
+					direction: 'weight_loss',
+					bgColor: '#FFF4E6',
+					illustration: '/static/images/students/exercise.png',
+					arrows: [
+						{ id: 1, icon: '/static/images/arrows/up-orange.svg', class: 'arrow-up-left' },
+						{ id: 2, icon: '/static/images/arrows/up-orange.svg', class: 'arrow-up-right' }
+					]
 				}
 			]
 		}
 	},
-	onLoad() {
-		this.loadTodayRecord()
-		this.loadHistoryList()
+	
+	computed: {
+		filteredExercises() {
+			return this.exercises.filter(exercise => {
+				// 分类筛选
+				const categoryMatch = this.activeCategory === 'all' || exercise.category === this.activeCategory;
+				
+				// 难度筛选
+				const difficultyMatch = !this.selectedDifficultyValue || exercise.difficulty === this.selectedDifficultyValue;
+				
+				// 改善方向筛选
+				const directionMatch = !this.selectedDirectionValue || exercise.direction === this.selectedDirectionValue;
+				
+				return categoryMatch && difficultyMatch && directionMatch;
+			});
+		},
+		
+		selectedDifficultyValue() {
+			const option = this.difficultyOptions.find(opt => opt.label === this.selectedDifficulty);
+			return option ? option.value : '';
+		},
+		
+		selectedDirectionValue() {
+			const option = this.directionOptions.find(opt => opt.label === this.selectedDirection);
+			return option ? option.value : '';
+		}
 	},
+	
 	methods: {
-		// 返回上一页
 		goBack() {
-			uni.navigateBack()
+			uni.navigateBack();
 		},
 		
-		// 选择运动项目
-		selectSport(sport) {
-			console.log('选择运动项目:', sport)
-			// 跳转到运动详情页面
-			uni.navigateTo({
-				url: `/pages/students/sportDetail/index?id=${sport.id}&name=${sport.name}`
-			})
+		showMore() {
+			uni.showToast({
+				title: '更多功能开发中',
+				icon: 'none'
+			});
 		},
 		
-		// 开始AI训练
-		startAITraining() {
-			console.log('开始AI训练')
-			uni.navigateTo({
-				url: '/pages/students/aiTraining/index'
-			})
+		showDifficultyPicker() {
+			this.showDifficultySelector = true;
 		},
 		
-		// 查看全部历史
-		viewAllHistory() {
-			console.log('查看全部历史')
-			uni.navigateTo({
-				url: '/pages/students/history/index'
-			})
+		showDirectionPicker() {
+			this.showDirectionSelector = true;
 		},
 		
-		// 查看历史详情
-		viewHistoryDetail(record) {
-			console.log('查看历史详情:', record)
-			uni.navigateTo({
-				url: `/pages/students/historyDetail/index?id=${record.id}`
-			})
+		onDifficultyConfirm(e) {
+			// uView u-picker事件：e.data为选中项对象数组，单列取第一个
+			const selected = e?.data?.[0] || null;
+			if (selected) {
+				this.selectedDifficulty = selected.label;
+			} else if (Array.isArray(e?.value)) {
+				// 兼容仅返回值数组的情况
+				const idx = this.difficultyOptions.findIndex(opt => opt.value === e.value[0]);
+				if (idx > -1) this.selectedDifficulty = this.difficultyOptions[idx].label;
+			}
+			this.showDifficultySelector = false;
 		},
 		
-		// 加载今日运动记录
-		loadTodayRecord() {
-			// 这里可以调用API获取今日运动记录
-			console.log('加载今日运动记录')
+		onDirectionConfirm(e) {
+			const selected = e?.data?.[0] || null;
+			if (selected) {
+				this.selectedDirection = selected.label;
+			} else if (Array.isArray(e?.value)) {
+				const idx = this.directionOptions.findIndex(opt => opt.value === e.value[0]);
+				if (idx > -1) this.selectedDirection = this.directionOptions[idx].label;
+			}
+			this.showDirectionSelector = false;
 		},
 		
-		// 加载运动历史
-		loadHistoryList() {
-			// 这里可以调用API获取运动历史
-			console.log('加载运动历史')
+		selectCategory(category) {
+			this.activeCategory = category;
+		},
+		
+		startExercise(exercise) {
+			uni.showToast({
+				title: `开始${exercise.name}`,
+				icon: 'success'
+			});
+			// 这里可以跳转到具体的运动详情页面
+			// uni.navigateTo({
+			//     url: `/pages/exercise/detail?name=${exercise.name}`
+			// });
 		}
 	}
 }
 </script>
 
 <style lang="scss" scoped>
-.gym-container {
+.gym-page {
+	background-color: #f5f5f5;
 	min-height: 100vh;
-	background: #F5F5F5;
 }
 
+/* 导航栏样式 */
 .nav-bar {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 20rpx 32rpx;
-	background: #FFFFFF;
-	box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+	height: 88rpx;
+	padding: 0 32rpx;
+	background-color: #fff;
+	border-bottom: 1rpx solid #eee;
 }
 
-.nav-left {
+.nav-left, .nav-right {
 	width: 60rpx;
 	height: 60rpx;
 	display: flex;
@@ -315,7 +350,7 @@ export default {
 	justify-content: center;
 }
 
-.back-icon {
+.back-icon, .more-icon {
 	width: 40rpx;
 	height: 40rpx;
 }
@@ -323,333 +358,229 @@ export default {
 .nav-title {
 	font-size: 36rpx;
 	font-weight: 600;
-	color: #333333;
+	color: #333;
 }
 
-.nav-right {
-	width: 60rpx;
-}
-
-.top-section {
-	position: relative;
-	height: 300rpx;
-	overflow: hidden;
-}
-
-.background-image {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-}
-
-.bg-img {
-	width: 100%;
-	height: 100%;
-}
-
-.content-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(0, 0, 0, 0.3);
+/* 筛选区域样式 */
+.filter-section {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.welcome-text {
-	text-align: center;
-	color: #FFFFFF;
-}
-
-.title {
-	font-size: 40rpx;
-	font-weight: 600;
-	margin-bottom: 16rpx;
-}
-
-.subtitle {
-	font-size: 28rpx;
-	opacity: 0.9;
-}
-
-.sport-list {
-	padding: 32rpx;
-	background: #FFFFFF;
-	margin-bottom: 20rpx;
-}
-
-.section-title {
-	font-size: 32rpx;
-	font-weight: 600;
-	color: #333333;
-	margin-bottom: 24rpx;
-}
-
-.sport-grid {
-	display: flex;
-	flex-direction: column;
-	gap: 20rpx;
-}
-
-.sport-item {
-	display: flex;
-	align-items: center;
-	padding: 24rpx;
-	background: #F8F9FA;
-	border-radius: 16rpx;
-	border: 2rpx solid transparent;
-	transition: all 0.3s ease;
-}
-
-.sport-item:active {
-	border-color: #2C84FF;
-	background: #F0F7FF;
-}
-
-.sport-icon {
-	width: 80rpx;
-	height: 80rpx;
-	margin-right: 24rpx;
-}
-
-.icon-img {
-	width: 100%;
-	height: 100%;
-}
-
-.sport-info {
-	flex: 1;
-}
-
-.sport-name {
-	font-size: 32rpx;
-	font-weight: 600;
-	color: #333333;
-	margin-bottom: 8rpx;
-}
-
-.sport-desc {
-	font-size: 26rpx;
-	color: #666666;
-	margin-bottom: 8rpx;
-}
-
-.sport-duration {
-	font-size: 24rpx;
-	color: #2C84FF;
-	font-weight: 500;
-}
-
-.sport-action {
-	width: 60rpx;
-	height: 60rpx;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.play-icon {
-	width: 40rpx;
-	height: 40rpx;
-}
-
-.ai-section {
-	padding: 32rpx;
-	background: #FFFFFF;
-	margin-bottom: 20rpx;
-}
-
-.ai-card {
-	background: linear-gradient(135deg, #2C84FF 0%, #4A9EFF 100%);
-	border-radius: 20rpx;
-	padding: 32rpx;
-}
-
-.ai-content {
-	display: flex;
-	align-items: center;
-}
-
-.ai-icon {
-	width: 80rpx;
-	height: 80rpx;
-	margin-right: 24rpx;
-}
-
-.ai-img {
-	width: 100%;
-	height: 100%;
-}
-
-.ai-info {
-	flex: 1;
-}
-
-.ai-title {
-	font-size: 32rpx;
-	font-weight: 600;
-	color: #FFFFFF;
-	margin-bottom: 8rpx;
-}
-
-.ai-desc {
-	font-size: 26rpx;
-	color: #FFFFFF;
-	opacity: 0.9;
-}
-
-.ai-arrow {
-	width: 40rpx;
-	height: 40rpx;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.arrow-icon {
-	width: 24rpx;
-	height: 24rpx;
-}
-
-.record-section {
-	padding: 32rpx;
-	background: #FFFFFF;
-	margin-bottom: 20rpx;
-}
-
-.record-card {
-	display: flex;
-	justify-content: space-between;
-}
-
-.record-item {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	flex: 1;
-}
-
-.record-icon {
-	width: 60rpx;
-	height: 60rpx;
-	margin-bottom: 16rpx;
-}
-
-.record-img {
-	width: 100%;
-	height: 100%;
-}
-
-.record-label {
-	font-size: 24rpx;
-	color: #666666;
-	margin-bottom: 8rpx;
-}
-
-.record-value {
-	font-size: 32rpx;
-	font-weight: 600;
-	color: #2C84FF;
-}
-
-.history-section {
-	padding: 32rpx;
-	background: #FFFFFF;
-}
-
-.section-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 24rpx;
-}
-
-.view-all {
-	display: flex;
-	align-items: center;
-	gap: 8rpx;
-}
-
-.view-all-text {
-	font-size: 28rpx;
-	color: #2C84FF;
-}
-
-.history-list {
-	display: flex;
-	flex-direction: column;
+	padding: 20rpx 32rpx;
+	background-color: #fff;
 	gap: 16rpx;
 }
 
-.history-item {
+.filter-item {
+	flex: 1;
 	display: flex;
 	align-items: center;
-	padding: 24rpx;
-	background: #F8F9FA;
-	border-radius: 12rpx;
+	justify-content: space-between;
+	padding: 16rpx 20rpx;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+	border: 1rpx solid #ddd;
+	box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
 }
 
-.history-date {
-	width: 120rpx;
-	margin-right: 24rpx;
+.filter-item:active {
+	background-color: #f8f9fa;
+	transform: scale(0.98);
 }
 
-.date-text {
-	font-size: 28rpx;
-	font-weight: 600;
-	color: #333333;
-	margin-bottom: 4rpx;
+.filter-text {
+	font-size: 26rpx;
+	color: #333;
+	font-weight: 400;
 }
 
-.time-text {
+.filter-arrow {
+	width: 20rpx;
+	height: 20rpx;
+	opacity: 0.6;
+}
+
+/* 主要内容区域样式 */
+.main-content {
+	display: flex;
+	background-color: #fff;
+	min-height: calc(100vh - 200rpx);
+}
+
+/* 左侧分类导航样式 */
+.left-sidebar {
+	width: 180rpx;
+	background-color: #fafafa;
+	border-right: 1rpx solid #e0e0e0;
+	padding: 12rpx 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.sidebar-item {
+	padding: 18rpx 12rpx;
+	margin: 3rpx 8rpx;
+	border-radius: 6rpx;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	min-height: 76rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.sidebar-item:hover {
+	background-color: #f0f0f0;
+}
+
+.sidebar-item.active {
+	background-color: #007AFF;
+	box-shadow: 0 2rpx 6rpx rgba(0, 122, 255, 0.25);
+}
+
+.sidebar-text {
 	font-size: 24rpx;
-	color: #666666;
+	color: #555;
+	text-align: center;
+	line-height: 1.3;
+	word-break: break-all;
+	font-weight: 400;
 }
 
-.history-info {
+.sidebar-item.active .sidebar-text {
+	color: #fff;
+	font-weight: 500;
+}
+
+/* 左侧“全部运动”右侧难度控件样式 */
+.sidebar-item--controls {
+	justify-content: space-between;
+}
+.sidebar-left {
+	display: flex;
+	align-items: center;
+}
+.sidebar-control {
+	display: flex;
+	align-items: center;
+	gap: 8rpx;
+	padding: 10rpx 14rpx;
+	background-color: #fff;
+	border: 1rpx solid #E6E8EB;
+	border-radius: 10rpx;
+	box-shadow: 0 1rpx 3rpx rgba(16, 24, 40, 0.08);
+}
+.sidebar-control-text {
+	font-size: 24rpx;
+	color: #4D5562;
+	font-weight: 500;
+}
+.sidebar-control-arrow {
+	width: 22rpx;
+	height: 14rpx;
+	opacity: 0.8;
+}
+
+/* 右侧内容样式 */
+.right-content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+/* 运动分类样式 */
+/* 运动项目网格样式 */
+.exercise-grid {
+	padding: 24rpx 32rpx 32rpx;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24rpx;
 	flex: 1;
 }
 
-.history-sport {
-	font-size: 30rpx;
-	font-weight: 500;
-	color: #333333;
-	margin-bottom: 4rpx;
+.exercise-item {
+	width: calc(50% - 12rpx);
+	margin-bottom: 32rpx;
 }
 
-.history-duration {
-	font-size: 26rpx;
-	color: #666666;
+.exercise-card {
+	position: relative;
+	height: 240rpx;
+	border-radius: 16rpx;
+	overflow: hidden;
+	margin-bottom: 16rpx;
 }
 
-.history-status {
-	padding: 8rpx 16rpx;
-	border-radius: 20rpx;
+.exercise-illustration {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 120rpx;
+	height: 120rpx;
 }
 
-.history-status.completed {
-	background: #E8F5E8;
+.exercise-img {
+	width: 100%;
+	height: 100%;
 }
 
-.history-status.incomplete {
-	background: #FFF3E0;
+.exercise-arrows {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
-.status-text {
-	font-size: 24rpx;
-	font-weight: 500;
+.arrow-icon {
+	position: absolute;
+	width: 32rpx;
+	height: 32rpx;
 }
 
-.history-status.completed .status-text {
-	color: #4CAF50;
+.arrow-up-left {
+	top: 24rpx;
+	left: 24rpx;
 }
 
-.history-status.incomplete .status-text {
-	color: #FF9800;
+.arrow-up-right {
+	top: 24rpx;
+	right: 24rpx;
+}
+
+.arrow-down-left {
+	bottom: 24rpx;
+	left: 24rpx;
+}
+
+.arrow-down-right {
+	bottom: 24rpx;
+	right: 24rpx;
+}
+
+.arrow-left {
+	top: 50%;
+	left: 24rpx;
+	transform: translateY(-50%);
+}
+
+.arrow-right {
+	top: 50%;
+	right: 24rpx;
+	transform: translateY(-50%);
+}
+
+.exercise-name {
+	font-size: 28rpx;
+	color: #333;
+	text-align: center;
+	line-height: 1.4;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 750rpx) {
+	.exercise-item {
+		width: calc(50% - 12rpx);
+	}
 }
 </style>

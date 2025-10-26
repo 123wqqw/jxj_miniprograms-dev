@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "physical-school-rank": "/pagesPlan/classPlan/physicalTestClass/components/physicalRankInfo/components/physicalSchoolRank",
+    "physical-rank-item": "/pagesPlan/classPlan/physicalTestClass/components/physicalRankInfo/components/physicalRankItem"
+  }
+}

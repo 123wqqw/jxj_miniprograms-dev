@@ -25,30 +25,30 @@
 /* 透明度 */
 /* 文章场景相关 */
 .maxBox.data-v-40fd5d84 {
-  width: 750rpx;
+  width: 750upx;
   overflow: scroll;
 }
 .maxBox .formBox.data-v-40fd5d84 {
-  width: 750rpx;
-  height: 176rpx;
-  margin-top: 16rpx;
+  width: 750upx;
+  height: 176upx;
+  margin-top: 16upx;
   box-sizing: border-box;
 }
 .maxBox .formBox .formItem.data-v-40fd5d84 {
-  padding: 0 32rpx;
+  padding: 0 32upx;
   background: #FFFFFF;
-  height: 88rpx;
-  line-height: 88rpx;
-  font-size: 28rpx;
+  height: 88upx;
+  line-height: 88upx;
+  font-size: 28upx;
   color: #202020;
-  border-bottom: 1rpx solid #DDDDDD;
+  border-bottom: 1upx solid #DDDDDD;
 }
 .maxBox .formBox .formItem .formLeft.data-v-40fd5d84 {
-  width: 140rpx;
+  width: 140upx;
   float: left;
   display: flex;
   justify-content: space-around;
-  margin-right: 8rpx;
+  margin-right: 8upx;
 }
 .maxBox .formBox .formItem .areaNumber.data-v-40fd5d84 {
   position: relative;
@@ -57,34 +57,34 @@
 }
 .maxBox .formBox .formItem .input-main.data-v-40fd5d84 {
   float: left;
-  height: 88rpx;
+  height: 88upx;
 }
 .maxBox .formBox .formItem .clock-input-placeholder.data-v-40fd5d84 {
   color: #B2B2B2;
 }
 .maxBox .formBox .formItem .yzCode.data-v-40fd5d84 {
-  font-size: 24rpx;
-  width: 120rpx;
+  font-size: 24upx;
+  width: 120upx;
   float: right;
   color: #5C8FF7;
 }
 .maxBox .formBox .submit-btn.data-v-40fd5d84 {
-  width: 638rpx;
-  height: 88rpx;
-  margin-top: 120rpx;
+  width: 638upx;
+  height: 88upx;
+  margin-top: 120upx;
   background-color: #5C8FF7;
   border: none;
-  border-radius: 44rpx;
-  font-size: 28rpx;
-  line-height: 88rpx;
+  border-radius: 44upx;
+  font-size: 28upx;
+  line-height: 88upx;
   color: #FFFFFF;
 }
 .data-v-40fd5d84 .u-dropdown__content {
-  width: 750rpx !important;
-  margin-left: -166rpx;
+  width: 750upx !important;
+  margin-left: -166upx;
 }
 .data-v-40fd5d84 .u-dropdown__content__popup {
-  width: 750rpx;
+  width: 750upx;
 }
 .flexItem.data-v-40fd5d84 {
   display: flex;

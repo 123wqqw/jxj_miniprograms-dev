@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "阳光跑记录",
+  "usingComponents": {
+    "u-dropdown": "/node-modules/uview-ui/components/u-dropdown/u-dropdown",
+    "u-dropdown-item": "/node-modules/uview-ui/components/u-dropdown-item/u-dropdown-item",
+    "u-search": "/node-modules/uview-ui/components/u-search/u-search",
+    "u-loadmore": "/node-modules/uview-ui/components/u-loadmore/u-loadmore",
+    "u-image": "/node-modules/uview-ui/components/u-image/u-image",
+    "list-item": "/pagesCenter/sunshineRun/components/listItem"
+  }
+}

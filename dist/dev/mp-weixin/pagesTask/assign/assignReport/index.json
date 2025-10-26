@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "作业报告",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "u-subsection": "/node-modules/uview-ui/components/u-subsection/u-subsection",
+    "u-picker": "/node-modules/uview-ui/components/u-picker/u-picker",
+    "u-empty": "/node-modules/uview-ui/components/u-empty/u-empty"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "阳光跑详情",
+  "usingComponents": {
+    "u-dropdown": "/node-modules/uview-ui/components/u-dropdown/u-dropdown",
+    "u-dropdown-item": "/node-modules/uview-ui/components/u-dropdown-item/u-dropdown-item",
+    "u-search": "/node-modules/uview-ui/components/u-search/u-search",
+    "list-item": "/pagesCenter/sunshineRun/components/listItem",
+    "calendar": "/pagesCenter/sportCenter/runDetails/components/calendar/index",
+    "student-table": "/pagesCenter/sunshineRun/detail/components/studentTable",
+    "teacher-table": "/pagesCenter/sunshineRun/detail/components/teacherTable"
+  }
+}

@@ -30,7 +30,7 @@
 }
 .student-physical-detail-container .student-info-box.data-v-0fb77b8a {
   width: 100%;
-  height: 280rpx;
+  height: 280upx;
   background-color: #5C8FF7;
   position: absolute;
   top: 0;
@@ -38,17 +38,17 @@
 }
 .student-physical-detail-container .student-info-box .student-info.data-v-0fb77b8a {
   width: 100%;
-  height: 176rpx;
-  padding: 40rpx 32rpx;
+  height: 176upx;
+  padding: 40upx 32upx;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .student-physical-detail-container .student-info-box .student-info .avatar.data-v-0fb77b8a {
-  width: 96rpx;
-  height: 96rpx;
-  min-width: 96rpx;
-  margin-right: 16rpx;
+  width: 96upx;
+  height: 96upx;
+  min-width: 96upx;
+  margin-right: 16upx;
 }
 .student-physical-detail-container .student-info-box .student-info .info-box.data-v-0fb77b8a {
   flex: 1;
@@ -68,90 +68,90 @@
   align-items: center;
 }
 .student-physical-detail-container .student-info-box .student-info .info-box .info-text .top .name.data-v-0fb77b8a {
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: 500;
   color: #FFFFFF;
 }
 .student-physical-detail-container .student-info-box .student-info .info-box .info-text .top .class-name.data-v-0fb77b8a {
-  height: 48rpx;
-  padding: 0 14rpx;
-  font-size: 20rpx;
+  height: 48upx;
+  padding: 0 14upx;
+  font-size: 20upx;
   font-weight: 400;
   color: #FFFFFF;
-  line-height: 46rpx;
-  border-radius: 8rpx;
-  border: 1rpx solid #FFFFFF;
-  margin-left: 16rpx;
+  line-height: 46upx;
+  border-radius: 8upx;
+  border: 1upx solid #FFFFFF;
+  margin-left: 16upx;
 }
 .student-physical-detail-container .student-info-box .student-info .info-box .info-text .bottom.data-v-0fb77b8a {
-  font-size: 24rpx;
-  line-height: 36rpx;
+  font-size: 24upx;
+  line-height: 36upx;
   font-weight: 400;
   color: #FFFFFF;
-  margin-top: 8rpx;
+  margin-top: 8upx;
 }
 .student-physical-detail-container .student-info-box .student-info .info-box .score-text.data-v-0fb77b8a {
-  font-size: 40rpx;
+  font-size: 40upx;
   color: #FFFFFF;
   font-weight: 400;
   vertical-align: baseline;
 }
 .student-physical-detail-container .student-info-box .student-info .info-box .score-text label.data-v-0fb77b8a {
-  font-size: 80rpx;
+  font-size: 80upx;
 }
 .student-physical-detail-container .student-info-box .student-info .download-btn.data-v-0fb77b8a {
-  width: 88rpx;
-  height: 48rpx;
-  margin-left: 24rpx;
-  border-radius: 24rpx;
+  width: 88upx;
+  height: 48upx;
+  margin-left: 24upx;
+  border-radius: 24upx;
   background-color: #FFFFFF;
-  font-size: 24rpx;
+  font-size: 24upx;
   font-weight: 400;
   color: #5C8FF7;
-  line-height: 48rpx;
+  line-height: 48upx;
   text-align: center;
 }
 .student-physical-detail-container .physical-data.data-v-0fb77b8a {
   width: 100%;
-  margin-top: 184rpx;
+  margin-top: 184upx;
   padding-bottom: 44rpx;
   position: relative;
   z-index: 1;
 }
 .student-physical-detail-container .physical-data .physical-score-list.data-v-0fb77b8a {
-  width: 704rpx;
+  width: 704upx;
   margin: 0 auto;
-  border-radius: 24rpx;
+  border-radius: 24upx;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  border: 1rpx solid #E8E8E8;
-  box-shadow: 0rpx 0rpx 16rpx 0rpx rgba(0, 0, 0, 0.08), 0rpx 0rpx 2rpx 0rpx rgba(0, 0, 0, 0.1);
+  border: 1upx solid #E8E8E8;
+  box-shadow: 0upx 0upx 16upx 0upx rgba(0, 0, 0, 0.08), 0upx 0upx 2upx 0upx rgba(0, 0, 0, 0.1);
 }
 .student-physical-detail-container .physical-data .physical-score-list .mark-item.data-v-0fb77b8a {
   display: flex;
   width: 50%;
-  height: 55rpx;
-  line-height: 55rpx;
+  height: 55upx;
+  line-height: 55upx;
   font-size: 0;
-  border-bottom: 1rpx solid #E8E8E8;
+  border-bottom: 1upx solid #E8E8E8;
   overflow: hidden;
-  font-size: 20rpx;
+  font-size: 20upx;
   font-weight: 400;
 }
 .student-physical-detail-container .physical-data .physical-score-list .mark-item .mark-key.data-v-0fb77b8a {
-  min-width: 174rpx;
+  min-width: 174upx;
   height: 100%;
   text-align: left;
-  border-right: 1rpx solid #E8E8E8;
+  border-right: 1upx solid #E8E8E8;
   background-color: #EBEBEB;
   color: #464646;
-  padding: 0 24rpx;
+  padding: 0 24upx;
 }
 .student-physical-detail-container .physical-data .physical-score-list .mark-item .mark-value.data-v-0fb77b8a {
   flex: 1;
   height: 100%;
-  padding-left: 16rpx;
+  padding-left: 16upx;
   background-color: #FFFFFF;
   color: #707070;
 }
@@ -159,15 +159,15 @@
   border-bottom: none;
 }
 .student-physical-detail-container .physical-data .physical-score-rank.data-v-0fb77b8a {
-  width: 704rpx;
-  height: 360rpx;
+  width: 704upx;
+  height: 360upx;
   margin: 0 auto;
-  margin-top: 24rpx;
-  border-radius: 24rpx;
+  margin-top: 24upx;
+  border-radius: 24upx;
   overflow: hidden;
   background-color: #FFFFFF;
-  box-shadow: 0rpx 0rpx 16rpx 0rpx rgba(0, 0, 0, 0.08), 0rpx 0rpx 2rpx 0rpx rgba(0, 0, 0, 0.1);
-  padding: 24rpx;
+  box-shadow: 0upx 0upx 16upx 0upx rgba(0, 0, 0, 0.08), 0upx 0upx 2upx 0upx rgba(0, 0, 0, 0.1);
+  padding: 24upx;
   display: flex;
 }
 .student-physical-detail-container .physical-data .physical-score-rank .rank-charts.data-v-0fb77b8a {
@@ -176,54 +176,54 @@
   position: relative;
 }
 .student-physical-detail-container .physical-data .physical-score-rank .rank-charts .wave.data-v-0fb77b8a {
-  width: 163rpx;
-  height: 34rpx;
+  width: 163upx;
+  height: 34upx;
   position: absolute;
-  bottom: 70rpx;
+  bottom: 70upx;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 .student-physical-detail-container .physical-data .physical-score-rank .rank-charts .class-rank.data-v-0fb77b8a {
   width: 100%;
-  height: 32rpx;
+  height: 32upx;
   position: absolute;
-  bottom: 8rpx;
+  bottom: 8upx;
   left: 0;
   text-align: center;
-  line-height: 32rpx;
-  font-size: 24rpx;
+  line-height: 32upx;
+  font-size: 24upx;
   font-weight: 400;
   color: #202020;
 }
 .student-physical-detail-container .physical-data .physical-score-rank .rank-text.data-v-0fb77b8a {
-  width: 305rpx;
+  width: 305upx;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 .student-physical-detail-container .physical-data .physical-score-rank .rank-text .level-text.data-v-0fb77b8a {
-  margin-top: 8rpx;
-  margin-bottom: 16rpx;
-  font-size: 40rpx;
+  margin-top: 8upx;
+  margin-bottom: 16upx;
+  font-size: 40upx;
   font-weight: 500;
   color: #5C8FF7;
 }
 .student-physical-detail-container .physical-data .physical-score-rank .rank-text .comment-text.data-v-0fb77b8a {
   width: 100%;
-  font-size: 24rpx;
+  font-size: 24upx;
   font-weight: 400;
   color: #707070;
-  line-height: 32rpx;
+  line-height: 32upx;
 }
 .student-physical-detail-container .physical-data .physical-score-bar.data-v-0fb77b8a {
-  width: 704rpx;
-  height: 660rpx;
+  width: 704upx;
+  height: 660upx;
   margin: 0 auto;
-  margin-top: 24rpx;
-  border-radius: 24rpx;
+  margin-top: 24upx;
+  border-radius: 24upx;
   overflow: hidden;
   background-color: #FFFFFF;
-  box-shadow: 0rpx 0rpx 16rpx 0rpx rgba(0, 0, 0, 0.08), 0rpx 0rpx 2rpx 0rpx rgba(0, 0, 0, 0.1);
-  padding: 24rpx;
+  box-shadow: 0upx 0upx 16upx 0upx rgba(0, 0, 0, 0.08), 0upx 0upx 2upx 0upx rgba(0, 0, 0, 0.1);
+  padding: 24upx;
 }

@@ -1,0 +1,22 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 人物头部 -->
+  <circle cx="60" cy="25" r="10" fill="#FFB366"/>
+  
+  <!-- 人物躯干 -->
+  <rect x="50" y="35" width="20" height="35" rx="10" fill="#FFB366"/>
+  
+  <!-- 手臂 -->
+  <rect x="35" y="45" width="12" height="4" rx="2" fill="#FFB366"/>
+  <rect x="73" y="45" width="12" height="4" rx="2" fill="#FFB366"/>
+  
+  <!-- 腿部 -->
+  <rect x="54" y="70" width="5" height="25" rx="2.5" fill="#FFB366"/>
+  <rect x="61" y="70" width="5" height="25" rx="2.5" fill="#FFB366"/>
+  
+  <!-- 测量带 -->
+  <ellipse cx="60" cy="55" rx="18" ry="3" fill="none" stroke="#FF8C42" stroke-width="2"/>
+  
+  <!-- 测量数字 -->
+  <rect x="75" y="50" width="15" height="8" rx="2" fill="#FFF" stroke="#FF8C42"/>
+  <text x="82.5" y="56" text-anchor="middle" font-size="6" fill="#FF8C42">75cm</text>
+</svg>

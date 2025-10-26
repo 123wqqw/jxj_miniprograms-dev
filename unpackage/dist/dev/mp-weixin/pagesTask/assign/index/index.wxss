@@ -1,13 +1,13 @@
 .assign-task-container {
   width: 100%;
-  min-height: 1000rpx;
+  min-height: 1000upx;
   height: auto !important;
   overflow: hidden;
 }
 .assign-task-container .task-content {
   width: 100%;
-  min-height: 1000rpx;
+  min-height: 1000upx;
   height: auto !important;
-  margin-top: 16rpx;
+  margin-top: 16upx;
 }
 

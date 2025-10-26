@@ -1,0 +1,40 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-32[0].rules[0].use[1]!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js??clonedRuleSet-32[0].rules[0].use[2]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-32[0].rules[0].use[3]!./node_modules/less-loader/dist/cjs.js??clonedRuleSet-32[0].rules[0].use[4]!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js??clonedRuleSet-32[0].rules[0].use[5]!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/index.js??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./pagesPlan/classPlan/index/index.vue?vue&type=style&index=0&id=b169fc32&lang=less&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+view[data-v-b169fc32] {
+  box-sizing: border-box;
+}
+.classPlan-container[data-v-b169fc32] {
+  padding: 30rpx 44rpx;
+}
+.classPlan-item[data-v-b169fc32] {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 2rpx 18rpx -7rpx #6695F6;
+  border-radius: 22rpx;
+  margin-bottom: 30rpx;
+  padding: 44rpx 30rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  line-height: 1.5;
+  color: #858585;
+}
+.classPlan-item-icon[data-v-b169fc32] {
+  width: 104rpx;
+  height: 104rpx;
+  padding: 20rpx;
+  background: rgba(67, 127, 249, 0.05);
+  border-radius: 8rpx;
+  border: 1px solid #437FF9;
+  margin-right: 20rpx;
+}
+.classPlan-item-container[data-v-b169fc32] {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 20rpx;
+}
+

@@ -1,0 +1,219 @@
+{
+  "pages": [
+    "pages/login/index/index",
+    "pages/mine/index/index",
+    "pages/home/index/index",
+    "pages/login/login/login",
+    "pages/login/bindPhone/bindPhone",
+    "pages/webView/index/index",
+    "pages/login/auth/step1",
+    "pages/login/forgotPassword/step2",
+    "pages/login/forgotPassword/step3",
+    "pages/login/register/step2",
+    "pages/login/register/step3"
+  ],
+  "subPackages": [
+    {
+      "root": "pagesTask",
+      "pages": [
+        "assign/index/index",
+        "assign/selectAssign/index",
+        "assign/templateInfo/index",
+        "assign/replacement/index",
+        "assign/assignTemplate/index",
+        "correct/index/index",
+        "assign/assignTask/assignTask",
+        "assign/assignTask/selectAi",
+        "assign/assignTask/sportDetail",
+        "assign/assignTask/taskDetails",
+        "assign/assignTaskInfo/assignTaskInfo",
+        "assign/clockStatistics/clockStatistics",
+        "assign/correctTask/correctTask",
+        "assign/clockDetails/clockDetails",
+        "correct/classStatistics/classStatistics",
+        "correct/batchCorrectTask/batchCorrectTask",
+        "correct/studentTaskDetail/studentTaskDetail",
+        "correct/exportCorrectFile/exportCorrectFile",
+        "correct/correctStudentDetail/correctStudentDetail",
+        "correct/schemeIndex/schemeIndex",
+        "correct/schemeClassStatistics/schemeClassStatistics",
+        "correct/schemeStudentDetail/schemeStudentDetail",
+        "assign/assignTask/clearTask",
+        "assign/assignReport/index",
+        "assign/assignReport/dataExport",
+        "assign/assignReport/classes"
+      ]
+    },
+    {
+      "root": "pagesData",
+      "pages": [
+        "physicalData/index/index",
+        "physicalData/classDetails/classDetails",
+        "physicalData/studentDetail/studentDetail",
+        "physicalData/studentDetail/downloadFile",
+        "physicalFactorData/index/index",
+        "physicalFactorData/classDetails/classDetails",
+        "physicalFactorData/studentDetail/studentDetail",
+        "prizeVerification/page/index",
+        "prizeVerification/detail/index",
+        "prizeVerification/record/index"
+      ]
+    },
+    {
+      "root": "pagesPlan",
+      "pages": [
+        "classPlan/index/index",
+        "classPlan/indicator/index",
+        "classPlan/physicalTestClass/index",
+        "classPlan/coursewareSet/index",
+        "classPlan/selectScheme/index",
+        "classPlan/replacement/index",
+        "classPlan/replacement/sportDetail",
+        "classPlan/assignment/index",
+        "intervention/index/intervention",
+        "intervention/detail/interventionDetail"
+      ]
+    },
+    {
+      "root": "pagesMine",
+      "pages": [
+        "mine/classManage/classManage",
+        "mine/facialCapture/facialCapture",
+        "mine/editPhone/editPhone",
+        "mine/myInformation/myInformation",
+        "mine/facialSelfie/facialSelfie",
+        "mine/classConcat/calssConcat",
+        "mine/clockDateSetting/clockDateSetting",
+        "mine/classConcatHelp/classConcatHelp"
+      ]
+    },
+    {
+      "root": "H5",
+      "pages": [
+        "share/index"
+      ]
+    },
+    {
+      "root": "pagesCenter",
+      "pages": [
+        "sportCenter/index",
+        "sportCenter/runnStats/index",
+        "sportCenter/runnStats/semseterSelect/index",
+        "sportCenter/runnStats/classDetail/index",
+        "sportCenter/runnStats/studentDetail/index",
+        "sportCenter/runDetails/index",
+        "sportCenter/runDetails/runRecord/index",
+        "classTraining/page/index",
+        "classTraining/detail/index",
+        "casuallyClass/page/index",
+        "casuallyClass/detail/index",
+        "freeExercise/page/index",
+        "sunshineRun/page/index",
+        "sunshineRun/detail/index"
+      ]
+    },
+    {
+      "root": "pagesNotice",
+      "pages": [
+        "index/index",
+        "leaveNotice/index",
+        "leaveNoticeReview/index"
+      ]
+    },
+    {
+      "root": "pagesStudent",
+      "pages": [
+        "home/index",
+        "gym/index"
+      ]
+    },
+    {
+      "root": "pages/students",
+      "pages": [
+        "login/index",
+        "register/index",
+        "forgotPassword/index",
+        "home/index",
+        "gym/index",
+        "homework/index",
+        "leaderboard/index",
+        "records/index"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f6f6f6",
+    "pageOrientation": "portrait"
+  },
+  "tabBar": {
+    "color": "#A8ABB2",
+    "selectedColor": "#409EFF",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "height": "56px",
+    "iconWidth": "24px",
+    "spacing": "2px",
+    "fontSize": "12px",
+    "list": [
+      {
+        "pagePath": "pages/home/index/index",
+        "iconPath": "static/images/tabBar/teacher-home.png",
+        "selectedIconPath": "static/images/tabBar/teacher-home-active.png",
+        "text": "校体云"
+      },
+      {
+        "pagePath": "pages/mine/index/index",
+        "iconPath": "static/images/tabBar/teacher-mine.png",
+        "selectedIconPath": "static/images/tabBar/teacher-mine-active.png",
+        "text": "我"
+      }
+    ]
+  },
+  "preloadRule": {
+    "pagesTask/assign/index/index": {
+      "network": "all",
+      "packages": [
+        "pagesTask"
+      ]
+    },
+    "pagesTask/correct/index/index": {
+      "network": "all",
+      "packages": [
+        "pagesTask"
+      ]
+    },
+    "pagesData/physicalData/index/index": {
+      "network": "all",
+      "packages": [
+        "pagesData"
+      ]
+    },
+    "pagesData/physicalFactorData/index/index": {
+      "network": "all",
+      "packages": [
+        "pagesData"
+      ]
+    },
+    "pages/mine/index/index": {
+      "network": "all",
+      "packages": [
+        "pagesMine"
+      ]
+    },
+    "pagesCenter/sportCenter/index": {
+      "network": "all",
+      "packages": [
+        "pagesCenter"
+      ]
+    }
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取当前位置"
+    }
+  },
+  "usingComponents": {}
+}

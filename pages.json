@@ -75,6 +75,7 @@
 				"enablePullDownRefresh": false
 			}
 		},
+
 		{
 			"path": "pages/login/auth/step1",
 			"style": {

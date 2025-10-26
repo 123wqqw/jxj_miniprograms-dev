@@ -25,9 +25,9 @@
 /* 透明度 */
 /* 文章场景相关 */
 .container.data-v-09d1ac9e {
-  width: 750rpx;
-  height: 144rpx;
-  padding-top: 27rpx;
+  width: 750upx;
+  height: 144upx;
+  padding-top: 27upx;
   background: #FFFFFF;
 }
 .black-text.data-v-09d1ac9e {
@@ -35,13 +35,13 @@
 }
 .class-name.data-v-09d1ac9e {
   position: absolute;
-  top: 22rpx;
-  left: 32rpx;
-  width: 100rpx;
-  height: 100rpx;
+  top: 22upx;
+  left: 32upx;
+  width: 100upx;
+  height: 100upx;
   background: #5C8FF7;
-  border-radius: 12rpx;
-  font-size: 24rpx;
+  border-radius: 12upx;
+  font-size: 24upx;
   font-weight: 500;
   color: #FFFFFF;
   display: flex;
@@ -51,21 +51,21 @@
 }
 .class-num.data-v-09d1ac9e {
   position: absolute;
-  top: 28rpx;
-  left: 144rpx;
-  height: 36rpx;
-  font-size: 28rpx;
+  top: 28upx;
+  left: 144upx;
+  height: 36upx;
+  font-size: 28upx;
   font-weight: 500;
   color: #202020;
 }
 .student-num.data-v-09d1ac9e {
   position: absolute;
-  top: 79rpx;
-  left: 144rpx;
-  height: 36rpx;
-  font-size: 28rpx;
+  top: 79upx;
+  left: 144upx;
+  height: 36upx;
+  font-size: 28upx;
   color: #707070;
 }
 .student-num .num-type.data-v-09d1ac9e {
-  margin-right: 32rpx;
+  margin-right: 32upx;
 }

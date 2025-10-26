@@ -29,7 +29,7 @@
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  min-height: 1000rpx;
+  min-height: 1000upx;
   height: auto !important;
 }
 .taskarrange .dfc.data-v-278fa72c {
@@ -45,12 +45,12 @@
 }
 .taskarrange .box.data-v-278fa72c {
   background: #FFFFFF;
-  box-shadow: 0rpx 4rpx 10rpx rgba(0, 0, 0, 0.04);
-  border-radius: 12rpx;
-  margin-bottom: 20rpx;
+  box-shadow: 0upx 4upx 10upx rgba(0, 0, 0, 0.04);
+  border-radius: 12upx;
+  margin-bottom: 20upx;
 }
 .taskarrange .box .box-header.data-v-278fa72c {
-  height: 88rpx;
+  height: 88upx;
   width: 100%;
   display: flex;
   align-items: center;
@@ -66,22 +66,22 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: 400;
   color: #707070;
-  margin: 16rpx 0;
+  margin: 16upx 0;
 }
 .taskarrange .task-division .setting.data-v-278fa72c {
-  height: 28rpx;
-  width: 28rpx;
-  margin-right: 14rpx;
+  height: 28upx;
+  width: 28upx;
+  margin-right: 14upx;
 }
 .taskarrange .checkAll.data-v-278fa72c {
-  line-height: 88rpx;
-  height: 88rpx;
-  border-bottom: 1rpx solid #E6E6E6;
+  line-height: 88upx;
+  height: 88upx;
+  border-bottom: 1upx solid #E6E6E6;
   background: #FFFFFF;
-  padding-left: 32rpx;
+  padding-left: 32upx;
   box-sizing: border-box;
 }
 .taskarrange .checkAll.data-v-278fa72c  .u-checkbox {
@@ -91,11 +91,11 @@
   position: relative;
 }
 .taskarrange .task-grade .box-header.data-v-278fa72c {
-  padding: 0 12rpx 0 32rpx;
-  font-size: 28rpx;
+  padding: 0 12upx 0 32upx;
+  font-size: 28upx;
   font-weight: 400;
   color: #202020;
-  border-bottom: solid 1rpx #DDDDDD;
+  border-bottom: solid 1upx #DDDDDD;
 }
 .taskarrange .task-grade .box-header .header-left.data-v-278fa72c {
   flex-grow: 1;
@@ -104,28 +104,28 @@
   align-items: center;
 }
 .taskarrange .task-grade .box-header .header-right.data-v-278fa72c {
-  margin-right: 32rpx;
+  margin-right: 32upx;
 }
 .taskarrange .task-grade .box-header .header-right .checkItemImg.data-v-278fa72c {
-  width: 25rpx;
-  height: 25rpx;
-  margin-left: 7rpx;
+  width: 25upx;
+  height: 25upx;
+  margin-left: 7upx;
 }
 .taskarrange .task-grade .box-content.data-v-278fa72c {
-  padding: 24rpx 36rpx;
-  margin-left: 42rpx;
+  padding: 24upx 36upx;
+  margin-left: 42upx;
 }
 .taskarrange .task-grade .box-content .grade-row.data-v-278fa72c {
-  width: 540rpx;
-  padding: 14rpx 0;
+  width: 540upx;
+  padding: 14upx 0;
 }
 .taskarrange .task-grade .box-content .grade-row .name.data-v-278fa72c {
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: 400;
   color: #202020;
 }
 .taskarrange .task-grade .box-content .grade-row .state.data-v-278fa72c {
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: 400;
   color: #707070;
   display: flex;
@@ -137,25 +137,25 @@
   color: #5C8FF7;
 }
 .taskarrange .task-grade .box-content .grade-row .state .state-right.data-v-278fa72c {
-  width: 13rpx;
-  height: 24rpx;
-  margin-left: 20rpx;
+  width: 13upx;
+  height: 24upx;
+  margin-left: 20upx;
 }
 .taskarrange .task-grade .box-content .default-content.data-v-278fa72c {
   width: 100%;
-  margin: 14rpx 0;
-  height: 56rpx;
+  margin: 14upx 0;
+  height: 56upx;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .taskarrange .task-grade .box-content .default-content .name.data-v-278fa72c {
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: 400;
   color: #202020;
 }
 .taskarrange .task-grade .box-content .default-content .state.data-v-278fa72c {
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: 400;
   color: #707070;
 }
@@ -163,52 +163,52 @@
   display: none;
 }
 .taskarrange .task-divider.data-v-278fa72c {
-  margin: 40rpx 0 15rpx 0;
+  margin: 40upx 0 15upx 0;
 }
 .taskarrange .task-button.data-v-278fa72c {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80rpx;
-  line-height: 80rpx;
+  height: 80upx;
+  line-height: 80upx;
   opacity: 1;
-  border-radius: 40rpx;
+  border-radius: 40upx;
   color: #FFFFFF;
 }
 .taskarrange .task-button.remind.data-v-278fa72c {
-  width: 686rpx;
+  width: 686upx;
   background: linear-gradient(270deg, #0D9FFF 0%, #78CBFF 100%);
 }
 .taskarrange .task-button.disabled.data-v-278fa72c {
-  width: 686rpx;
+  width: 686upx;
   background: #B2B2B2;
 }
 .taskarrange .task-button.addtask.data-v-278fa72c {
-  width: 331rpx;
+  width: 331upx;
   background: #5C8FF7;
 }
 .taskarrange .task-button.cleartask.data-v-278fa72c {
-  width: 331rpx;
+  width: 331upx;
   background: #5C8FF7;
 }
 .taskarrange .task-button.clear.data-v-278fa72c {
-  width: 331rpx;
+  width: 331upx;
   background: #B2B2B2;
 }
 .taskarrange .task-button .remain-icon.data-v-278fa72c {
-  width: 30rpx;
-  height: 30rpx;
-  margin-right: 14rpx;
+  width: 30upx;
+  height: 30upx;
+  margin-right: 14upx;
 }
 .taskarrange .task-button .addtask-icon.data-v-278fa72c {
-  width: 28rpx;
-  height: 28rpx;
-  margin-right: 14rpx;
+  width: 28upx;
+  height: 28upx;
+  margin-right: 14upx;
 }
 .taskarrange .task-button .clear-icon.data-v-278fa72c {
-  width: 22rpx;
-  height: 22rpx;
-  margin-right: 14rpx;
+  width: 22upx;
+  height: 22upx;
+  margin-right: 14upx;
 }
 .taskarrange .btn-box-content.data-v-278fa72c {
   width: 100%;
@@ -218,7 +218,7 @@
   padding-bottom: env(safe-area-inset-bottom);
 }
 .taskarrange .btn-box-content .default-content.data-v-278fa72c {
-  height: 88rpx;
+  height: 88upx;
   padding: 32rpx 0;
   box-sizing: content-box;
 }
@@ -240,26 +240,26 @@
 }
 .taskarrange .bottom-btn-box .btn-content.data-v-278fa72c {
   width: 100%;
-  height: 88rpx;
-  padding: 32rpx 0;
+  height: 88upx;
+  padding: 32upx 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
   box-sizing: content-box;
 }
 .taskarrange .bottom-btn-box .action-btn.data-v-278fa72c {
-  width: 320rpx;
-  height: 88rpx;
+  width: 320upx;
+  height: 88upx;
   background-color: #5C8FF7;
   border: none;
-  border-radius: 44rpx;
-  font-size: 32rpx;
+  border-radius: 44upx;
+  font-size: 32upx;
   font-weight: 600;
   color: #FFFFFF;
-  line-height: 88rpx;
+  line-height: 88upx;
 }
 .taskarrange .bottom-btn-box .action-btn-big.data-v-278fa72c {
-  width: 638rpx;
+  width: 638upx;
   margin: 0 auto;
 }
 .taskarrange .bottom-btn-box .active.data-v-278fa72c {

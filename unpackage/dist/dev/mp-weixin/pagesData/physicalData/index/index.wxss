@@ -25,122 +25,122 @@
 /* 透明度 */
 /* 文章场景相关 */
 .maxBox.data-v-0fca3654 {
-  width: 750rpx;
+  width: 750upx;
   overflow: scroll;
-  padding-top: 16rpx;
+  padding-top: 16upx;
   /* background: #F5F5F5; */
 }
 .maxBox .topScreen.data-v-0fca3654 {
-  margin: 0 0 16rpx 31rpx;
+  margin: 0 0 16upx 31upx;
 }
 .maxBox .topScreen .topTitle.data-v-0fca3654 {
   color: #202020;
-  font-size: 24rpx;
-  margin-right: 15rpx;
+  font-size: 24upx;
+  margin-right: 15upx;
   display: inline-block;
 }
 .maxBox .topScreen .changeDown.data-v-0fca3654 {
-  width: 18rpx;
-  height: 16rpx;
+  width: 18upx;
+  height: 16upx;
 }
 .maxBox .data-item.data-v-0fca3654 {
-  width: 702rpx;
-  height: 228rpx;
+  width: 702upx;
+  height: 228upx;
   background: #FFFFFF;
-  box-shadow: 0px 0px 8rpx 0px rgba(112, 112, 112, 0.1);
-  border-radius: 24rpx;
-  margin-bottom: 16rpx;
-  margin-left: 24rpx;
+  box-shadow: 0px 0px 8upx 0px rgba(112, 112, 112, 0.1);
+  border-radius: 24upx;
+  margin-bottom: 16upx;
+  margin-left: 24upx;
   position: relative;
   color: #707070;
 }
 .maxBox .data-item .className.data-v-0fca3654 {
-  width: 100rpx;
-  height: 100rpx;
+  width: 100upx;
+  height: 100upx;
   background: #5C8FF7;
-  border-radius: 12rpx;
-  border: 2rpx solid #5C8FF7;
-  font-size: 24rpx;
+  border-radius: 12upx;
+  border: 2upx solid #5C8FF7;
+  font-size: 24upx;
   font-weight: 500;
   color: #FFFFFF;
-  padding: 15rpx 12rpx;
+  padding: 15upx 12upx;
   box-sizing: border-box;
   position: absolute;
-  top: 23rpx;
-  left: 32rpx;
+  top: 23upx;
+  left: 32upx;
   text-align: center;
 }
 .maxBox .data-item .classNumber.data-v-0fca3654 {
-  height: 36rpx;
-  font-size: 28rpx;
+  height: 36upx;
+  font-size: 28upx;
   font-weight: 500;
   color: #202020;
   position: absolute;
-  top: 28rpx;
-  left: 144rpx;
+  top: 28upx;
+  left: 144upx;
   display: flex;
   align-items: center;
 }
 .maxBox .data-item .help-icon.data-v-0fca3654 {
-  width: 34rpx;
-  height: 34rpx;
+  width: 34upx;
+  height: 34upx;
   border-radius: 50%;
-  font-size: 24rpx;
+  font-size: 24upx;
   color: #FFFFFF;
-  line-height: 34rpx;
+  line-height: 34upx;
   text-align: center;
   background-color: #464646;
-  margin-left: 16rpx;
+  margin-left: 16upx;
 }
 .maxBox .data-item .studentNum.data-v-0fca3654 {
-  height: 36rpx;
-  font-size: 28rpx;
+  height: 36upx;
+  font-size: 28upx;
   color: #707070;
   position: absolute;
-  top: 83rpx;
-  left: 144rpx;
+  top: 83upx;
+  left: 144upx;
 }
 .maxBox .data-item .line.data-v-0fca3654 {
-  width: 638rpx;
-  height: 1rpx;
+  width: 638upx;
+  height: 1upx;
   background: #DDDDDD;
   position: absolute;
-  top: 143rpx;
-  left: 32rpx;
+  top: 143upx;
+  left: 32upx;
 }
 .maxBox .data-item .statistical.data-v-0fca3654 {
-  width: 638rpx;
+  width: 638upx;
   display: flex;
   position: absolute;
-  top: 168rpx;
-  left: 32rpx;
-  font-size: 24rpx;
+  top: 168upx;
+  left: 32upx;
+  font-size: 24upx;
 }
 .maxBox .data-item .statistical view.data-v-0fca3654 {
   width: 33%;
   text-align: left;
 }
 .maxBox .data-item .jian.data-v-0fca3654 {
-  width: 17rpx;
-  height: 32rpx;
+  width: 17upx;
+  height: 32upx;
   position: absolute;
-  top: 56rpx;
-  right: 39rpx;
+  top: 56upx;
+  right: 39upx;
 }
 .maxBox .nolist.data-v-0fca3654 {
   position: absolute;
-  top: 240rpx;
-  left: 250rpx;
-  width: 250rpx;
+  top: 240upx;
+  left: 250upx;
+  width: 250upx;
 }
 .maxBox .nolist .noImg.data-v-0fca3654 {
-  width: 250rpx;
-  height: 144rpx;
+  width: 250upx;
+  height: 144upx;
 }
 .maxBox .nolist .noTit.data-v-0fca3654 {
-  font-size: 24rpx;
+  font-size: 24upx;
   font-weight: 400;
   color: #B2B2B2;
   text-align: center;
-  margin-top: 24rpx;
+  margin-top: 24upx;
 }

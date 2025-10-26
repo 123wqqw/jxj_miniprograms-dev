@@ -1,0 +1,263 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22[0].rules[0].use[1]!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js??clonedRuleSet-22[0].rules[0].use[2]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22[0].rules[0].use[3]!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??clonedRuleSet-22[0].rules[0].use[4]!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js??clonedRuleSet-22[0].rules[0].use[5]!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/index.js??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./pages/students/leaderboard/index.vue?vue&type=style&index=0&id=564941c2&lang=scss&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.leaderboard-container[data-v-564941c2] {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+.nav-bar[data-v-564941c2] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 32rpx;
+  background: #ffffff;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+.nav-left[data-v-564941c2] {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back-icon[data-v-564941c2] {
+  width: 40rpx;
+  height: 40rpx;
+}
+.nav-title[data-v-564941c2] {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333333;
+}
+.nav-right[data-v-564941c2] {
+  width: 60rpx;
+}
+.my-rank-card[data-v-564941c2] {
+  margin: 32rpx;
+  background: linear-gradient(135deg, #2c84ff 0%, #4a9eff 100%);
+  border-radius: 20rpx;
+  padding: 32rpx;
+}
+.rank-header[data-v-564941c2] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.my-rank-info[data-v-564941c2] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rank-number[data-v-564941c2] {
+  font-size: 64rpx;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8rpx;
+}
+.rank-label[data-v-564941c2] {
+  font-size: 28rpx;
+  color: #ffffff;
+  opacity: 0.9;
+}
+.my-stats[data-v-564941c2] {
+  display: flex;
+  gap: 40rpx;
+}
+.stat-item[data-v-564941c2] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stat-number[data-v-564941c2] {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4rpx;
+}
+.stat-label[data-v-564941c2] {
+  font-size: 24rpx;
+  color: #ffffff;
+  opacity: 0.8;
+}
+.filter-section[data-v-564941c2] {
+  padding: 0 32rpx 20rpx;
+  background: #ffffff;
+}
+.filter-tabs[data-v-564941c2] {
+  display: flex;
+  gap: 20rpx;
+}
+.filter-tab[data-v-564941c2] {
+  flex: 1;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 36rpx;
+  transition: all 0.3s ease;
+}
+.filter-tab.active[data-v-564941c2] {
+  background: #2c84ff;
+}
+.tab-text[data-v-564941c2] {
+  font-size: 28rpx;
+  color: #666666;
+  transition: color 0.3s ease;
+}
+.filter-tab.active .tab-text[data-v-564941c2] {
+  color: #ffffff;
+  font-weight: 500;
+}
+.leaderboard-list[data-v-564941c2] {
+  padding: 0 32rpx 32rpx;
+}
+.rank-item[data-v-564941c2] {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+.rank-item.my-rank[data-v-564941c2] {
+  background: linear-gradient(135deg, #ffe4e1 0%, #fff0f0 100%);
+  border: 2rpx solid #ff6b6b;
+}
+.rank-position[data-v-564941c2] {
+  width: 80rpx;
+  display: flex;
+  justify-content: center;
+}
+.position-number[data-v-564941c2] {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.position-number.rank-first[data-v-564941c2] {
+  background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+}
+.position-number.rank-second[data-v-564941c2] {
+  background: linear-gradient(135deg, #c0c0c0 0%, #a0a0a0 100%);
+}
+.position-number.rank-third[data-v-564941c2] {
+  background: linear-gradient(135deg, #cd7f32 0%, #b8860b 100%);
+}
+.position-number.rank-normal[data-v-564941c2] {
+  background: #f5f5f5;
+}
+.rank-icon[data-v-564941c2] {
+  width: 40rpx;
+  height: 40rpx;
+}
+.rank-text[data-v-564941c2] {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333333;
+}
+.position-number.rank-first .rank-text[data-v-564941c2],
+.position-number.rank-second .rank-text[data-v-564941c2],
+.position-number.rank-third .rank-text[data-v-564941c2] {
+  color: #ffffff;
+}
+.user-info[data-v-564941c2] {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-left: 24rpx;
+}
+.avatar[data-v-564941c2] {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.avatar-img[data-v-564941c2] {
+  width: 100%;
+  height: 100%;
+}
+.user-details[data-v-564941c2] {
+  flex: 1;
+}
+.user-name[data-v-564941c2] {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 8rpx;
+}
+.user-class[data-v-564941c2] {
+  font-size: 26rpx;
+  color: #666666;
+}
+.rank-stats[data-v-564941c2] {
+  display: flex;
+  gap: 24rpx;
+}
+.stat-item[data-v-564941c2] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stat-number[data-v-564941c2] {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #2c84ff;
+  margin-bottom: 4rpx;
+}
+.stat-label[data-v-564941c2] {
+  font-size: 22rpx;
+  color: #666666;
+}
+.bottom-tip[data-v-564941c2] {
+  padding: 32rpx;
+  background: #ffffff;
+  margin-top: 20rpx;
+}
+.tip-content[data-v-564941c2] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  padding: 24rpx;
+  background: #f8f9fa;
+  border-radius: 16rpx;
+}
+.tip-icon[data-v-564941c2] {
+  width: 40rpx;
+  height: 40rpx;
+}
+.tip-text[data-v-564941c2] {
+  font-size: 28rpx;
+  color: #666666;
+}

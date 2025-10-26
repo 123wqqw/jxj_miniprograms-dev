@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "u-badge": "/node-modules/uview-ui/components/u-badge/u-badge",
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "u-swiper": "/node-modules/uview-ui/components/u-swiper/u-swiper",
+    "u-tabbar": "/node-modules/uview-ui/components/u-tabbar/u-tabbar",
+    "userinfo-block": "/pages/home/index/components/userinfo-block/index",
+    "user-grid": "/pages/home/index/components/user-grid/index",
+    "class-model": "/components/model/classModel",
+    "pie-charts": "/pages/home/index/components/pie-charts/index",
+    "class-progress": "/pages/home/index/components/class-progress/index",
+    "if-new-pass": "/components/model/ifNewPass"
+  }
+}

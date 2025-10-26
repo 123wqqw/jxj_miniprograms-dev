@@ -1,0 +1,28 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 人物头部 -->
+  <circle cx="60" cy="25" r="8" fill="#6BB6FF"/>
+  
+  <!-- 人物躯干 -->
+  <rect x="54" y="33" width="12" height="25" rx="6" fill="#6BB6FF"/>
+  
+  <!-- 手臂 - 握绳 -->
+  <rect x="42" y="40" width="8" height="3" rx="1.5" fill="#6BB6FF"/>
+  <rect x="70" y="40" width="8" height="3" rx="1.5" fill="#6BB6FF"/>
+  
+  <!-- 腿部 - 跳跃姿势 -->
+  <rect x="56" y="58" width="3" height="15" rx="1.5" fill="#6BB6FF"/>
+  <rect x="61" y="58" width="3" height="15" rx="1.5" fill="#6BB6FF"/>
+  
+  <!-- 跳绳 -->
+  <path d="M46 43 Q30 60 30 80 Q30 90 60 95 Q90 90 90 80 Q90 60 74 43" 
+        stroke="#4A90E2" stroke-width="2" fill="none"/>
+  
+  <!-- 绳柄 -->
+  <rect x="44" y="41" width="4" height="8" rx="2" fill="#4A90E2"/>
+  <rect x="72" y="41" width="4" height="8" rx="2" fill="#4A90E2"/>
+  
+  <!-- 运动轨迹 -->
+  <circle cx="60" cy="75" r="2" fill="#4A90E2" opacity="0.5"/>
+  <circle cx="55" cy="78" r="1.5" fill="#4A90E2" opacity="0.3"/>
+  <circle cx="65" cy="78" r="1.5" fill="#4A90E2" opacity="0.3"/>
+</svg>

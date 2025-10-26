@@ -25,30 +25,30 @@
 /* 透明度 */
 /* 文章场景相关 */
 .maxBox.data-v-1af64f63 {
-  width: 750rpx;
-  padding-top: 16rpx;
+  width: 750upx;
+  padding-top: 16upx;
 }
 .maxBox .formBox.data-v-1af64f63 {
-  width: 750rpx;
+  width: 750upx;
   box-sizing: border-box;
   overflow: hidden;
 }
 .maxBox .formBox .formItem.data-v-1af64f63 {
-  padding-left: 32rpx;
+  padding-left: 32upx;
   background: #FFFFFF;
-  height: 88rpx;
-  line-height: 88rpx;
-  font-size: 28rpx;
+  height: 88upx;
+  line-height: 88upx;
+  font-size: 28upx;
   color: #202020;
-  border-bottom: 1rpx solid #DDDDDD;
+  border-bottom: 1upx solid #DDDDDD;
   position: relative;
 }
 .maxBox .formBox .formItem .formLeft.data-v-1af64f63 {
-  width: 140rpx;
+  width: 140upx;
   float: left;
   display: flex;
   justify-content: space-around;
-  margin-right: 8rpx;
+  margin-right: 8upx;
 }
 .maxBox .formBox .formItem .areaNumber.data-v-1af64f63 {
   position: relative;
@@ -57,31 +57,31 @@
 }
 .maxBox .formBox .formItem .input-main.data-v-1af64f63 {
   float: left;
-  height: 88rpx;
+  height: 88upx;
 }
 .maxBox .formBox .formItem .yzCode.data-v-1af64f63 {
-  font-size: 28rpx;
-  width: 160rpx;
+  font-size: 28upx;
+  width: 160upx;
   float: right;
   text-align: left;
 }
 .maxBox .formBox .submit-btn.data-v-1af64f63 {
-  width: 638rpx;
-  height: 88rpx;
+  width: 638upx;
+  height: 88upx;
   background-color: #5C8FF7;
   border: none;
-  border-radius: 44rpx;
-  font-size: 28rpx;
-  line-height: 88rpx;
+  border-radius: 44upx;
+  font-size: 28upx;
+  line-height: 88upx;
   color: #FFFFFF;
-  margin-top: 88rpx;
+  margin-top: 88upx;
 }
 .data-v-1af64f63 .u-dropdown__content {
-  width: 750rpx !important;
-  margin-left: -166rpx;
+  width: 750upx !important;
+  margin-left: -166upx;
 }
 .data-v-1af64f63 .u-dropdown__content__popup {
-  width: 750rpx;
+  width: 750upx;
 }
 .flexItem.data-v-1af64f63 {
   display: flex;

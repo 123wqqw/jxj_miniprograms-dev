@@ -47,9 +47,9 @@
 }
 .popup-content .title.data-v-2e8b766d {
   width: 100%;
-  height: 86rpx;
-  line-height: 86rpx;
-  font-size: 32rpx;
+  height: 86upx;
+  line-height: 86upx;
+  font-size: 32upx;
   font-weight: 400;
   color: #464646;
   text-align: center;
@@ -60,33 +60,33 @@
 }
 .popup-content .screen-info .screen-li.data-v-2e8b766d {
   width: 100%;
-  margin-top: 20rpx;
+  margin-top: 20upx;
 }
 .popup-content .screen-info .screen-li .li-title.data-v-2e8b766d {
   width: 100%;
-  height: 40rpx;
-  line-height: 40rpx;
-  padding: 0 32rpx;
-  font-size: 28rpx;
+  height: 40upx;
+  line-height: 40upx;
+  padding: 0 32upx;
+  font-size: 28upx;
   font-weight: 500;
   color: #202020;
-  margin-bottom: 12rpx;
+  margin-bottom: 12upx;
 }
 .popup-content .screen-info .screen-li .li-info.data-v-2e8b766d {
   width: 100%;
-  padding: 0 16rpx;
+  padding: 0 16upx;
   display: flex;
   flex-wrap: wrap;
 }
 .popup-content .screen-info .screen-li .li-info .li-item.data-v-2e8b766d {
-  width: calc(33.3333333333% - 32rpx);
-  height: 70rpx;
-  border-radius: 35rpx;
-  line-height: 70rpx;
+  width: calc(33.3333333333% - 32upx);
+  height: 70upx;
+  border-radius: 35upx;
+  line-height: 70upx;
   text-align: center;
-  margin: 12rpx 16rpx;
+  margin: 12upx 16upx;
   background-color: #f5f5f5;
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: 400;
   color: #464646;
 }
@@ -95,20 +95,20 @@
   color: #ffffff;
 }
 .popup-content .screen-info .screen-li .scroll-li-info.data-v-2e8b766d {
-  padding: 0 16rpx;
+  padding: 0 16upx;
   white-space: nowrap;
   height: 94rpx;
 }
 .popup-content .screen-info .screen-li .scroll-li-info .li-item.data-v-2e8b766d {
-  height: 70rpx;
-  min-width: calc(33.3333333333% - 32rpx);
+  height: 70upx;
+  min-width: calc(33.3333333333% - 32upx);
   padding: 0 32rpx;
-  border-radius: 35rpx;
-  line-height: 70rpx;
+  border-radius: 35upx;
+  line-height: 70upx;
   text-align: center;
-  margin: 12rpx 16rpx;
+  margin: 12upx 16upx;
   background-color: #f5f5f5;
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: 400;
   color: #464646;
   display: inline-flex;
@@ -121,18 +121,18 @@
 }
 .popup-content .screnn-btn.data-v-2e8b766d {
   width: 100%;
-  height: 86rpx;
+  height: 86upx;
   display: flex;
-  border-top: 2rpx solid #e6e6e6;
+  border-top: 2upx solid #e6e6e6;
 }
 .popup-content .screnn-btn .action-btn.data-v-2e8b766d {
   flex: 1;
   height: 100%;
-  line-height: 86rpx;
+  line-height: 86upx;
   text-align: center;
   background-color: #ffffff;
   color: #5c8ff7;
-  font-size: 32rpx;
+  font-size: 32upx;
   font-weight: 600;
 }
 .popup-content .screnn-btn .action-btn--confirm.data-v-2e8b766d {
@@ -145,36 +145,36 @@
 }
 .popup-content .comment-content .content-title.data-v-2e8b766d {
   width: 100%;
-  height: 40rpx;
-  line-height: 40rpx;
-  padding: 0 32rpx;
-  font-size: 28rpx;
+  height: 40upx;
+  line-height: 40upx;
+  padding: 0 32upx;
+  font-size: 28upx;
   font-weight: 500;
   color: #202020;
-  margin-bottom: 12rpx;
+  margin-bottom: 12upx;
 }
 .popup-content .comment-content .comment-model.data-v-2e8b766d {
   width: 100%;
-  padding: 0 32rpx;
-  padding-top: 30rpx;
+  padding: 0 32upx;
+  padding-top: 30upx;
   display: flex;
   flex-wrap: wrap;
 }
 .popup-content .comment-content .comment-model .model-li.data-v-2e8b766d {
   position: relative;
-  margin-right: 24rpx;
+  margin-right: 24upx;
   margin-bottom: 24rpx;
 }
 .popup-content .comment-content .comment-model .model-li .model-text.data-v-2e8b766d {
-  height: 60rpx;
-  padding: 0 32rpx;
-  border-radius: 12rpx;
-  border: 2rpx solid #b2b2b2;
+  height: 60upx;
+  padding: 0 32upx;
+  border-radius: 12upx;
+  border: 2upx solid #b2b2b2;
   background-color: #ffffff;
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: 400;
   color: #464646;
-  line-height: 60rpx;
+  line-height: 60upx;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -183,50 +183,50 @@
   word-break: break-all;
 }
 .popup-content .comment-content .comment-model .model-li .model-li--active.data-v-2e8b766d {
-  border: 2rpx solid #5c8ff7;
+  border: 2upx solid #5c8ff7;
   background-color: #5c8ff7;
   color: #ffffff;
 }
 .popup-content .comment-content .comment-model .model-li .model-del.data-v-2e8b766d {
-  width: 48rpx;
-  height: 48rpx;
-  padding: 12rpx;
+  width: 48upx;
+  height: 48upx;
+  padding: 12upx;
   position: absolute;
-  right: -24rpx;
-  top: -24rpx;
+  right: -24upx;
+  top: -24upx;
   z-index: 1;
 }
 .popup-content .comment-content .comment-model .model-li .del-img.data-v-2e8b766d {
-  width: 24rpx;
-  height: 24rpx;
+  width: 24upx;
+  height: 24upx;
 }
 .popup-content .comment-content .comment-model .model-li-add.data-v-2e8b766d {
-  height: 60rpx;
-  padding: 0 32rpx;
-  border-radius: 12rpx;
-  border: 2rpx solid #5c8ff7;
+  height: 60upx;
+  padding: 0 32upx;
+  border-radius: 12upx;
+  border: 2upx solid #5c8ff7;
   background-color: #ffffff;
-  font-size: 28rpx;
+  font-size: 28upx;
   font-weight: 400;
   color: #5c8ff7;
-  line-height: 60rpx;
-  margin-right: 24rpx;
+  line-height: 60upx;
+  margin-right: 24upx;
   margin-bottom: 24rpx;
 }
 .popup-content .comment-content .comment-model .model-li-add--active.data-v-2e8b766d {
-  border: 2rpx solid #5c8ff7;
+  border: 2upx solid #5c8ff7;
   background-color: #5c8ff7;
   color: #ffffff;
 }
 .popup-content .comment-input.data-v-2e8b766d {
-  width: 686rpx;
-  height: 226rpx;
+  width: 686upx;
+  height: 226upx;
   background-color: #f5f5f5;
-  border-radius: 24rpx;
+  border-radius: 24upx;
   margin: 0 auto;
-  margin-top: 24rpx;
-  padding: 16rpx 24rpx;
-  font-size: 28rpx;
+  margin-top: 24upx;
+  padding: 16upx 24upx;
+  font-size: 28upx;
   color: #202020;
   position: relative;
 }
@@ -234,25 +234,25 @@
   height: 100%;
 }
 .popup-content .comment-input .conent-size.data-v-2e8b766d {
-  font-size: 28rpx;
+  font-size: 28upx;
   color: #b2b2b2;
   position: absolute;
-  bottom: 17rpx;
-  right: 24rpx;
+  bottom: 17upx;
+  right: 24upx;
 }
 .popup-content .comment-btn.data-v-2e8b766d {
   width: 100%;
-  height: 86rpx;
+  height: 86upx;
   display: flex;
 }
 .popup-content .comment-btn .action-btn.data-v-2e8b766d {
   flex: 1;
   height: 100%;
-  line-height: 86rpx;
+  line-height: 86upx;
   text-align: center;
   background-color: #5c8ff7;
   color: #ffffff;
-  font-size: 32rpx;
+  font-size: 32upx;
   font-weight: 600;
 }
 .popup-content .comment-btn .action-btn--disabled.data-v-2e8b766d {

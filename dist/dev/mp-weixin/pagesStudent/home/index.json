@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "profile-modal": "/pagesStudent/home/components/ProfileModal"
+  }
+}

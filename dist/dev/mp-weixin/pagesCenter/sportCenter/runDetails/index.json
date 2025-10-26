@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "跑步明细",
+  "usingComponents": {
+    "u-loadmore": "/node-modules/uview-ui/components/u-loadmore/u-loadmore",
+    "u-image": "/node-modules/uview-ui/components/u-image/u-image",
+    "drop-tab": "/pagesCenter/sportCenter/runDetails/components/drop-tab/index",
+    "student-card": "/pagesCenter/sportCenter/runDetails/components/student-card/index"
+  }
+}

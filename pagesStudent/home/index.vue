@@ -302,7 +302,7 @@ export default {
     // 跳转到家庭健身房
     goToGym() {
       uni.navigateTo({
-        url: "/pagesStudent/gym/index",
+        url: "/pages/students/gym/index",
       });
     },
 
