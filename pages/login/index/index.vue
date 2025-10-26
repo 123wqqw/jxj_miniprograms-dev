@@ -49,7 +49,6 @@
 									wechatOpenid,
 									...params
 								} = res.data
-								console.log('wechatOpenId:', wechatOpenid);
 								this.setOpenid(wechatOpenid);
 								if (!params.teacherId && !params.studentId) {
 									uni.navigateTo({

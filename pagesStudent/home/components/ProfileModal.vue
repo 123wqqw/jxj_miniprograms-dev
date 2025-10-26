@@ -276,9 +276,6 @@ export default {
 					tag: 'student_info' // 随便传一个字符串
 				};
 
-				console.log('paramsparamsparams',params);
-				
-
 				getReq(URL.apiGetStudentInfo, params).then(res => {
 					console.log('resresresresresresresresres',res);
 					

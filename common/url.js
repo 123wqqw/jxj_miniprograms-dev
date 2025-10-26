@@ -549,6 +549,7 @@ const URL = {
 	apiGetStudentInfo: "/xty-usercenter/app-api/student/v1/info",
 	// 修改密码V2
 	apiPostChangePasswordV2: "/xty-usercenter/app-api/mine/v2/password/change",
+	
 
 
 	// 首页文案
