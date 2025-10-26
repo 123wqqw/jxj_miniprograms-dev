@@ -137,16 +137,117 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {
 
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
 var _request = __webpack_require__(/*! @/common/request.js */ 75);
 var _url = __webpack_require__(/*! @/common/url.js */ 76);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -154,32 +255,13 @@ var _default = {
         duration: "25分钟",
         calories: "180卡",
         exercises: "3项"
-      },
-      pageQuery: {
-        pages: {
-          pageNum: 1,
-          pageSize: 10
-        },
-        directionId: "",
-        difficulty: [],
-        dimensionId: ""
       }
     };
   },
   onLoad: function onLoad() {
     this.getTodayStats();
-    this.getList();
-    this.getQuery();
   },
   methods: {
-    getList: function getList() {
-      var params = _objectSpread({}, this.pageQuery);
-      (0, _request.postReq)(_url.URL.jxjSportList, params).then(function (res) {});
-    },
-    // 查看锻炼方向，难度和改善方向
-    getQuery: function getQuery() {
-      (0, _request.getReq)(_url.URL.jxjDirection).then(function (res) {});
-    },
     // 获取今日运动统计
     getTodayStats: function getTodayStats() {
       // 这里可以调用API获取今日运动数据

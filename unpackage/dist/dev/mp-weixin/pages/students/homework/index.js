@@ -381,15 +381,15 @@ var _default = {
     // 打卡作业查询
     loadCalendarHW: function loadCalendarHW() {
       var params = {
-        clockDate: ''
+        clockDate: ""
       };
       (0, _request.getReq)(_url.URL.jxjTaskInfo, params).then(function (res) {});
     },
     // 获取打卡记录
     loadCalendar: function loadCalendar() {
       var params = {
-        beginDate: '',
-        endDate: ''
+        beginDate: "",
+        endDate: ""
       };
       (0, _request.getReq)(_url.URL.jxjCalendar, params).then(function (res) {});
     },
