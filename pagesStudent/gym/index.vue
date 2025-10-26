@@ -114,34 +114,12 @@ export default {
         calories: "180卡",
         exercises: "3项",
       },
-      pageQuery: {
-        pages: {
-          pageNum: 1,
-          pageSize: 10,
-        },
-        directionId: "",
-        difficulty: [],
-        dimensionId: "",
-      },
     };
   },
   onLoad() {
     this.getTodayStats();
-    this.getList();
-		this.getQuery()
   },
   methods: {
-    getList() {
-      const params = {...this.pageQuery}
-      postReq(URL.jxjSportList, params).then((res) => {});
-    },
-		// 查看锻炼方向，难度和改善方向
-		getQuery(){
-			getReq(URL.jxjDirection).then(res => { 
-				
-				
-			})
-		},
     // 获取今日运动统计
     getTodayStats() {
       // 这里可以调用API获取今日运动数据

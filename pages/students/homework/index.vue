@@ -233,32 +233,28 @@ export default {
     this.loadHomeworkList();
   },
   methods: {
-		// 打卡作业查询
-		loadCalendarHW() {
-			const params={
-				clockDate:''
-			}
-			getReq(URL.jxjTaskInfo,params).then(res=>{
-				
-			})
-		},
-		// 获取打卡记录
-		loadCalendar() {
-			const params={
-				beginDate:'',
-				endDate:''
-			}
-			getReq(URL.jxjCalendar,params).then(res => {
-
-			})
-		},
+    // 打卡作业查询
+    loadCalendarHW() {
+      const params = {
+        clockDate: "",
+      };
+      getReq(URL.jxjTaskInfo, params).then((res) => {});
+    },
+    // 获取打卡记录
+    loadCalendar() {
+      const params = {
+        beginDate: "",
+        endDate: "",
+      };
+      getReq(URL.jxjCalendar, params).then((res) => {});
+    },
     // 上传锻炼记录
     uploadRecord() {
       const params = {
         actionId: 0, //动作id
         aiCount: 0, //ai计数
         bgImageUrl: "", //背景图片url
-        commitType: 0,  //提交类型（0.正常提交；1.异常提交；2.提前提交）
+        commitType: 0, //提交类型（0.正常提交；1.异常提交；2.提前提交）
         consume: 0, //消耗
         continuousJump: 0, //当前连跳个数(个)
         exerciseMediaUrl: "", //锻炼媒体文件地址
@@ -267,10 +263,10 @@ export default {
         schemeId: 0, //关联的改善方案id
         score: 0, //成绩
         smartDevices: 0, //是否是智能设备(0.否；1.是)
-        speed: 0,  //速度
-        taskId: 0,  //关联的打卡任务id
-        timeConsume: 0,  //耗时(毫秒)
-        type: 0,  //模式(1.定时 2.定数 3.纯定时)
+        speed: 0, //速度
+        taskId: 0, //关联的打卡任务id
+        timeConsume: 0, //耗时(毫秒)
+        type: 0, //模式(1.定时 2.定数 3.纯定时)
       };
       postReq(URL.jxjUploadRecord, params).then((res) => {});
     },
