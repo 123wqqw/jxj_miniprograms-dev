@@ -200,10 +200,14 @@ export default {
           tag: "student_info", // 随便传一个字符串
         };
 
+        console.log('paramsparamsparamsparams',params);
+        
+        console.log('URLURLURLURL',URL);
+        
         const response = await getReq(URL.apiGetStudentInfo, params);
         console.log("获取到的学生信息:", response);
 
-        // 更新学生信息
+        // // 更新学生信息
         if (response && response.data) {
           this.studentInfo = {
             ...this.studentInfo,
@@ -260,34 +264,34 @@ export default {
 
     // 联系方式
     goToContact() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none",
-      });
+      // uni.showToast({
+      //   title: "功能开发中",
+      //   icon: "none",
+      // });
     },
 
     // 修改密码
     goToChangePassword() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none",
-      });
+      // uni.showToast({
+      //   title: "功能开发中",
+      //   icon: "none",
+      // });
     },
 
     // 解绑账号
     goToUnbindAccount() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none",
-      });
+      // uni.showToast({
+      //   title: "功能开发中",
+      //   icon: "none",
+      // });
     },
 
     // 清除缓存
     clearCache() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none",
-      });
+      // uni.showToast({
+      //   title: "功能开发中",
+      //   icon: "none",
+      // });
     },
 
     // 更新用户信息
@@ -296,7 +300,6 @@ export default {
         ...this.studentInfo,
         ...userInfo,
       };
-      console.log("更新后的学生信息:", this.studentInfo);
     },
 
     // 跳转到家庭健身房
@@ -308,25 +311,22 @@ export default {
 
     // 跳转到校外体育作业
     goToHomework() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none",
-      });
+      uni.navigateTo({
+				url: '/pages/students/homework/index'
+			})
     },
 
     // 跳转到锻炼风云榜
     goToLeaderboard() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none",
-      });
+      uni.navigateTo({
+				url: '/pages/students/leaderboard/index'
+			})
     },
 
     // 跳转到健身运动记录
     goToRecords() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none",
+      uni.navigateTo({
+        url: '/pages/students/records/index'
       });
     },
   },
