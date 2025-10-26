@@ -210,7 +210,6 @@ var _default = {
               var _res$data = res.data,
                 wechatOpenid = _res$data.wechatOpenid,
                 params = (0, _objectWithoutProperties2.default)(_res$data, _excluded);
-              console.log('wechatOpenId:', wechatOpenid);
               _this.setOpenid(wechatOpenid);
               if (!params.teacherId && !params.studentId) {
                 uni.navigateTo({

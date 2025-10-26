@@ -26,14 +26,14 @@
 /* 文章场景相关 */
 .homework-container.data-v-0034ac61 {
   min-height: 100vh;
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
 .nav-bar.data-v-0034ac61 {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20rpx 32rpx;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
 }
 .nav-left.data-v-0034ac61 {
@@ -57,14 +57,14 @@
 }
 .stats-section.data-v-0034ac61 {
   padding: 32rpx;
-  background: #FFFFFF;
+  background: #ffffff;
   margin-bottom: 20rpx;
 }
 .stats-card.data-v-0034ac61 {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: linear-gradient(135deg, #2C84FF 0%, #4A9EFF 100%);
+  background: linear-gradient(135deg, #2c84ff 0%, #4a9eff 100%);
   border-radius: 20rpx;
   padding: 40rpx 20rpx;
 }
@@ -77,12 +77,12 @@
 .stats-number.data-v-0034ac61 {
   font-size: 48rpx;
   font-weight: 600;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 8rpx;
 }
 .stats-label.data-v-0034ac61 {
   font-size: 26rpx;
-  color: #FFFFFF;
+  color: #ffffff;
   opacity: 0.9;
 }
 .stats-divider.data-v-0034ac61 {
@@ -92,7 +92,7 @@
 }
 .filter-section.data-v-0034ac61 {
   padding: 0 32rpx 20rpx;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 .filter-tabs.data-v-0034ac61 {
   display: flex;
@@ -104,12 +104,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #F5F5F5;
+  background: #f5f5f5;
   border-radius: 36rpx;
   transition: all 0.3s ease;
 }
 .filter-tab.active.data-v-0034ac61 {
-  background: #2C84FF;
+  background: #2c84ff;
 }
 .tab-text.data-v-0034ac61 {
   font-size: 28rpx;
@@ -117,14 +117,14 @@
   transition: color 0.3s ease;
 }
 .filter-tab.active .tab-text.data-v-0034ac61 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 500;
 }
 .homework-list.data-v-0034ac61 {
   padding: 0 32rpx 32rpx;
 }
 .homework-item.data-v-0034ac61 {
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 16rpx;
   margin-bottom: 20rpx;
   overflow: hidden;
@@ -135,8 +135,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 24rpx 32rpx;
-  background: #F8F9FA;
-  border-bottom: 1rpx solid #E5E5E5;
+  background: #f8f9fa;
+  border-bottom: 1rpx solid #e5e5e5;
 }
 .homework-title.data-v-0034ac61 {
   font-size: 32rpx;
@@ -148,20 +148,20 @@
   border-radius: 20rpx;
 }
 .homework-status.pending.data-v-0034ac61 {
-  background: #FFF3E0;
+  background: #fff3e0;
 }
 .homework-status.completed.data-v-0034ac61 {
-  background: #E8F5E8;
+  background: #e8f5e8;
 }
 .status-text.data-v-0034ac61 {
   font-size: 24rpx;
   font-weight: 500;
 }
 .homework-status.pending .status-text.data-v-0034ac61 {
-  color: #FF9800;
+  color: #ff9800;
 }
 .homework-status.completed .status-text.data-v-0034ac61 {
-  color: #4CAF50;
+  color: #4caf50;
 }
 .homework-content.data-v-0034ac61 {
   padding: 32rpx;
@@ -206,7 +206,7 @@
 }
 .deadline-text.data-v-0034ac61 {
   font-size: 26rpx;
-  color: #FF4757;
+  color: #ff4757;
   font-weight: 500;
 }
 .homework-action.data-v-0034ac61 {
@@ -219,17 +219,17 @@
   transition: all 0.3s ease;
 }
 .action-btn.pending.data-v-0034ac61 {
-  background: #2C84FF;
+  background: #2c84ff;
 }
 .action-btn.completed.data-v-0034ac61 {
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
 .action-text.data-v-0034ac61 {
   font-size: 26rpx;
   font-weight: 500;
 }
 .action-btn.pending .action-text.data-v-0034ac61 {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .action-btn.completed .action-text.data-v-0034ac61 {
   color: #666666;

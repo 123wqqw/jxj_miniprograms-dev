@@ -272,7 +272,6 @@ exports.default = void 0;
 //
 //
 //
-//
 var _default = {
   data: function data() {
     return {
@@ -537,6 +536,9 @@ var _default = {
     },
     selectCategory: function selectCategory(category) {
       this.activeCategory = category;
+      // 切换分类时重置筛选为占位，避免旧条件影响新分类
+      this.selectedDifficulty = '难度';
+      this.selectedDirection = '改善方向';
     },
     startExercise: function startExercise(exercise) {
       uni.showToast({

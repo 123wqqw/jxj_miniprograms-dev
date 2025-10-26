@@ -460,7 +460,6 @@ var _default2 = {
           tag: 'student_info' // 随便传一个字符串
         };
 
-        console.log('paramsparamsparams', params);
         (0, _request.getReq)(_url.URL.apiGetStudentInfo, params).then(function (res) {
           console.log('resresresresresresresresres', res);
         });

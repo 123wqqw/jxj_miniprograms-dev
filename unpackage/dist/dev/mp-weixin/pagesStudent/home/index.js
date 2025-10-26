@@ -207,22 +207,25 @@ var _default = {
                   // 学生ID
                   tag: "student_info" // 随便传一个字符串
                 };
-                _context.next = 5;
+
+                console.log('paramsparamsparamsparams', params);
+                console.log('URLURLURLURL', _url.URL);
+                _context.next = 7;
                 return (0, _request.getReq)(_url.URL.apiGetStudentInfo, params);
-              case 5:
+              case 7:
                 response = _context.sent;
                 console.log("获取到的学生信息:", response);
 
-                // 更新学生信息
+                // // 更新学生信息
                 if (response && response.data) {
                   _this.studentInfo = _objectSpread(_objectSpread({}, _this.studentInfo), response.data);
                   _this.studentInfo.school = _this.studentInfo.schoolName + " " + _this.studentInfo.grade + "年级" + _this.studentInfo.claNumber + "班";
                   console.log("更新后的学生信息:", _this.studentInfo);
                 }
-                _context.next = 14;
+                _context.next = 16;
                 break;
-              case 10:
-                _context.prev = 10;
+              case 12:
+                _context.prev = 12;
                 _context.t0 = _context["catch"](0);
                 console.error("获取学生信息失败:", _context.t0);
                 // 如果API调用失败，至少显示本地存储的信息
@@ -232,12 +235,12 @@ var _default = {
                     school: _this.xiaotiyunUser.student.schoolName || "北京市朝阳第一小学 四年级3班"
                   };
                 }
-              case 14:
+              case 16:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 10]]);
+        }, _callee, null, [[0, 12]]);
       }))();
     },
     // 切换用户
@@ -265,36 +268,35 @@ var _default = {
     },
     // 联系方式
     goToContact: function goToContact() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none"
-      });
+      // uni.showToast({
+      //   title: "功能开发中",
+      //   icon: "none",
+      // });
     },
     // 修改密码
     goToChangePassword: function goToChangePassword() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none"
-      });
+      // uni.showToast({
+      //   title: "功能开发中",
+      //   icon: "none",
+      // });
     },
     // 解绑账号
     goToUnbindAccount: function goToUnbindAccount() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none"
-      });
+      // uni.showToast({
+      //   title: "功能开发中",
+      //   icon: "none",
+      // });
     },
     // 清除缓存
     clearCache: function clearCache() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none"
-      });
+      // uni.showToast({
+      //   title: "功能开发中",
+      //   icon: "none",
+      // });
     },
     // 更新用户信息
     updateUserInfo: function updateUserInfo(userInfo) {
       this.studentInfo = _objectSpread(_objectSpread({}, this.studentInfo), userInfo);
-      console.log("更新后的学生信息:", this.studentInfo);
     },
     // 跳转到家庭健身房
     goToGym: function goToGym() {
@@ -304,23 +306,20 @@ var _default = {
     },
     // 跳转到校外体育作业
     goToHomework: function goToHomework() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none"
+      uni.navigateTo({
+        url: '/pages/students/homework/index'
       });
     },
     // 跳转到锻炼风云榜
     goToLeaderboard: function goToLeaderboard() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none"
+      uni.navigateTo({
+        url: '/pages/students/leaderboard/index'
       });
     },
     // 跳转到健身运动记录
     goToRecords: function goToRecords() {
-      uni.showToast({
-        title: "功能开发中",
-        icon: "none"
+      uni.navigateTo({
+        url: '/pages/students/records/index'
       });
     }
   }

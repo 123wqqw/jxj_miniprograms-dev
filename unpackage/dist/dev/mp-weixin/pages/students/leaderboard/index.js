@@ -157,6 +157,32 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _request = __webpack_require__(/*! @/common/request.js */ 75);
+var _url = __webpack_require__(/*! @/common/url.js */ 76);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -249,7 +275,7 @@ exports.default = void 0;
 var _default = {
   data: function data() {
     return {
-      activeFilter: 'week',
+      activeFilter: "week",
       myRank: {
         rank: 15,
         totalTime: 180,
@@ -257,110 +283,156 @@ var _default = {
       },
       leaderboardList: [{
         rank: 1,
-        name: '张小明',
-        className: '四年级3班',
+        name: "张小明",
+        className: "四年级3班",
         totalTime: 450,
         totalDays: 28,
-        avatar: '/static/images/students/user.png',
+        avatar: "/static/images/students/user.png",
         isMe: false
       }, {
         rank: 2,
-        name: '李小红',
-        className: '四年级2班',
+        name: "李小红",
+        className: "四年级2班",
         totalTime: 420,
         totalDays: 26,
-        avatar: '/static/images/students/user.png',
+        avatar: "/static/images/students/user.png",
         isMe: false
       }, {
         rank: 3,
-        name: '王小强',
-        className: '四年级1班',
+        name: "王小强",
+        className: "四年级1班",
         totalTime: 380,
         totalDays: 24,
-        avatar: '/static/images/students/user.png',
+        avatar: "/static/images/students/user.png",
         isMe: false
       }, {
         rank: 4,
-        name: '赵小丽',
-        className: '四年级3班',
+        name: "赵小丽",
+        className: "四年级3班",
         totalTime: 350,
         totalDays: 22,
-        avatar: '/static/images/students/user.png',
+        avatar: "/static/images/students/user.png",
         isMe: false
       }, {
         rank: 5,
-        name: '陈小华',
-        className: '四年级2班',
+        name: "陈小华",
+        className: "四年级2班",
         totalTime: 320,
         totalDays: 20,
-        avatar: '/static/images/students/user.png',
+        avatar: "/static/images/students/user.png",
         isMe: false
       }, {
         rank: 6,
-        name: '刘小军',
-        className: '四年级1班',
+        name: "刘小军",
+        className: "四年级1班",
         totalTime: 300,
         totalDays: 18,
-        avatar: '/static/images/students/user.png',
+        avatar: "/static/images/students/user.png",
         isMe: false
       }, {
         rank: 7,
-        name: '黄小美',
-        className: '四年级3班',
+        name: "黄小美",
+        className: "四年级3班",
         totalTime: 280,
         totalDays: 16,
-        avatar: '/static/images/students/user.png',
+        avatar: "/static/images/students/user.png",
         isMe: false
       }, {
         rank: 8,
-        name: '周小亮',
-        className: '四年级2班',
+        name: "周小亮",
+        className: "四年级2班",
         totalTime: 260,
         totalDays: 14,
-        avatar: '/static/images/students/user.png',
+        avatar: "/static/images/students/user.png",
         isMe: false
       }, {
         rank: 15,
-        name: '李思思',
-        className: '四年级3班',
+        name: "李思思",
+        className: "四年级3班",
         totalTime: 180,
         totalDays: 12,
-        avatar: '/static/images/students/user.png',
+        avatar: "/static/images/students/user.png",
         isMe: true
       }]
     };
   },
   onLoad: function onLoad() {
-    this.loadLeaderboardData();
+    var date = this.getCurrentWeekRange();
+    this.loadLeaderboardData(date);
   },
   methods: {
+    formatDate: function formatDate(date) {
+      var year = date.getFullYear();
+      var month = String(date.getMonth() + 1).padStart(2, "0");
+      var day = String(date.getDate()).padStart(2, "0");
+      return "".concat(year, "-").concat(month, "-").concat(day);
+    },
+    getCurrentWeekRange: function getCurrentWeekRange() {
+      var today = new Date();
+      var dayOfWeek = today.getDay(); // 0-6, 0是周日
+
+      // 计算本周一的日期
+      var monday = new Date(today);
+      monday.setDate(today.getDate() - dayOfWeek + (dayOfWeek === 0 ? -6 : 1));
+
+      // 本周一到今天
+      var startDate = this.formatDate(monday);
+      var endDate = this.formatDate(today);
+      return "".concat(startDate, " - ").concat(endDate);
+    },
+    getLastWeekRange: function getLastWeekRange() {
+      var today = new Date();
+      var dayOfWeek = today.getDay(); // 0-6, 0是周日
+
+      // 计算上周一的日期
+      var lastMonday = new Date(today);
+      lastMonday.setDate(today.getDate() - dayOfWeek - 6 + (dayOfWeek === 0 ? -6 : 1));
+
+      // 计算上周日的日期
+      var lastSunday = new Date(lastMonday);
+      lastSunday.setDate(lastMonday.getDate() + 6);
+      var startDate = this.formatDate(lastMonday);
+      var endDate = this.formatDate(lastSunday);
+      return "".concat(startDate, " - ").concat(endDate);
+    },
     // 返回上一页
     goBack: function goBack() {
       uni.navigateBack();
     },
     // 设置筛选条件
     setFilter: function setFilter(filter) {
-      this.activeFilter = filter;
-      this.loadLeaderboardData();
+      var date = null;
+      if (filter === "week") {
+        date = this.getCurrentWeekRange();
+      } else {
+        date = this.getLastWeekRange();
+      }
+      this.loadLeaderboardData(date);
     },
     // 获取排名样式类
     getRankClass: function getRankClass(rank) {
-      if (rank === 1) return 'rank-first';
-      if (rank === 2) return 'rank-second';
-      if (rank === 3) return 'rank-third';
-      return 'rank-normal';
+      if (rank === 1) return "rank-first";
+      if (rank === 2) return "rank-second";
+      if (rank === 3) return "rank-third";
+      return "rank-normal";
     },
     // 获取排名图标
     getRankIcon: function getRankIcon(rank) {
-      if (rank === 1) return '/static/images/students/one.png';
-      if (rank === 2) return '/static/images/students/two.png';
-      if (rank === 3) return '/static/images/students/three.png';
-      return '';
+      if (rank === 1) return "/static/images/students/one.png";
+      if (rank === 2) return "/static/images/students/two.png";
+      if (rank === 3) return "/static/images/students/three.png";
+      return "";
     },
     // 加载排行榜数据
-    loadLeaderboardData: function loadLeaderboardData() {
+    loadLeaderboardData: function loadLeaderboardData(time) {
       // 这里可以调用API获取排行榜数据
-      console.log('加载排行榜数据:', this.activeFilter);
+      console.log('URLURLURLURLURL', _url.URL);
+      var params = {
+        time: '2023-08-01'
+      };
+      (0, _request.getReq)(_url.URL.jxjRankInfo, params).then(function (res) {
+        console.log("resresresresresresres", res);
+      });
     }
   }
 };

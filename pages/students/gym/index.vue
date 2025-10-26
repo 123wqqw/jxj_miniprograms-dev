@@ -11,30 +11,18 @@
 			</view>
 		</view>
 
-		<!-- 筛选区域（保留“改善方向”，移除“难度”至左侧“全部运动”右侧） -->
-		<view class="filter-section">
-			<view class="filter-item" @click="showDirectionPicker">
-				<text class="filter-text">{{ selectedDirection }}</text>
-				<image src="/static/images/common/arrow-down.png" class="filter-arrow"></image>
-			</view>
-		</view>
 
 		<!-- 主要内容区域 -->
 		<view class="main-content">
 			<!-- 左侧分类导航 -->
 			<view class="left-sidebar">
-				<!-- 全部运动 + 难度（右侧控件） -->
+				<!-- 全部运动 -->
 				<view 
-					class="sidebar-item sidebar-item--controls" 
+					class="sidebar-item" 
 					:class="{ active: activeCategory === 'all' }"
+					@click="selectCategory('all')"
 				>
-					<view class="sidebar-left" @click="selectCategory('all')">
-						<text class="sidebar-text">全部运动</text>
-					</view>
-					<view class="sidebar-control" @click.stop="showDifficultyPicker">
-						<text class="sidebar-control-text">{{ selectedDifficulty }}</text>
-						<image src="/static/images/common/arrow-down.png" class="sidebar-control-arrow"></image>
-					</view>
+					<text class="sidebar-text">全部运动</text>
 				</view>
 				
 				<!-- 具体运动分类 -->
@@ -50,8 +38,19 @@
 			</view>
 
 			<!-- 右侧内容 -->
-			<view class="right-content">
-				<!-- 运动项目网格 -->
+				<view class="right-content">
+					<!-- 筛选区域（与网格同块，难度与改善方向并排） -->
+					<view class="filter-section capsule">
+						<view class="filter-item gray" @click="showDifficultyPicker">
+							<text class="filter-text">{{ selectedDifficulty }}</text>
+							<image src="/static/images/common/arrow-down-yes.png" class="filter-arrow" :class="{ rotated: showDifficultySelector }"></image>
+						</view>
+						<view class="filter-item gray" @click="showDirectionPicker">
+							<text class="filter-text">{{ selectedDirection }}</text>
+							<image src="/static/images/common/arrow-down-yes.png" class="filter-arrow" :class="{ rotated: showDirectionSelector }"></image>
+						</view>
+					</view>
+					<!-- 运动项目网格 -->
 		<view class="exercise-grid">
 			<view 
 				class="exercise-item" 
@@ -76,7 +75,7 @@
 				<view class="exercise-name">{{ exercise.name }}</view>
 			</view>
 		</view>
-			</view>
+				</view>
 		</view>
 
 		<!-- 难度选择器（uView 1.x 标准用法） -->
@@ -309,6 +308,9 @@ export default {
 		
 		selectCategory(category) {
 			this.activeCategory = category;
+			// 切换分类时重置筛选为占位，避免旧条件影响新分类
+			this.selectedDifficulty = '难度';
+			this.selectedDirection = '改善方向';
 		},
 		
 		startExercise(exercise) {
@@ -364,22 +366,43 @@ export default {
 /* 筛选区域样式 */
 .filter-section {
 	display: flex;
-	padding: 20rpx 32rpx;
+	align-items: center;
+	padding: 12rpx 20rpx;
+	background-color: transparent;
+	gap: 12rpx;
+}
+
+/* 胶囊容器 */
+.filter-section.capsule {
 	background-color: #fff;
-	gap: 16rpx;
+	margin: 0 16rpx;
+	padding: 12rpx 16rpx;
+	border-radius: 999rpx;
+	box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.08);
+}
+
+/* 灰色按钮 */
+.filter-item.gray {
+	background-color: #f3f4f6;
+	border-color: #e7e9ee;
+	border: 0;
+	box-shadow: none;
+	border-radius: 8rpx;
 }
 
 .filter-item {
-	flex: 1;
+	flex: 0 0 calc(50% - 12rpx);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 16rpx 20rpx;
+	gap: 8rpx;
+	padding: 12rpx 16rpx;
+	min-height: 56rpx;
 	background-color: #ffffff;
-	border-radius: 8rpx;
+	border-radius: 10rpx;
 	border: 1rpx solid #ddd;
-	box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease;
+	box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.08);
+	transition: all 0.2s ease;
 }
 
 .filter-item:active {
@@ -389,14 +412,23 @@ export default {
 
 .filter-text {
 	font-size: 26rpx;
-	color: #333;
+	color: #666;
 	font-weight: 400;
 }
 
 .filter-arrow {
-	width: 20rpx;
-	height: 20rpx;
-	opacity: 0.6;
+	display: block;
+	width: 22rpx;
+	height: 22rpx;
+	color: #666666;
+	opacity: 1;
+	flex-shrink: 0;
+	transition: transform 0.18s ease;
+}
+
+/* 展开态箭头旋转 */
+.filter-arrow.rotated {
+	transform: rotate(180deg);
 }
 
 /* 主要内容区域样式 */
@@ -451,34 +483,6 @@ export default {
 	font-weight: 500;
 }
 
-/* 左侧“全部运动”右侧难度控件样式 */
-.sidebar-item--controls {
-	justify-content: space-between;
-}
-.sidebar-left {
-	display: flex;
-	align-items: center;
-}
-.sidebar-control {
-	display: flex;
-	align-items: center;
-	gap: 8rpx;
-	padding: 10rpx 14rpx;
-	background-color: #fff;
-	border: 1rpx solid #E6E8EB;
-	border-radius: 10rpx;
-	box-shadow: 0 1rpx 3rpx rgba(16, 24, 40, 0.08);
-}
-.sidebar-control-text {
-	font-size: 24rpx;
-	color: #4D5562;
-	font-weight: 500;
-}
-.sidebar-control-arrow {
-	width: 22rpx;
-	height: 14rpx;
-	opacity: 0.8;
-}
 
 /* 右侧内容样式 */
 .right-content {
@@ -490,10 +494,10 @@ export default {
 /* 运动分类样式 */
 /* 运动项目网格样式 */
 .exercise-grid {
-	padding: 24rpx 32rpx 32rpx;
+	padding: 8rpx 24rpx 24rpx;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 24rpx;
+	gap: 20rpx;
 	flex: 1;
 }
 
@@ -571,10 +575,10 @@ export default {
 }
 
 .exercise-name {
-	font-size: 28rpx;
-	color: #333;
-	text-align: center;
+	font-size: 24rpx;
+	color: #666;
 	line-height: 1.4;
+	padding: 0 4rpx;
 }
 
 /* 响应式调整 */
