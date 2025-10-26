@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "u-image": "/node-modules/uview-ui/components/u-image/u-image",
-    "u-line-progress": "/node-modules/uview-ui/components/u-line-progress/u-line-progress"
-  }
-}

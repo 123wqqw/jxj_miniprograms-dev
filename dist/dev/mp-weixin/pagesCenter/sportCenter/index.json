@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "跑步中心",
-  "usingComponents": {
-    "u-image": "/node-modules/uview-ui/components/u-image/u-image"
-  }
-}

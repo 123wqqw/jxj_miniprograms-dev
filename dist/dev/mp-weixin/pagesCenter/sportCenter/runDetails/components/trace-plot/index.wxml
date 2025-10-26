@@ -1,1 +1,0 @@
-<map class="map_container data-v-102aadb7" longitude="{{lng}}" latitude="{{lat}}" markers="{{markers}}" polyline="{{polyline}}" show-location="{{false}}" enable-zoom="{{false}}" enable-scroll="{{false}}" enable-rotate="{{false}}"></map>

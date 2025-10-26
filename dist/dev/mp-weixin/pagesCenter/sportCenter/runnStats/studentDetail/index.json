@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "学生详情",
-  "usingComponents": {
-    "score-card": "/pagesCenter/sportCenter/runnStats/components/score-card/index",
-    "line-charts": "/pagesCenter/sportCenter/runnStats/components/line-charts/index"
-  }
-}

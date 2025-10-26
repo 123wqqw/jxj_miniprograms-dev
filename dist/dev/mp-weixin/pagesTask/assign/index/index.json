@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "布置作业",
-  "enablePullDownRefresh": true,
-  "usingComponents": {
-    "task-arrange": "/pagesTask/components/task-arrange/task-arrange"
-  }
-}

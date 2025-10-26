@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "学生详情",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "l-echart": "/uni_modules/lime-echart/components/l-echart/l-echart"
-  }
-}

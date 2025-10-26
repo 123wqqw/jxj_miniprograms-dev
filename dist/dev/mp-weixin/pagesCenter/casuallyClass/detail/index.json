@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "串班训练详情",
-  "usingComponents": {
-    "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
-    "record-detail": "/pagesCenter/casuallyClass/detail/components/recordDetail",
-    "record-table": "/pagesCenter/casuallyClass/detail/components/recordTable"
-  }
-}

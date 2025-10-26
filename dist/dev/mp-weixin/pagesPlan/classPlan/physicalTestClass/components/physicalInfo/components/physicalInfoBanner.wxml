@@ -1,1 +1,0 @@
-<view class="banner-item data-v-041799eb"><view class="text-bold data-v-041799eb">{{''+label+''}}</view><view class="data-v-041799eb">{{''+(value||'--')+''}}</view><slot></slot></view>

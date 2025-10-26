@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "总览",
-  "enablePullDownRefresh": true,
-  "usingComponents": {
-    "x-week-date-calendar": "/pagesTask/components/x-week-date-calendar/x-week-date-calendar"
-  }
-}

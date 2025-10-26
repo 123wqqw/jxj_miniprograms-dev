@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "选择项目",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
-    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
-    "swiper-page": "/pagesTask/assign/assignTask/swiperPage"
-  }
-}

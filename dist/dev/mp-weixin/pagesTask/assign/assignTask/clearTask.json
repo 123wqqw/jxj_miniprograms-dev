@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "撤回布置",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "u-popup": "/node-modules/uview-ui/components/u-popup/u-popup",
-    "u-modal": "/node-modules/uview-ui/components/u-modal/u-modal",
-    "x-week-date-calendar": "/pagesTask/components/x-week-date-calendar/x-week-date-calendar3"
-  }
-}

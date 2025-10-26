@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "布置作业",
-  "usingComponents": {
-    "u-steps": "/node-modules/uview-ui/components/u-steps/u-steps",
-    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
-    "u-modal": "/node-modules/uview-ui/components/u-modal/u-modal"
-  }
-}

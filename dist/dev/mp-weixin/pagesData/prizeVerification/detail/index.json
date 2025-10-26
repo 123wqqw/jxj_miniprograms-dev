@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "兑换详情",
-  "usingComponents": {
-    "u-image": "/node-modules/uview-ui/components/u-image/u-image",
-    "u-input": "/node-modules/uview-ui/components/u-input/u-input",
-    "u-modal": "/node-modules/uview-ui/components/u-modal/u-modal",
-    "prize-item": "/pagesData/prizeVerification/detail/components/prizeItem"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "绑定手机号",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "u-toast": "/node-modules/uview-ui/components/u-toast/u-toast",
-    "u-dropdown": "/node-modules/uview-ui/components/u-dropdown/u-dropdown",
-    "u-dropdown-item": "/node-modules/uview-ui/components/u-dropdown-item/u-dropdown-item"
-  }
-}
