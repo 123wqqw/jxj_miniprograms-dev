@@ -102,15 +102,6 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var g0 = _vm.filteredHomeworkList.length
-  _vm.$mp.data = Object.assign(
-    {},
-    {
-      $root: {
-        g0: g0,
-      },
-    }
-  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -146,68 +137,14 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {
 
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _request = __webpack_require__(/*! @/common/request.js */ 75);
-var _url = __webpack_require__(/*! @/common/url.js */ 76);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 //
 //
 //
@@ -288,185 +225,98 @@ var _url = __webpack_require__(/*! @/common/url.js */ 76);
 var _default = {
   data: function data() {
     return {
-      activeFilter: "all",
-      homeworkStats: {
-        total: 8,
-        completed: 5,
-        pending: 3
-      },
-      homeworkList: [{
-        id: 1,
-        title: "俯卧撑训练",
-        subject: "体育",
-        duration: 15,
-        difficulty: "中等",
-        description: "完成3组俯卧撑，每组10个，组间休息1分钟",
-        deadline: "2024-01-20 23:59",
-        status: "pending",
-        statusText: "待完成",
-        actionText: "开始练习"
+      // 顶部周日历
+      weekDates: [{
+        date: 20,
+        hasDot: false,
+        selected: false
       }, {
-        id: 2,
-        title: "跳绳运动",
-        subject: "体育",
-        duration: 20,
-        difficulty: "简单",
-        description: "连续跳绳5分钟，记录跳绳次数",
-        deadline: "2024-01-19 23:59",
-        status: "completed",
-        statusText: "已完成",
-        actionText: "查看详情"
+        date: 21,
+        hasDot: true,
+        selected: false
       }, {
-        id: 3,
-        title: "深蹲练习",
-        subject: "体育",
-        duration: 10,
-        difficulty: "简单",
-        description: "完成2组深蹲，每组15个",
-        deadline: "2024-01-18 23:59",
-        status: "completed",
-        statusText: "已完成",
-        actionText: "查看详情"
+        date: '今',
+        hasDot: false,
+        selected: false
       }, {
-        id: 4,
-        title: "平板支撑",
-        subject: "体育",
-        duration: 5,
-        difficulty: "困难",
-        description: "保持平板支撑姿势1分钟",
-        deadline: "2024-01-21 23:59",
-        status: "pending",
-        statusText: "待完成",
-        actionText: "开始练习"
+        date: 23,
+        hasDot: true,
+        selected: true
       }, {
-        id: 5,
-        title: "仰卧起坐",
-        subject: "体育",
-        duration: 12,
-        difficulty: "中等",
-        description: "完成3组仰卧起坐，每组20个",
-        deadline: "2024-01-17 23:59",
-        status: "completed",
-        statusText: "已完成",
-        actionText: "查看详情"
+        date: 24,
+        hasDot: false,
+        selected: false
       }, {
-        id: 6,
-        title: "开合跳",
-        subject: "体育",
-        duration: 8,
-        difficulty: "简单",
-        description: "连续开合跳3分钟",
-        deadline: "2024-01-22 23:59",
-        status: "pending",
-        statusText: "待完成",
-        actionText: "开始练习"
-      }]
+        date: 25,
+        hasDot: true,
+        selected: false
+      }, {
+        date: 26,
+        hasDot: false,
+        selected: false
+      }],
+      leaveTip: true,
+      dayTitle: '10月22日的作业',
+      // 作业列表（示例数据，贴近参考稿）
+      homeworkItems: [{
+        title: '腹部拉伸1分钟',
+        meta: '1分钟 × 4组',
+        img: '/static/images/students/one.png',
+        statusText: '去打卡',
+        statusClass: 'blue',
+        stamped: true,
+        revoked: false
+      }, {
+        title: '左右三步跑1分钟',
+        meta: '1分钟 × 4组',
+        img: '/static/images/students/two.png',
+        statusText: '已打卡',
+        statusClass: 'gray',
+        stamped: false,
+        revoked: true
+      }, {
+        title: '合掌跳1分钟',
+        meta: '1分钟 × 4组',
+        img: '/static/images/students/three.png',
+        statusText: '未打卡',
+        statusClass: 'light',
+        stamped: false,
+        revoked: false
+      }],
+      summaryCount: '0/3'
     };
   },
-  computed: {
-    filteredHomeworkList: function filteredHomeworkList() {
-      var _this = this;
-      if (this.activeFilter === "all") {
-        return this.homeworkList;
-      }
-      return this.homeworkList.filter(function (homework) {
-        return homework.status === _this.activeFilter;
-      });
-    }
-  },
-  onLoad: function onLoad() {
-    this.loadHomeworkList();
-  },
   methods: {
-    // 打卡作业查询
-    loadCalendarHW: function loadCalendarHW() {
-      var params = {
-        clockDate: ""
-      };
-      (0, _request.getReq)(_url.URL.jxjTaskInfo, params).then(function (res) {});
-    },
-    // 获取打卡记录
-    loadCalendar: function loadCalendar() {
-      var params = {
-        beginDate: "",
-        endDate: ""
-      };
-      (0, _request.getReq)(_url.URL.jxjCalendar, params).then(function (res) {});
-    },
-    // 上传锻炼记录
-    uploadRecord: function uploadRecord() {
-      var params = {
-        actionId: 0,
-        //动作id
-        aiCount: 0,
-        //ai计数
-        bgImageUrl: "",
-        //背景图片url
-        commitType: 0,
-        //提交类型（0.正常提交；1.异常提交；2.提前提交）
-        consume: 0,
-        //消耗
-        continuousJump: 0,
-        //当前连跳个数(个)
-        exerciseMediaUrl: "",
-        //锻炼媒体文件地址
-        id: 0,
-        //运动记录id
-        interrupt: 0,
-        //中断次数
-        schemeId: 0,
-        //关联的改善方案id
-        score: 0,
-        //成绩
-        smartDevices: 0,
-        //是否是智能设备(0.否；1.是)
-        speed: 0,
-        //速度
-        taskId: 0,
-        //关联的打卡任务id
-        timeConsume: 0,
-        //耗时(毫秒)
-        type: 0 //模式(1.定时 2.定数 3.纯定时)
-      };
-
-      (0, _request.postReq)(_url.URL.jxjUploadRecord, params).then(function (res) {});
-    },
-    // 返回上一页
     goBack: function goBack() {
       uni.navigateBack();
     },
-    // 设置筛选条件
-    setFilter: function setFilter(filter) {
-      this.activeFilter = filter;
-    },
-    // 查看作业详情
-    viewHomeworkDetail: function viewHomeworkDetail(homework) {
-      console.log("查看作业详情:", homework);
-      uni.navigateTo({
-        url: "/pages/students/homeworkDetail/index?id=".concat(homework.id)
+    selectDay: function selectDay(idx) {
+      this.weekDates = this.weekDates.map(function (d, i) {
+        return _objectSpread(_objectSpread({}, d), {}, {
+          selected: i === idx
+        });
       });
     },
-    // 处理作业
-    handleHomework: function handleHomework(homework) {
-      if (homework.status === "pending") {
-        // 开始练习
-        this.startHomework(homework);
+    handleItem: function handleItem(item) {
+      // 根据状态执行不同逻辑，这里仅作为占位
+      if (item.statusClass === 'blue') {
+        // 去打卡
+        uni.showToast({
+          title: '前往打卡',
+          icon: 'none'
+        });
       } else {
-        // 查看详情
-        this.viewHomeworkDetail(homework);
+        uni.showToast({
+          title: '查看详情',
+          icon: 'none'
+        });
       }
     },
-    // 开始作业
-    startHomework: function startHomework(homework) {
-      console.log("开始作业:", homework);
-      uni.navigateTo({
-        url: "/pages/students/homeworkPractice/index?id=".concat(homework.id)
+    openSummary: function openSummary() {
+      uni.showToast({
+        title: '打开任务完成详情',
+        icon: 'none'
       });
-    },
-    // 加载作业列表
-    loadHomeworkList: function loadHomeworkList() {
-      // 这里可以调用API获取作业列表
-      console.log("加载作业列表");
     }
   }
 };
