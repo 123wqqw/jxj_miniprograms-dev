@@ -117,7 +117,7 @@
 		<view class="btn-box-content safe-area-inset-bottom">
 			<view class="default-content">
 				<view class="btn-content">
-					<view class="top" v-if="studentIds.length>1"></view>
+					<!-- <view class="top" v-if="studentIds.length>1"></view> -->
 					<view class="bottom" v-if="clockDetailsData.showButton || clockDetailsData.corrected"></view>
 				</view>
 			</view>
@@ -323,6 +323,10 @@
 				return  `${month}月${day}日` + ' ' + [hour, minute].map((n) => this.formatNumber(n)).join(':')
 			},
 			formatTaskTime(timestamp) {
+				// 添加检查确保 timestamp 存在且有效
+				if (!timestamp) {
+					return ''; // 或者返回默认值如 '日期未知'
+				}
 				let date = new Date();
 				date.setTime(timestamp);
 				let month = date.getMonth() + 1

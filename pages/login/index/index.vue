@@ -2,7 +2,7 @@
 	<view class="authorization">
 		<!-- 顶部背景图片 -->
 		<view class="top-background">
-			<image src="/static/login.png" mode="aspectFill" class="background-image"></image>
+			<image src="/static/login.png" mode="widthFix" class="background-image"></image>
 			<view class="icon-logo">
 				<image src="/static/ic_logo.png" class="logo-image"/>
 			</view>
@@ -49,6 +49,7 @@
 									wechatOpenid,
 									...params
 								} = res.data
+								console.log('wechatOpenId:', wechatOpenid);
 								this.setOpenid(wechatOpenid);
 								if (!params.teacherId && !params.studentId) {
 									uni.navigateTo({
@@ -104,32 +105,32 @@
 .authorization {
 	width: 100%;
 	min-height: 100vh;
-	background: #FFFFFF;
+	background: #F8F8FB;
 	position: relative;
 }
 
 .top-background {
 	position: relative;
 	width: 100%;
-	height: 500rpx;
+	// height: 500rpx;
 	overflow: hidden;
 }
 
 .background-image {
 	width: 100%;
-	height: 100%;
+	// height: auto;
 }
 
 .icon-logo {
 	position: absolute;
 	top: 65%;
 	left: 50%;
-	transform: translate(-58%, -80%);
+	transform: translate(-50%, -80%);
 	z-index: 10;
 	
 	.logo-image {
-		width: 336rpx;
-		height: 120rpx;
+		width: 448rpx;
+		height: 160rpx;
 	}
 }
 
@@ -138,7 +139,11 @@
 	left: 0;
 	right: 0;
 	bottom: 24rpx;
-	margin: 0 88rpx;
+	margin: 0 auto;
+	width: 520rpx;
+	height: 88rpx;
+	padding: 0;
+	line-height: 88rpx;
 	background-color: #2C84FF;
 	color: #fff;
 	border-radius: 16rpx;
