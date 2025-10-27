@@ -287,7 +287,6 @@ export default {
     // 加载排行榜数据
     loadLeaderboardData(time) {
       // 这里可以调用API获取排行榜数据
-			console.log('URLURLURLURLURL',URL);
 			const params = {
 				time: '2023-08-01'
 			}

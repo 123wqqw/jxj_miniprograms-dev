@@ -200,10 +200,6 @@ export default {
           tag: "student_info", // 随便传一个字符串
         };
 
-        console.log('paramsparamsparamsparams',params);
-        
-        console.log('URLURLURLURL',URL);
-        
         const response = await getReq(URL.apiGetStudentInfo, params);
         console.log("获取到的学生信息:", response);
 
