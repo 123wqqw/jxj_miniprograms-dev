@@ -3,8 +3,7 @@
 // const BASE_URL = 'https://xty.iydsj.com/api'; // 正式环境 wx384c94eaf17a6fd4
 // export const USERCENTER = 'http://test.usercenter.xiaotiyun.cn';
 // export const USERCENTER = 'https://usercenter.xiaotiyun.cn';
-const DEFAULT_USERCENTER = 'http://test.xty.public.xiaoti.cloud';
-export const USERCENTER = process.env.VUE_APP_BASE_URL || DEFAULT_USERCENTER;
+export const USERCENTER = process.env.VUE_APP_BASE_URL;
 // export const USERCENTER = 'http://test.xty.public.xiaoti.cloud';
 // export const USERCENTER = 'http://pre.xty.public.xiaoti.cloud';
 // export const USERCENTER = 'https://xty.public.xiaoti.cloud';
@@ -243,7 +242,7 @@ export const postReq = (apiUrl, params, headers) => {
 	} else {
 		header['Accept-Language'] = "zh-Hans";
 	}
-	const isEncrypt = USERCENTER === 'https://xty.public.xiaoti.cloud'
+	const isEncrypt = USERCENTER === 'https://jxz.qhfx.edu.cn:41088/home-gym-public/'
 	console.log(xiaotiyunUser);
     if (xiaotiyunUser) {
         if (xiaotiyunUser.hasOwnProperty('teacher')) {
@@ -306,7 +305,6 @@ export const postReq = (apiUrl, params, headers) => {
 			BASE_URL = domain;
 		}
 	}
-	console.log(domain);
 	return new Promise((resolve, reject) => {
 		uni.showLoading({
 			title: '加载中',

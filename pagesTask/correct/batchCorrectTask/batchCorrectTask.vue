@@ -75,7 +75,7 @@
 				<view class="comment-content">
 					<view class="content-title">{{$t('task.correct.batchCorrectTask.comment')}}：</view>
 					<view class="comment-input">
-						<u-input :maxlength="noteMaxLen" :clearable="false" placeholder-style="font-size: 12px;color:#B2B2B2;" v-model="comments" type="textarea" :placeholder="$t('task.correct.batchCorrecTask.commentModalPlaceholder')" />
+						<u-input :maxlength="noteMaxLen" :clearable="false" placeholder-style="font-size: 12px;color:#B2B2B2;" v-model="comments" type="textarea" :placeholder="$t('task.correct.batchCorrectTask.commentModalPlaceholder')" />
 						<view class="conent-size">{{ comments.length }}/{{noteMaxLen}}</view>
 					</view>
 					<view class="comment-model">
@@ -364,6 +364,8 @@
 							}
 						})
 						_this.correctStudentList = correctStudentList;
+						_this.showCommentPopup = false;
+						_this.initPageFun();
 						uni.showToast({
 							icon: 'none',
 							title: "批改成功！",

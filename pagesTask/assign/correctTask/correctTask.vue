@@ -17,7 +17,7 @@
 				</view>
 				<view class="tab-img">
 					<!-- <u-image height="100%" width="100%" src="../../../static/images/tobe-corrected.png"></u-image> -->
-					<image src="../../../pagesTask/static/images/tobe-corrected.png" mode="widthFix" class="tobe-img"></image>
+					<image src="../../static/images/tobe-corrected.png" mode="widthFix" class="tobe-img"></image>
 				</view>
 			</view>
 			<view class="tab-box" :class="{'tab-box-active':isCorrected}" @click="changeCorrectStatus(true)">
@@ -27,14 +27,14 @@
 				</view>
 				<view class="tab-img">
 					<!-- <u-image height="100%" width="100%" src="../../../static/images/corrected.png"></u-image> -->
-					<image src="../../../pagesTask/static/images/corrected.png" mode="widthFix" class="abled-img"></image>
+					<image src="../../static/images/corrected.png" mode="widthFix" class="abled-img"></image>
 				</view>
 			</view>
 		</view>
 		<view class="correct-search">
 			<view class="search-input-box">
 				<input type="text" confirm-type="search" @confirm="goSearch()" v-model="studentName" placeholder="输入学生姓名" placeholder-style="color: #DDDDDD;" class="search-input"/>
-				<image src="../../../pagesTask/static/images/search-icon.png" mode="widthFix" class="search-icon"></image>
+				<image src="../../static/images/search-icon.png" mode="widthFix" class="search-icon"></image>
 			</view>
 		</view>
 		<view class="correct-content">
@@ -51,13 +51,13 @@
 						<view class="date-time">{{item.completionTime?formatCompletionTime(item.completionTime):''}}</view>
 					</view>
 					<view class="header-img">
-						<u-image height="100%" width="100%" border-radius="50%" :src="item.status == 1?'../../../pagesTask/static/images/corrected-teacher.png':'../../../pagesTask/static/images/tobe-corrected-teacher.png'"></u-image>
+						<u-image height="100%" width="100%" border-radius="50%" :src="item.status == 1?'../../static/images/corrected-teacher.png':'../../static/images/tobe-corrected-teacher.png'"></u-image>
 					</view>
 				</view>
 				<view class="task-info">
 					<view class="task-list" v-for="(task,j) in item.taskInfos" :key="j">
 						<view class="task-name">{{task.name}}</view>
-						<view class="clock-text">{{task.clockText}}<view class="comment-btn" v-if="item.comments == null && j == (item.taskInfos.length-1)" @click="showCommentInput(item)"><image src="../../../pagesTask/static/images/comment-icon.png" class="comment-icon"/>点评</view></view>
+						<view class="clock-text">{{task.clockText}}<view class="comment-btn" v-if="item.comments == null && j == (item.taskInfos.length-1)" @click="showCommentInput(item)"><image src="../../static/images/comment-icon.png" class="comment-icon"/>点评</view></view>
 					</view>
 				</view>
 				<view class="task-comment" v-if="item.comments">
@@ -65,7 +65,7 @@
 				</view>
 			</view>
 			<view class="no-data" v-if="correctList.length == 0">
-				<image src="../../../pagesTask/static/images/no-peclass.png" mode="widthFix" class="none-img"></image>
+				<image src="../../static/images/no-peclass.png" mode="widthFix" class="none-img"></image>
 			</view>
 		</view>
 		

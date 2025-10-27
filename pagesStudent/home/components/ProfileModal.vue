@@ -4,20 +4,20 @@
 		<view class="modal-content" @click.stop>
 			<!-- 关闭按钮 -->
 			<view class="close-btn" @click="closeModal">
-				<image src="/static/images/students/close.png" class="close-icon"></image>
+				<image src="/static/images/students/cc.png" class="close-icon"></image>
 			</view>
-
+			
 			<!-- 用户信息区域 -->
 			<view class="user-info-section">
 				<view class="user-info">
 					<view class="avatar">
-						<image :src="userInfo.avatar || '/static/images/students/default.png'" mode="aspectFill" class="avatar-img"></image>
+						<image :src="userInfo.avatar || '/static/images/students/boy.png'" mode="aspectFill" class="avatar-img"></image>
 					</view>
 					<view class="user-details">
 						<view class="user-name-row">
 							<view class="user-name">{{ userInfo.name || '李思思' }}</view>
 							<view class="switch-user-btn" @click="switchUser">
-								<image src="/static/images/students/change.png" class="switch-icon"></image>
+								<image src="/static/images/students/jt.svg" class="switch-icon"></image>
 								<text class="switch-text">切换用户</text>
 							</view>
 						</view>
@@ -25,17 +25,17 @@
 					</view>
 				</view>
 			</view>
-
+			
 			<!-- 菜单列表 -->
 			<view class="menu-list">
 				<view class="menu-item" @click="toggleAccountSecurity">
 					<view class="menu-item-content">
 						<text class="menu-text">账号与安全</text>
-						<view class="arrow-icon" :class="{ expanded: accountSecurityExpanded }">
-							<image src="/static/images/students/right_arr.png" class="arrow-img"></image>
+						<view class="arrow-icon" :class="{ 'expanded': accountSecurityExpanded }">
+							<image src="/static/images/students/yjt.png" class="arrow-img"></image>
 						</view>
 					</view>
-
+					
 					<!-- 账号与安全子菜单 -->
 					<view class="sub-menu" v-if="accountSecurityExpanded">
 						<view class="sub-menu-item" @click.stop="goToContact">
@@ -45,7 +45,7 @@
 							<view class="sub-menu-right">
 								<text class="phone-number">{{ formatPhoneNumber(userInfo.phone || userInfo.contactInformation) || '183******70' }}</text>
 								<view class="arrow-icon">
-									<image src="/static/images/students/right_arr.png" class="arrow-img"></image>
+									<image src="/static/images/students/yjt.png" class="arrow-img"></image>
 								</view>
 							</view>
 						</view>
@@ -54,7 +54,7 @@
 								<text class="sub-menu-text">修改密码</text>
 							</view>
 							<view class="arrow-icon">
-								<image src="/static/images/students/right_arr.png" class="arrow-img"></image>
+								<image src="/static/images/students/yjt.png" class="arrow-img"></image>
 							</view>
 						</view>
 						<view class="sub-menu-item" @click.stop="goToUnbindAccount">
@@ -62,23 +62,23 @@
 								<text class="sub-menu-text">解绑账号</text>
 							</view>
 							<view class="arrow-icon">
-								<image src="/static/images/students/right_arr.png" class="arrow-img"></image>
+								<image src="/static/images/students/yjt.png" class="arrow-img"></image>
 							</view>
 						</view>
 					</view>
 				</view>
-
+				
 				<view class="menu-item" @click="clearCache">
 					<view class="menu-item-content">
 						<text class="menu-text">清除缓存</text>
 						<view class="arrow-icon">
-							<image src="/static/images/students/right_arr.png" class="arrow-img"></image>
+							<image src="/static/images/students/yjt.png" class="arrow-img"></image>
 						</view>
 					</view>
 				</view>
 			</view>
 		</view>
-
+		
 		<!-- 修改密码弹框 -->
 		<u-modal v-model="passwordVisible" title="修改密码" :show-cancel-button="false" :show-confirm-button="false">
 			<view class="password-form">
@@ -92,7 +92,7 @@
 					<input v-model="confirmPasswordInput" placeholder="请再次输入新密码" maxlength="18" password class="password-input" />
 				</view>
 			</view>
-
+			
 			<!-- 自定义按钮 -->
 			<view class="password-buttons">
 				<view class="password-btn cancel-btn" @click="cancelPassword">取消</view>
@@ -103,9 +103,9 @@
 </template>
 
 <script>
-import { getReq, postReq } from '@/common/request.js';
-import { URL } from '@/common/url.js';
-import { MD5_ENCRYPT } from '@/common/secret.js';
+import { getReq, postReq } from '@/common/request.js'
+import { URL } from '@/common/url.js'
+import { MD5_ENCRYPT } from '@/common/secret.js'
 
 export default {
 	name: 'ProfileModal',
@@ -122,183 +122,181 @@ export default {
 			})
 		}
 	},
-	data() {
-		return {
-			accountSecurityExpanded: false,
-			passwordVisible: false,
-			oldPassword: '',
-			newPassword: '',
-			confirmPasswordInput: ''
-		};
-	},
+		data() {
+			return {
+				accountSecurityExpanded: false,
+				passwordVisible: false,
+				oldPassword: '',
+				newPassword: '',
+				confirmPasswordInput: ''
+			}
+		},
 	watch: {
 		visible(newVal) {
 			if (newVal) {
 				// 弹框显示时获取学生信息
-				this.getStudentInfo();
+				this.getStudentInfo()
 			}
 		},
 	},
 	methods: {
 		closeModal() {
-			this.$emit('close');
+			this.$emit('close')
 		},
-
+		
 		toggleAccountSecurity() {
-			this.accountSecurityExpanded = !this.accountSecurityExpanded;
+			this.accountSecurityExpanded = !this.accountSecurityExpanded
 		},
-
+		
 		switchUser() {
-			this.$emit('switchUser');
+			this.$emit('switchUser')
 		},
-
+		
 		goToContact() {
-			this.$emit('goToContact');
+			this.$emit('goToContact')
 		},
-
+		
 		goToChangePassword() {
-			this.passwordVisible = true;
+			this.passwordVisible = true
 		},
-
+		
 		// 取消修改密码
 		cancelPassword() {
 			// 清空输入框
-			this.oldPassword = '';
-			this.newPassword = '';
-			this.confirmPasswordInput = '';
+			this.oldPassword = ''
+			this.newPassword = ''
+			this.confirmPasswordInput = ''
 			// 关闭弹框
-			this.passwordVisible = false;
+			this.passwordVisible = false
 		},
-
+		
 		async confirmPassword() {
 			// 验证输入
 			if (!this.newPassword || !this.confirmPasswordInput || !this.oldPassword) {
 				uni.showToast({
 					title: '密码不能为空',
 					icon: 'none'
-				});
-				return;
+				})
+				return
 			}
 			if (this.newPassword.length < 8 || this.newPassword.length > 18 || this.confirmPasswordInput.length < 8 || this.confirmPasswordInput.length > 18) {
 				uni.showToast({
 					title: '密码长度请设置在8~18位之间',
 					icon: 'none'
-				});
-				return;
+				})
+				return
 			}
-			let reRgbPass = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])');
+			let reRgbPass = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])')
 			if (!reRgbPass.test(this.newPassword) || !reRgbPass.test(this.confirmPasswordInput)) {
 				uni.showToast({
 					title: '密码请包含英文大小写和数字',
 					icon: 'none'
-				});
-				return;
+				})
+				return
 			}
 			if (this.newPassword !== this.confirmPasswordInput) {
 				uni.showToast({
 					title: '两次输入的密码不一致',
 					icon: 'none'
-				});
-				return;
+				})
+				return
 			}
-
+			
 			try {
 				// 显示加载提示
 				uni.showLoading({
 					title: '修改中...'
-				});
-
+				})
+				
 				// 准备请求参数
 				const params = {
 					oldPassword: MD5_ENCRYPT(this.oldPassword), // MD5加密旧密码
 					newPassword: MD5_ENCRYPT(this.newPassword), // MD5加密新密码
 					newPasswordPlaintext: this.newPassword // 新密码明文
-				};
-
-				console.log('修改密码参数:', params);
-
+				}
+				
+				console.log('修改密码参数:', params)
+				
 				// 调用修改密码API
-				const response = await postReq(URL.apiPostChangePasswordV2, params);
-				console.log('修改密码响应:', response);
-
+				const response = await postReq(URL.apiPostChangePasswordV2, params)
+				console.log('修改密码响应:', response)
+				
 				// 隐藏加载提示
-				uni.hideLoading();
-
+				uni.hideLoading()
+				
 				// 显示成功提示
 				uni.showToast({
 					title: '密码修改成功',
 					icon: 'success'
-				});
-
+				})
+				
 				// 清空输入框并关闭弹框
-				this.oldPassword = '';
-				this.newPassword = '';
-				this.confirmPasswordInput = '';
-				this.passwordVisible = false;
+				this.oldPassword = ''
+				this.newPassword = ''
+				this.confirmPasswordInput = ''
+				this.passwordVisible = false
+				
 			} catch (error) {
 				// 隐藏加载提示
-				uni.hideLoading();
-
-				console.error('修改密码失败:', error);
-
+				uni.hideLoading()
+				
+				console.error('修改密码失败:', error)
+				
 				// 显示错误提示
 				uni.showToast({
 					title: error.message || '修改密码失败',
 					icon: 'none'
-				});
+				})
 			}
 		},
-
+		
 		goToUnbindAccount() {
-			this.$emit('goToUnbindAccount');
+			this.$emit('goToUnbindAccount')
 		},
-
+		
 		clearCache() {
-			this.$emit('clearCache');
+			this.$emit('clearCache')
 		},
-
+		
 		// 格式化手机号显示（加密中间部分）
 		formatPhoneNumber(phone) {
-			if (!phone) return '';
+			if (!phone) return ''
 			// 如果是11位手机号，显示前3位和后2位，中间用*代替
 			if (phone.length === 11) {
-				return phone.substring(0, 3) + '******' + phone.substring(9);
+				return phone.substring(0, 3) + '******' + phone.substring(9)
 			}
 			// 其他情况直接返回
-			return phone;
+			return phone
 		},
-
+		
 		// 获取学生信息
-		getStudentInfo() {
+		async getStudentInfo() {
 			try {
 				const params = {
-					studentid: this.userInfo.studentId || '', // 学生ID
+					studentid: this.userInfo.studentId || this.userInfo.studentid || 123456, // 学生ID
 					tag: 'student_info' // 随便传一个字符串
-				};
-
-				getReq(URL.apiGetStudentInfo, params).then(res => {
-					console.log('resresresresresresresresres',res);
-					
-				});
-				console.log('学生信息:', response);
-
+				}
+				
+				const response = await getReq(URL.apiGetStudentInfo, params)
+				console.log('学生信息:', response)
+				
 				// 处理返回的学生信息
 				if (response && response.data) {
 					// 可以在这里更新用户信息
-					this.$emit('updateUserInfo', response.data);
+					this.$emit('updateUserInfo', response.data)
 				}
-
-				return response;
+				
+				return response
 			} catch (error) {
-				console.error('获取学生信息失败:', error);
+				console.error('获取学生信息失败:', error)
 				uni.showToast({
 					title: '获取学生信息失败',
 					icon: 'none'
-				});
+				})
 			}
 		}
 	}
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -328,7 +326,7 @@ export default {
 	position: relative;
 	width: 100%;
 	height: 85%;
-	background: #ffffff;
+	background: #FFFFFF;
 	border-radius: 24rpx 24rpx 0 0;
 	box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.1);
 	display: flex;
@@ -366,7 +364,7 @@ export default {
 }
 
 .user-info-section {
-	// background-image: url('/static/images/students/top.png');
+	background-image: url('/static/images/students/top.png');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -406,7 +404,7 @@ export default {
 }
 
 .user-details {
-	color: #ffffff;
+	color: #FFFFFF;
 	font-size: 36rpx;
 	flex: 1;
 }
@@ -439,7 +437,7 @@ export default {
 
 .switch-text {
 	font-size: 24rpx;
-	color: #2c84ff;
+	color: #2C84FF;
 }
 
 .user-school {
@@ -450,26 +448,27 @@ export default {
 	width: 100%;
 	height: 80rpx;
 	padding: 0 24rpx;
-	border: 2rpx solid #ccc;
+	border: 2rpx solid #CCC;
 	border-radius: 12rpx;
 	font-size: 28rpx;
 	color: #333333;
-	background: #ffffff;
+	background: #FFFFFF;
 	box-sizing: border-box;
 }
 
+
 .password-input::placeholder {
-	color: #b2b2b2;
+	color: #B2B2B2;
 	text-align: left;
 }
 .menu-list {
 	flex: 1;
 	padding: 32rpx 0 200rpx 20rpx;
-	background: #ffffff;
+	background: #FFFFFF;
 }
 
 .menu-item {
-	border-bottom: 1rpx solid #f5f5f5;
+	border-bottom: 1rpx solid #F5F5F5;
 }
 
 .menu-item:last-child {
@@ -503,12 +502,12 @@ export default {
 }
 
 .arrow-img {
-	width: 40rpx;
-	height: 40rpx;
+	width: 16rpx;
+	height: 16rpx;
 }
 
 .sub-menu {
-	background: #ffffff;
+	background: #FFFFFF;
 	margin: 0 32rpx 24rpx 32rpx;
 	border-radius: 16rpx;
 	box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
@@ -520,7 +519,7 @@ export default {
 	justify-content: space-between;
 	align-items: center;
 	padding: 32rpx;
-	border-bottom: 1rpx solid #f5f5f5;
+	border-bottom: 1rpx solid #F5F5F5;
 }
 
 .sub-menu-item:last-child {
@@ -586,6 +585,6 @@ export default {
 }
 
 .confirm-btn {
-	color: #2c84ff;
+	color: #2C84FF;
 }
 </style>
