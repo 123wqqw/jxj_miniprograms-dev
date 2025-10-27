@@ -100,6 +100,8 @@
 </template>
 
 <script>
+import { getReq, postReq } from "@/common/request.js";
+import { URL } from "@/common/url.js";
 export default {
 	data() {
 		return {
@@ -264,8 +266,27 @@ showDirectionDropdown: false,
 			return option ? option.value : '';
 		}
 	},
+	mounted() {
+    // this.getList();
+		this.getQuery()
+  },
 	
 	methods: {
+		   // 查看锻炼方向，难度和改善方向
+			 getQuery() {
+      getReq(URL.jxjDirection).then((res) => {
+				console.log('resresresresres',res);
+				
+			});
+    },
+		// 获取运动列表
+    getList() {
+      const params = { ...this.pageQuery };
+      postReq(URL.jxjSportList, params).then((res) => {
+				console.log('resresresresresresres',res);
+				
+			});
+    },
 		goBack() {
 			uni.navigateBack();
 		},

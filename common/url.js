@@ -618,24 +618,6 @@ const userCenterUrlList = [
 	URL.apiGetStudentInfo,
 	URL.apiPostChangePasswordV2,
 	URL.apiPostTeachersCheckAccount,
-
-	URL.jxjTextType,
-	URL.jxjRankInfo,
-	URL.jxjRelation,
-	URL.jxjLogin,
-	URL.jxjSportList,
-	URL.jxjDirection,
-	URL.jxjDownload,
-	URL.jxjSportDetail,
-	URL.jxjUploadRecord,
-	URL.jxjCalendar,
-	URL.jxjTaskInfo,
-	URL.jxjStudentInfo,
-	URL.jxjTaskDetail,
-	URL.jxjAskLeave,
-	URL.jxjRevoke,
-	URL.jxjRecordInfos,
-	URL.jxjGetRecordInfos,
 ];
 
 export {
