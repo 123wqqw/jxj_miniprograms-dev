@@ -155,12 +155,12 @@ var _url = __webpack_require__(/*! @/common/url.js */ 76);
 var _util = __webpack_require__(/*! @/common/util.js */ 115);
 var lineCharts = function lineCharts() {
   Promise.all(/*! require.ensure | pagesCenter/sportCenter/runnStats/components/line-charts/index */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pagesCenter/sportCenter/runnStats/components/line-charts/index")]).then((function () {
-    return resolve(__webpack_require__(/*! ../components/line-charts/index.vue */ 1433));
+    return resolve(__webpack_require__(/*! ../components/line-charts/index.vue */ 1441));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var scoreCard = function scoreCard() {
   __webpack_require__.e(/*! require.ensure | pagesCenter/sportCenter/runnStats/components/score-card/index */ "pagesCenter/sportCenter/runnStats/components/score-card/index").then((function () {
-    return resolve(__webpack_require__(/*! ../components/score-card/index.vue */ 1426));
+    return resolve(__webpack_require__(/*! ../components/score-card/index.vue */ 1434));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

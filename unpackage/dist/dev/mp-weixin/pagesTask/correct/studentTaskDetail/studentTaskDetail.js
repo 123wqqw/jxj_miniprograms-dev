@@ -101,10 +101,10 @@ var components
 try {
   components = {
     uModal: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 919))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 927))
     },
     uPopup: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-popup/u-popup */ "node-modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! uview-ui/components/u-popup/u-popup.vue */ 1126))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-popup/u-popup */ "node-modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! uview-ui/components/u-popup/u-popup.vue */ 1134))
     },
   }
 } catch (e) {
@@ -194,27 +194,27 @@ var _util = __webpack_require__(/*! @/common/util.js */ 115);
 var _excluded = ["sportTaskInfos", "avatar", "name", "className", "aliasClassName", "studentNum", "corrected", "askLeave", "completion", "totalCount", "staus", "totalGroup", "isApproval"];
 var xWeekDateCalendar = function xWeekDateCalendar() {
   Promise.all(/*! require.ensure | pagesTask/components/x-week-date-calendar/x-week-date-calendar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pagesTask/common/vendor"), __webpack_require__.e("pagesTask/components/x-week-date-calendar/x-week-date-calendar")]).then((function () {
-    return resolve(__webpack_require__(/*! ../../components/x-week-date-calendar/x-week-date-calendar.vue */ 1119));
+    return resolve(__webpack_require__(/*! ../../components/x-week-date-calendar/x-week-date-calendar.vue */ 1127));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var UserInfo = function UserInfo() {
   Promise.all(/*! require.ensure | pagesTask/correct/studentTaskDetail/components/UserInfo/index */[__webpack_require__.e("pagesTask/common/vendor"), __webpack_require__.e("pagesTask/correct/studentTaskDetail/components/UserInfo/index")]).then((function () {
-    return resolve(__webpack_require__(/*! ./components/UserInfo/index.vue */ 1210));
+    return resolve(__webpack_require__(/*! ./components/UserInfo/index.vue */ 1218));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var SportItem = function SportItem() {
   __webpack_require__.e(/*! require.ensure | pagesTask/correct/studentTaskDetail/components/SportItem/index */ "pagesTask/correct/studentTaskDetail/components/SportItem/index").then((function () {
-    return resolve(__webpack_require__(/*! ./components/SportItem/index.vue */ 1220));
+    return resolve(__webpack_require__(/*! ./components/SportItem/index.vue */ 1228));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var OpeartionBtn = function OpeartionBtn() {
   __webpack_require__.e(/*! require.ensure | pagesTask/correct/studentTaskDetail/components/OpeartionBtn/index */ "pagesTask/correct/studentTaskDetail/components/OpeartionBtn/index").then((function () {
-    return resolve(__webpack_require__(/*! ./components/OpeartionBtn/index.vue */ 1227));
+    return resolve(__webpack_require__(/*! ./components/OpeartionBtn/index.vue */ 1235));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var Review = function Review() {
   __webpack_require__.e(/*! require.ensure | pagesTask/correct/studentTaskDetail/components/Review/index */ "pagesTask/correct/studentTaskDetail/components/Review/index").then((function () {
-    return resolve(__webpack_require__(/*! ./components/Review/index.vue */ 1234));
+    return resolve(__webpack_require__(/*! ./components/Review/index.vue */ 1242));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var that = null;

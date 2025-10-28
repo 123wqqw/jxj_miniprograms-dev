@@ -161,182 +161,19 @@ var _default = {
       showDirectionDropdown: false,
       // 分类相关
       activeCategory: "all",
-      specificCategories: [{
-        label: "有氧运动",
-        value: "cardio"
-      }, {
-        label: "腹部运动",
-        value: "abs"
-      }, {
-        label: "力量练习",
-        value: "strength"
-      }, {
-        label: "腿部运动",
-        value: "legs"
-      }, {
-        label: "手臂运动",
-        value: "arms"
-      }],
+      specificCategories: [],
       // 筛选选项
-      difficultyOptions: [{
-        label: "难度",
-        value: ""
-      }, {
-        label: "初级",
-        value: "beginner"
-      }, {
-        label: "中级",
-        value: "intermediate"
-      }, {
-        label: "高级",
-        value: "advanced"
-      }],
-      directionOptions: [{
-        label: "改善方向",
-        value: ""
-      }, {
-        label: "减脂",
-        value: "weight_loss"
-      }, {
-        label: "塑形",
-        value: "fitness"
-      }, {
-        label: "柔韧性",
-        value: "flexibility"
-      }, {
-        label: "体能",
-        value: "endurance"
-      }],
+      difficultyOptions: [],
+      directionOptions: [],
       // 运动项目数据
-      exercises: [{
-        name: "腹部拉伸",
-        category: "abs",
-        difficulty: "beginner",
-        direction: "flexibility",
-        bgColor: "#FFF4E6",
-        illustration: "/static/images/exercises/abs-stretch.svg",
-        arrows: [{
-          id: 1,
-          icon: "/static/images/arrows/up-orange.svg",
-          class: "arrow-up-left"
-        }, {
-          id: 2,
-          icon: "/static/images/arrows/up-orange.svg",
-          class: "arrow-up-right"
-        }]
-      }, {
-        name: "测腰",
-        category: "abs",
-        difficulty: "beginner",
-        direction: "fitness",
-        bgColor: "#FFF4E6",
-        illustration: "/static/images/exercises/waist-measure.svg",
-        arrows: [{
-          id: 1,
-          icon: "/static/images/arrows/up-orange.svg",
-          class: "arrow-up-left"
-        }, {
-          id: 2,
-          icon: "/static/images/arrows/up-orange.svg",
-          class: "arrow-up-right"
-        }]
-      }, {
-        name: "猫式运动",
-        category: "all",
-        difficulty: "beginner",
-        direction: "flexibility",
-        bgColor: "#F0F8FF",
-        illustration: "/static/images/exercises/cat-pose.svg",
-        arrows: [{
-          id: 1,
-          icon: "/static/images/arrows/down-blue.svg",
-          class: "arrow-down-left"
-        }, {
-          id: 2,
-          icon: "/static/images/arrows/down-blue.svg",
-          class: "arrow-down-right"
-        }]
-      }, {
-        name: "双脚原地踏绳跳（慢...）",
-        category: "cardio",
-        difficulty: "intermediate",
-        direction: "weight_loss",
-        bgColor: "#E6F3FF",
-        illustration: "/static/images/exercises/rope-jump.svg",
-        arrows: [{
-          id: 1,
-          icon: "/static/images/arrows/left-blue.svg",
-          class: "arrow-left"
-        }, {
-          id: 2,
-          icon: "/static/images/arrows/right-blue.svg",
-          class: "arrow-right"
-        }]
-      }, {
-        name: "前后摆平衡站立",
-        category: "all",
-        difficulty: "beginner",
-        direction: "fitness",
-        bgColor: "#F0F8FF",
-        illustration: "/static/images/students/exercise.png",
-        arrows: [{
-          id: 1,
-          icon: "/static/images/arrows/left-blue.svg",
-          class: "arrow-left"
-        }, {
-          id: 2,
-          icon: "/static/images/arrows/right-blue.svg",
-          class: "arrow-right"
-        }]
-      }, {
-        name: "A字拉伸",
-        category: "strength",
-        difficulty: "intermediate",
-        direction: "flexibility",
-        bgColor: "#FFF4E6",
-        illustration: "/static/images/students/exercise.png",
-        arrows: [{
-          id: 1,
-          icon: "/static/images/arrows/left-blue.svg",
-          class: "arrow-left"
-        }, {
-          id: 2,
-          icon: "/static/images/arrows/right-blue.svg",
-          class: "arrow-right"
-        }]
-      }, {
-        name: "左右三步跑",
-        category: "cardio",
-        difficulty: "intermediate",
-        direction: "fitness",
-        bgColor: "#E6F3FF",
-        illustration: "/static/images/students/exercise.png",
-        arrows: [{
-          id: 1,
-          icon: "/static/images/arrows/left-blue.svg",
-          class: "arrow-left"
-        }, {
-          id: 2,
-          icon: "/static/images/arrows/right-blue.svg",
-          class: "arrow-right"
-        }]
-      }, {
-        name: "合掌跳",
-        category: "cardio",
-        difficulty: "beginner",
-        direction: "weight_loss",
-        bgColor: "#FFF4E6",
-        illustration: "/static/images/students/exercise.png",
-        arrows: [{
-          id: 1,
-          icon: "/static/images/arrows/up-orange.svg",
-          class: "arrow-up-left"
-        }, {
-          id: 2,
-          icon: "/static/images/arrows/up-orange.svg",
-          class: "arrow-up-right"
-        }]
-      }]
+      exercises: [],
+      pageQuery: {
+        difficulty: [1],
+        dimensionId: [10],
+        directionId: 0,
+        pageNum: 1,
+        pageSize: 9999
+      }
     };
   },
   computed: {
@@ -370,25 +207,28 @@ var _default = {
     }
   },
   mounted: function mounted() {
-    // this.getList();
     this.getQuery();
+    this.getList();
   },
   methods: {
     // 查看锻炼方向，难度和改善方向
     getQuery: function getQuery() {
+      var _this4 = this;
       (0, _request.getReq)(_url.URL.jxjDirection).then(function (res) {
-        console.log("resresresresres", res);
+        if (res.message === "成功") {
+          _this4.difficultyOptions = res.data.difficulty;
+          _this4.directionOptions = res.data.dimension;
+        }
       });
-      // 获取运动详情
-      // jxjSportDetail:"/xty-task/app-api/sport/v2/sportDetail",
-      // // 上传AI锻炼记录
-      // jxjUploadRecord: "/xty-task/app-api/clock/v2/uploadRecord",
     },
     // 获取运动列表
     getList: function getList() {
+      var _this5 = this;
       var params = _objectSpread({}, this.pageQuery);
       (0, _request.postReq)(_url.URL.jxjSportList, params).then(function (res) {
-        console.log("resresresresresresres", res);
+        if (res.message === "成功") {
+          _this5.exercises = res.data.content;
+        }
       });
     },
     goBack: function goBack() {
@@ -435,14 +275,19 @@ var _default = {
       this.activeCategory = category;
     },
     startExercise: function startExercise(exercise) {
-      uni.showToast({
-        title: "\u5F00\u59CB".concat(exercise.name),
-        icon: "success"
+      // 跳转到项目详情页（pagesTask 子包）
+      // sportDetail 读取参数 id：onLoad(e) { this.option = e }，apiGetSportDetail 会用 id 调接口
+      var id = exercise.id || exercise.aiSportId || exercise.sportId;
+      if (!id) {
+        uni.showToast({
+          title: '缺少项目ID，无法打开详情',
+          icon: 'none'
+        });
+        return;
+      }
+      uni.navigateTo({
+        url: "/pagesTask/assign/assignTask/sportDetail?id=".concat(id)
       });
-      // 这里可以跳转到具体的运动详情页面
-      // uni.navigateTo({
-      //     url: `/pages/exercise/detail?name=${exercise.name}`
-      // });
     }
   }
 };

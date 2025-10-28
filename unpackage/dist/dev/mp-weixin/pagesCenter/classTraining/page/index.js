@@ -101,16 +101,16 @@ var components
 try {
   components = {
     uDropdown: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-dropdown/u-dropdown */ "node-modules/uview-ui/components/u-dropdown/u-dropdown").then(__webpack_require__.bind(null, /*! uview-ui/components/u-dropdown/u-dropdown.vue */ 1003))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-dropdown/u-dropdown */ "node-modules/uview-ui/components/u-dropdown/u-dropdown").then(__webpack_require__.bind(null, /*! uview-ui/components/u-dropdown/u-dropdown.vue */ 1011))
     },
     uDropdownItem: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-dropdown-item/u-dropdown-item */ "node-modules/uview-ui/components/u-dropdown-item/u-dropdown-item").then(__webpack_require__.bind(null, /*! uview-ui/components/u-dropdown-item/u-dropdown-item.vue */ 1010))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-dropdown-item/u-dropdown-item */ "node-modules/uview-ui/components/u-dropdown-item/u-dropdown-item").then(__webpack_require__.bind(null, /*! uview-ui/components/u-dropdown-item/u-dropdown-item.vue */ 1018))
     },
     uLoadmore: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-loadmore/u-loadmore */ "node-modules/uview-ui/components/u-loadmore/u-loadmore").then(__webpack_require__.bind(null, /*! uview-ui/components/u-loadmore/u-loadmore.vue */ 1293))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-loadmore/u-loadmore */ "node-modules/uview-ui/components/u-loadmore/u-loadmore").then(__webpack_require__.bind(null, /*! uview-ui/components/u-loadmore/u-loadmore.vue */ 1301))
     },
     uImage: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 898))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 906))
     },
   }
 } catch (e) {
@@ -199,7 +199,7 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var trainingItem = function trainingItem() {
   __webpack_require__.e(/*! require.ensure | pagesCenter/classTraining/page/components/trainingItem */ "pagesCenter/classTraining/page/components/trainingItem").then((function () {
-    return resolve(__webpack_require__(/*! ./components/trainingItem.vue */ 1508));
+    return resolve(__webpack_require__(/*! ./components/trainingItem.vue */ 1516));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

@@ -101,10 +101,10 @@ var components
 try {
   components = {
     uTabs: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 1084))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 1092))
     },
     uButton: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 1031))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 1039))
     },
   }
 } catch (e) {
@@ -182,7 +182,7 @@ var _request = __webpack_require__(/*! ../../../common/request.js */ 75);
 var _url = __webpack_require__(/*! ../../../common/url.js */ 76);
 var swiperPage = function swiperPage() {
   __webpack_require__.e(/*! require.ensure | pagesTask/assign/assignTask/swiperPage */ "pagesTask/assign/assignTask/swiperPage").then((function () {
-    return resolve(__webpack_require__(/*! ./swiperPage.vue */ 1154));
+    return resolve(__webpack_require__(/*! ./swiperPage.vue */ 1162));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

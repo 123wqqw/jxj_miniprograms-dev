@@ -218,10 +218,50 @@ var _default = {
         stamped: false,
         revoked: false
       }],
-      summaryCount: '0/3'
+      summaryCount: '0/3',
+      date: {
+        beginDate: '',
+        endDate: ''
+      },
+      clockDate: '',
+      askleaveText: '',
+      askLeaveDate: ''
     };
   },
+  mounted: function mounted() {
+    this.getCalendar();
+  },
   methods: {
+    getCalendar: function getCalendar() {
+      (0, _request.getReq)(_url.URL.jxjCalendar, _objectSpread({}, this.date)).then(function (res) {
+        console.log('jxjCalendarjxjCalendar', res);
+        if (res.data.message === "成功") {}
+      });
+    },
+    getTaskInfo: function getTaskInfo() {
+      (0, _request.getReq)(_url.URL.jxjTaskInfo, _objectSpread({}, this.clockDate)).then(function (res) {
+        console.log('jxjTaskInfojxjTaskInfo', res);
+        if (res.data.message === "成功") {}
+      });
+    },
+    getTaskDetail: function getTaskDetail() {
+      (0, _request.getReq)(_url.URL.jxjTaskDetail, _objectSpread({}, this.clockDate)).then(function (res) {
+        console.log('jxjTaskDetailjxjTaskDetail', res);
+        if (res.data.message === "成功") {}
+      });
+    },
+    getAskLeave: function getAskLeave() {
+      (0, _request.postReq)(_url.URL.jxjAskLeave, _objectSpread({}, this.askleaveText)).then(function (res) {
+        console.log('jxjAskLeavejxjAskLeave', res);
+        if (res.data.message === "成功") {}
+      });
+    },
+    getRevoke: function getRevoke() {
+      (0, _request.postReq)(_url.URL.jxjRevoke, _objectSpread({}, this.askLeaveDate)).then(function (res) {
+        console.log('jxjRevokejxjRevoke', res);
+        if (res.data.message === "成功") {}
+      });
+    },
     goBack: function goBack() {
       uni.navigateBack();
     },

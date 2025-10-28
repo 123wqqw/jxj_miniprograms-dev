@@ -135,7 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(uni) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -170,15 +170,66 @@ var _url = __webpack_require__(/*! @/common/url.js */ 76);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
       option: {},
-      sportDetail: {}
+      sportDetail: {},
+      // 计时默认值：1分钟，可改动
+      durationMinutes: 1,
+      // 登录状态：根据本地是否存在 xiaotiyunUser 判断
+      isLogin: false
     };
+  },
+  computed: {
+    // 为了支持动态图片，根据分钟选择不同图片
+    currentImageUrl: function currentImageUrl() {
+      // 支持多种字段：durationImages/durationImgMap；若没有则使用封面 aiSportImg；再无则用默认占位图
+      var m = Number(this.durationMinutes);
+      var map = this.sportDetail.durationImages || this.sportDetail.durationImgMap || null;
+      if (map) {
+        // map 可能是 {"1":"url1", "2":"url2"}
+        var byKey = map[m] || map[String(m)];
+        if (byKey) return byKey;
+        // 或者是数组 [{minutes:1,url:"..."}]
+        if (Array.isArray(map)) {
+          var found = map.find(function (it) {
+            return Number(it.minutes) === m && (it.url || it.imgUrl);
+          });
+          if (found) return found.url || found.imgUrl;
+        }
+      }
+      return this.sportDetail.aiSportImg || '/static/images/students/default.png';
+    }
   },
   onLoad: function onLoad(e) {
     this.option = e;
+  },
+  onShow: function onShow() {
+    // 刷新登录状态（学生端）
+    try {
+      var user = uni.getStorageSync('xiaotiyunUser');
+      this.isLogin = !!user;
+    } catch (err) {
+      this.isLogin = false;
+    }
   },
   onReady: function onReady() {
     this.apiGetSportDetail();
@@ -197,10 +248,36 @@ var _default = {
       }).catch(function () {
         _this.sportDetail = {};
       });
+    },
+    // 滑条实时与最终变更处理
+    onDurationChanging: function onDurationChanging(e) {
+      this.durationMinutes = e.detail.value;
+    },
+    onDurationChange: function onDurationChange(e) {
+      this.durationMinutes = e.detail.value;
+    },
+    onPrimaryAction: function onPrimaryAction() {
+      if (!this.isLogin) {
+        uni.navigateTo({
+          url: '/pages/students/login/index'
+        });
+        return;
+      }
+      // 跳转到 3 秒倒计时界面，传递必要参数，倒计时结束后进入练习页面
+      var id = this.option.id || this.sportDetail.aiSportId || this.sportDetail.sportId || '';
+      var duration = Number(this.durationMinutes) || 1;
+      var seconds = 3;
+      // 此处不要对路径进行 encode，避免无法识别页面路径而不跳转
+      var returnUrl = '/pagesTask/assign/assignTask/practice';
+      var url = "/pagesTask/assign/assignTask/countdown?id=".concat(encodeURIComponent(id), "&duration=").concat(duration, "&seconds=").concat(seconds, "&returnUrl=").concat(encodeURIComponent(returnUrl));
+      uni.navigateTo({
+        url: url
+      });
     }
   }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
 

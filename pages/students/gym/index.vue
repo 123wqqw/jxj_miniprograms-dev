@@ -267,14 +267,16 @@ export default {
     },
 
     startExercise(exercise) {
-      uni.showToast({
-        title: `开始${exercise.name}`,
-        icon: "success",
+      // 跳转到项目详情页（pagesTask 子包）
+      // sportDetail 读取参数 id：onLoad(e) { this.option = e }，apiGetSportDetail 会用 id 调接口
+      const id = exercise.id || exercise.aiSportId || exercise.sportId;
+      if (!id) {
+        uni.showToast({ title: '缺少项目ID，无法打开详情', icon: 'none' });
+        return;
+      }
+      uni.navigateTo({
+        url: `/pagesTask/assign/assignTask/sportDetail?id=${id}`
       });
-      // 这里可以跳转到具体的运动详情页面
-      // uni.navigateTo({
-      //     url: `/pages/exercise/detail?name=${exercise.name}`
-      // });
     },
   },
 };

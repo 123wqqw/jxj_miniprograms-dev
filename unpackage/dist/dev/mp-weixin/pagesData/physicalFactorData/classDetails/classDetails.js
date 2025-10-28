@@ -101,13 +101,13 @@ var components
 try {
   components = {
     uModal: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 919))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 927))
     },
     uTabs: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 1084))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 1092))
     },
     lEchart: function () {
-      return Promise.all(/*! import() | uni_modules/lime-echart/components/l-echart/l-echart */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/lime-echart/components/l-echart/l-echart")]).then(__webpack_require__.bind(null, /*! @/uni_modules/lime-echart/components/l-echart/l-echart.vue */ 1168))
+      return Promise.all(/*! import() | uni_modules/lime-echart/components/l-echart/l-echart */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/lime-echart/components/l-echart/l-echart")]).then(__webpack_require__.bind(null, /*! @/uni_modules/lime-echart/components/l-echart/l-echart.vue */ 1176))
     },
   }
 } catch (e) {

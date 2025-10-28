@@ -414,7 +414,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ 1050:
+/***/ 1058:
 /*!*****************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/uview-ui/libs/util/emitter.js ***!
   \*****************************************************************************************************/
@@ -483,7 +483,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1051:
+/***/ 1059:
 /*!*************************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/uview-ui/libs/util/async-validator.js ***!
   \*************************************************************************************************************/
@@ -1661,11 +1661,63 @@ Schema.warning = warning;
 Schema.messages = messages;
 var _default = Schema;
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../../Applications/HBuilderX-Alpha.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 1052)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../../Applications/HBuilderX-Alpha.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 1060)))
 
 /***/ }),
 
-/***/ 1052:
+/***/ 106:
+/*!****************************************************************************************************!*\
+  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/crypto-js/pad-zeropadding.js ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ 13);
+;
+(function (root, factory, undef) {
+  if (( false ? undefined : _typeof(exports)) === "object") {
+    // CommonJS
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 79), __webpack_require__(/*! ./cipher-core */ 97));
+  } else if (true) {
+    // AMD
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! ./core */ 79), __webpack_require__(/*! ./cipher-core */ 97)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {}
+})(this, function (CryptoJS) {
+  /**
+   * Zero padding strategy.
+   */
+  CryptoJS.pad.ZeroPadding = {
+    pad: function pad(data, blockSize) {
+      // Shortcut
+      var blockSizeBytes = blockSize * 4;
+
+      // Pad
+      data.clamp();
+      data.sigBytes += blockSizeBytes - (data.sigBytes % blockSizeBytes || blockSizeBytes);
+    },
+    unpad: function unpad(data) {
+      // Shortcut
+      var dataWords = data.words;
+
+      // Unpad
+      var i = data.sigBytes - 1;
+      for (var i = data.sigBytes - 1; i >= 0; i--) {
+        if (dataWords[i >>> 2] >>> 24 - i % 4 * 8 & 0xff) {
+          data.sigBytes = i + 1;
+          break;
+        }
+      }
+    }
+  };
+  return CryptoJS.pad.ZeroPadding;
+});
+
+/***/ }),
+
+/***/ 1060:
 /*!********************************************************!*\
   !*** ./node_modules/node-libs-browser/mock/process.js ***!
   \********************************************************/
@@ -1696,7 +1748,7 @@ exports.binding = function (name) {
     var path;
     exports.cwd = function () { return cwd };
     exports.chdir = function (dir) {
-        if (!path) path = __webpack_require__(/*! path */ 1053);
+        if (!path) path = __webpack_require__(/*! path */ 1061);
         cwd = path.resolve(dir, cwd);
     };
 })();
@@ -1710,7 +1762,7 @@ exports.features = {};
 
 /***/ }),
 
-/***/ 1053:
+/***/ 1061:
 /*!***********************************************!*\
   !*** ./node_modules/path-browserify/index.js ***!
   \***********************************************/
@@ -2020,59 +2072,7 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 1052)))
-
-/***/ }),
-
-/***/ 106:
-/*!****************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/crypto-js/pad-zeropadding.js ***!
-  \****************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ 13);
-;
-(function (root, factory, undef) {
-  if (( false ? undefined : _typeof(exports)) === "object") {
-    // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 79), __webpack_require__(/*! ./cipher-core */ 97));
-  } else if (true) {
-    // AMD
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! ./core */ 79), __webpack_require__(/*! ./cipher-core */ 97)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else {}
-})(this, function (CryptoJS) {
-  /**
-   * Zero padding strategy.
-   */
-  CryptoJS.pad.ZeroPadding = {
-    pad: function pad(data, blockSize) {
-      // Shortcut
-      var blockSizeBytes = blockSize * 4;
-
-      // Pad
-      data.clamp();
-      data.sigBytes += blockSizeBytes - (data.sigBytes % blockSizeBytes || blockSizeBytes);
-    },
-    unpad: function unpad(data) {
-      // Shortcut
-      var dataWords = data.words;
-
-      // Unpad
-      var i = data.sigBytes - 1;
-      for (var i = data.sigBytes - 1; i >= 0; i--) {
-        if (dataWords[i >>> 2] >>> 24 - i % 4 * 8 & 0xff) {
-          data.sigBytes = i + 1;
-          break;
-        }
-      }
-    }
-  };
-  return CryptoJS.pad.ZeroPadding;
-});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 1060)))
 
 /***/ }),
 
@@ -4842,7 +4842,7 @@ exports.downloadPreviewExcelFile = downloadPreviewExcelFile;
 
 /***/ }),
 
-/***/ 1173:
+/***/ 1181:
 /*!****************************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/uni_modules/lime-echart/components/l-echart/canvas.js ***!
   \****************************************************************************************************************/
@@ -5091,7 +5091,7 @@ exports.default = Canvas;
 
 /***/ }),
 
-/***/ 1174:
+/***/ 1182:
 /*!***************************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/uni_modules/lime-echart/components/l-echart/utils.js ***!
   \***************************************************************************************************************/
@@ -5160,7 +5160,7 @@ module.exports = toPropertyKey, module.exports.__esModule = true, module.exports
 
 /***/ }),
 
-/***/ 1260:
+/***/ 1268:
 /*!******************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/uview-ui/libs/util/province.js ***!
   \******************************************************************************************************/
@@ -5282,7 +5282,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1261:
+/***/ 1269:
 /*!**************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/uview-ui/libs/util/city.js ***!
   \**************************************************************************************************/
@@ -6403,7 +6403,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1262:
+/***/ 1270:
 /*!**************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/uview-ui/libs/util/area.js ***!
   \**************************************************************************************************/
@@ -34803,7 +34803,7 @@ var getReq = function getReq(apiUrl, params, headers) {
       domain = xiaotiyunUser.parent.domain;
     } else if (xiaotiyunUser.hasOwnProperty('student')) {
       // 学生端登录信息（避免访问 parent.id 报错）
-      var _uid2 = xiaotiyunUser.student.uid || xiaotiyunUser.student.studentId || undefined;
+      var _uid2 = xiaotiyunUser.student.id || xiaotiyunUser.student.studentId || undefined;
       var _token2 = xiaotiyunUser.student.token || undefined;
       var _studentId = xiaotiyunUser.student.studentId || xiaotiyunUser.student.uid || undefined;
       if (_uid2 && _token2) {
@@ -34826,25 +34826,25 @@ var getReq = function getReq(apiUrl, params, headers) {
     BASE_URL = domain;
   }
   // 学生角色：非 USERCENTER 业务域接口统一按学生身份请求，避免 token 与角色不匹配（如 xty-task）
-  if (xiaotiyunUser && xiaotiyunUser.hasOwnProperty('student')) {
-    var isUserCenter = BASE_URL === USERCENTER;
-    if (!isUserCenter) {
-      header.loginType = 'student';
-      // 非家长场景不强制携带 studentId
-      if (header.studentId) delete header.studentId;
-    }
-  }
-  // 当为学生角色时，针对不同服务动态设置 loginType：
-  // - 非 USERCENTER 业务域（如 xty-task、xty-plan 等），多数接口期望学生角色鉴权，使用 loginType=student
-  // - USERCENTER 或明确要求家长场景的接口再使用 studentParent
-  if (xiaotiyunUser && xiaotiyunUser.hasOwnProperty('student')) {
-    var _isUserCenter = BASE_URL === USERCENTER;
-    if (!_isUserCenter) {
-      header.loginType = 'student';
-      // 学生场景通常不必带 studentId，避免后端按家长场景校验导致 401
-      if (header.studentId) delete header.studentId;
-    }
-  }
+  // if (xiaotiyunUser && xiaotiyunUser.hasOwnProperty('student')) {
+  // 	const isUserCenter = BASE_URL === USERCENTER;
+  // 	if (!isUserCenter) {
+  // 		header.loginType = 'studentParent';
+  // 		// 非家长场景不强制携带 studentId
+  // 		// if (header.studentId) delete header.studentId;
+  // 	}
+  // }
+  // // 当为学生角色时，针对不同服务动态设置 loginType：
+  // // - 非 USERCENTER 业务域（如 xty-task、xty-plan 等），多数接口期望学生角色鉴权，使用 loginType=student
+  // // - USERCENTER 或明确要求家长场景的接口再使用 studentParent
+  // if (xiaotiyunUser && xiaotiyunUser.hasOwnProperty('student')) {
+  // 	const isUserCenter = BASE_URL === USERCENTER;
+  // 	if (!isUserCenter) {
+  // 		header.loginType = 'studentParent';
+  // 		// 学生场景通常不必带 studentId，避免后端按家长场景校验导致 401
+  // 		// if (header.studentId) delete header.studentId;
+  // 	}
+  // }
   return new Promise(function (resolve, reject) {
     uni.showLoading({
       title: '加载中'
@@ -34933,7 +34933,7 @@ var postReq = function postReq(apiUrl, params, headers) {
   // let cookie = uni.getStorageSync('cookieKey');//取出Cookie
   var xiaotiyunUser = uni.getStorageSync('xiaotiyunUser'); // 用户信息
   var studentInfo = uni.getStorageSync('studentInfo'); // 用户信息
-  console.log('studentInfostudentInfostudentInfostudentInfostudentInfostudentInfostudentInfostudentInfo', studentInfo);
+
   var header = _objectSpread({
     'Content-Type': 'application/json'
   }, headers);
@@ -34979,7 +34979,7 @@ var postReq = function postReq(apiUrl, params, headers) {
       header.loginType = "studentParent";
       domain = xiaotiyunUser.parent.domain;
     } else if (xiaotiyunUser.hasOwnProperty('student')) {
-      var _uid4 = xiaotiyunUser.student.uid || xiaotiyunUser.student.studentId || undefined;
+      var _uid4 = xiaotiyunUser.student.id || xiaotiyunUser.student.studentId || undefined;
       var _token4 = xiaotiyunUser.student.token || undefined;
       var _studentId2 = xiaotiyunUser.student.studentId || xiaotiyunUser.student.uid || undefined;
       if (isEncrypt && _uid4 && _token4) {
@@ -34996,13 +34996,13 @@ var postReq = function postReq(apiUrl, params, headers) {
       } else if (_uid4 && _token4) {
         header.uid = _uid4;
         header.token = _token4;
+        header.studentId = _studentId2;
         header.os = 'miniprogram';
         // 非加密场景补充 studentId
         if (_studentId2) header.studentId = _studentId2;
       }
       header.loginType = "studentParent";
       domain = xiaotiyunUser.student.domain ? xiaotiyunUser.student.domain : studentInfo.domain;
-      console.log('domaindomaindomaindomain', domain);
     }
   }
   if (_url.userCenterUrlList.indexOf(apiUrl) > -1) {

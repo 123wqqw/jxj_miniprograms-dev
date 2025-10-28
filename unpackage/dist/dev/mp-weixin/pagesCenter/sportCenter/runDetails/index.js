@@ -101,10 +101,10 @@ var components
 try {
   components = {
     uLoadmore: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-loadmore/u-loadmore */ "node-modules/uview-ui/components/u-loadmore/u-loadmore").then(__webpack_require__.bind(null, /*! uview-ui/components/u-loadmore/u-loadmore.vue */ 1293))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-loadmore/u-loadmore */ "node-modules/uview-ui/components/u-loadmore/u-loadmore").then(__webpack_require__.bind(null, /*! uview-ui/components/u-loadmore/u-loadmore.vue */ 1301))
     },
     uImage: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 898))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 906))
     },
   }
 } catch (e) {
@@ -183,12 +183,12 @@ var _request = __webpack_require__(/*! @/common/request.js */ 75);
 var _url = __webpack_require__(/*! @/common/url.js */ 76);
 var dropTab = function dropTab() {
   Promise.all(/*! require.ensure | pagesCenter/sportCenter/runDetails/components/drop-tab/index */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pagesCenter/sportCenter/runDetails/components/drop-tab/index")]).then((function () {
-    return resolve(__webpack_require__(/*! ./components/drop-tab/index.vue */ 1475));
+    return resolve(__webpack_require__(/*! ./components/drop-tab/index.vue */ 1483));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var studentCard = function studentCard() {
   __webpack_require__.e(/*! require.ensure | pagesCenter/sportCenter/runDetails/components/student-card/index */ "pagesCenter/sportCenter/runDetails/components/student-card/index").then((function () {
-    return resolve(__webpack_require__(/*! ./components/student-card/index.vue */ 1482));
+    return resolve(__webpack_require__(/*! ./components/student-card/index.vue */ 1490));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

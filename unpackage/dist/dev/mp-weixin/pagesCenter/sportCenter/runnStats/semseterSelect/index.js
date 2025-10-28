@@ -101,16 +101,16 @@ var components
 try {
   components = {
     uNavbar: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 1447))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 1455))
     },
     uCollapse: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-collapse/u-collapse */ "node-modules/uview-ui/components/u-collapse/u-collapse").then(__webpack_require__.bind(null, /*! uview-ui/components/u-collapse/u-collapse.vue */ 1454))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-collapse/u-collapse */ "node-modules/uview-ui/components/u-collapse/u-collapse").then(__webpack_require__.bind(null, /*! uview-ui/components/u-collapse/u-collapse.vue */ 1462))
     },
     uCollapseItem: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-collapse-item/u-collapse-item */ "node-modules/uview-ui/components/u-collapse-item/u-collapse-item").then(__webpack_require__.bind(null, /*! uview-ui/components/u-collapse-item/u-collapse-item.vue */ 1461))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-collapse-item/u-collapse-item */ "node-modules/uview-ui/components/u-collapse-item/u-collapse-item").then(__webpack_require__.bind(null, /*! uview-ui/components/u-collapse-item/u-collapse-item.vue */ 1469))
     },
     uTabs: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 1084))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 1092))
     },
   }
 } catch (e) {

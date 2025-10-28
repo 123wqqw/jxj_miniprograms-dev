@@ -172,20 +172,43 @@
 						"enablePullDownRefresh": false
 					}
 				},
-				{
-					"path": "assign/assignTask/sportDetail",
-					"style": {
-						"navigationBarTitleText": "项目详情",
-						"enablePullDownRefresh": false
-					}
-				},
-				{
-					"path": "assign/assignTask/taskDetails",
-					"style": {
-						"navigationBarTitleText": "作业浏览",
-						"enablePullDownRefresh": false
-					}
-				},
+                {
+                    "path": "assign/assignTask/sportDetail",
+                    "style": {
+                        "navigationBarTitleText": "项目详情",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "assign/assignTask/countdown",
+                    "style": {
+                        "navigationBarTitleText": "",
+                        "navigationStyle": "custom",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "assign/assignTask/practice",
+                    "style": {
+                        "navigationBarTitleText": "运动进行",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "assign/assignTask/finish",
+                    "style": {
+                        "navigationBarTitleText": "",
+                        "navigationStyle": "custom",
+                        "enablePullDownRefresh": false
+                    }
+                },
+                {
+                    "path": "assign/assignTask/taskDetails",
+                    "style": {
+                        "navigationBarTitleText": "作业浏览",
+                        "enablePullDownRefresh": false
+                    }
+                },
 				{
 					"path": "assign/assignTaskInfo/assignTaskInfo",
 					"style": {

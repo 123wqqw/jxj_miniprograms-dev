@@ -217,9 +217,24 @@ export default {
 		
 		// 查看记录详情
 		viewRecordDetail(record) {
-			console.log('查看记录详情:', record)
+			// 跳转到“完成页”作为记录详情展示
+			// 兼容 duration 可能为 'MM:SS' 字符串或数字（分钟）
+			let seconds = 0
+			let minutes = 0
+			if (typeof record.duration === 'string') {
+				const parts = String(record.duration).split(':')
+				const m = parseInt(parts[0] || '0') || 0
+				const s = parseInt(parts[1] || '0') || 0
+				minutes = m
+				seconds = m * 60 + s
+			} else if (typeof record.duration === 'number') {
+				minutes = record.duration
+				seconds = Math.max(0, Math.round(record.duration * 60))
+			}
+			const name = record.title || '运动项目'
+			const id = record.id || ''
 			uni.navigateTo({
-				url: `/pages/students/recordDetail/index?id=${record.id}`
+				url: `/pagesTask/assign/assignTask/finish?name=${encodeURIComponent(name)}&id=${encodeURIComponent(id)}&duration=${minutes}&seconds=${seconds}`
 			})
 		},
 		

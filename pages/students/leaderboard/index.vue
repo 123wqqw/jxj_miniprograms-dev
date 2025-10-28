@@ -12,27 +12,7 @@
       <view class="nav-right"></view>
     </view>
 
-    <!-- 我的排名卡片 -->
-    <view class="my-rank-card">
-      <view class="rank-header">
-        <view class="my-rank-info">
-          <view class="rank-number">{{ myRank.rank }}</view>
-          <view class="rank-label">我的排名</view>
-        </view>
-        <view class="my-stats">
-          <view class="stat-item">
-            <view class="stat-number">{{ myRank.totalTime }}</view>
-            <view class="stat-label">总时长(分钟)</view>
-          </view>
-          <view class="stat-item">
-            <view class="stat-number">{{ myRank.totalDays }}</view>
-            <view class="stat-label">坚持天数</view>
-          </view>
-        </view>
-      </view>
-    </view>
-
-    <!-- 筛选标签 -->
+    <!-- 筛选标签（调整位置：在前三名区上面） -->
     <view class="filter-section">
       <view class="filter-tabs">
         <view
@@ -55,58 +35,56 @@
       </view>
     </view>
 
-    <!-- 排行榜列表 -->
-    <view class="leaderboard-list">
-      <view
-        class="rank-item"
-        v-for="(item, index) in leaderboardList"
-        :key="index"
-        :class="{ 'my-rank': item.isMe }"
-      >
-        <view class="rank-position">
-          <view class="position-number">
-            <image
-              v-if="item.rank <= 3"
-              :src="getRankIcon(item.rank)"
-              class="rank-icon"
-            ></image>
-            <text v-else class="rank-text">{{ item.rank }}</text>
-          </view>
+    <!-- 顶部背景与前三名展示（仅UI调整，不改动逻辑） -->
+    <view class="hero-bg">
+      <view class="podium">
+        <!-- TOP2 -->
+        <view class="podium-card podium-sub">
+          <view class="podium-title">TOP2</view>
+          <view class="podium-name">{{ leaderboardList[1] && leaderboardList[1].name }}</view>
+          <view class="podium-time">{{ leaderboardList[1] && leaderboardList[1].totalTime }}分钟</view>
         </view>
-
-        <view class="user-info">
-          <view class="avatar">
-            <image
-              :src="item.avatar || '/static/images/students/user.png'"
-              mode="aspectFill"
-              class="avatar-img"
-            ></image>
-          </view>
-          <view class="user-details">
-            <view class="user-name">{{ item.name }}</view>
-            <view class="user-class">{{ item.className }}</view>
-          </view>
+        <!-- TOP1 -->
+        <view class="podium-card podium-main">
+          <view class="podium-title">TOP1</view>
+          <view class="podium-name">{{ leaderboardList[0] && leaderboardList[0].name }}</view>
+          <view class="podium-time">{{ leaderboardList[0] && leaderboardList[0].totalTime }}分钟</view>
         </view>
-
-        <view class="rank-stats">
-          <view class="stat-item">
-            <view class="stat-number">{{ item.totalTime }}</view>
-            <view class="stat-label">分钟</view>
-          </view>
-          <view class="stat-item">
-            <view class="stat-number">{{ item.totalDays }}</view>
-            <view class="stat-label">天</view>
-          </view>
+        <!-- TOP3 -->
+        <view class="podium-card podium-sub">
+          <view class="podium-title">TOP3</view>
+          <view class="podium-name">{{ leaderboardList[2] && leaderboardList[2].name }}</view>
+          <view class="podium-time">{{ leaderboardList[2] && leaderboardList[2].totalTime }}分钟</view>
         </view>
       </view>
     </view>
 
-    <!-- 底部提示 -->
-    <view class="bottom-tip">
-      <view class="tip-content">
-        <image src="/static/images/students/medal.png" class="tip-icon"></image>
-        <view class="tip-text">坚持锻炼，你也能登上榜首！</view>
+    <!-- 排行榜列表（样式调整为卡片行，与设计一致） -->
+    <view class="leaderboard-list">
+      <view
+        class="list-row"
+        v-for="(item, index) in leaderboardList"
+        :key="index"
+        :class="{ 'is-me': item.isMe }"
+      >
+        <view class="row-left">
+          <view class="row-rank" :class="{ top: item.rank <= 3 }">{{ item.rank }}</view>
+          <image :src="item.avatar || '/static/images/students/user.png'" class="row-avatar" mode="aspectFill" />
+          <view class="row-name">{{ item.name }}</view>
+        </view>
+        <view class="row-right">
+          <view class="row-time">{{ item.totalTime }}分钟</view>
+        </view>
       </view>
+    </view>
+    <!-- 底部我的排名固定条（UI仅展示，无交互改动） -->
+    <view class="self-rank-bar">
+      <view class="self-left">
+        <view class="self-rank">{{ myRank.rank }}</view>
+        <view class="self-name">我的</view>
+        <view class="self-time">{{ myRank.totalTime }}分钟</view>
+      </view>
+      <view class="self-action">去锻炼</view>
     </view>
   </view>
 </template>
@@ -301,7 +279,7 @@ export default {
 <style lang="scss" scoped>
 .leaderboard-container {
   min-height: 100vh;
-  background: #f5f5f5;
+  background: linear-gradient(180deg, #77b6ff 0%, #eaf6ff 38%, #f7f9fc 100%);
 }
 
 .nav-bar {
@@ -336,60 +314,46 @@ export default {
   width: 60rpx;
 }
 
-.my-rank-card {
-  margin: 32rpx;
-  background: linear-gradient(135deg, #2c84ff 0%, #4a9eff 100%);
-  border-radius: 20rpx;
-  padding: 32rpx;
+/* 顶部前三名展示 */
+.hero-bg {
+  padding: 24rpx 24rpx 0;
 }
-
-.rank-header {
+.podium {
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
-  align-items: center;
+  padding: 12rpx 8rpx 24rpx;
 }
-
-.my-rank-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.podium-card {
+  width: 200rpx;
+  background: rgba(255,255,255,0.92);
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(46,120,255,0.12);
+  text-align: center;
+  padding: 20rpx 12rpx;
 }
-
-.rank-number {
-  font-size: 64rpx;
-  font-weight: 600;
-  color: #ffffff;
+.podium-main {
+  width: 220rpx;
+  transform: translateY(-10rpx);
+  border: 4rpx solid #ffd86a;
+}
+.podium-sub {
+  border: 2rpx solid #cfe2ff;
+}
+.podium-title {
+  font-size: 28rpx;
+  font-weight: 800;
+  color: #4b7cff;
   margin-bottom: 8rpx;
 }
-
-.rank-label {
-  font-size: 28rpx;
-  color: #ffffff;
-  opacity: 0.9;
+.podium-name {
+  font-size: 26rpx;
+  color: #666;
 }
-
-.my-stats {
-  display: flex;
-  gap: 40rpx;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stat-number {
-  font-size: 36rpx;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 4rpx;
-}
-
-.stat-label {
+.podium-time {
+  margin-top: 8rpx;
   font-size: 24rpx;
-  color: #ffffff;
-  opacity: 0.8;
+  color: #999;
 }
 
 .filter-section {
@@ -399,7 +363,10 @@ export default {
 
 .filter-tabs {
   display: flex;
-  gap: 20rpx;
+  gap: 0;
+  background: #eaf2ff;
+  border-radius: 16rpx;
+  margin: 0 8rpx;
 }
 
 .filter-tab {
@@ -408,175 +375,122 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f5f5f5;
-  border-radius: 36rpx;
+  border-radius: 16rpx;
   transition: all 0.3s ease;
 }
 
 .filter-tab.active {
-  background: #2c84ff;
+  background: #2E78FF;
 }
 
 .tab-text {
-  font-size: 28rpx;
-  color: #666666;
+  font-size: 26rpx;
+  color: #2E78FF;
   transition: color 0.3s ease;
 }
 
 .filter-tab.active .tab-text {
   color: #ffffff;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .leaderboard-list {
-  padding: 0 32rpx 32rpx;
+  padding: 0 24rpx 120rpx;
 }
 
-.rank-item {
+/* 列表行样式 */
+.list-row {
   display: flex;
   align-items: center;
   background: #ffffff;
   border-radius: 16rpx;
-  padding: 24rpx;
+  padding: 18rpx 20rpx;
   margin-bottom: 16rpx;
-  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
 }
-
-.rank-item.my-rank {
-  background: linear-gradient(135deg, #ffe4e1 0%, #fff0f0 100%);
-  border: 2rpx solid #ff6b6b;
+.list-row.is-me {
+  background: #eef4ff;
 }
-
-.rank-position {
-  width: 80rpx;
+.row-left {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
-
-.position-number {
+.row-rank {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 12rpx;
+  background: #f2f4f7;
+  color: #333;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16rpx;
+}
+.row-rank.top {
+  background: #e8f0ff;
+  color: #2E78FF;
+}
+.row-avatar {
   width: 60rpx;
   height: 60rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+.row-name {
+  font-size: 30rpx;
+  color: #333;
+}
+.row-right {
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 50%;
+}
+.row-time {
+  font-size: 26rpx;
+  color: #999;
 }
 
-.position-number.rank-first {
-  background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+/* 底部固定我的排名条 */
+.self-rank-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120rpx;
+  background: #2E78FF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24rpx;
 }
-
-.position-number.rank-second {
-  background: linear-gradient(135deg, #c0c0c0 0%, #a0a0a0 100%);
-}
-
-.position-number.rank-third {
-  background: linear-gradient(135deg, #cd7f32 0%, #b8860b 100%);
-}
-
-.position-number.rank-normal {
-  background: #f5f5f5;
-}
-
-.rank-icon {
-  width: 40rpx;
-  height: 40rpx;
-}
-
-.rank-text {
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #333333;
-}
-
-.position-number.rank-first .rank-text,
-.position-number.rank-second .rank-text,
-.position-number.rank-third .rank-text {
+.self-left {
+  display: flex;
+  align-items: center;
   color: #ffffff;
 }
-
-.user-info {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  margin-left: 24rpx;
+.self-rank {
+  font-size: 36rpx;
+  font-weight: 800;
+  margin-right: 24rpx;
 }
-
-.avatar {
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-right: 20rpx;
+.self-name {
+  font-size: 30rpx;
+  margin-right: 24rpx;
 }
-
-.avatar-img {
-  width: 100%;
-  height: 100%;
-}
-
-.user-details {
-  flex: 1;
-}
-
-.user-name {
-  font-size: 32rpx;
-  font-weight: 600;
-  color: #333333;
-  margin-bottom: 8rpx;
-}
-
-.user-class {
+.self-time {
   font-size: 26rpx;
-  color: #666666;
+  opacity: 0.9;
 }
-
-.rank-stats {
-  display: flex;
-  gap: 24rpx;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stat-number {
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #2c84ff;
-  margin-bottom: 4rpx;
-}
-
-.stat-label {
-  font-size: 22rpx;
-  color: #666666;
-}
-
-.bottom-tip {
-  padding: 32rpx;
+.self-action {
+  height: 72rpx;
+  padding: 0 28rpx;
   background: #ffffff;
-  margin-top: 20rpx;
-}
-
-.tip-content {
+  color: #2E78FF;
+  border-radius: 36rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16rpx;
-  padding: 24rpx;
-  background: #f8f9fa;
-  border-radius: 16rpx;
-}
-
-.tip-icon {
-  width: 40rpx;
-  height: 40rpx;
-}
-
-.tip-text {
-  font-size: 28rpx;
-  color: #666666;
+  font-size: 26rpx;
+  font-weight: 700;
 }
 </style>

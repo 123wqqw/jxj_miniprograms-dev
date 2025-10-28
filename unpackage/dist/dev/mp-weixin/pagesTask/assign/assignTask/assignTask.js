@@ -101,22 +101,22 @@ var components
 try {
   components = {
     uGap: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-gap/u-gap */ "node-modules/uview-ui/components/u-gap/u-gap").then(__webpack_require__.bind(null, /*! uview-ui/components/u-gap/u-gap.vue */ 905))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-gap/u-gap */ "node-modules/uview-ui/components/u-gap/u-gap").then(__webpack_require__.bind(null, /*! uview-ui/components/u-gap/u-gap.vue */ 913))
     },
     uImage: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 898))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 906))
     },
     uButton: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 1031))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 1039))
     },
     uIcon: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 940))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 948))
     },
     uPopup: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-popup/u-popup */ "node-modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! uview-ui/components/u-popup/u-popup.vue */ 1126))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-popup/u-popup */ "node-modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! uview-ui/components/u-popup/u-popup.vue */ 1134))
     },
     uSelect: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-select/u-select */ "node-modules/uview-ui/components/u-select/u-select").then(__webpack_require__.bind(null, /*! uview-ui/components/u-select/u-select.vue */ 1063))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-select/u-select */ "node-modules/uview-ui/components/u-select/u-select").then(__webpack_require__.bind(null, /*! uview-ui/components/u-select/u-select.vue */ 1071))
     },
   }
 } catch (e) {
@@ -309,17 +309,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var that = null;
 var xWeekDateCalendar = function xWeekDateCalendar() {
   Promise.all(/*! require.ensure | pagesTask/components/x-week-date-calendar/x-week-date-calendar3 */[__webpack_require__.e("pagesTask/common/vendor"), __webpack_require__.e("pagesTask/components/x-week-date-calendar/x-week-date-calendar3")]).then((function () {
-    return resolve(__webpack_require__(/*! pagesTask/components/x-week-date-calendar/x-week-date-calendar3.vue */ 1133));
+    return resolve(__webpack_require__(/*! pagesTask/components/x-week-date-calendar/x-week-date-calendar3.vue */ 1141));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var customizedItems = function customizedItems() {
   __webpack_require__.e(/*! require.ensure | pagesTask/assign/components/customized-items/index */ "pagesTask/assign/components/customized-items/index").then((function () {
-    return resolve(__webpack_require__(/*! ../components/customized-items/index.vue */ 1140));
+    return resolve(__webpack_require__(/*! ../components/customized-items/index.vue */ 1148));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var aiSportItem = function aiSportItem() {
   __webpack_require__.e(/*! require.ensure | pagesTask/assign/components/ai-sport-item/index */ "pagesTask/assign/components/ai-sport-item/index").then((function () {
-    return resolve(__webpack_require__(/*! ../components/ai-sport-item/index.vue */ 1147));
+    return resolve(__webpack_require__(/*! ../components/ai-sport-item/index.vue */ 1155));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

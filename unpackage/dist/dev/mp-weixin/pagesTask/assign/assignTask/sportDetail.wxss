@@ -51,19 +51,55 @@
   line-height: 48rpx;
   font-weight: 600;
   color: #202020;
-  margin-bottom: 80rpx;
+  margin-bottom: 40rpx;
+}
+
+/* 计时卡片样式 */
+.timer-card.data-v-098df646 {
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.06);
+  padding: 28rpx;
+  margin-bottom: 40rpx;
+}
+.timer-title.data-v-098df646 {
+  text-align: center;
+  font-size: 28rpx;
+  color: #202020;
+  margin-bottom: 20rpx;
+}
+.slider-wrap.data-v-098df646 {
+  padding: 0 10rpx 24rpx;
+}
+.primary-btn.data-v-098df646 {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background: #5C8FF7;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 16rpx;
 }
 .sport-text.data-v-098df646 {
   font-size: 28rpx;
   font-weight: 400;
   color: #707070;
   line-height: 36rpx;
+  background: #FFFFFF;
+  /* 背景色卡片 */
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.06);
+  padding: 28rpx;
+  margin-bottom: 30rpx;
 }
 .sport-text-title.data-v-098df646 {
   font-weight: 600;
   color: #202020;
   line-height: 40rpx;
+  margin-bottom: 16rpx;
 }
 .sport-text + .sport-text.data-v-098df646 {
-  margin-top: 30rpx;
+  margin-top: 0;
+  /* 已通过 margin-bottom 控制间距 */
 }
