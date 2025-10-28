@@ -123,6 +123,12 @@
 </template>
 
 <script>
+import { getReq, postReq } from "@/common/request.js";
+import { URL } from "@/common/url.js";
+	// // 获取所有AI锻炼记录列表
+	// jxjRecordInfos:"/xty-task/app-api/clock/v2/getRecordInfos",
+	// // 获取AI锻炼记录列表
+	// jxjGetRecordInfos:"/xty-task/app-api/clock/v1/getRecordInfos",
 export default {
 	data() {
 		return {

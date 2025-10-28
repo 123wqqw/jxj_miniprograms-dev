@@ -210,7 +210,7 @@ export default {
   },
   onLoad() {
 		const date = this.getCurrentWeekRange();
-    this.loadLeaderboardData(date);
+    // this.loadLeaderboardData(date);
   },
   methods: {
     formatDate(date) {

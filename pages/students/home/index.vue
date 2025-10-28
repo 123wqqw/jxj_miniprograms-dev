@@ -113,6 +113,7 @@ import {
 import ProfileModal from './components/ProfileModal.vue'
 import { getReq } from '@/common/request.js'
 import { URL } from '@/common/url.js'
+// jxjTextType:"/xty-task/app-api/rank/v41100/jxjAppIndexTextType",
 
 export default {
 	components: {

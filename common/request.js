@@ -52,8 +52,6 @@ export const getReq = (apiUrl, params, headers) => {
 	let BASE_URL, domain;
 	// let cookie = uni.getStorageSync('cookieKey');//取出Cookie
 	let xiaotiyunUser = uni.getStorageSync('xiaotiyunUser'); // 用户信息
-	let studentInfo = uni.getStorageSync('studentInfo'); // 用户信息
-	console.log('studentInfostudentInfostudentInfostudentInfo111111111',studentInfo);
 	
 	let header = {
 		'Content-Type': 'application/x-www-form-urlencoded',
@@ -95,8 +93,7 @@ export const getReq = (apiUrl, params, headers) => {
                 header.token = token;
             }
             header.loginType = "student";
-            domain = xiaotiyunUser.student.domain ?xiaotiyunUser.student.domain :studentInfo.domain;
-						console.log('domaindomaindomaindomain111111111',domain);
+            domain = xiaotiyunUser.student.domain 
 						
 		}
 		header = Object.assign({}, header, {
