@@ -88,7 +88,7 @@ export const getReq = (apiUrl, params, headers) => {
 			domain = xiaotiyunUser.parent.domain;
         } else if (xiaotiyunUser.hasOwnProperty('student')) {
             // 学生端登录信息（避免访问 parent.id 报错）
-            const uid = xiaotiyunUser.student.uid || xiaotiyunUser.student.studentId || undefined;
+            const uid = xiaotiyunUser.student.id || xiaotiyunUser.student.studentId || undefined;
             const token = xiaotiyunUser.student.token || undefined;
             const studentId = xiaotiyunUser.student.studentId || xiaotiyunUser.student.uid || undefined;
             if (uid && token) {
@@ -114,25 +114,25 @@ export const getReq = (apiUrl, params, headers) => {
 		BASE_URL = domain;
 	}
 	// 学生角色：非 USERCENTER 业务域接口统一按学生身份请求，避免 token 与角色不匹配（如 xty-task）
-	if (xiaotiyunUser && xiaotiyunUser.hasOwnProperty('student')) {
-		const isUserCenter = BASE_URL === USERCENTER;
-		if (!isUserCenter) {
-			header.loginType = 'student';
-			// 非家长场景不强制携带 studentId
-			if (header.studentId) delete header.studentId;
-		}
-	}
-	// 当为学生角色时，针对不同服务动态设置 loginType：
-	// - 非 USERCENTER 业务域（如 xty-task、xty-plan 等），多数接口期望学生角色鉴权，使用 loginType=student
-	// - USERCENTER 或明确要求家长场景的接口再使用 studentParent
-	if (xiaotiyunUser && xiaotiyunUser.hasOwnProperty('student')) {
-		const isUserCenter = BASE_URL === USERCENTER;
-		if (!isUserCenter) {
-			header.loginType = 'student';
-			// 学生场景通常不必带 studentId，避免后端按家长场景校验导致 401
-			if (header.studentId) delete header.studentId;
-		}
-	}
+	// if (xiaotiyunUser && xiaotiyunUser.hasOwnProperty('student')) {
+	// 	const isUserCenter = BASE_URL === USERCENTER;
+	// 	if (!isUserCenter) {
+	// 		header.loginType = 'studentParent';
+	// 		// 非家长场景不强制携带 studentId
+	// 		// if (header.studentId) delete header.studentId;
+	// 	}
+	// }
+	// // 当为学生角色时，针对不同服务动态设置 loginType：
+	// // - 非 USERCENTER 业务域（如 xty-task、xty-plan 等），多数接口期望学生角色鉴权，使用 loginType=student
+	// // - USERCENTER 或明确要求家长场景的接口再使用 studentParent
+	// if (xiaotiyunUser && xiaotiyunUser.hasOwnProperty('student')) {
+	// 	const isUserCenter = BASE_URL === USERCENTER;
+	// 	if (!isUserCenter) {
+	// 		header.loginType = 'studentParent';
+	// 		// 学生场景通常不必带 studentId，避免后端按家长场景校验导致 401
+	// 		// if (header.studentId) delete header.studentId;
+	// 	}
+	// }
 	return new Promise((resolve, reject) => {
 		uni.showLoading({
 			title: '加载中',
@@ -263,7 +263,6 @@ export const postReq = (apiUrl, params, headers) => {
 	// let cookie = uni.getStorageSync('cookieKey');//取出Cookie
 	let xiaotiyunUser = uni.getStorageSync('xiaotiyunUser'); // 用户信息
 	let studentInfo = uni.getStorageSync('studentInfo'); // 用户信息
-	console.log('studentInfostudentInfostudentInfostudentInfostudentInfostudentInfostudentInfostudentInfo',studentInfo);
 	
 	let header = {
 		'Content-Type': 'application/json',
@@ -311,7 +310,7 @@ export const postReq = (apiUrl, params, headers) => {
 			header.loginType = "studentParent";
 			domain = xiaotiyunUser.parent.domain;
         } else if (xiaotiyunUser.hasOwnProperty('student')) {
-            const uid = xiaotiyunUser.student.uid || xiaotiyunUser.student.studentId || undefined;
+            const uid = xiaotiyunUser.student.id || xiaotiyunUser.student.studentId || undefined;
             const token = xiaotiyunUser.student.token || undefined;
             const studentId = xiaotiyunUser.student.studentId || xiaotiyunUser.student.uid || undefined;
             if (isEncrypt && uid && token) {
@@ -321,15 +320,13 @@ export const postReq = (apiUrl, params, headers) => {
             } else if (uid && token) {
                 header.uid = uid;
                 header.token = token;
+								header.studentId = studentId;
                 header.os = 'miniprogram';
                 // 非加密场景补充 studentId
                 if (studentId) header.studentId = studentId;
             }
             header.loginType = "studentParent";
             domain = xiaotiyunUser.student.domain ?xiaotiyunUser.student.domain :studentInfo.domain;
-
-						console.log('domaindomaindomaindomain',domain);
-						
 		}
 	}
 	if (userCenterUrlList.indexOf(apiUrl) > -1) {
