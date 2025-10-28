@@ -52,6 +52,8 @@ export const getReq = (apiUrl, params, headers) => {
 	let BASE_URL, domain;
 	// let cookie = uni.getStorageSync('cookieKey');//取出Cookie
 	let xiaotiyunUser = uni.getStorageSync('xiaotiyunUser'); // 用户信息
+	let studentInfo = uni.getStorageSync('studentInfo'); // 可能包含 domain 的本地信息
+	console.log('xiaotiyunUser---',xiaotiyunUser)
 	
 	let header = {
 		'Content-Type': 'application/x-www-form-urlencoded',
@@ -88,12 +90,18 @@ export const getReq = (apiUrl, params, headers) => {
             // 学生端登录信息（避免访问 parent.id 报错）
             const uid = xiaotiyunUser.student.uid || xiaotiyunUser.student.studentId || undefined;
             const token = xiaotiyunUser.student.token || undefined;
+            const studentId = xiaotiyunUser.student.studentId || xiaotiyunUser.student.uid || undefined;
             if (uid && token) {
                 header.uid = uid;
                 header.token = token;
             }
-            header.loginType = "student";
-            domain = xiaotiyunUser.student.domain 
+            // 按需切换为 studentParent 并补充 studentId，避免后端按家长身份校验时报参数不足
+            header.loginType = "studentParent";
+            if (studentId) {
+                header.studentId = studentId;
+            }
+            // 兜底 domain（避免缺失导致非 usercenter 接口请求失败）
+            domain = xiaotiyunUser.student.domain || (studentInfo && studentInfo.domain)
 						
 		}
 		header = Object.assign({}, header, {
@@ -104,6 +112,26 @@ export const getReq = (apiUrl, params, headers) => {
 		BASE_URL = USERCENTER;
 	} else {
 		BASE_URL = domain;
+	}
+	// 学生角色：非 USERCENTER 业务域接口统一按学生身份请求，避免 token 与角色不匹配（如 xty-task）
+	if (xiaotiyunUser && xiaotiyunUser.hasOwnProperty('student')) {
+		const isUserCenter = BASE_URL === USERCENTER;
+		if (!isUserCenter) {
+			header.loginType = 'student';
+			// 非家长场景不强制携带 studentId
+			if (header.studentId) delete header.studentId;
+		}
+	}
+	// 当为学生角色时，针对不同服务动态设置 loginType：
+	// - 非 USERCENTER 业务域（如 xty-task、xty-plan 等），多数接口期望学生角色鉴权，使用 loginType=student
+	// - USERCENTER 或明确要求家长场景的接口再使用 studentParent
+	if (xiaotiyunUser && xiaotiyunUser.hasOwnProperty('student')) {
+		const isUserCenter = BASE_URL === USERCENTER;
+		if (!isUserCenter) {
+			header.loginType = 'student';
+			// 学生场景通常不必带 studentId，避免后端按家长场景校验导致 401
+			if (header.studentId) delete header.studentId;
+		}
 	}
 	return new Promise((resolve, reject) => {
 		uni.showLoading({
@@ -285,17 +313,19 @@ export const postReq = (apiUrl, params, headers) => {
         } else if (xiaotiyunUser.hasOwnProperty('student')) {
             const uid = xiaotiyunUser.student.uid || xiaotiyunUser.student.studentId || undefined;
             const token = xiaotiyunUser.student.token || undefined;
+            const studentId = xiaotiyunUser.student.studentId || xiaotiyunUser.student.uid || undefined;
             if (isEncrypt && uid && token) {
-                header.security = AES_ECB_ENCRYPT(JSON.stringify({
-                    uid: uid,
-                    token: token
-                }))
+                // 加密场景下，若按 studentParent 校验，通常需要携带 studentId
+                const securityPayload = studentId ? { uid, token, studentId } : { uid, token };
+                header.security = AES_ECB_ENCRYPT(JSON.stringify(securityPayload))
             } else if (uid && token) {
                 header.uid = uid;
                 header.token = token;
                 header.os = 'miniprogram';
+                // 非加密场景补充 studentId
+                if (studentId) header.studentId = studentId;
             }
-            header.loginType = "student";
+            header.loginType = "studentParent";
             domain = xiaotiyunUser.student.domain ?xiaotiyunUser.student.domain :studentInfo.domain;
 
 						console.log('domaindomaindomaindomain',domain);

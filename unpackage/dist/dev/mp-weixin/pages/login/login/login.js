@@ -265,7 +265,7 @@ var _default = {
           _this2.setXiaotiyunUser(xiaotiyunUser);
           if (info.phone) {
             uni.switchTab({
-              url: "/pagesStudent/home/index"
+              url: "/pages/home/index/index"
             });
           } else {
             uni.reLaunch({
@@ -291,15 +291,19 @@ var _default = {
     },
     // 跳转到注册页面
     goToRegister: function goToRegister() {
-      uni.navigateTo({
-        url: '/pages/login/auth/step1?type=register'
-      });
+      if (this.currentRole === 'student') {
+        uni.navigateTo({
+          url: '/pages/login/auth/step1?type=register'
+        });
+      }
     },
     // 跳转到忘记密码页面
     goToForgotPassword: function goToForgotPassword() {
-      uni.navigateTo({
-        url: "/pages/login/auth/step1"
-      });
+      if (this.currentRole === 'student') {
+        uni.navigateTo({
+          url: "/pages/login/auth/step1"
+        });
+      }
     },
     // 区域信息
     getUserCenterGetAreaList: function getUserCenterGetAreaList() {

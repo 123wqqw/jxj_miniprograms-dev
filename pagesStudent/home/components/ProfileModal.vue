@@ -276,19 +276,16 @@ export default {
 					tag: 'student_info' // 随便传一个字符串
 				};
 
-				getReq(URL.apiGetStudentInfo, params).then(res => {
-					console.log('resresresresresresresresres',res);
-					
+				getReq(URL.apiGetStudentInfo, params).then(response => {
+					console.log('学生信息(老版本):', response);
+					// 处理返回的学生信息（优先取 data.data）
+					if (response && response.data) {
+						const payload = response.data && response.data.data ? response.data.data : response.data
+						// 可以在这里更新用户信息
+						this.$emit('updateUserInfo', payload);
+					}
+					return response;
 				});
-				console.log('学生信息:', response);
-
-				// 处理返回的学生信息
-				if (response && response.data) {
-					// 可以在这里更新用户信息
-					this.$emit('updateUserInfo', response.data);
-				}
-
-				return response;
 			} catch (error) {
 				console.error('获取学生信息失败:', error);
 				uni.showToast({

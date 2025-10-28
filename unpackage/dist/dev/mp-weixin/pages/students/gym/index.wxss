@@ -39,14 +39,16 @@
   background-color: #fff;
   border-bottom: 1rpx solid #eee;
 }
-.nav-left.data-v-efbd7f00, .nav-right.data-v-efbd7f00 {
+.nav-left.data-v-efbd7f00,
+.nav-right.data-v-efbd7f00 {
   width: 60rpx;
   height: 60rpx;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.back-icon.data-v-efbd7f00, .more-icon.data-v-efbd7f00 {
+.back-icon.data-v-efbd7f00,
+.more-icon.data-v-efbd7f00 {
   width: 40rpx;
   height: 40rpx;
 }
@@ -132,7 +134,7 @@
   background-color: #f0f0f0;
 }
 .sidebar-item.active.data-v-efbd7f00 {
-  background-color: #007AFF;
+  background-color: #007aff;
   box-shadow: 0 2rpx 6rpx rgba(0, 122, 255, 0.25);
 }
 .sidebar-text.data-v-efbd7f00 {
@@ -312,14 +314,16 @@
   background-color: #fff;
   border-bottom: 1rpx solid #eee;
 }
-.nav-left.data-v-efbd7f00, .nav-right.data-v-efbd7f00 {
+.nav-left.data-v-efbd7f00,
+.nav-right.data-v-efbd7f00 {
   width: 60rpx;
   height: 60rpx;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.back-icon.data-v-efbd7f00, .more-icon.data-v-efbd7f00 {
+.back-icon.data-v-efbd7f00,
+.more-icon.data-v-efbd7f00 {
   width: 40rpx;
   height: 40rpx;
 }
@@ -398,7 +402,7 @@
   background-color: #f0f0f0;
 }
 .sidebar-item.active.data-v-efbd7f00 {
-  background-color: #007AFF;
+  background-color: #007aff;
   box-shadow: 0 2rpx 6rpx rgba(0, 122, 255, 0.25);
 }
 .sidebar-text.data-v-efbd7f00 {

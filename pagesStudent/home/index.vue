@@ -146,6 +146,7 @@
 
 <script>
 import { mapState } from "vuex";
+import { mapMutations } from "vuex";
 import ProfileModal from "./components/ProfileModal.vue";
 import { getReq } from "@/common/request.js";
 import { URL } from "@/common/url.js";
@@ -173,6 +174,7 @@ export default {
     this.getStudentInfo();
   },
   methods: {
+    ...mapMutations(["setXiaotiyunUser"]),
     // 获取系统信息
     getSystemInfo() {
       const systemInfo = uni.getSystemInfoSync();
@@ -185,49 +187,55 @@ export default {
         // 先从本地存储获取基本信息
         if (this.xiaotiyunUser && this.xiaotiyunUser.student) {
           this.studentInfo = {
-            name: this.xiaotiyunUser.student.name || "",
-            school: this.xiaotiyunUser.student.schoolName || "",
-            studentId:
-              this.xiaotiyunUser.student.studentId ||
-              this.xiaotiyunUser.student.uid,
-            avatar: this.xiaotiyunUser.student.avatar || "",
-          };
+            name: this.xiaotiyunUser.student.name || '',
+            school: this.xiaotiyunUser.student.schoolName || '',
+            studentId: this.xiaotiyunUser.student.studentId || this.xiaotiyunUser.student.uid,
+            avatar: this.xiaotiyunUser.student.avatar || ''
+          }
         }
-
+        
         // 调用API获取最新学生信息
         const params = {
-          studentId: this.studentInfo.studentId || "", // 学生ID
-          tag: "student_info", // 随便传一个字符串
-        };
-
-        const response = await getReq(URL.apiGetStudentInfo, params);
-        console.log("获取到的学生信息:", response);
-
-        // // 更新学生信息
-        if (response && response.data) {
-          this.studentInfo = {
-            ...this.studentInfo,
-            ...response.data,
-          };
-          this.studentInfo.school =
-            this.studentInfo.schoolName +
-            " " +
-            this.studentInfo.grade +
-            "年级" +
-            this.studentInfo.claNumber +
-            "班";
-          console.log("更新后的学生信息:", this.studentInfo);
+          studentId: this.studentInfo.studentId || '', // 学生ID
+          tag: 'student_info' // 随便传一个字符串
         }
+        
+        const response = await getReq(URL.apiGetStudentInfo, params)
+        console.log('获取到的学生信息:', response)
+        
+				// 更新学生信息
+				if (response && response.data) {
+					const payload = response.data && response.data.data ? response.data.data : response.data
+					this.studentInfo = {
+						...this.studentInfo,
+						...payload
+					}
+          this.studentInfo.school = this.studentInfo.schoolName + ' ' + this.studentInfo.grade + '年级' + this.studentInfo.claNumber + '班'
+          console.log('更新后的学生信息:', this.studentInfo)
+          
+			   // 只替换响应里有的字段；没有的字段保持不变，同时确保鉴权字段不被清空
+					const prevStudent = (this.xiaotiyunUser && this.xiaotiyunUser.student) || {}
+					const mergedStudent = { ...prevStudent, ...payload }
+					;['uid','token','domain'].forEach(k => {
+						if (!payload || !Object.prototype.hasOwnProperty.call(payload, k) || payload[k] === undefined || payload[k] === null || payload[k] === '') {
+							mergedStudent[k] = prevStudent[k]
+						}
+					})
+					const updatedXiaotiyunUser = {
+						...(this.xiaotiyunUser || {}),
+						student: mergedStudent
+					}
+					this.setXiaotiyunUser(updatedXiaotiyunUser)
+				}
+        
       } catch (error) {
-        console.error("获取学生信息失败:", error);
+        console.error('获取学生信息失败:', error)
         // 如果API调用失败，至少显示本地存储的信息
         if (this.xiaotiyunUser && this.xiaotiyunUser.student) {
           this.studentInfo = {
-            name: this.xiaotiyunUser.student.name || "李思思",
-            school:
-              this.xiaotiyunUser.student.schoolName ||
-              "北京市朝阳第一小学 四年级3班",
-          };
+            name: this.xiaotiyunUser.student.name || '李思思',
+            school: this.xiaotiyunUser.student.schoolName || '北京市朝阳第一小学 四年级3班'
+          }
         }
       }
     },
@@ -292,10 +300,24 @@ export default {
 
     // 更新用户信息
     updateUserInfo(userInfo) {
+      // 视图模型合并
       this.studentInfo = {
         ...this.studentInfo,
         ...userInfo,
       };
+      // 只替换 userInfo 中存在的字段；未提供的字段保持不变，同时确保鉴权字段不被清空
+      const prevStudent = (this.xiaotiyunUser && this.xiaotiyunUser.student) || {}
+      const mergedStudent = { ...prevStudent, ...userInfo }
+      ;['uid','token','domain'].forEach(k => {
+        if (!userInfo || !Object.prototype.hasOwnProperty.call(userInfo, k) || userInfo[k] === undefined || userInfo[k] === null || userInfo[k] === '') {
+          mergedStudent[k] = prevStudent[k]
+        }
+      })
+      const updatedXiaotiyunUser = {
+        ...(this.xiaotiyunUser || {}),
+        student: mergedStudent
+      }
+      this.setXiaotiyunUser(updatedXiaotiyunUser)
     },
 
     // 跳转到家庭健身房

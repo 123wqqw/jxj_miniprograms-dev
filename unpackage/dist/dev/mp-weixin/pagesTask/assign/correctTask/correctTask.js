@@ -101,19 +101,19 @@ var components
 try {
   components = {
     uImage: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 896))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 898))
     },
     uBackTop: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-back-top/u-back-top */ "node-modules/uview-ui/components/u-back-top/u-back-top").then(__webpack_require__.bind(null, /*! uview-ui/components/u-back-top/u-back-top.vue */ 1159))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-back-top/u-back-top */ "node-modules/uview-ui/components/u-back-top/u-back-top").then(__webpack_require__.bind(null, /*! uview-ui/components/u-back-top/u-back-top.vue */ 1161))
     },
     uCalendar: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-calendar/u-calendar */ "node-modules/uview-ui/components/u-calendar/u-calendar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-calendar/u-calendar.vue */ 1096))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-calendar/u-calendar */ "node-modules/uview-ui/components/u-calendar/u-calendar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-calendar/u-calendar.vue */ 1098))
     },
     uPopup: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-popup/u-popup */ "node-modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! uview-ui/components/u-popup/u-popup.vue */ 1124))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-popup/u-popup */ "node-modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! uview-ui/components/u-popup/u-popup.vue */ 1126))
     },
     uInput: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-input/u-input.vue */ 1054))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-input/u-input.vue */ 1056))
     },
   }
 } catch (e) {

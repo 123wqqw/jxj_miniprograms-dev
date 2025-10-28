@@ -101,13 +101,13 @@ var components
 try {
   components = {
     uToast: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-toast/u-toast */ "node-modules/uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! uview-ui/components/u-toast/u-toast.vue */ 994))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-toast/u-toast */ "node-modules/uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! uview-ui/components/u-toast/u-toast.vue */ 996))
     },
     uDropdown: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-dropdown/u-dropdown */ "node-modules/uview-ui/components/u-dropdown/u-dropdown").then(__webpack_require__.bind(null, /*! uview-ui/components/u-dropdown/u-dropdown.vue */ 1001))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-dropdown/u-dropdown */ "node-modules/uview-ui/components/u-dropdown/u-dropdown").then(__webpack_require__.bind(null, /*! uview-ui/components/u-dropdown/u-dropdown.vue */ 1003))
     },
     uDropdownItem: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-dropdown-item/u-dropdown-item */ "node-modules/uview-ui/components/u-dropdown-item/u-dropdown-item").then(__webpack_require__.bind(null, /*! uview-ui/components/u-dropdown-item/u-dropdown-item.vue */ 1008))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-dropdown-item/u-dropdown-item */ "node-modules/uview-ui/components/u-dropdown-item/u-dropdown-item").then(__webpack_require__.bind(null, /*! uview-ui/components/u-dropdown-item/u-dropdown-item.vue */ 1010))
     },
   }
 } catch (e) {

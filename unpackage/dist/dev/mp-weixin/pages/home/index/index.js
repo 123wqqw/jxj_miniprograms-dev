@@ -101,16 +101,16 @@ var components
 try {
   components = {
     uBadge: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-badge/u-badge */ "node-modules/uview-ui/components/u-badge/u-badge").then(__webpack_require__.bind(null, /*! uview-ui/components/u-badge/u-badge.vue */ 931))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-badge/u-badge */ "node-modules/uview-ui/components/u-badge/u-badge").then(__webpack_require__.bind(null, /*! uview-ui/components/u-badge/u-badge.vue */ 933))
     },
     uIcon: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 938))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 940))
     },
     uSwiper: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-swiper/u-swiper */ "node-modules/uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! uview-ui/components/u-swiper/u-swiper.vue */ 945))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-swiper/u-swiper */ "node-modules/uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! uview-ui/components/u-swiper/u-swiper.vue */ 947))
     },
     uTabbar: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabbar/u-tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabbar/u-tabbar")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabbar/u-tabbar.vue */ 910))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabbar/u-tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabbar/u-tabbar")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabbar/u-tabbar.vue */ 912))
     },
   }
 } catch (e) {
@@ -185,32 +185,32 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var userinfoBlock = function userinfoBlock() {
   __webpack_require__.e(/*! require.ensure | pages/home/index/components/userinfo-block/index */ "pages/home/index/components/userinfo-block/index").then((function () {
-    return resolve(__webpack_require__(/*! ./components/userinfo-block/index.vue */ 952));
+    return resolve(__webpack_require__(/*! ./components/userinfo-block/index.vue */ 954));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var userGrid = function userGrid() {
   __webpack_require__.e(/*! require.ensure | pages/home/index/components/user-grid/index */ "pages/home/index/components/user-grid/index").then((function () {
-    return resolve(__webpack_require__(/*! ./components/user-grid/index.vue */ 959));
+    return resolve(__webpack_require__(/*! ./components/user-grid/index.vue */ 961));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var PieCharts = function PieCharts() {
   Promise.all(/*! require.ensure | pages/home/index/components/pie-charts/index */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/home/index/components/pie-charts/index")]).then((function () {
-    return resolve(__webpack_require__(/*! ./components/pie-charts/index.vue */ 966));
+    return resolve(__webpack_require__(/*! ./components/pie-charts/index.vue */ 968));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var classProgress = function classProgress() {
   __webpack_require__.e(/*! require.ensure | pages/home/index/components/class-progress/index */ "pages/home/index/components/class-progress/index").then((function () {
-    return resolve(__webpack_require__(/*! ./components/class-progress/index.vue */ 973));
+    return resolve(__webpack_require__(/*! ./components/class-progress/index.vue */ 975));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var classModel = function classModel() {
   __webpack_require__.e(/*! require.ensure | components/model/classModel */ "components/model/classModel").then((function () {
-    return resolve(__webpack_require__(/*! ../../../components/model/classModel.vue */ 980));
+    return resolve(__webpack_require__(/*! ../../../components/model/classModel.vue */ 982));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var ifNewPass = function ifNewPass() {
   __webpack_require__.e(/*! require.ensure | components/model/ifNewPass */ "components/model/ifNewPass").then((function () {
-    return resolve(__webpack_require__(/*! ../../../components/model/ifNewPass.vue */ 987));
+    return resolve(__webpack_require__(/*! ../../../components/model/ifNewPass.vue */ 989));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

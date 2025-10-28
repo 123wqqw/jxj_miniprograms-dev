@@ -369,7 +369,52 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ 1048:
+/***/ 105:
+/*!*************************************************************************************************!*\
+  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/crypto-js/pad-iso97971.js ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ 13);
+;
+(function (root, factory, undef) {
+  if (( false ? undefined : _typeof(exports)) === "object") {
+    // CommonJS
+    module.exports = exports = factory(__webpack_require__(/*! ./core */ 79), __webpack_require__(/*! ./cipher-core */ 97));
+  } else if (true) {
+    // AMD
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! ./core */ 79), __webpack_require__(/*! ./cipher-core */ 97)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {}
+})(this, function (CryptoJS) {
+  /**
+   * ISO/IEC 9797-1 Padding Method 2.
+   */
+  CryptoJS.pad.Iso97971 = {
+    pad: function pad(data, blockSize) {
+      // Add 0x80 byte
+      data.concat(CryptoJS.lib.WordArray.create([0x80000000], 1));
+
+      // Zero pad the rest
+      CryptoJS.pad.ZeroPadding.pad(data, blockSize);
+    },
+    unpad: function unpad(data) {
+      // Remove zero padding
+      CryptoJS.pad.ZeroPadding.unpad(data);
+
+      // Remove one more byte -- the 0x80 byte
+      data.sigBytes--;
+    }
+  };
+  return CryptoJS.pad.Iso97971;
+});
+
+/***/ }),
+
+/***/ 1050:
 /*!*****************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/uview-ui/libs/util/emitter.js ***!
   \*****************************************************************************************************/
@@ -438,7 +483,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1049:
+/***/ 1051:
 /*!*************************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/uview-ui/libs/util/async-validator.js ***!
   \*************************************************************************************************************/
@@ -1616,56 +1661,11 @@ Schema.warning = warning;
 Schema.messages = messages;
 var _default = Schema;
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../../Applications/HBuilderX-Alpha.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 1050)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../../Applications/HBuilderX-Alpha.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 1052)))
 
 /***/ }),
 
-/***/ 105:
-/*!*************************************************************************************************!*\
-  !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/crypto-js/pad-iso97971.js ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ 13);
-;
-(function (root, factory, undef) {
-  if (( false ? undefined : _typeof(exports)) === "object") {
-    // CommonJS
-    module.exports = exports = factory(__webpack_require__(/*! ./core */ 79), __webpack_require__(/*! ./cipher-core */ 97));
-  } else if (true) {
-    // AMD
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! ./core */ 79), __webpack_require__(/*! ./cipher-core */ 97)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else {}
-})(this, function (CryptoJS) {
-  /**
-   * ISO/IEC 9797-1 Padding Method 2.
-   */
-  CryptoJS.pad.Iso97971 = {
-    pad: function pad(data, blockSize) {
-      // Add 0x80 byte
-      data.concat(CryptoJS.lib.WordArray.create([0x80000000], 1));
-
-      // Zero pad the rest
-      CryptoJS.pad.ZeroPadding.pad(data, blockSize);
-    },
-    unpad: function unpad(data) {
-      // Remove zero padding
-      CryptoJS.pad.ZeroPadding.unpad(data);
-
-      // Remove one more byte -- the 0x80 byte
-      data.sigBytes--;
-    }
-  };
-  return CryptoJS.pad.Iso97971;
-});
-
-/***/ }),
-
-/***/ 1050:
+/***/ 1052:
 /*!********************************************************!*\
   !*** ./node_modules/node-libs-browser/mock/process.js ***!
   \********************************************************/
@@ -1696,7 +1696,7 @@ exports.binding = function (name) {
     var path;
     exports.cwd = function () { return cwd };
     exports.chdir = function (dir) {
-        if (!path) path = __webpack_require__(/*! path */ 1051);
+        if (!path) path = __webpack_require__(/*! path */ 1053);
         cwd = path.resolve(dir, cwd);
     };
 })();
@@ -1710,7 +1710,7 @@ exports.features = {};
 
 /***/ }),
 
-/***/ 1051:
+/***/ 1053:
 /*!***********************************************!*\
   !*** ./node_modules/path-browserify/index.js ***!
   \***********************************************/
@@ -2020,7 +2020,7 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 1050)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 1052)))
 
 /***/ }),
 
@@ -4842,7 +4842,7 @@ exports.downloadPreviewExcelFile = downloadPreviewExcelFile;
 
 /***/ }),
 
-/***/ 1171:
+/***/ 1173:
 /*!****************************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/uni_modules/lime-echart/components/l-echart/canvas.js ***!
   \****************************************************************************************************************/
@@ -5091,7 +5091,7 @@ exports.default = Canvas;
 
 /***/ }),
 
-/***/ 1172:
+/***/ 1174:
 /*!***************************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/uni_modules/lime-echart/components/l-echart/utils.js ***!
   \***************************************************************************************************************/
@@ -5160,7 +5160,7 @@ module.exports = toPropertyKey, module.exports.__esModule = true, module.exports
 
 /***/ }),
 
-/***/ 1258:
+/***/ 1260:
 /*!******************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/uview-ui/libs/util/province.js ***!
   \******************************************************************************************************/
@@ -5282,7 +5282,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1259:
+/***/ 1261:
 /*!**************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/uview-ui/libs/util/city.js ***!
   \**************************************************************************************************/
@@ -6403,7 +6403,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 1260:
+/***/ 1262:
 /*!**************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/node_modules/uview-ui/libs/util/area.js ***!
   \**************************************************************************************************/
@@ -34735,8 +34735,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 // const BASE_URL = 'https://xty.iydsj.com/api'; // 正式环境 wx384c94eaf17a6fd4
 // export const USERCENTER = 'http://test.usercenter.xiaotiyun.cn';
 // export const USERCENTER = 'https://usercenter.xiaotiyun.cn';
-var DEFAULT_USERCENTER = 'http://test.xty.public.xiaoti.cloud';
-var USERCENTER = "http://121.229.177.213:19999" || false;
+var USERCENTER = "http://121.229.177.213:19999";
 // export const USERCENTER = 'http://test.xty.public.xiaoti.cloud';
 // export const USERCENTER = 'http://pre.xty.public.xiaoti.cloud';
 // export const USERCENTER = 'https://xty.public.xiaoti.cloud';
@@ -34769,6 +34768,8 @@ var getReq = function getReq(apiUrl, params, headers) {
   var BASE_URL, domain;
   // let cookie = uni.getStorageSync('cookieKey');//取出Cookie
   var xiaotiyunUser = uni.getStorageSync('xiaotiyunUser'); // 用户信息
+  var studentInfo = uni.getStorageSync('studentInfo'); // 可能包含 domain 的本地信息
+  console.log('xiaotiyunUser---', xiaotiyunUser);
   var header = {
     'Content-Type': 'application/x-www-form-urlencoded',
     'os': 'miniprogram'
@@ -34804,12 +34805,18 @@ var getReq = function getReq(apiUrl, params, headers) {
       // 学生端登录信息（避免访问 parent.id 报错）
       var _uid2 = xiaotiyunUser.student.uid || xiaotiyunUser.student.studentId || undefined;
       var _token2 = xiaotiyunUser.student.token || undefined;
+      var _studentId = xiaotiyunUser.student.studentId || xiaotiyunUser.student.uid || undefined;
       if (_uid2 && _token2) {
         header.uid = _uid2;
         header.token = _token2;
       }
-      header.loginType = "student";
-      domain = xiaotiyunUser.student.domain;
+      // 按需切换为 studentParent 并补充 studentId，避免后端按家长身份校验时报参数不足
+      header.loginType = "studentParent";
+      if (_studentId) {
+        header.studentId = _studentId;
+      }
+      // 兜底 domain（避免缺失导致非 usercenter 接口请求失败）
+      domain = xiaotiyunUser.student.domain || studentInfo && studentInfo.domain;
     }
     header = Object.assign({}, header, _objectSpread({}, headers));
   }
@@ -34817,6 +34824,26 @@ var getReq = function getReq(apiUrl, params, headers) {
     BASE_URL = USERCENTER;
   } else {
     BASE_URL = domain;
+  }
+  // 学生角色：非 USERCENTER 业务域接口统一按学生身份请求，避免 token 与角色不匹配（如 xty-task）
+  if (xiaotiyunUser && xiaotiyunUser.hasOwnProperty('student')) {
+    var isUserCenter = BASE_URL === USERCENTER;
+    if (!isUserCenter) {
+      header.loginType = 'student';
+      // 非家长场景不强制携带 studentId
+      if (header.studentId) delete header.studentId;
+    }
+  }
+  // 当为学生角色时，针对不同服务动态设置 loginType：
+  // - 非 USERCENTER 业务域（如 xty-task、xty-plan 等），多数接口期望学生角色鉴权，使用 loginType=student
+  // - USERCENTER 或明确要求家长场景的接口再使用 studentParent
+  if (xiaotiyunUser && xiaotiyunUser.hasOwnProperty('student')) {
+    var _isUserCenter = BASE_URL === USERCENTER;
+    if (!_isUserCenter) {
+      header.loginType = 'student';
+      // 学生场景通常不必带 studentId，避免后端按家长场景校验导致 401
+      if (header.studentId) delete header.studentId;
+    }
   }
   return new Promise(function (resolve, reject) {
     uni.showLoading({
@@ -34905,6 +34932,8 @@ var postReq = function postReq(apiUrl, params, headers) {
   var BASE_URL, domain;
   // let cookie = uni.getStorageSync('cookieKey');//取出Cookie
   var xiaotiyunUser = uni.getStorageSync('xiaotiyunUser'); // 用户信息
+  var studentInfo = uni.getStorageSync('studentInfo'); // 用户信息
+  console.log('studentInfostudentInfostudentInfostudentInfostudentInfostudentInfostudentInfostudentInfo', studentInfo);
   var header = _objectSpread({
     'Content-Type': 'application/json'
   }, headers);
@@ -34914,8 +34943,7 @@ var postReq = function postReq(apiUrl, params, headers) {
   } else {
     header['Accept-Language'] = "zh-Hans";
   }
-  var isEncrypt = USERCENTER === 'https://xty.public.xiaoti.cloud';
-  console.log(xiaotiyunUser);
+  var isEncrypt = USERCENTER === 'https://jxz.qhfx.edu.cn:41088/home-gym-public/';
   if (xiaotiyunUser) {
     if (xiaotiyunUser.hasOwnProperty('teacher')) {
       var uid = xiaotiyunUser.teacher.teacherId || undefined;
@@ -34953,18 +34981,28 @@ var postReq = function postReq(apiUrl, params, headers) {
     } else if (xiaotiyunUser.hasOwnProperty('student')) {
       var _uid4 = xiaotiyunUser.student.uid || xiaotiyunUser.student.studentId || undefined;
       var _token4 = xiaotiyunUser.student.token || undefined;
+      var _studentId2 = xiaotiyunUser.student.studentId || xiaotiyunUser.student.uid || undefined;
       if (isEncrypt && _uid4 && _token4) {
-        header.security = (0, _secret.AES_ECB_ENCRYPT)(JSON.stringify({
+        // 加密场景下，若按 studentParent 校验，通常需要携带 studentId
+        var securityPayload = _studentId2 ? {
+          uid: _uid4,
+          token: _token4,
+          studentId: _studentId2
+        } : {
           uid: _uid4,
           token: _token4
-        }));
+        };
+        header.security = (0, _secret.AES_ECB_ENCRYPT)(JSON.stringify(securityPayload));
       } else if (_uid4 && _token4) {
         header.uid = _uid4;
         header.token = _token4;
         header.os = 'miniprogram';
+        // 非加密场景补充 studentId
+        if (_studentId2) header.studentId = _studentId2;
       }
-      header.loginType = "student";
-      domain = xiaotiyunUser.student.domain;
+      header.loginType = "studentParent";
+      domain = xiaotiyunUser.student.domain ? xiaotiyunUser.student.domain : studentInfo.domain;
+      console.log('domaindomaindomaindomain', domain);
     }
   }
   if (_url.userCenterUrlList.indexOf(apiUrl) > -1) {
@@ -34977,7 +35015,6 @@ var postReq = function postReq(apiUrl, params, headers) {
       BASE_URL = domain;
     }
   }
-  console.log(domain);
   return new Promise(function (resolve, reject) {
     uni.showLoading({
       title: '加载中'
@@ -35738,7 +35775,7 @@ var URL = {
   jxjGetRecordInfos: "/xty-task/app-api/clock/v1/getRecordInfos"
 };
 exports.URL = URL;
-var userCenterUrlList = [URL.userCenterGetVerifyCode, URL.userCenterGetWxUserInfo, URL.userCenterPhoneLogin, URL.userCenterBindStudentAndLogin, URL.userCenterAddBandStudent, URL.userCenterChangeUser, URL.userCenterChangeBindPhone, URL.userCenterGetStudentParentMineSetting, URL.userCenterGetMineStudentInfo, URL.userCenterUnBandStudentApp, URL.userCenterChangeAvatar, URL.userCenterGetDomain, URL.userCenterGetAreaList, URL.userCenterIsTeacher, URL.userCenterChangeStudent, URL.userCenterGetAllSchool, URL.userCenterTeacherLogin, URL.userCenterSetNewPassword, URL.userCenterLogoutWechat, URL.apiGetVerifStudentIDNumber, URL.apiGetVerifStudentInformation, URL.apiGetCAPTCHA, URL.apiGetBindContactInformation, URL.apiPostSetPassword, URL.apiPostStudentPasswordLogin, URL.apiGetStudentInfo, URL.apiPostChangePasswordV2, URL.apiPostTeachersCheckAccount, URL.jxjTextType, URL.jxjRankInfo, URL.jxjRelation, URL.jxjLogin, URL.jxjSportList, URL.jxjDirection, URL.jxjDownload, URL.jxjSportDetail, URL.jxjUploadRecord, URL.jxjCalendar, URL.jxjTaskInfo, URL.jxjStudentInfo, URL.jxjTaskDetail, URL.jxjAskLeave, URL.jxjRevoke, URL.jxjRecordInfos, URL.jxjGetRecordInfos];
+var userCenterUrlList = [URL.userCenterGetVerifyCode, URL.userCenterGetWxUserInfo, URL.userCenterPhoneLogin, URL.userCenterBindStudentAndLogin, URL.userCenterAddBandStudent, URL.userCenterChangeUser, URL.userCenterChangeBindPhone, URL.userCenterGetStudentParentMineSetting, URL.userCenterGetMineStudentInfo, URL.userCenterUnBandStudentApp, URL.userCenterChangeAvatar, URL.userCenterGetDomain, URL.userCenterGetAreaList, URL.userCenterIsTeacher, URL.userCenterChangeStudent, URL.userCenterGetAllSchool, URL.userCenterTeacherLogin, URL.userCenterSetNewPassword, URL.userCenterLogoutWechat, URL.apiGetVerifStudentIDNumber, URL.apiGetVerifStudentInformation, URL.apiGetCAPTCHA, URL.apiGetBindContactInformation, URL.apiPostSetPassword, URL.apiPostStudentPasswordLogin, URL.apiGetStudentInfo, URL.apiPostChangePasswordV2, URL.apiPostTeachersCheckAccount];
 exports.userCenterUrlList = userCenterUrlList;
 
 /***/ }),

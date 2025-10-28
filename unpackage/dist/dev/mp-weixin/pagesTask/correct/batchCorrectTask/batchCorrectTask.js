@@ -101,13 +101,13 @@ var components
 try {
   components = {
     uPopup: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-popup/u-popup */ "node-modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! uview-ui/components/u-popup/u-popup.vue */ 1124))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-popup/u-popup */ "node-modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! uview-ui/components/u-popup/u-popup.vue */ 1126))
     },
     uInput: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-input/u-input.vue */ 1054))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-input/u-input.vue */ 1056))
     },
     uModal: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 917))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 919))
     },
   }
 } catch (e) {
@@ -159,7 +159,7 @@ var render = function () {
   var m13 = _vm.$t("common.enter")
   var m14 = _vm.$t("task.correct.batchCorrectTask.commentInput")
   var m15 = _vm.$t("task.correct.batchCorrectTask.comment")
-  var m16 = _vm.$t("task.correct.batchCorrecTask.commentModalPlaceholder")
+  var m16 = _vm.$t("task.correct.batchCorrectTask.commentModalPlaceholder")
   var g0 = _vm.comments.length
   var m17 = _vm.$t("task.correct.batchCorrectTask.commentInput")
   var m18 = _vm.$t("task.correct.batchCorrectTask.comment")
@@ -509,6 +509,8 @@ var _default = {
             }
           });
           _this.correctStudentList = correctStudentList;
+          _this.showCommentPopup = false;
+          _this.initPageFun();
           uni.showToast({
             icon: 'none',
             title: "批改成功！",

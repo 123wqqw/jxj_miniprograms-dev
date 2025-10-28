@@ -101,7 +101,7 @@ var components
 try {
   components = {
     uModal: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 917))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 919))
     },
   }
 } catch (e) {
@@ -366,7 +366,7 @@ var _generateDates = __webpack_require__(/*! ../../components/x-week-date-calend
 //
 var xWeekDateCalendar = function xWeekDateCalendar() {
   Promise.all(/*! require.ensure | pagesTask/components/x-week-date-calendar/x-week-date-calendar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pagesTask/common/vendor"), __webpack_require__.e("pagesTask/components/x-week-date-calendar/x-week-date-calendar")]).then((function () {
-    return resolve(__webpack_require__(/*! @/pagesTask/components/x-week-date-calendar/x-week-date-calendar.vue */ 1117));
+    return resolve(__webpack_require__(/*! @/pagesTask/components/x-week-date-calendar/x-week-date-calendar.vue */ 1119));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

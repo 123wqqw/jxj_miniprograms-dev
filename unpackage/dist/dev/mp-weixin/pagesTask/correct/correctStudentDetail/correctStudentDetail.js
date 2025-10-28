@@ -101,13 +101,13 @@ var components
 try {
   components = {
     uPopup: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-popup/u-popup */ "node-modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! uview-ui/components/u-popup/u-popup.vue */ 1124))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-popup/u-popup */ "node-modules/uview-ui/components/u-popup/u-popup").then(__webpack_require__.bind(null, /*! uview-ui/components/u-popup/u-popup.vue */ 1126))
     },
     uInput: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-input/u-input.vue */ 1054))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-input/u-input.vue */ 1056))
     },
     uModal: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 917))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 919))
     },
   }
 } catch (e) {
@@ -238,7 +238,6 @@ var render = function () {
   var m17 = _vm.clockDetailsData.showButton
     ? _vm.$t("task.correct.studentDetail.unFinishedTaskWarning")
     : null
-  var g4 = _vm.studentIds.length
   var m18 =
     !_vm.clockDetailsData.showButton && _vm.clockDetailsData.comments
       ? _vm.$t("task.correct.batchCorrectTask.commentInput")
@@ -250,11 +249,11 @@ var render = function () {
   var m20 = _vm.$t("task.correct.batchCorrectTask.commentInput")
   var m21 = _vm.$t("task.correct.batchCorrectTask.comment")
   var m22 = _vm.$t("task.correct.batchCorrectTask.commentModalPlaceholder")
-  var g5 = _vm.comments.length
+  var g4 = _vm.comments.length
   var m23 = _vm.$t("task.correct.batchCorrectTask.commentInput")
   var m24 = _vm.$t("task.correct.batchCorrectTask.comment")
   var m25 = _vm.$t("task.correct.batchCorrectTask.pleaseInputCommentModal")
-  var g6 = _vm.commentModel.length
+  var g5 = _vm.commentModel.length
   _vm.$mp.data = Object.assign(
     {},
     {
@@ -269,17 +268,16 @@ var render = function () {
         l1: l1,
         m16: m16,
         m17: m17,
-        g4: g4,
         m18: m18,
         m19: m19,
         m20: m20,
         m21: m21,
         m22: m22,
-        g5: g5,
+        g4: g4,
         m23: m23,
         m24: m24,
         m25: m25,
-        g6: g6,
+        g5: g5,
       },
     }
   )
@@ -331,7 +329,7 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var xWeekDateCalendar = function xWeekDateCalendar() {
   Promise.all(/*! require.ensure | pagesTask/components/x-week-date-calendar/x-week-date-calendar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pagesTask/common/vendor"), __webpack_require__.e("pagesTask/components/x-week-date-calendar/x-week-date-calendar")]).then((function () {
-    return resolve(__webpack_require__(/*! ../../components/x-week-date-calendar/x-week-date-calendar.vue */ 1117));
+    return resolve(__webpack_require__(/*! ../../components/x-week-date-calendar/x-week-date-calendar.vue */ 1119));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -466,6 +464,11 @@ var _default = {
       }).join(':');
     },
     formatTaskTime: function formatTaskTime(timestamp) {
+      // 添加检查确保 timestamp 存在且有效
+      if (!timestamp) {
+        return ''; // 或者返回默认值如 '日期未知'
+      }
+
       var date = new Date();
       date.setTime(timestamp);
       var month = date.getMonth() + 1;

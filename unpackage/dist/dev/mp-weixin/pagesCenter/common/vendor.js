@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pagesCenter/common/vendor"],{
 
-/***/ 1525:
+/***/ 1527:
 /*!*************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/common/utility/MathUtil.js ***!
   \*************************************************************************************/

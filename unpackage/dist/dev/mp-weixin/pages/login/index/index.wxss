@@ -27,37 +27,39 @@
 .authorization.data-v-41115d06 {
   width: 100%;
   min-height: 100vh;
-  background: #FFFFFF;
+  background: #F8F8FB;
   position: relative;
 }
 .top-background.data-v-41115d06 {
   position: relative;
   width: 100%;
-  height: 500rpx;
   overflow: hidden;
 }
 .background-image.data-v-41115d06 {
   width: 100%;
-  height: 100%;
 }
 .icon-logo.data-v-41115d06 {
   position: absolute;
   top: 65%;
   left: 50%;
-  -webkit-transform: translate(-58%, -80%);
-          transform: translate(-58%, -80%);
+  -webkit-transform: translate(-50%, -80%);
+          transform: translate(-50%, -80%);
   z-index: 10;
 }
 .icon-logo .logo-image.data-v-41115d06 {
-  width: 336rpx;
-  height: 120rpx;
+  width: 448rpx;
+  height: 160rpx;
 }
 .button.data-v-41115d06 {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 24rpx;
-  margin: 0 88rpx;
+  margin: 0 auto;
+  width: 520rpx;
+  height: 88rpx;
+  padding: 0;
+  line-height: 88rpx;
   background-color: #2C84FF;
   color: #fff;
   border-radius: 16rpx;

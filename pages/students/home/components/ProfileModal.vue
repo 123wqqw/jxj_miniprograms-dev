@@ -279,11 +279,12 @@ export default {
 				
 				const response = await getReq(URL.apiGetStudentInfo, params)
 				console.log('学生信息:', response)
-				
-				// 处理返回的学生信息
+
+				// 处理返回的学生信息（优先取 data.data）
 				if (response && response.data) {
+					const payload = response.data && response.data.data ? response.data.data : response.data
 					// 可以在这里更新用户信息
-					this.$emit('updateUserInfo', response.data)
+					this.$emit('updateUserInfo', payload)
 				}
 				
 				return response

@@ -101,19 +101,19 @@ var components
 try {
   components = {
     uTag: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */ "node-modules/uview-ui/components/u-tag/u-tag").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 1075))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */ "node-modules/uview-ui/components/u-tag/u-tag").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 1077))
     },
     uIcon: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 938))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 940))
     },
     uButton: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 1029))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 1031))
     },
     uModal: function () {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 917))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 919))
     },
     uInput: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-input/u-input.vue */ 1054))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-input/u-input.vue */ 1056))
     },
   }
 } catch (e) {
@@ -241,17 +241,17 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var tracePlot = function tracePlot() {
   __webpack_require__.e(/*! require.ensure | pagesCenter/sportCenter/runDetails/components/trace-plot/index */ "pagesCenter/sportCenter/runDetails/components/trace-plot/index").then((function () {
-    return resolve(__webpack_require__(/*! ../components/trace-plot/index.vue */ 1487));
+    return resolve(__webpack_require__(/*! ../components/trace-plot/index.vue */ 1489));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var speedBlock = function speedBlock() {
   __webpack_require__.e(/*! require.ensure | pagesCenter/sportCenter/runDetails/components/speed-block/index */ "pagesCenter/sportCenter/runDetails/components/speed-block/index").then((function () {
-    return resolve(__webpack_require__(/*! ../components/speed-block/index.vue */ 1494));
+    return resolve(__webpack_require__(/*! ../components/speed-block/index.vue */ 1496));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var frequencyBlock = function frequencyBlock() {
   Promise.all(/*! require.ensure | pagesCenter/sportCenter/runDetails/components/frequency-block/index */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pagesCenter/sportCenter/runDetails/components/frequency-block/index")]).then((function () {
-    return resolve(__webpack_require__(/*! ../components/frequency-block/index.vue */ 1501));
+    return resolve(__webpack_require__(/*! ../components/frequency-block/index.vue */ 1503));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

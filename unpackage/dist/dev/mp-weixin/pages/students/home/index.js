@@ -152,9 +152,10 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var ProfileModal = function ProfileModal() {
   __webpack_require__.e(/*! require.ensure | pages/students/home/components/ProfileModal */ "pages/students/home/components/ProfileModal").then((function () {
-    return resolve(__webpack_require__(/*! ./components/ProfileModal.vue */ 1584));
+    return resolve(__webpack_require__(/*! ./components/ProfileModal.vue */ 1586));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
+// jxjTextType:"/xty-task/app-api/rank/v41100/jxjAppIndexTextType",
 var _default = {
   components: {
     ProfileModal: ProfileModal
@@ -175,7 +176,7 @@ var _default = {
     this.getSystemInfo();
     this.getStudentInfo();
   },
-  methods: {
+  methods: _objectSpread(_objectSpread({}, (0, _vuex.mapMutations)(['setXiaotiyunUser'])), {}, {
     // 获取系统信息
     getSystemInfo: function getSystemInfo() {
       var systemInfo = uni.getSystemInfoSync();
@@ -185,7 +186,7 @@ var _default = {
     getStudentInfo: function getStudentInfo() {
       var _this = this;
       return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
-        var params, response;
+        var params, response, payload, prevStudent, mergedStudent, updatedXiaotiyunUser;
         return _regenerator.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -215,9 +216,23 @@ var _default = {
 
                 // 更新学生信息
                 if (response && response.data) {
-                  _this.studentInfo = _objectSpread(_objectSpread({}, _this.studentInfo), response.data);
+                  payload = response.data && response.data.data ? response.data.data : response.data;
+                  _this.studentInfo = _objectSpread(_objectSpread({}, _this.studentInfo), payload);
                   _this.studentInfo.school = _this.studentInfo.schoolName + ' ' + _this.studentInfo.grade + '年级' + _this.studentInfo.claNumber + '班';
                   console.log('更新后的学生信息:', _this.studentInfo);
+
+                  // 只替换响应里有的字段；没有的字段保持不变，同时确保鉴权字段不被清空
+                  prevStudent = _this.xiaotiyunUser && _this.xiaotiyunUser.student || {};
+                  mergedStudent = _objectSpread(_objectSpread({}, prevStudent), payload);
+                  ['uid', 'token', 'domain'].forEach(function (k) {
+                    if (!payload || !Object.prototype.hasOwnProperty.call(payload, k) || payload[k] === undefined || payload[k] === null || payload[k] === '') {
+                      mergedStudent[k] = prevStudent[k];
+                    }
+                  });
+                  updatedXiaotiyunUser = _objectSpread(_objectSpread({}, _this.xiaotiyunUser || {}), {}, {
+                    student: mergedStudent
+                  });
+                  _this.setXiaotiyunUser(updatedXiaotiyunUser);
                 }
                 _context.next = 14;
                 break;
@@ -293,8 +308,21 @@ var _default = {
     },
     // 更新用户信息
     updateUserInfo: function updateUserInfo(userInfo) {
+      console.log('更新用户信息:', userInfo);
+      // 视图模型合并
       this.studentInfo = _objectSpread(_objectSpread({}, this.studentInfo), userInfo);
-      console.log('更新后的学生信息:', this.studentInfo);
+      // 只替换 userInfo 中存在的字段；未提供的字段保持不变，同时确保鉴权字段不被清空
+      var prevStudent = this.xiaotiyunUser && this.xiaotiyunUser.student || {};
+      var mergedStudent = _objectSpread(_objectSpread({}, prevStudent), userInfo);
+      ['uid', 'token', 'domain'].forEach(function (k) {
+        if (!userInfo || !Object.prototype.hasOwnProperty.call(userInfo, k) || userInfo[k] === undefined || userInfo[k] === null || userInfo[k] === '') {
+          mergedStudent[k] = prevStudent[k];
+        }
+      });
+      var updatedXiaotiyunUser = _objectSpread(_objectSpread({}, this.xiaotiyunUser || {}), {}, {
+        student: mergedStudent
+      });
+      this.setXiaotiyunUser(updatedXiaotiyunUser);
     },
     // 跳转到家庭健身房
     goToGym: function goToGym() {
@@ -320,7 +348,7 @@ var _default = {
         url: '/pages/students/records/index'
       });
     }
-  }
+  })
 };
 exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))

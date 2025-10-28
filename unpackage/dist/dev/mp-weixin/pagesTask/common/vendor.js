@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pagesTask/common/vendor"],{
 
-/***/ 1211:
+/***/ 1213:
 /*!**************************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/static/images/correctTask/icon_reivew.png ***!
   \**************************************************************************************************************/
@@ -11,7 +11,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAACoCAYAAAC2
 
 /***/ }),
 
-/***/ 1212:
+/***/ 1214:
 /*!*****************************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/static/images/correctTask/ask-leave-icon.png ***!
   \*****************************************************************************************************************/
@@ -22,7 +22,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAB8CAYAAAC7
 
 /***/ }),
 
-/***/ 1213:
+/***/ 1215:
 /*!************************************************************************************************************!*\
   !*** /Users/a8833/Documents/GitHub/jxj_miniprograms-dev/pagesTask/static/images/correctTask/read-icon.png ***!
   \************************************************************************************************************/
