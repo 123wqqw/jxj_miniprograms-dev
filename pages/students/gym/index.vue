@@ -27,12 +27,12 @@
         <!-- 具体运动分类 -->
         <view
           class="sidebar-item"
-          :class="{ active: activeCategory === category.value }"
+          :class="{ active: activeCategory === category.id }"
           v-for="category in specificCategories"
-          :key="category.value"
-          @tap="selectCategory(category.value)"
+          :key="category.id"
+          @tap="selectCategory(category.id)"
         >
-          <text class="sidebar-text">{{ category.label }}</text>
+          <text class="sidebar-text">{{ category.name }}</text>
         </view>
       </view>
 
@@ -62,13 +62,13 @@
           <view
             class="option-item"
             v-for="opt in difficultyOptions"
-            :key="opt.value"
+            :key="opt.id"
             @tap="chooseDifficulty(opt)"
           >
             <text
               class="option-text"
-              :class="{ selected: selectedDifficulty === opt.label }"
-              >{{ opt.label }}</text
+              :class="{ selected: selectedDifficulty === opt.name }"
+              >{{ opt.name }}</text
             >
           </view>
         </view>
@@ -77,13 +77,13 @@
           <view
             class="option-item"
             v-for="opt in directionOptions"
-            :key="opt.value"
+            :key="opt.id"
             @tap="chooseDirection(opt)"
           >
             <text
               class="option-text"
-              :class="{ selected: selectedDirection === opt.label }"
-              >{{ opt.label }}</text
+              :class="{ selected: selectedDirection === opt.name }"
+              >{{ opt.name }}</text
             >
           </view>
         </view>
@@ -97,32 +97,22 @@
         <view class="exercise-grid">
           <view
             class="exercise-item"
-            v-for="(exercise, index) in filteredExercises"
-            :key="index"
+            v-for="(exercise) in exercises"
+            :key="exercise.id"
             @tap="startExercise(exercise)"
           >
             <view
               class="exercise-card"
-              :style="{ backgroundColor: exercise.bgColor }"
             >
               <view class="exercise-illustration">
                 <image
-                  :src="exercise.illustration"
+                  :src="exercise.aiSportImg"
                   mode="aspectFit"
                   class="exercise-img"
                 ></image>
               </view>
-              <view class="exercise-arrows">
-                <image
-                  v-for="arrow in exercise.arrows"
-                  :key="arrow.id"
-                  :src="arrow.icon"
-                  :class="arrow.class"
-                  class="arrow-icon"
-                ></image>
-              </view>
             </view>
-            <view class="exercise-name">{{ exercise.name }}</view>
+            <view class="exercise-name">{{ exercise.aiSportName }}</view>
           </view>
         </view>
       </view>
@@ -151,192 +141,22 @@ export default {
 
       // 分类相关
       activeCategory: "all",
-      specificCategories: [
-        { label: "有氧运动", value: "cardio" },
-        { label: "腹部运动", value: "abs" },
-        { label: "力量练习", value: "strength" },
-        { label: "腿部运动", value: "legs" },
-        { label: "手臂运动", value: "arms" },
-      ],
+      specificCategories: [],
 
       // 筛选选项
-      difficultyOptions: [
-        { label: "难度", value: "" },
-        { label: "初级", value: "beginner" },
-        { label: "中级", value: "intermediate" },
-        { label: "高级", value: "advanced" },
-      ],
-      directionOptions: [
-        { label: "改善方向", value: "" },
-        { label: "减脂", value: "weight_loss" },
-        { label: "塑形", value: "fitness" },
-        { label: "柔韧性", value: "flexibility" },
-        { label: "体能", value: "endurance" },
-      ],
+      difficultyOptions: [],
+      directionOptions: [],
 
       // 运动项目数据
       exercises: [
-        {
-          name: "腹部拉伸",
-          category: "abs",
-          difficulty: "beginner",
-          direction: "flexibility",
-          bgColor: "#FFF4E6",
-          illustration: "/static/images/exercises/abs-stretch.svg",
-          arrows: [
-            {
-              id: 1,
-              icon: "/static/images/arrows/up-orange.svg",
-              class: "arrow-up-left",
-            },
-            {
-              id: 2,
-              icon: "/static/images/arrows/up-orange.svg",
-              class: "arrow-up-right",
-            },
-          ],
-        },
-        {
-          name: "测腰",
-          category: "abs",
-          difficulty: "beginner",
-          direction: "fitness",
-          bgColor: "#FFF4E6",
-          illustration: "/static/images/exercises/waist-measure.svg",
-          arrows: [
-            {
-              id: 1,
-              icon: "/static/images/arrows/up-orange.svg",
-              class: "arrow-up-left",
-            },
-            {
-              id: 2,
-              icon: "/static/images/arrows/up-orange.svg",
-              class: "arrow-up-right",
-            },
-          ],
-        },
-        {
-          name: "猫式运动",
-          category: "all",
-          difficulty: "beginner",
-          direction: "flexibility",
-          bgColor: "#F0F8FF",
-          illustration: "/static/images/exercises/cat-pose.svg",
-          arrows: [
-            {
-              id: 1,
-              icon: "/static/images/arrows/down-blue.svg",
-              class: "arrow-down-left",
-            },
-            {
-              id: 2,
-              icon: "/static/images/arrows/down-blue.svg",
-              class: "arrow-down-right",
-            },
-          ],
-        },
-        {
-          name: "双脚原地踏绳跳（慢...）",
-          category: "cardio",
-          difficulty: "intermediate",
-          direction: "weight_loss",
-          bgColor: "#E6F3FF",
-          illustration: "/static/images/exercises/rope-jump.svg",
-          arrows: [
-            {
-              id: 1,
-              icon: "/static/images/arrows/left-blue.svg",
-              class: "arrow-left",
-            },
-            {
-              id: 2,
-              icon: "/static/images/arrows/right-blue.svg",
-              class: "arrow-right",
-            },
-          ],
-        },
-        {
-          name: "前后摆平衡站立",
-          category: "all",
-          difficulty: "beginner",
-          direction: "fitness",
-          bgColor: "#F0F8FF",
-          illustration: "/static/images/students/exercise.png",
-          arrows: [
-            {
-              id: 1,
-              icon: "/static/images/arrows/left-blue.svg",
-              class: "arrow-left",
-            },
-            {
-              id: 2,
-              icon: "/static/images/arrows/right-blue.svg",
-              class: "arrow-right",
-            },
-          ],
-        },
-        {
-          name: "A字拉伸",
-          category: "strength",
-          difficulty: "intermediate",
-          direction: "flexibility",
-          bgColor: "#FFF4E6",
-          illustration: "/static/images/students/exercise.png",
-          arrows: [
-            {
-              id: 1,
-              icon: "/static/images/arrows/left-blue.svg",
-              class: "arrow-left",
-            },
-            {
-              id: 2,
-              icon: "/static/images/arrows/right-blue.svg",
-              class: "arrow-right",
-            },
-          ],
-        },
-        {
-          name: "左右三步跑",
-          category: "cardio",
-          difficulty: "intermediate",
-          direction: "fitness",
-          bgColor: "#E6F3FF",
-          illustration: "/static/images/students/exercise.png",
-          arrows: [
-            {
-              id: 1,
-              icon: "/static/images/arrows/left-blue.svg",
-              class: "arrow-left",
-            },
-            {
-              id: 2,
-              icon: "/static/images/arrows/right-blue.svg",
-              class: "arrow-right",
-            },
-          ],
-        },
-        {
-          name: "合掌跳",
-          category: "cardio",
-          difficulty: "beginner",
-          direction: "weight_loss",
-          bgColor: "#FFF4E6",
-          illustration: "/static/images/students/exercise.png",
-          arrows: [
-            {
-              id: 1,
-              icon: "/static/images/arrows/up-orange.svg",
-              class: "arrow-up-left",
-            },
-            {
-              id: 2,
-              icon: "/static/images/arrows/up-orange.svg",
-              class: "arrow-up-right",
-            },
-          ],
-        },
       ],
+      pageQuery: {
+        difficulty: [1],
+        dimensionId: [10],
+        directionId: 0,
+        pageNum: 1,
+        pageSize: 9999,
+      },
     };
   },
 
@@ -377,26 +197,27 @@ export default {
     },
   },
   mounted() {
-    // this.getList();
     this.getQuery();
+		this.getList();
   },
 
   methods: {
     // 查看锻炼方向，难度和改善方向
     getQuery() {
       getReq(URL.jxjDirection).then((res) => {
-        console.log("resresresresres", res);
+        if (res.message === "成功") {
+          this.difficultyOptions = res.data.difficulty;
+          this.directionOptions = res.data.dimension;
+        }
       });
-      // 获取运动详情
-      // jxjSportDetail:"/xty-task/app-api/sport/v2/sportDetail",
-      // // 上传AI锻炼记录
-      // jxjUploadRecord: "/xty-task/app-api/clock/v2/uploadRecord",
     },
     // 获取运动列表
     getList() {
       const params = { ...this.pageQuery };
       postReq(URL.jxjSportList, params).then((res) => {
-        console.log("resresresresresresres", res);
+				if (res.message === "成功") {
+					this.exercises = res.data.content
+				}
       });
     },
     goBack() {

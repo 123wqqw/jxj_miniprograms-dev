@@ -134,9 +134,59 @@ export default {
         },
       ],
       summaryCount: '0/3',
+      date:{
+        beginDate:'',
+        endDate:''
+      },
+      clockDate:'',
+      askleaveText:'',
+      askLeaveDate:''
     };
   },
+  mounted() {
+    this.getCalendar();
+  },
   methods: {
+    getCalendar(){
+      getReq(URL.jxjCalendar,{...this.date}).then(res => {
+        console.log('jxjCalendarjxjCalendar',res);
+        if (res.data.message === "成功") {
+          
+        }
+      })
+    },
+    getTaskInfo(){
+      getReq(URL.jxjTaskInfo,{...this.clockDate}).then(res => {
+        console.log('jxjTaskInfojxjTaskInfo',res);
+        if (res.data.message === "成功") {
+          
+        }
+      })
+    },
+    getTaskDetail(){
+      getReq(URL.jxjTaskDetail,{...this.clockDate}).then(res => {
+        console.log('jxjTaskDetailjxjTaskDetail',res);
+        if (res.data.message === "成功") {
+          
+        }
+      })
+    },
+    getAskLeave(){
+      postReq(URL.jxjAskLeave,{...this.askleaveText}).then(res => {
+        console.log('jxjAskLeavejxjAskLeave',res);
+        if (res.data.message === "成功") {
+          
+        }
+      })
+    },
+    getRevoke(){
+      postReq(URL.jxjRevoke,{...this.askLeaveDate}).then(res => {
+        console.log('jxjRevokejxjRevoke',res);
+        if (res.data.message === "成功") {
+          
+        }
+      })
+    },
     goBack() {
       uni.navigateBack();
     },
