@@ -1,123 +1,34 @@
 <template>
-	<view class="records-container">
+	<view class="records-page">
 		<!-- 顶部导航栏 -->
-		<view class="nav-bar">
+	<!-- 	<view class="nav-bar">
 			<view class="nav-left" @click="goBack">
 				<image src="/static/images/students/arrow-left.png" class="back-icon"></image>
 			</view>
 			<view class="nav-title">健身运动记录</view>
 			<view class="nav-right"></view>
-		</view>
-		
-		<!-- 统计概览 -->
-		<view class="stats-overview">
-			<view class="stats-card">
-				<view class="stat-item">
-					<view class="stat-icon">
-						<image src="/static/images/students/exercise.png" class="icon-img"></image>
-					</view>
-					<view class="stat-info">
-						<view class="stat-number">{{ totalStats.totalTime }}</view>
-						<view class="stat-label">总运动时长(分钟)</view>
-					</view>
+		</view> -->
+
+		<!-- 分组列表（按天） -->
+		<view class="sections">
+			<view class="section" v-for="(group, gi) in groupedRecords" :key="gi">
+				<view class="section-header">
+					<view class="section-label">{{ group.label }}</view>
+					<view class="section-count">锻炼 {{ group.items.length }} 次</view>
 				</view>
-				<view class="stat-item">
-					<view class="stat-icon">
-						<image src="/static/images/students/rank.png" class="icon-img"></image>
-					</view>
-					<view class="stat-info">
-						<view class="stat-number">{{ totalStats.totalDays }}</view>
-						<view class="stat-label">坚持天数</view>
-					</view>
-				</view>
-				<view class="stat-item">
-					<view class="stat-icon">
-						<image src="/static/images/students/read.png" class="icon-img"></image>
-					</view>
-					<view class="stat-info">
-						<view class="stat-number">{{ totalStats.totalCalories }}</view>
-						<view class="stat-label">消耗卡路里</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		
-		<!-- 筛选标签 -->
-		<view class="filter-section">
-			<view class="filter-tabs">
-				<view 
-					class="filter-tab" 
-					:class="{ 'active': activeFilter === 'all' }"
-					@click="setFilter('all')"
-				>
-					<text class="tab-text">全部</text>
-				</view>
-				<view 
-					class="filter-tab" 
-					:class="{ 'active': activeFilter === 'gym' }"
-					@click="setFilter('gym')"
-				>
-					<text class="tab-text">健身房</text>
-				</view>
-				<view 
-					class="filter-tab" 
-					:class="{ 'active': activeFilter === 'homework' }"
-					@click="setFilter('homework')"
-				>
-					<text class="tab-text">体育作业</text>
-				</view>
-			</view>
-		</view>
-		
-		<!-- 记录列表 -->
-		<view class="records-list">
-			<view 
-				class="record-item" 
-				v-for="(record, index) in filteredRecordsList" 
-				:key="index"
-				@click="viewRecordDetail(record)"
-			>
-				<view class="record-header">
-					<view class="record-type" :class="record.type">
-						<image :src="getTypeIcon(record.type)" class="type-icon"></image>
-						<text class="type-text">{{ record.typeText }}</text>
-					</view>
-					<view class="record-date">{{ record.date }}</view>
-				</view>
-				
-				<view class="record-content">
-					<view class="record-title">{{ record.title }}</view>
-					<view class="record-desc">{{ record.description }}</view>
-					
-					<view class="record-stats">
-						<view class="stat-item">
-							<view class="stat-label">时长</view>
-							<view class="stat-value">{{ record.duration }}分钟</view>
+				<view class="card">
+					<view class="row" v-for="(item, i) in group.items" :key="i" @click="viewRecordDetail(item)">
+						<view class="left">
+							<view class="name">{{ item.title }}</view>
+							<view class="time">{{ item.time }}</view>
 						</view>
-						<view class="stat-item">
-							<view class="stat-label">消耗</view>
-							<view class="stat-value">{{ record.calories }}卡</view>
-						</view>
-						<view class="stat-item">
-							<view class="stat-label">完成度</view>
-							<view class="stat-value">{{ record.completion }}%</view>
+						<view class="right">
+							<text class="duration">{{ item.duration }}</text>
+							<image src="/static/images/students/arrow-right.png" class="chev" />
 						</view>
 					</view>
 				</view>
-				
-				<view class="record-footer">
-					<view class="record-time">{{ record.time }}</view>
-					<view class="record-status" :class="record.status">
-						<text class="status-text">{{ record.statusText }}</text>
-					</view>
-				</view>
 			</view>
-		</view>
-		
-		<!-- 空状态 -->
-		<view class="empty-state" v-if="filteredRecordsList.length === 0">
-			<image src="/static/images/students/default.png" class="empty-icon"></image>
-			<view class="empty-text">暂无运动记录</view>
 		</view>
 	</view>
 </template>
@@ -132,6 +43,24 @@ import { URL } from "@/common/url.js";
 export default {
 	data() {
 		return {
+			groupedRecords: [
+				{
+					label: '今天',
+					items: [
+						{ title: '单腿站立', time: '14:32', duration: '0:30' },
+						{ title: '单腿站立', time: '14:32', duration: '0:30' },
+						{ title: '单腿站立', time: '14:32', duration: '0:30' }
+					]
+				},
+				{
+					label: '2024-04-24',
+					items: [
+						{ title: '单腿站立', time: '14:32', duration: '0:30' },
+						{ title: '单腿站立', time: '14:32', duration: '0:30' },
+						{ title: '单腿站立', time: '14:32', duration: '0:30' }
+					]
+				}
+			],
 			activeFilter: 'all',
 			totalStats: {
 				totalTime: 1250,
@@ -587,5 +516,78 @@ export default {
 .empty-text {
 	font-size: 32rpx;
 	color: #999999;
+}
+/* 新版分组列表样式，匹配截图视觉 */
+.records-page {
+	min-height: 100vh;
+	background: #F5F6F8;
+}
+
+.sections {
+	padding: 16rpx 24rpx 24rpx;
+}
+
+.section {
+	margin-bottom: 24rpx;
+}
+
+.section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 8rpx 12rpx;
+	color: #8A8F99;
+	font-size: 26rpx;
+}
+
+.section-count {
+	color: #8A8F99;
+}
+
+.card {
+	background: #FFFFFF;
+	border-radius: 24rpx;
+	overflow: hidden;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 24rpx 28rpx;
+	border-bottom: 1rpx solid #EEEEEE;
+}
+
+.row:last-child {
+	border-bottom: none;
+}
+
+.left .name {
+	font-size: 32rpx;
+	color: #111111;
+	font-weight: 600;
+}
+
+.left .time {
+	margin-top: 8rpx;
+	font-size: 24rpx;
+	color: #8A8F99;
+}
+
+.right {
+	display: flex;
+	align-items: center;
+	gap: 8rpx;
+}
+
+.duration {
+	color: #2C84FF;
+	font-size: 32rpx;
+	font-weight: 600;
+}
+
+.chev {
+	width: 20rpx;
+	height: 20rpx;
 }
 </style>

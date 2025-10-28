@@ -136,6 +136,7 @@
         "home/index",
         "gym/index",
         "homework/index",
+        "homework/clock",
         "leaderboard/index",
         "records/index"
       ]

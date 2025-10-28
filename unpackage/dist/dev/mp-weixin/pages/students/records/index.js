@@ -102,21 +102,19 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var l0 = _vm.__map(_vm.filteredRecordsList, function (record, index) {
-    var $orig = _vm.__get_orig(record)
-    var m0 = _vm.getTypeIcon(record.type)
+  var l0 = _vm.__map(_vm.groupedRecords, function (group, gi) {
+    var $orig = _vm.__get_orig(group)
+    var g0 = group.items.length
     return {
       $orig: $orig,
-      m0: m0,
+      g0: g0,
     }
   })
-  var g0 = _vm.filteredRecordsList.length
   _vm.$mp.data = Object.assign(
     {},
     {
       $root: {
         l0: l0,
-        g0: g0,
       },
     }
   )
@@ -196,95 +194,6 @@ var _url = __webpack_require__(/*! @/common/url.js */ 76);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 // // 获取所有AI锻炼记录列表
 // jxjRecordInfos:"/xty-task/app-api/clock/v2/getRecordInfos",
 // // 获取AI锻炼记录列表
@@ -292,6 +201,37 @@ var _url = __webpack_require__(/*! @/common/url.js */ 76);
 var _default = {
   data: function data() {
     return {
+      groupedRecords: [{
+        label: '今天',
+        items: [{
+          title: '单腿站立',
+          time: '14:32',
+          duration: '0:30'
+        }, {
+          title: '单腿站立',
+          time: '14:32',
+          duration: '0:30'
+        }, {
+          title: '单腿站立',
+          time: '14:32',
+          duration: '0:30'
+        }]
+      }, {
+        label: '2024-04-24',
+        items: [{
+          title: '单腿站立',
+          time: '14:32',
+          duration: '0:30'
+        }, {
+          title: '单腿站立',
+          time: '14:32',
+          duration: '0:30'
+        }, {
+          title: '单腿站立',
+          time: '14:32',
+          duration: '0:30'
+        }]
+      }],
       activeFilter: 'all',
       totalStats: {
         totalTime: 1250,

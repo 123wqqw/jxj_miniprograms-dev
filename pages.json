@@ -701,6 +701,12 @@
 						"navigationBarTitleText": "校外体育作业"
 					}
 				}, {
+					"path": "homework/clock",
+					"style": {
+						"navigationBarTitleText": "作业打卡",
+						"navigationStyle": "custom"
+					}
+				}, {
 					"path": "leaderboard/index",
 					"style": {
 						"navigationBarTitleText": "锻炼风云榜"

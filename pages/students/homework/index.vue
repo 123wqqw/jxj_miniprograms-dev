@@ -144,10 +144,11 @@ export default {
       this.weekDates = this.weekDates.map((d, i) => ({ ...d, selected: i === idx }));
     },
     handleItem(item) {
-      // 根据状态执行不同逻辑，这里仅作为占位
       if (item.statusClass === 'blue') {
-        // 去打卡
-        uni.showToast({ title: '前往打卡', icon: 'none' });
+        // 去打卡：跳转到打卡页面
+        uni.navigateTo({
+          url: '/pages/students/homework/clock'
+        })
       } else {
         uni.showToast({ title: '查看详情', icon: 'none' });
       }
