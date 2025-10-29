@@ -2,7 +2,8 @@
 	<view class="sportDetail">
 		<!-- 顶部媒体改为图片，依据选择的计时分钟动态切换 -->
 		<view class="video-wrap">
-			<image class="video-content" :src="currentImageUrl" mode="aspectFill"></image>
+			<video  class="video-content" :src="sportDetail.guideVideo"></video>
+			<!-- <image class="video-content" :src="currentImageUrl" mode="aspectFill"></image> -->
 		</view>
 		<view class="sportName">
 			{{sportDetail.aiSportName}}

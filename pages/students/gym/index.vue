@@ -15,24 +15,15 @@
     <view class="main-content">
       <!-- 左侧分类导航 -->
       <view class="left-sidebar">
-        <!-- 全部运动 -->
-        <view
-          class="sidebar-item"
-          :class="{ active: activeCategory === 'all' }"
-          @tap="selectCategory('all')"
-        >
-          <text class="sidebar-text">全部运动</text>
-        </view>
-
         <!-- 具体运动分类 -->
         <view
           class="sidebar-item"
-          :class="{ active: activeCategory === category.id }"
+          :class="{ active: activeCategory === category.directionName }"
           v-for="category in specificCategories"
-          :key="category.id"
-          @tap="selectCategory(category.id)"
+          :key="category.directionId"
+          @tap="selectCategory(category)"
         >
-          <text class="sidebar-text">{{ category.name }}</text>
+          <text class="sidebar-text">{{ category.directionName }}</text>
         </view>
       </view>
 
@@ -97,13 +88,11 @@
         <view class="exercise-grid">
           <view
             class="exercise-item"
-            v-for="(exercise) in exercises"
+            v-for="exercise in exercises"
             :key="exercise.id"
             @tap="startExercise(exercise)"
           >
-            <view
-              class="exercise-card"
-            >
+            <view class="exercise-card">
               <view class="exercise-illustration">
                 <image
                   :src="exercise.aiSportImg"
@@ -140,7 +129,7 @@ export default {
       showDirectionDropdown: false,
 
       // 分类相关
-      activeCategory: "all",
+      activeCategory: "全部运动",
       specificCategories: [],
 
       // 筛选选项
@@ -148,8 +137,7 @@ export default {
       directionOptions: [],
 
       // 运动项目数据
-      exercises: [
-      ],
+      exercises: [],
       pageQuery: {
         difficulty: [1],
         dimensionId: [10],
@@ -160,54 +148,20 @@ export default {
     };
   },
 
-  computed: {
-    filteredExercises() {
-      return this.exercises.filter((exercise) => {
-        // 分类筛选
-        const categoryMatch =
-          this.activeCategory === "all" ||
-          exercise.category === this.activeCategory;
-
-        // 难度筛选
-        const difficultyMatch =
-          !this.selectedDifficultyValue ||
-          exercise.difficulty === this.selectedDifficultyValue;
-
-        // 改善方向筛选
-        const directionMatch =
-          !this.selectedDirectionValue ||
-          exercise.direction === this.selectedDirectionValue;
-
-        return categoryMatch && difficultyMatch && directionMatch;
-      });
-    },
-
-    selectedDifficultyValue() {
-      const option = this.difficultyOptions.find(
-        (opt) => opt.label === this.selectedDifficulty
-      );
-      return option ? option.value : "";
-    },
-
-    selectedDirectionValue() {
-      const option = this.directionOptions.find(
-        (opt) => opt.label === this.selectedDirection
-      );
-      return option ? option.value : "";
-    },
-  },
   mounted() {
     this.getQuery();
-		this.getList();
+    this.getList();
   },
 
   methods: {
     // 查看锻炼方向，难度和改善方向
     getQuery() {
+      const list = [{ directionName: "全部运动", directionId: "all" }];
       getReq(URL.jxjDirection).then((res) => {
         if (res.message === "成功") {
           this.difficultyOptions = res.data.difficulty;
           this.directionOptions = res.data.dimension;
+          this.specificCategories = list.concat(res.data.exerciseDirection);
         }
       });
     },
@@ -215,29 +169,13 @@ export default {
     getList() {
       const params = { ...this.pageQuery };
       postReq(URL.jxjSportList, params).then((res) => {
-				if (res.message === "成功") {
-					this.exercises = res.data.content
-				}
+        if (res.message === "成功") {
+          this.exercises = res.data.content;
+        }
       });
     },
     goBack() {
       uni.navigateBack();
-    },
-
-    showMore() {
-      uni.showToast({
-        title: "更多功能开发中",
-        icon: "none",
-      });
-    },
-
-    showDifficultyPicker() {
-      // 改为下拉面板切换
-      this.toggleDifficultyDropdown();
-    },
-    showDirectionPicker() {
-      // 改为下拉面板切换
-      this.toggleDirectionDropdown();
     },
     // 新增：切换下拉面板
     toggleDifficultyDropdown() {
@@ -255,15 +193,21 @@ export default {
     },
     // 新增：选择项
     chooseDifficulty(opt) {
-      this.selectedDifficulty = opt.label;
+      this.selectedDifficulty = opt.name;
+      this.pageQuery.difficulty = [opt.id];
+			this.getList()
       this.showDifficultyDropdown = false;
     },
     chooseDirection(opt) {
-      this.selectedDirection = opt.label;
+      this.selectedDirection = opt.name;
+      this.pageQuery.dimensionId = [opt.id];
+			this.getList()
       this.showDirectionDropdown = false;
     },
     selectCategory(category) {
-      this.activeCategory = category;
+      this.activeCategory = category.directionName;
+      this.pageQuery.directionId = category.directionId;
+			this.getList()
     },
 
     startExercise(exercise) {
@@ -271,11 +215,11 @@ export default {
       // sportDetail 读取参数 id：onLoad(e) { this.option = e }，apiGetSportDetail 会用 id 调接口
       const id = exercise.id || exercise.aiSportId || exercise.sportId;
       if (!id) {
-        uni.showToast({ title: '缺少项目ID，无法打开详情', icon: 'none' });
+        uni.showToast({ title: "缺少项目ID，无法打开详情", icon: "none" });
         return;
       }
       uni.navigateTo({
-        url: `/pagesTask/assign/assignTask/sportDetail?id=${id}`
+        url: `/pagesTask/assign/assignTask/sportDetail?id=${id}`,
       });
     },
   },
