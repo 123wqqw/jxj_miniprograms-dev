@@ -74,9 +74,7 @@
     <!-- 文字提示 -->
     <view class="text-tip">
       <view class="text-tip-text"
-        >呼叫[{{
-          studentInfo.name
-        }}]！无论什么原因暂停，这里永远是你的加油站。今天先来活动10分钟，找回感觉就好！</view
+        >{{ content }}</view
       >
     </view>
 
@@ -164,6 +162,7 @@ export default {
         name: "李思思",
         school: "北京市朝阳第一小学 四年级3班",
       },
+      content:''
     };
   },
   computed: {
@@ -172,9 +171,36 @@ export default {
   onLoad() {
     this.getSystemInfo();
     this.getStudentInfo();
+    
   },
   methods: {
     ...mapMutations(["setXiaotiyunUser"]),
+    filterText(type){
+      const {name} = this.studentInfo
+      switch(type){
+        case 1:
+          return `[${name}]你好！[家庭健身房]已为你开启！完成第一次锻炼，就能即刻在[风云榜]上拥有姓名，开启你的健康之旅吧！`
+        case 2:
+          return `哈喽[${name}]！新的一周开始啦，能量条已刷新！快来“家庭健身房”充个电，抢跑本周风云榜吧！`
+        case 3:
+          return `嘿，[${name}]！就差一点点就能追上上周啦！今天来运动一下，就能反败为胜！`
+        case 4:
+          return `呼叫[${name}]！无论什么原因暂停，这里永远是你的加油站。今天先来活动10分钟，找回感觉就好！`
+        case 5:
+          return `本周排行榜中第一名：太强了，[${name}]！作为风云榜冠军，你已经是所有同学的榜样了！继续展现你的风采吧！`
+        case 6:
+          return `本周排行榜中非第一名：不愧是[${name}]！这运动节奏太稳了，你是我们的榜样！保持下去，风云榜冠军就是你！`
+        default:
+            return ''
+      }
+    },
+    getTextType(){
+      getReq(URL.jxjTextType).then(res => {
+        if (res.message === '成功') {
+          this.content = this.filterText(res.data)
+        }
+      })
+    },
     // 获取系统信息
     getSystemInfo() {
       const systemInfo = uni.getSystemInfoSync();
@@ -203,6 +229,7 @@ export default {
         const response = await getReq(URL.apiGetStudentInfo, params)
         console.log('获取到的学生信息:', response)
         
+        
 				// 更新学生信息
 				if (response && response.data) {
 					const payload = response.data && response.data.data ? response.data.data : response.data
@@ -210,7 +237,7 @@ export default {
 						...this.studentInfo,
 						...payload
 					}
-          this.studentInfo.school = this.studentInfo.schoolName + ' ' + this.studentInfo.grade + '年级' + this.studentInfo.claNumber + '班'
+          this.studentInfo.school = this.studentInfo.className?this.studentInfo.schoolName + '' + this.studentInfo.className: this.studentInfo.schoolName + ' ' + this.studentInfo.grade + '年级' + this.studentInfo.claNumber + '班'
           console.log('更新后的学生信息:', this.studentInfo)
           
 			   // 只替换响应里有的字段；没有的字段保持不变，同时确保鉴权字段不被清空
@@ -223,9 +250,10 @@ export default {
 					})
 					const updatedXiaotiyunUser = {
 						...(this.xiaotiyunUser || {}),
-						student: mergedStudent
+						student: {...mergedStudent,school:this.studentInfo.school},
 					}
 					this.setXiaotiyunUser(updatedXiaotiyunUser)
+          this.getTextType()
 				}
         
       } catch (error) {

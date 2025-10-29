@@ -6,7 +6,8 @@
   </view>
     <!-- 顶部指导视频（按需求：无任何操作按钮，禁止快进、暂停） -->
     <view class="guide-wrap">
-      <video v-if="currentVideoUrl" class="guide-video"
+      <video class="guide-video" :src="sportDetail.guideVideo"></video>
+      <!-- <video v-if="currentVideoUrl" class="guide-video"
              id="guideVideo"
              :src="currentVideoUrl"
              :controls="false"
@@ -20,7 +21,7 @@
              @pause="resumeVideo"
              @ended="restartVideo"
       ></video>
-      <image v-else class="guide-image" :src="currentImageUrl" mode="aspectFit"></image>
+      <image v-else class="guide-image" :src="currentImageUrl" mode="aspectFit"></image> -->
     </view>
 
     <!-- 相机预览区域（按UI一比一：计时与结束按钮覆盖在相机区域顶部左右） -->
@@ -115,7 +116,7 @@ export default {
   },
   methods: {
     apiGetSportDetail(id) {
-      getReq(URL.apiGetSportDetail, { id }).then(res => {
+      getReq(URL.jxjSportDetail, { id }).then(res => {
         if (res.data && JSON.stringify(res.data) !== '{}') {
           this.sportDetail = res.data
         }
@@ -159,7 +160,7 @@ export default {
       const duration = Number(this.duration) || 1
       const seconds = this.elapsedSeconds
       const videoUrl = this.currentVideoUrl || ''
-      const url = `/pagesTask/assign/assignTask/finish?name=${encodeURIComponent(name)}&id=${encodeURIComponent(id)}&duration=${duration}&seconds=${seconds}&videoUrl=${encodeURIComponent(videoUrl)}`
+      const url = `/pagesTask/assign/assignTask/finish?name=${name}&id=${encodeURIComponent(id)}&duration=${duration}&seconds=${seconds}&videoUrl=${encodeURIComponent(videoUrl)}`
       uni.navigateTo({ url })
     },
     onEndConfirm() {

@@ -551,41 +551,41 @@ const URL = {
 	apiPostChangePasswordV2: "/xty-usercenter/app-api/mine/v2/password/change",
 	
 
-
-	// 首页文案
+  // 11111 接口已对接
+	// 首页文案 111111111
 	jxjTextType:"/xty-task/app-api/rank/v41100/jxjAppIndexTextType",
-	// 排行榜
+	// 排行榜 
 	jxjRankInfo:"/xty-task/app-api/rank/v41100/weekRankInfo",
-	// 获取绑定关系
-	jxjRelation:"/xty-usercenter/app-api/login/v41100/relation",
-	// 京小健登录
-	jxjLogin: "/xty-usercenter/app-api/login/v41100/login",
-	// 条件查询分屏运动列表
+	// // 获取绑定关系
+	// jxjRelation:"/xty-usercenter/app-api/login/v41100/relation",
+	// // 京小健登录
+	// jxjLogin: "/xty-usercenter/app-api/login/v41100/login",
+	// 条件查询分屏运动列表 111111
 	jxjSportList: "/xty-task/app-api/sport/v3/list",
-	// 体能训练查看锻炼方向，难度和改善方向
+	// 体能训练查看锻炼方向，难度和改善方向 111111
 	jxjDirection:"/xty-task/app-api/sport/v1/select/sport/direction",
-	// 下载分屏运动背景音效
+	// 下载分屏运动背景音效 111111
 	jxjDownload:"/xty-task/app-api/sport/v1/download",
-	// 获取运动详情
+	// 获取运动详情 111111
 	jxjSportDetail:"/xty-task/app-api/sport/v2/sportDetail",
 	// 上传AI锻炼记录
 	jxjUploadRecord: "/xty-task/app-api/clock/v2/uploadRecord",
-	// 每日打卡日历
+	// 每日打卡日历 11111
 	jxjCalendar:"/xty-task/app-api/clock/v1/calendar",
-	// 打卡作业查询
+	// 打卡作业查询 11111
 	jxjTaskInfo:"/xty-task/app-api/clock/v2/taskInfo",
-	// 获取学生信息
-	jxjStudentInfo:"xty-basic/app-api/student/v260/studentInfo",
+	// 获取学生信息 111111
+	jxjStudentInfo:"/xty-basic/app-api/student/v260/studentInfo",
 	// 打卡作业详情
 	jxjTaskDetail:"/xty-task/app-api/clock/v3/taskInfo/detail",
-	// 请假
+	// 请假 1111111
 	jxjAskLeave:"/xty-task/app-api/clock/v2/askleave",
-	// 撤销请假
+	// 撤销请假 1111111
 	jxjRevoke:"/xty-task/app-api/clock/v1/askleave/revoke",
-	// 获取所有AI锻炼记录列表
-	jxjRecordInfos:"/xty-task/app-api/clock/v2/getRecordInfos",
-	// 获取AI锻炼记录列表
-	jxjGetRecordInfos:"/xty-task/app-api/clock/v1/getRecordInfos",
+	// 获取所有AI锻炼记录列表 1111111
+	jxjRecordList:"/xty-task/app-api/clock/v2/getRecordInfos",
+	// 获取AI锻炼记录详情  1111111111
+	jxjRecordDetail:"/xty-task/app-api/clock/v1/getDetailRecordInfo",
 };
 
 const userCenterUrlList = [

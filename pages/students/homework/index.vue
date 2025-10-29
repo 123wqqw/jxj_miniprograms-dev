@@ -3,20 +3,18 @@
     <!-- 顶部渐变+导航 -->
     <view class="hero">
       <view class="nav">
-       <!-- <view class="nav-left" @tap="goBack">
+        <!-- <view class="nav-left" @tap="goBack">
           <image src="/static/images/students/arrow-left.png" class="back-icon" />
         </view>
         <view class="nav-title">校外体育作业</view> -->
-        <view class="nav-right">
-      
-        </view>
+        <view class="nav-right"> </view>
       </view>
       <!-- 个人信息 -->
       <view class="profile">
-        <image src="/static/images/students/user.png" class="avatar" />
+        <image :src="userAvatar" class="avatar" />
         <view class="profile-texts">
-          <view class="name">李思思</view>
-          <view class="school">北京市朝阳第一小学 四年级3班</view>
+          <view class="name">{{ userName }}</view>
+          <view class="school">{{ school }}</view>
         </view>
       </view>
     </view>
@@ -25,16 +23,24 @@
     <view class="content-card">
       <view class="section-title">体育作业</view>
       <view class="weekday-row">
-        <view class="wk" v-for="(d, idx) in weekDates" :key="'wk-'+idx">{{ d.date === '今' ? '今' : '—' }}</view>
+        <view class="wk" v-for="(d, idx) in weekDates" :key="'wk-' + idx">{{
+          d.date === "今" ? "今" : "—"
+        }}</view>
       </view>
-       <!-- 周日历条 -->
-       <view class="week-strip">
-         <view v-for="(d, idx) in weekDates" :key="idx" class="day" :class="{ selected: d.selected }" @tap="selectDay(idx)">
-           <view class="date">{{ d.date }}</view>
-           <view class="dot" v-if="d.hasDot"></view>
-         </view>
-       </view>
-       <view class="leave-tip" v-if="leaveTip">已请假</view>
+      <!-- 周日历条 -->
+      <view class="week-strip">
+        <view
+          v-for="(d, idx) in weekDates"
+          :key="idx"
+          class="day"
+          :class="{ selected: d.selected }"
+          @tap="selectDay(idx)"
+        >
+          <view class="date">{{ d.date }}</view>
+          <view class="dot" v-if="d.hasDot"></view>
+        </view>
+      </view>
+      <view class="leave-tip" v-if="leaveTip">已请假</view>
       <view class="strip-divider"></view>
 
       <!-- 当日作业标题与提示 -->
@@ -61,7 +67,12 @@
             </view>
             <view class="meta">{{ item.meta }}</view>
             <view class="cta-row">
-              <view class="status-pill" :class="item.statusClass" @tap.stop="handleItem(item)">{{ item.statusText }}</view>
+              <view
+                class="status-pill"
+                :class="item.statusClass"
+                @tap.stop="handleItem(item)"
+                >{{ item.statusText }}</view
+              >
             </view>
           </view>
         </view>
@@ -70,7 +81,9 @@
 
     <!-- 底部按钮 -->
     <view class="bottom-bar">
-      <view class="cta-btn" @tap="openSummary">任务完成详情（{{ summaryCount }}）</view>
+      <view class="cta-btn" @tap="openSummary"
+        >任务完成详情（{{ summaryCount }}）</view
+      >
     </view>
   </view>
 </template>
@@ -78,16 +91,16 @@
 <script>
 import { getReq, postReq } from "@/common/request.js";
 import { URL } from "@/common/url.js";
-	// // 每日打卡日历
-	// jxjCalendar:"/xty-task/app-api/clock/v1/calendar",
-	// // 打卡作业查询
-	// jxjTaskInfo:"/xty-task/app-api/clock/v2/taskInfo",
-  // // 打卡作业详情
-	// jxjTaskDetail:"/xty-task/app-api/clock/v3/taskInfo/detail",
-  // // 请假
-	// jxjAskLeave:"/xty-task/app-api/clock/v2/askleave",
-	// // 撤销请假
-	// jxjRevoke:"/xty-task/app-api/clock/v1/askleave/revoke",
+// // 每日打卡日历
+// jxjCalendar:"/xty-task/app-api/clock/v1/calendar",
+// // 打卡作业查询
+// jxjTaskInfo:"/xty-task/app-api/clock/v2/taskInfo",
+// // 打卡作业详情
+// jxjTaskDetail:"/xty-task/app-api/clock/v3/taskInfo/detail",
+// // 请假
+// jxjAskLeave:"/xty-task/app-api/clock/v2/askleave",
+// // 撤销请假
+// jxjRevoke:"/xty-task/app-api/clock/v1/askleave/revoke",
 export default {
   data() {
     return {
@@ -95,116 +108,126 @@ export default {
       weekDates: [
         { date: 20, hasDot: false, selected: false },
         { date: 21, hasDot: true, selected: false },
-        { date: '今', hasDot: false, selected: false },
+        { date: "今", hasDot: false, selected: false },
         { date: 23, hasDot: true, selected: true },
         { date: 24, hasDot: false, selected: false },
         { date: 25, hasDot: true, selected: false },
         { date: 26, hasDot: false, selected: false },
       ],
       leaveTip: true,
-      dayTitle: '10月22日的作业',
+      dayTitle: "10月22日的作业",
       // 作业列表（示例数据，贴近参考稿）
       homeworkItems: [
         {
-          title: '腹部拉伸1分钟',
-          meta: '1分钟 × 4组',
-          img: '/static/images/students/one.png',
-          statusText: '去打卡',
-          statusClass: 'blue',
+          title: "腹部拉伸1分钟",
+          meta: "1分钟 × 4组",
+          img: "/static/images/students/one.png",
+          statusText: "去打卡",
+          statusClass: "blue",
           stamped: true,
           revoked: false,
         },
         {
-          title: '左右三步跑1分钟',
-          meta: '1分钟 × 4组',
-          img: '/static/images/students/two.png',
-          statusText: '已打卡',
-          statusClass: 'gray',
+          title: "左右三步跑1分钟",
+          meta: "1分钟 × 4组",
+          img: "/static/images/students/two.png",
+          statusText: "已打卡",
+          statusClass: "gray",
           stamped: false,
           revoked: true,
         },
         {
-          title: '合掌跳1分钟',
-          meta: '1分钟 × 4组',
-          img: '/static/images/students/three.png',
-          statusText: '未打卡',
-          statusClass: 'light',
+          title: "合掌跳1分钟",
+          meta: "1分钟 × 4组",
+          img: "/static/images/students/three.png",
+          statusText: "未打卡",
+          statusClass: "light",
           stamped: false,
           revoked: false,
         },
       ],
-      summaryCount: '0/3',
-      date:{
-        beginDate:'',
-        endDate:''
+      summaryCount: "0/3",
+      date: {
+        beginDate: "2025-08-10",
+        endDate: "2025-08-15",
       },
-      clockDate:'',
-      askleaveText:'',
-      askLeaveDate:''
+      clockDate: "2025-08-23",
+      askleaveText: "",
+      askLeaveDate: "",
+      userName: "",
+      userAvatar: "",
+      school: "",
     };
   },
   mounted() {
-    this.getCalendar();
+    const user = uni.getStorageSync("xiaotiyunUser") || {};
+    console.log("useruser", user);
+
+    this.userName = user.student.name;
+    this.userAvatar =
+      user.student.avatarUrl || "/static/images/students/default.png";
+    this.school = user.student.school || "";
+    // this.getCalendar();
+    this.getTaskInfo()
+
   },
   methods: {
-    getCalendar(){
-      getReq(URL.jxjCalendar,{...this.date}).then(res => {
-        console.log('jxjCalendarjxjCalendar',res);
+    getCalendar() {
+      getReq(URL.jxjCalendar, { ...this.date }).then((res) => {
+        console.log("jxjCalendarjxjCalendar", res);
         if (res.data.message === "成功") {
-          
         }
-      })
+      });
     },
-    getTaskInfo(){
-      getReq(URL.jxjTaskInfo,{...this.clockDate}).then(res => {
-        console.log('jxjTaskInfojxjTaskInfo',res);
+    getTaskInfo() {
+      getReq(URL.jxjTaskInfo, { clockDate:this.clockDate }).then((res) => {
+        console.log("jxjTaskInfojxjTaskInfo", res);
         if (res.data.message === "成功") {
-          
         }
-      })
+      });
     },
-    getTaskDetail(){
-      getReq(URL.jxjTaskDetail,{...this.clockDate}).then(res => {
-        console.log('jxjTaskDetailjxjTaskDetail',res);
+    getTaskDetail() {
+      getReq(URL.jxjTaskDetail, { clockDate:this.clockDate }).then((res) => {
+        console.log("jxjTaskDetailjxjTaskDetail", res);
         if (res.data.message === "成功") {
-          
         }
-      })
+      });
     },
-    getAskLeave(){
-      postReq(URL.jxjAskLeave,{...this.askleaveText}).then(res => {
-        console.log('jxjAskLeavejxjAskLeave',res);
+    getAskLeave() {
+      postReq(URL.jxjAskLeave, { ...this.askleaveText }).then((res) => {
+        console.log("jxjAskLeavejxjAskLeave", res);
         if (res.data.message === "成功") {
-          
         }
-      })
+      });
     },
-    getRevoke(){
-      postReq(URL.jxjRevoke,{...this.askLeaveDate}).then(res => {
-        console.log('jxjRevokejxjRevoke',res);
+    getRevoke() {
+      postReq(URL.jxjRevoke, { ...this.askLeaveDate }).then((res) => {
+        console.log("jxjRevokejxjRevoke", res);
         if (res.data.message === "成功") {
-          
         }
-      })
+      });
     },
     goBack() {
       uni.navigateBack();
     },
     selectDay(idx) {
-      this.weekDates = this.weekDates.map((d, i) => ({ ...d, selected: i === idx }));
+      this.weekDates = this.weekDates.map((d, i) => ({
+        ...d,
+        selected: i === idx,
+      }));
     },
     handleItem(item) {
-      if (item.statusClass === 'blue') {
+      if (item.statusClass === "blue") {
         // 去打卡：跳转到打卡页面
         uni.navigateTo({
-          url: '/pages/students/homework/clock'
-        })
+          url: "/pages/students/homework/clock",
+        });
       } else {
-        uni.showToast({ title: '查看详情', icon: 'none' });
+        uni.showToast({ title: "查看详情", icon: "none" });
       }
     },
     openSummary() {
-      uni.showToast({ title: '打开任务完成详情', icon: 'none' });
+      uni.showToast({ title: "打开任务完成详情", icon: "none" });
     },
   },
 };
@@ -235,19 +258,41 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.back-icon { width: 40rpx; height: 40rpx; }
-.nav-title { font-size: 36rpx; font-weight: 600; }
-.nav-right { width: 64rpx; }
+.back-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+.nav-title {
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.nav-right {
+  width: 64rpx;
+}
 
 .profile {
   margin-top: 32rpx;
   display: flex;
   align-items: center;
 }
-.avatar { width: 88rpx; height: 88rpx; border-radius: 50%; background: #fff; }
-.profile-texts { margin-left: 20rpx; }
-.name { font-size: 32rpx; font-weight: 600; }
-.school { margin-top: 8rpx; font-size: 26rpx; opacity: 0.9; }
+.avatar {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  background: #fff;
+}
+.profile-texts {
+  margin-left: 20rpx;
+}
+.name {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.school {
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  opacity: 0.9;
+}
 
 .content-card {
   margin-top: -90rpx; /* 让卡片上浮在渐变之上 */
@@ -256,12 +301,27 @@ export default {
   padding: 24rpx 24rpx 32rpx;
   margin-left: 24rpx;
   margin-right: 24rpx;
-  box-shadow: 0 12rpx 24rpx rgba(0,0,0,0.06);
+  box-shadow: 0 12rpx 24rpx rgba(0, 0, 0, 0.06);
 }
 
-.section-title { font-size: 32rpx; font-weight: 600; color: #333; padding: 8rpx 8rpx 12rpx; }
-.weekday-row { display: flex; justify-content: space-between; padding: 8rpx 8rpx 0; color: #98a2b3; font-size: 24rpx; }
-.weekday-row .wk { flex: 0 0 14.2857%; max-width: 14.2857%; text-align: center; }
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  padding: 8rpx 8rpx 12rpx;
+}
+.weekday-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8rpx 8rpx 0;
+  color: #98a2b3;
+  font-size: 24rpx;
+}
+.weekday-row .wk {
+  flex: 0 0 14.2857%;
+  max-width: 14.2857%;
+  text-align: center;
+}
 
 .week-strip {
   display: flex;
@@ -270,59 +330,178 @@ export default {
   padding: 8rpx 8rpx 12rpx;
   flex-wrap: nowrap; /* 强制一行展示 */
 }
-.day { flex: 0 0 14.2857%; max-width: 14.2857%; display: flex; flex-direction: column; align-items: center; }
+.day {
+  flex: 0 0 14.2857%;
+  max-width: 14.2857%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .date {
-  width: 56rpx; height: 56rpx; border-radius: 50%;
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
   box-sizing: border-box; /* 保证加边框后外径不增大，避免选中态影响平衡 */
-  display: flex; align-items: center; justify-content: center;
-  font-size: 28rpx; color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #333;
 }
-.day.selected .date { border: 3rpx solid #2e7bff; color: #2e7bff; }
-.dot { width: 8rpx; height: 8rpx; border-radius: 50%; background: #2e7bff; margin-top: 10rpx; }
+.day.selected .date {
+  border: 3rpx solid #2e7bff;
+  color: #2e7bff;
+}
+.dot {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: #2e7bff;
+  margin-top: 10rpx;
+}
 
-.leave-tip { color: #ff8a00; font-size: 24rpx; margin-left: 16rpx; }
-.strip-divider { height: 2rpx; background: #eaecef; margin: 12rpx 8rpx 0; }
+.leave-tip {
+  color: #ff8a00;
+  font-size: 24rpx;
+  margin-left: 16rpx;
+}
+.strip-divider {
+  height: 2rpx;
+  background: #eaecef;
+  margin: 12rpx 8rpx 0;
+}
 
-.day-title { margin-top: 12rpx; font-size: 28rpx; color: #333; }
-.sub-tip { margin-top: 8rpx; display: flex; align-items: center; font-size: 24rpx; color: #999; }
-.tip-icon { width: 28rpx; height: 28rpx; margin-right: 8rpx; }
+.day-title {
+  margin-top: 12rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.sub-tip {
+  margin-top: 8rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;
+}
+.tip-icon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 8rpx;
+}
 
-.card-list { margin-top: 16rpx; }
+.card-list {
+  margin-top: 16rpx;
+}
 .card-item {
-  display: flex; align-items: center;
-  background: #f8fafc; border-radius: 16rpx; padding: 16rpx; margin-top: 16rpx;
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border-radius: 16rpx;
+  padding: 16rpx;
+  margin-top: 16rpx;
 }
-.thumb { width: 160rpx; height: 120rpx; border-radius: 16rpx; background: #f1f5ff; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.thumb-img { width: 100%; height: 100%; object-fit: cover; }
-.card-main { flex: 1; margin-left: 16rpx; }
-.card-row { display: flex; justify-content: space-between; align-items: center; }
-.title { font-size: 28rpx; color: #333; font-weight: 600; }
-.meta { margin-top: 8rpx; font-size: 24rpx; color: #999; }
+.thumb {
+  width: 160rpx;
+  height: 120rpx;
+  border-radius: 16rpx;
+  background: #f1f5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-main {
+  flex: 1;
+  margin-left: 16rpx;
+}
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+}
+.meta {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #999;
+}
 
-.right-area { display: flex; align-items: center; gap: 12rpx; }
+.right-area {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
 .status-pill {
-  min-width: 120rpx; height: 52rpx; border-radius: 26rpx; padding: 0 24rpx;
-  display: flex; align-items: center; justify-content: center; font-size: 24rpx;
+  min-width: 120rpx;
+  height: 52rpx;
+  border-radius: 26rpx;
+  padding: 0 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
 }
-.status-pill.blue { background: #2e7bff; color: #fff; }
-.status-pill.gray { background: #eef0f3; color: #6b7280; }
-.status-pill.light { background: #f1f5f9; color: #94a3b8; }
+.status-pill.blue {
+  background: #2e7bff;
+  color: #fff;
+}
+.status-pill.gray {
+  background: #eef0f3;
+  color: #6b7280;
+}
+.status-pill.light {
+  background: #f1f5f9;
+  color: #94a3b8;
+}
 
-.revoked { font-size: 22rpx; color: #8a8a8a; background: #f1f1f1; padding: 6rpx 12rpx; border-radius: 20rpx; }
+.revoked {
+  font-size: 22rpx;
+  color: #8a8a8a;
+  background: #f1f1f1;
+  padding: 6rpx 12rpx;
+  border-radius: 20rpx;
+}
 
 /* 绿色印章（模拟圆形印章效果） */
 .stamp {
-  width: 96rpx; height: 96rpx; border-radius: 50%;
-  border: 3rpx dashed #2ecc71; color: #2ecc71;
-  display: flex; align-items: center; justify-content: center;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  border: 3rpx dashed #2ecc71;
+  color: #2ecc71;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transform: rotate(-10deg);
-  font-size: 24rpx; font-weight: 600;
+  font-size: 24rpx;
+  font-weight: 600;
 }
 
-.bottom-bar { padding: 24rpx; }
-.cta-btn {
-  height: 88rpx; border-radius: 44rpx; background: #2e7bff; color: #fff;
-  display: flex; align-items: center; justify-content: center; font-size: 28rpx; font-weight: 600;
+.bottom-bar {
+  padding: 24rpx;
 }
-.cta-row { margin-top: 12rpx; display: flex; }
+.cta-btn {
+  height: 88rpx;
+  border-radius: 44rpx;
+  background: #2e7bff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.cta-row {
+  margin-top: 12rpx;
+  display: flex;
+}
 </style>

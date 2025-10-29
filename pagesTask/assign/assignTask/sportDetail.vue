@@ -93,7 +93,7 @@
         },
         methods: {
             apiGetSportDetail() {
-                getReq(URL.apiGetSportDetail, {
+                getReq(URL.jxjSportDetail, {
                     id: this.option.id
                 }).then(res => {
                     if (res.data && JSON.stringify(res.data) !== '{}') {
@@ -117,14 +117,20 @@
                     uni.navigateTo({ url: '/pages/students/login/index' })
                     return
                 }
-                // 跳转到 3 秒倒计时界面，传递必要参数，倒计时结束后进入练习页面
-                const id = this.option.id || this.sportDetail.aiSportId || this.sportDetail.sportId || ''
-                const duration = Number(this.durationMinutes) || 1
-                const seconds = 3
-                // 此处不要对路径进行 encode，避免无法识别页面路径而不跳转
-                const returnUrl = '/pagesTask/assign/assignTask/practice'
-                const url = `/pagesTask/assign/assignTask/countdown?id=${encodeURIComponent(id)}&duration=${duration}&seconds=${seconds}&returnUrl=${encodeURIComponent(returnUrl)}`
-                uni.navigateTo({ url })
+								getReq(URL.jxjDownload,{sportId:this.sportDetail.id}).then(res => {
+									if (res.message === '成功') {
+										// 跳转到 3 秒倒计时界面，传递必要参数，倒计时结束后进入练习页面
+									const id = this.option.id || this.sportDetail.aiSportId || this.sportDetail.sportId || ''
+									const duration = Number(this.durationMinutes) || 1
+									const seconds = 3
+									// 此处不要对路径进行 encode，避免无法识别页面路径而不跳转
+									const returnUrl = '/pagesTask/assign/assignTask/practice'
+									const url = `/pagesTask/assign/assignTask/countdown?id=${encodeURIComponent(id)}&duration=${duration}&seconds=${seconds}&returnUrl=${encodeURIComponent(returnUrl)}`
+									uni.navigateTo({ url })
+									}
+									
+								})
+               
             }
         }
     }

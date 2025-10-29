@@ -2,6 +2,7 @@
   <view class="finish-page">
     <!-- 顶部祝贺区 -->
     <view class="hero">
+      
       <!-- 彩带装饰，近似还原 UI 效果 -->
       <view class="confetti c1"></view>
       <view class="confetti c2"></view>
@@ -38,6 +39,8 @@
 </template>
 
 <script>
+    import { getReq } from "@/common/request.js";
+    import { URL } from "@/common/url.js";
 export default {
   data() {
     return {
@@ -47,7 +50,9 @@ export default {
       duration: 1,
       videoUrl: '',
       userName: '',
-      userAvatar: '/static/images/students/default.png'
+      userAvatar: '/static/images/students/default.png',
+      from:'',
+      recordDetail:{}
     }
   },
   computed: {
@@ -63,13 +68,23 @@ export default {
     this.sportId = e.id || ''
     this.duration = Number(e.duration || 1)
     this.videoUrl = e.videoUrl || ''
+    
     try {
       const user = uni.getStorageSync('xiaotiyunUser') || {}
       this.userName = user.name || user.realName || user.nickName || user.nickname || '学生'
       this.userAvatar = user.avatarUrl || user.headImg || '/static/images/students/default.png'
     } catch (err) {}
+
+    if (e.from) {
+      this.loadRecordDetail()
+    }
   },
   methods: {
+    loadRecordDetail(){
+      getReq(URL.jxjRecordDetail,{id:this.sportId}).then(res => {
+        this.recordDetail = res.data
+      })
+    },
     onReplay() {
       if (this.videoUrl) {
         // 简单跳转到一个可播放的视频页面；如需专用回放页，可后续接入

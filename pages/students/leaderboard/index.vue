@@ -1,7 +1,7 @@
 <template>
   <view class="leaderboard-container">
     <!-- 顶部导航栏 -->
-    <view class="nav-bar">
+    <!-- <view class="nav-bar">
       <view class="nav-left" @click="goBack">
         <image
           src="/static/images/students/arrow-left.png"
@@ -10,7 +10,7 @@
       </view>
       <view class="nav-title">锻炼风云榜</view>
       <view class="nav-right"></view>
-    </view>
+    </view> -->
 
     <!-- 筛选标签（调整位置：在前三名区上面） -->
     <view class="filter-section">
@@ -188,7 +188,7 @@ export default {
   },
   onLoad() {
 		const date = this.getCurrentWeekRange();
-    // this.loadLeaderboardData(date);
+    this.loadLeaderboardData(date);
   },
   methods: {
     formatDate(date) {

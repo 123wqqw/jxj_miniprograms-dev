@@ -44,22 +44,6 @@ export default {
 	data() {
 		return {
 			groupedRecords: [
-				{
-					label: '今天',
-					items: [
-						{ title: '单腿站立', time: '14:32', duration: '0:30' },
-						{ title: '单腿站立', time: '14:32', duration: '0:30' },
-						{ title: '单腿站立', time: '14:32', duration: '0:30' }
-					]
-				},
-				{
-					label: '2024-04-24',
-					items: [
-						{ title: '单腿站立', time: '14:32', duration: '0:30' },
-						{ title: '单腿站立', time: '14:32', duration: '0:30' },
-						{ title: '单腿站立', time: '14:32', duration: '0:30' }
-					]
-				}
 			],
 			activeFilter: 'all',
 			totalStats: {
@@ -68,133 +52,93 @@ export default {
 				totalCalories: 3200
 			},
 			recordsList: [
-				{
-					id: 1,
-					type: 'gym',
-					typeText: '健身房',
-					title: '俯卧撑训练',
-					description: '完成3组俯卧撑，每组10个',
-					date: '2024-01-15',
-					time: '18:30',
-					duration: 15,
-					calories: 120,
-					completion: 100,
-					status: 'completed',
-					statusText: '已完成'
-				},
-				{
-					id: 2,
-					type: 'homework',
-					typeText: '体育作业',
-					title: '跳绳运动',
-					description: '连续跳绳5分钟',
-					date: '2024-01-15',
-					time: '19:00',
-					duration: 20,
-					calories: 150,
-					completion: 100,
-					status: 'completed',
-					statusText: '已完成'
-				},
-				{
-					id: 3,
-					type: 'gym',
-					typeText: '健身房',
-					title: '深蹲练习',
-					description: '完成2组深蹲，每组15个',
-					date: '2024-01-14',
-					time: '17:45',
-					duration: 10,
-					calories: 80,
-					completion: 100,
-					status: 'completed',
-					statusText: '已完成'
-				},
-				{
-					id: 4,
-					type: 'homework',
-					typeText: '体育作业',
-					title: '平板支撑',
-					description: '保持平板支撑姿势1分钟',
-					date: '2024-01-14',
-					time: '18:15',
-					duration: 5,
-					calories: 40,
-					completion: 60,
-					status: 'incomplete',
-					statusText: '未完成'
-				},
-				{
-					id: 5,
-					type: 'gym',
-					typeText: '健身房',
-					title: '仰卧起坐',
-					description: '完成3组仰卧起坐，每组20个',
-					date: '2024-01-13',
-					time: '16:30',
-					duration: 12,
-					calories: 90,
-					completion: 100,
-					status: 'completed',
-					statusText: '已完成'
-				},
-				{
-					id: 6,
-					type: 'homework',
-					typeText: '体育作业',
-					title: '开合跳',
-					description: '连续开合跳3分钟',
-					date: '2024-01-13',
-					time: '17:00',
-					duration: 8,
-					calories: 60,
-					completion: 100,
-					status: 'completed',
-					statusText: '已完成'
-				},
-				{
-					id: 7,
-					type: 'gym',
-					typeText: '健身房',
-					title: 'AI动作识别训练',
-					description: '通过AI识别完成标准动作练习',
-					date: '2024-01-12',
-					time: '18:00',
-					duration: 25,
-					calories: 180,
-					completion: 100,
-					status: 'completed',
-					statusText: '已完成'
-				},
-				{
-					id: 8,
-					type: 'homework',
-					typeText: '体育作业',
-					title: '跑步训练',
-					description: '慢跑10分钟',
-					date: '2024-01-12',
-					time: '19:30',
-					duration: 10,
-					calories: 100,
-					completion: 80,
-					status: 'incomplete',
-					statusText: '未完成'
-				}
+				
 			]
 		}
 	},
 	computed: {
-		filteredRecordsList() {
-			if (this.activeFilter === 'all') {
-				return this.recordsList
-			}
-			return this.recordsList.filter(record => record.type === this.activeFilter)
-		}
 	},
 	onLoad() {
 		this.loadRecordsData()
 	},
 	methods: {
+		// 格式化：Date => YYYY-MM-DD
+		formatDateTime(date) {
+			const y = date.getFullYear()
+			const m = String(date.getMonth() + 1).padStart(2, '0')
+			const d = String(date.getDate()).padStart(2, '0')
+			return `${y}-${m}-${d}`
+		},
+
+		// 时间戳(毫秒) => YYYY-MM-DD
+		formatDateFromMs(ms) {
+			return this.formatDateTime(new Date(ms))
+		},
+
+		// 时间戳(毫秒) => HH:mm
+		formatTimeFromMs(ms) {
+			const date = new Date(ms)
+			const hh = String(date.getHours()).padStart(2, '0')
+			const mm = String(date.getMinutes()).padStart(2, '0')
+			return `${hh}:${mm}`
+		},
+
+		// 毫秒 => M:SS 展示（例：0:30、5:07）
+		formatDurationFromMs(ms) {
+			const totalSeconds = Math.max(0, Math.floor((ms || 0) / 1000))
+			const minutes = Math.floor(totalSeconds / 60)
+			const seconds = String(totalSeconds % 60).padStart(2, '0')
+			return `${minutes}:${seconds}`
+		},
+
+		// label：今天/具体日期
+		labelForDate(dateStr) {
+			const todayStr = this.formatDateTime(new Date())
+			return dateStr === todayStr ? '今天' : dateStr
+		},
+
+		// 加载记录数据
+		loadRecordsData() {
+			const params = {
+				pageNum: 1,
+				pageSize: 9999
+			}
+			getReq(URL.jxjRecordList, params).then(res => {
+				if (res.message === '成功') {
+					// 兼容不同后端结构：data.content 可能是数组，每个元素内含 recordInfos
+					const content = (res.data.content) || []
+					const flatList = []
+					content.forEach(block => {
+						const list = (block && block.recordInfos) || []
+						list.forEach(item => flatList.push(item))
+					})
+
+					// 分组：按上传日期(YYYY-MM-DD)
+					const groupsMap = {}
+					flatList.forEach(info => {
+						const uploadMs = info.uploadTime || info.scoreDate || 0
+						const dateKey = this.formatDateFromMs(uploadMs)
+						if (!groupsMap[dateKey]) groupsMap[dateKey] = []
+						groupsMap[dateKey].push({
+							id: info.id,
+							title: info.name || '运动项目',
+							time: this.formatTimeFromMs(uploadMs),
+							duration: this.formatDurationFromMs(info.time_consume),
+						})
+					})
+
+					// 组装为页面所需结构，按日期倒序
+					const sortedDates = Object.keys(groupsMap).sort((a, b) => b.localeCompare(a))
+					this.groupedRecords = sortedDates.map(d => ({
+						label: this.labelForDate(d),
+						items: groupsMap[d]
+					}))
+					
+				}
+			}).catch(() => {
+				this.groupedRecords = []
+			})
+		},
 		// 返回上一页
 		goBack() {
 			uni.navigateBack()
@@ -219,8 +163,8 @@ export default {
 		viewRecordDetail(record) {
 			// 跳转到“完成页”作为记录详情展示
 			// 兼容 duration 可能为 'MM:SS' 字符串或数字（分钟）
-			let seconds = 0
-			let minutes = 0
+			let minutes
+			let seconds
 			if (typeof record.duration === 'string') {
 				const parts = String(record.duration).split(':')
 				const m = parseInt(parts[0] || '0') || 0
@@ -234,15 +178,11 @@ export default {
 			const name = record.title || '运动项目'
 			const id = record.id || ''
 			uni.navigateTo({
-				url: `/pagesTask/assign/assignTask/finish?name=${encodeURIComponent(name)}&id=${encodeURIComponent(id)}&duration=${minutes}&seconds=${seconds}`
+				url: `/pagesTask/assign/assignTask/finish?name=${(name)}&id=${encodeURIComponent(id)}&duration=${minutes}&seconds=${seconds}&from=record`
 			})
 		},
 		
-		// 加载记录数据
-		loadRecordsData() {
-			// 这里可以调用API获取运动记录数据
-			console.log('加载运动记录数据')
-		}
+		
 	}
 }
 </script>
