@@ -41,20 +41,32 @@
         <!-- TOP2 -->
         <view class="podium-card podium-sub">
           <view class="podium-title">TOP2</view>
-          <view class="podium-name">{{ leaderboardList[1] && leaderboardList[1].name }}</view>
-          <view class="podium-time">{{ leaderboardList[1] && leaderboardList[1].totalTime }}分钟</view>
+          <view class="podium-name">{{
+            leaderboardList[1] && leaderboardList[1].name
+          }}</view>
+          <view class="podium-time"
+            >{{ leaderboardList[1] && leaderboardList[1].totalTime }}分钟</view
+          >
         </view>
         <!-- TOP1 -->
         <view class="podium-card podium-main">
           <view class="podium-title">TOP1</view>
-          <view class="podium-name">{{ leaderboardList[0] && leaderboardList[0].name }}</view>
-          <view class="podium-time">{{ leaderboardList[0] && leaderboardList[0].totalTime }}分钟</view>
+          <view class="podium-name">{{
+            leaderboardList[0] && leaderboardList[0].name
+          }}</view>
+          <view class="podium-time"
+            >{{ leaderboardList[0] && leaderboardList[0].totalTime }}分钟</view
+          >
         </view>
         <!-- TOP3 -->
         <view class="podium-card podium-sub">
           <view class="podium-title">TOP3</view>
-          <view class="podium-name">{{ leaderboardList[2] && leaderboardList[2].name }}</view>
-          <view class="podium-time">{{ leaderboardList[2] && leaderboardList[2].totalTime }}分钟</view>
+          <view class="podium-name">{{
+            leaderboardList[2] && leaderboardList[2].name
+          }}</view>
+          <view class="podium-time"
+            >{{ leaderboardList[2] && leaderboardList[2].totalTime }}分钟</view
+          >
         </view>
       </view>
     </view>
@@ -68,8 +80,14 @@
         :class="{ 'is-me': item.isMe }"
       >
         <view class="row-left">
-          <view class="row-rank" :class="{ top: item.rank <= 3 }">{{ item.rank }}</view>
-          <image :src="item.avatar || '/static/images/students/user.png'" class="row-avatar" mode="aspectFill" />
+          <view class="row-rank" :class="{ top: item.rank <= 3 }">{{
+            item.rank
+          }}</view>
+          <image
+            :src="item.avatar || '/static/images/students/user.png'"
+            class="row-avatar"
+            mode="aspectFill"
+          />
           <view class="row-name">{{ item.name }}</view>
         </view>
         <view class="row-right">
@@ -81,7 +99,10 @@
     <view class="self-rank-bar">
       <view class="self-left">
         <view class="self-rank">{{ myRank.rank }}</view>
-        <view class="self-name">我的</view>
+        <view class="self-name">
+          <image class="row-avatar" :src="myRank.avatar" mode="aspectFill"></image>
+          {{ myRank.name }}
+          </view>
         <view class="self-time">{{ myRank.totalTime }}分钟</view>
       </view>
       <view class="self-action">去锻炼</view>
@@ -90,7 +111,7 @@
 </template>
 
 <script>
-import { getReq, postReq } from '@/common/request.js';
+import { getReq, postReq } from "@/common/request.js";
 import { URL } from "@/common/url.js";
 export default {
   data() {
@@ -102,95 +123,28 @@ export default {
         totalDays: 12,
       },
       leaderboardList: [
-        {
-          rank: 1,
-          name: "张小明",
-          className: "四年级3班",
-          totalTime: 450,
-          totalDays: 28,
-          avatar: "/static/images/students/user.png",
-          isMe: false,
-        },
-        {
-          rank: 2,
-          name: "李小红",
-          className: "四年级2班",
-          totalTime: 420,
-          totalDays: 26,
-          avatar: "/static/images/students/user.png",
-          isMe: false,
-        },
-        {
-          rank: 3,
-          name: "王小强",
-          className: "四年级1班",
-          totalTime: 380,
-          totalDays: 24,
-          avatar: "/static/images/students/user.png",
-          isMe: false,
-        },
-        {
-          rank: 4,
-          name: "赵小丽",
-          className: "四年级3班",
-          totalTime: 350,
-          totalDays: 22,
-          avatar: "/static/images/students/user.png",
-          isMe: false,
-        },
-        {
-          rank: 5,
-          name: "陈小华",
-          className: "四年级2班",
-          totalTime: 320,
-          totalDays: 20,
-          avatar: "/static/images/students/user.png",
-          isMe: false,
-        },
-        {
-          rank: 6,
-          name: "刘小军",
-          className: "四年级1班",
-          totalTime: 300,
-          totalDays: 18,
-          avatar: "/static/images/students/user.png",
-          isMe: false,
-        },
-        {
-          rank: 7,
-          name: "黄小美",
-          className: "四年级3班",
-          totalTime: 280,
-          totalDays: 16,
-          avatar: "/static/images/students/user.png",
-          isMe: false,
-        },
-        {
-          rank: 8,
-          name: "周小亮",
-          className: "四年级2班",
-          totalTime: 260,
-          totalDays: 14,
-          avatar: "/static/images/students/user.png",
-          isMe: false,
-        },
-        {
-          rank: 15,
-          name: "李思思",
-          className: "四年级3班",
-          totalTime: 180,
-          totalDays: 12,
-          avatar: "/static/images/students/user.png",
-          isMe: true,
-        },
       ],
     };
   },
   onLoad() {
-		const date = this.formatDate(new Date());
+    const date = this.formatDate(new Date());
     this.loadLeaderboardData(date);
   },
   methods: {
+    // 加载排行榜数据
+    loadLeaderboardData(time) {
+      // 这里可以调用API获取排行榜数据
+      const params = {
+        time: time,
+      };
+      getReq(URL.jxjRankInfo, params).then((res) => {
+        console.log("resresresresresresres", res);
+        if (res.message === "成功") {
+          this.myRank = res.data
+          this.leaderboardList = res.data.rankInfos
+        }
+      });
+    },
     formatDate(date) {
       const year = date.getFullYear();
       const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -208,7 +162,9 @@ export default {
       if (filter === "week") {
         date = this.formatDate(new Date());
       } else {
-        date = this.formatDate(new Date(new Date().getTime() - 7 * 24 * 60 * 60 * 1000));
+        date = this.formatDate(
+          new Date(new Date().getTime() - 7 * 24 * 60 * 60 * 1000)
+        );
       }
       this.loadLeaderboardData(date);
     },
@@ -227,17 +183,6 @@ export default {
       if (rank === 2) return "/static/images/students/two.png";
       if (rank === 3) return "/static/images/students/three.png";
       return "";
-    },
-
-    // 加载排行榜数据
-    loadLeaderboardData(time) {
-      // 这里可以调用API获取排行榜数据
-			const params = {
-				time: time
-			}
-			getReq(URL.jxjRankInfo,params).then(res => {
-				console.log("resresresresresresres", res);
-			})
     },
   },
 };
@@ -293,9 +238,9 @@ export default {
 }
 .podium-card {
   width: 200rpx;
-  background: rgba(255,255,255,0.92);
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 24rpx;
-  box-shadow: 0 8rpx 24rpx rgba(46,120,255,0.12);
+  box-shadow: 0 8rpx 24rpx rgba(46, 120, 255, 0.12);
   text-align: center;
   padding: 20rpx 12rpx;
 }
@@ -347,12 +292,12 @@ export default {
 }
 
 .filter-tab.active {
-  background: #2E78FF;
+  background: #2e78ff;
 }
 
 .tab-text {
   font-size: 26rpx;
-  color: #2E78FF;
+  color: #2e78ff;
   transition: color 0.3s ease;
 }
 
@@ -396,7 +341,7 @@ export default {
 }
 .row-rank.top {
   background: #e8f0ff;
-  color: #2E78FF;
+  color: #2e78ff;
 }
 .row-avatar {
   width: 60rpx;
@@ -424,7 +369,7 @@ export default {
   right: 0;
   bottom: 0;
   height: 120rpx;
-  background: #2E78FF;
+  background: #2e78ff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -452,7 +397,7 @@ export default {
   height: 72rpx;
   padding: 0 28rpx;
   background: #ffffff;
-  color: #2E78FF;
+  color: #2e78ff;
   border-radius: 36rpx;
   display: flex;
   align-items: center;
