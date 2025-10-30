@@ -275,9 +275,12 @@ export default {
         content: "确定要切换用户吗？",
         success: (res) => {
           if (res.confirm) {
+            console.log('切换用户切换用户切换用户切换用户');
+            
             uni.clearStorage();
             uni.reLaunch({
-              url: "/pages/login/index/index",
+              url: '/pages/login/login/login'
+              // url: "/pages/students/login/index",
             });
           }
         },

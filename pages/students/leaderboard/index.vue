@@ -187,7 +187,7 @@ export default {
     };
   },
   onLoad() {
-		const date = this.getCurrentWeekRange();
+		const date = this.formatDate(new Date());
     this.loadLeaderboardData(date);
   },
   methods: {
@@ -196,39 +196,6 @@ export default {
       const month = String(date.getMonth() + 1).padStart(2, "0");
       const day = String(date.getDate()).padStart(2, "0");
       return `${year}-${month}-${day}`;
-    },
-    getCurrentWeekRange() {
-      const today = new Date();
-      const dayOfWeek = today.getDay(); // 0-6, 0是周日
-
-      // 计算本周一的日期
-      const monday = new Date(today);
-      monday.setDate(today.getDate() - dayOfWeek + (dayOfWeek === 0 ? -6 : 1));
-
-      // 本周一到今天
-      const startDate = this.formatDate(monday);
-      const endDate = this.formatDate(today);
-
-      return `${startDate} - ${endDate}`;
-    },
-    getLastWeekRange() {
-      const today = new Date();
-      const dayOfWeek = today.getDay(); // 0-6, 0是周日
-
-      // 计算上周一的日期
-      const lastMonday = new Date(today);
-      lastMonday.setDate(
-        today.getDate() - dayOfWeek - 6 + (dayOfWeek === 0 ? -6 : 1)
-      );
-
-      // 计算上周日的日期
-      const lastSunday = new Date(lastMonday);
-      lastSunday.setDate(lastMonday.getDate() + 6);
-
-      const startDate = this.formatDate(lastMonday);
-      const endDate = this.formatDate(lastSunday);
-
-      return `${startDate} - ${endDate}`;
     },
     // 返回上一页
     goBack() {
@@ -239,9 +206,9 @@ export default {
     setFilter(filter) {
       let date = null;
       if (filter === "week") {
-        date = this.getCurrentWeekRange();
+        date = this.formatDate(new Date());
       } else {
-        date = this.getLastWeekRange();
+        date = this.formatDate(new Date(new Date().getTime() - 7 * 24 * 60 * 60 * 1000));
       }
       this.loadLeaderboardData(date);
     },
@@ -266,7 +233,7 @@ export default {
     loadLeaderboardData(time) {
       // 这里可以调用API获取排行榜数据
 			const params = {
-				time: '2023-08-01'
+				time: time
 			}
 			getReq(URL.jxjRankInfo,params).then(res => {
 				console.log("resresresresresresres", res);

@@ -109,7 +109,7 @@
     <!-- #ifdef MP-WEIXIN -->
     <view v-if="showLeaveDialog" class="overlay" @tap="cancelLeave">
       <view class="dialog" @tap.stop>
-        <view v-if="!isLeave" class="dlg-title">请假原因</view>
+        <view class="dlg-title">{{ !isLeave ? "撤销请假" : "请假原因" }}</view>
         <view v-if="!isLeave" class="dlg-input">
           <textarea
             v-model="leaveReason"
@@ -118,7 +118,7 @@
             class="dlg-textarea"
           />
         </view>
-        <view v-if="isLeave">请确认是否撤销请假</view>
+        <view v-if="isLeave" class="dlg-input">请确认是否撤销请假</view>
         <view class="dlg-divider"></view>
         <view class="dlg-actions">
           <view class="dlg-btn cancel" @tap="cancelLeave">我再想想</view>
@@ -164,11 +164,7 @@ export default {
       uni.navigateBack();
     },
     askLeave() {
-      if (!this.isLeave) {
-        this.showLeaveDialog = true;
-      } else {
-        this.showRepeal = true;
-      }
+      this.showLeaveDialog = true;
     },
     cancelLeave() {
       this.showLeaveDialog = false;

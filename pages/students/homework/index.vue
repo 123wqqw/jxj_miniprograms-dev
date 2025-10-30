@@ -91,16 +91,6 @@
 <script>
 import { getReq, postReq } from "@/common/request.js";
 import { URL } from "@/common/url.js";
-// // 每日打卡日历
-// jxjCalendar:"/xty-task/app-api/clock/v1/calendar",
-// // 打卡作业查询
-// jxjTaskInfo:"/xty-task/app-api/clock/v2/taskInfo",
-// // 打卡作业详情
-// jxjTaskDetail:"/xty-task/app-api/clock/v3/taskInfo/detail",
-// // 请假
-// jxjAskLeave:"/xty-task/app-api/clock/v2/askleave",
-// // 撤销请假
-// jxjRevoke:"/xty-task/app-api/clock/v1/askleave/revoke",
 export default {
   data() {
     return {
